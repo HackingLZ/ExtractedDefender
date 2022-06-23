@@ -1,0 +1,35 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1401.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_2 = nil
+if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p1 ~= nil then
+  l_0_2 = (this_sigattrlog[1]).utf8p1
+  local l_0_0, l_0_1 = {"program files", "windows"}
+end
+do
+  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
+
+  if contains(l_0_2, l_0_0) then
+    return mp.CLEAN
+  end
+  if IsLegacyOrgMachine() or IsTechniqueObservedForPid("BM", "ttexclusion") or IsTacticObservedForPid("BM", "ttexclusion") or IsTacticObservedForPid("BM", "ttexclusion_cln") then
+    return mp.CLEAN
+  end
+  local l_0_3 = nil
+  if ((bm.GetOverallTrafficVolumes)()).incoming_req < 1500000 and ((bm.GetOverallTrafficVolumes)()).outgoing_req < 1500000 and ((bm.GetOverallTrafficVolumes)()).incoming_response < 1500000 and ((bm.GetOverallTrafficVolumes)()).outgoing_response < 1500000 then
+    return mp.CLEAN
+  end
+  local l_0_4 = nil
+  local l_0_5 = math_abs(((bm.GetOverallTrafficVolumes)()).incoming_req - ((bm.GetOverallTrafficVolumes)()).outgoing_req)
+  if (l_0_5 >= 0 and l_0_5 <= 100000) or math_abs(l_0_4.incoming_response - l_0_4.outgoing_response) >= 0 and math_abs(l_0_4.incoming_response - l_0_4.outgoing_response) <= 100000 then
+    add_parents()
+    reportRelatedBmHits()
+    addOverallNetworkVolume()
+    TrackPidAndTechniqueBM("BM", "T1090", "MultiProxy")
+    return mp.INFECTED
+  end
+  return mp.CLEAN
+end
+

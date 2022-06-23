@@ -1,0 +1,41 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4810.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC7: Overwrote pending register: R0 in 'AssignReg'
+
+if (this_sigattrlog[2]).matched then
+  local l_0_0, l_0_1, l_0_2 = nil
+else
+  do
+    do return mp.CLEAN end
+    -- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
+
+    ;
+    (bm.add_related_file)(l_0_0)
+    local l_0_3 = nil
+    if (bm.get_current_process_startup_info)() == nil or ((bm.get_current_process_startup_info)()).ppid == nil then
+      return mp.CLEAN
+    end
+    local l_0_4 = nil
+    local l_0_5, l_0_6, l_0_7 = ((bm.get_current_process_startup_info)()).ppid, l_0_3:match("[^>](.-)([^\\/]-%.?([^%.\\/]*))$")
+    if l_0_7 == nil then
+      return mp.CLEAN
+    end
+    if isTainted(l_0_3, "remote_file_created_taint") and checkFilePathInProcessCommandline(l_0_5, l_0_7, true) then
+      reportRelatedBmHits()
+      addRelatedProcess()
+      TrackPidAndTechniqueBM("BM", "T1486", "Impact_GpgEncryption")
+      return mp.INFECTED
+    end
+    if ((string.sub)(l_0_3, 0, 5) == "/tmp/" or (string.sub)(l_0_3, 0, 9) == "/var/tmp/" or (string.sub)(l_0_3, 0, 9) == "/dev/shm/") and checkFilePathInProcessCommandline(l_0_5, l_0_7, true) then
+      reportRelatedBmHits()
+      addRelatedProcess()
+      TrackPidAndTechniqueBM("BM", "T1486", "Impact_GpgEncryption")
+      return mp.INFECTED
+    end
+    return mp.CLEAN
+  end
+end
+

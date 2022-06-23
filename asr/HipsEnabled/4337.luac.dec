@@ -1,0 +1,528 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4337.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (skip.get_contextdata)(skip.CONTEXT_DATA_SCANREASON)
+if l_0_0 ~= skip.SCANREASON_ONMODIFIEDHANDLECLOSE and l_0_0 ~= skip.SCANREASON_ONOPEN then
+  return 0
+end
+if (skip.get_contextdata)(skip.CONTEXT_DATA_OPEN_CREATEPROCESS_HINT) then
+  return 0
+end
+local l_0_1 = function(l_1_0, l_1_1)
+  -- function num : 0_0
+  do return l_1_1 == "" or (string.sub)(l_1_0, -(string.len)(l_1_1)) == l_1_1 end
+  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+end
+
+local l_0_2 = function(l_2_0, l_2_1)
+  -- function num : 0_1
+  do return (string.sub)(l_2_0, 1, (string.len)(l_2_1)) == l_2_1 end
+  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+end
+
+local l_0_3 = function(l_3_0, l_3_1)
+  -- function num : 0_2
+  if l_3_0 == "excel.exe" or l_3_0 == "winword.exe" or l_3_0 == "powerpnt.exe" or l_3_0 == "outlook.exe" or l_3_0 == "msaccess.exe" or l_3_0 == "mspub.exe" then
+    if l_3_1:find("^\\device\\harddiskvolume%d*\\program files\\microsoft office\\root\\office") ~= nil then
+      return true
+    end
+    if l_3_1:find("^\\device\\harddiskvolume%d*\\program files %(x86%)\\microsoft office\\root\\office") ~= nil then
+      return true
+    end
+    if l_3_1:find("^\\device\\harddiskvolume%d*\\program files\\windowsapps\\microsoft%.office%.desktop%.") ~= nil then
+      return true
+    end
+  end
+  return false
+end
+
+local l_0_4 = (string.lower)((skip.get_contextdata)(skip.CONTEXT_DATA_FILEPATH))
+local l_0_5 = (skip.get_contextdata)(skip.CONTEXT_DATA_PROCESS_ID)
+if l_0_5 == 4 and l_0_0 == skip.SCANREASON_ONMODIFIEDHANDLECLOSE and l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\packages\\([^\\]*)\\localstate\\rootfs\\") ~= nil and l_0_4 ~= nil and "^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\packages\\([^\\]*)\\localstate\\rootfs\\" ~= nil then
+  return 1
+end
+local l_0_6 = (string.lower)((skip.get_contextdata)(skip.CONTEXT_DATA_FILENAME))
+if l_0_6 == "pagefile.sys" or l_0_6 == "hiberfil.sys" or l_0_6 == "swapfile.sys" then
+  if l_0_4:match("^\\device\\harddiskvolumeshadowcopy%d*$") ~= nil then
+    return 1
+  end
+  if l_0_4:match("^\\device\\harddiskvolume%d*$") ~= nil then
+    return 1
+  end
+end
+local l_0_7 = (string.lower)((skip.get_contextdata)(skip.CONTEXT_DATA_PROCESSNAME))
+if l_0_7 == "rundll32.exe" or l_0_7 == "dllhost.exe" or l_0_7 == "regsvr32.exe" or l_0_7 == "cscript.exe" or l_0_7 == "jscript.exe" or l_0_7 == "cmd.exe" or l_0_7 == "curl.exe" or l_0_7 == "powershell.exe" or l_0_7 == "powershell_ise.exe" or l_0_7 == "wscript.exe" or l_0_7 == "mshta.exe" or l_0_7 == "csc.exe" or l_0_7 == "jsc.exe" or l_0_7 == "vbc.exe" then
+  return 0
+end
+local l_0_8 = (string.lower)((skip.get_contextdata)(skip.CONTEXT_DATA_PROCESSDEVICEPATH))
+if l_0_7 == "software_reporter_tool.exe" and l_0_8:find("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\google\\chrome\\user data\\swreporter\\") ~= nil then
+  return 1
+end
+if l_0_0 == skip.SCANREASON_ONOPEN and l_0_7 == "idwutil_600.exe" and l_0_1(l_0_8, "\\program files (x86)\\idrivewindows\\cmd_dutil") then
+  return 1
+end
+if l_0_0 == skip.SCANREASON_ONMODIFIEDHANDLECLOSE then
+  if l_0_3(l_0_7, l_0_8) and not (skip.IsHipsRuleEnabled)("3b576869-a4ec-4529-8536-b80a7769e899") and not (skip.IsHipsRuleEnabled)("92E97FA1-2EDF-4476-BDD6-9DD0B4DDDC7B") and not (skip.IsHipsRuleEnabled)("c28bf0fb-388c-438b-a41d-8688461af900") and not l_0_1(l_0_6, ".xoml") then
+    return 1
+  end
+  if l_0_7 == "winrar.exe" and not (skip.IsHipsRuleEnabled)("be9ba2d9-53ea-4cdc-84e5-9b1eeee46550") then
+    return 1
+  end
+  if (string.find)(l_0_7, "setup", 1, true) ~= nil or (string.find)(l_0_7, "install", 1, true) ~= nil then
+    return 1
+  end
+  if (string.find)(l_0_4, "\\program files", 1, true) ~= nil then
+    if l_0_4:match("^\\device\\harddiskvolume%d*\\program files\\") ~= nil then
+      return 1
+    end
+    if l_0_4:match("^\\device\\harddiskvolume%d*\\program files %(x86%)\\") ~= nil then
+      return 1
+    end
+  end
+  if l_0_2(l_0_4, "\\device\\mup\\") then
+    return 1
+  end
+  if (string.find)(l_0_8, "\\programdata\\ul\\pcmark", 1, true) ~= nil then
+    return 1
+  end
+  if (string.find)(l_0_8, "\\program files\\windowsapps\\", 1, true) ~= nil or (string.find)(l_0_8, "\\windows\\systemapps\\", 1, true) ~= nil then
+    return 1
+  end
+  if l_0_1(l_0_7, ".tmp") then
+    if l_0_1(l_0_6, ".tmp") then
+      return 1
+    end
+    if l_0_4:match("^\\device\\harddiskvolume%d*\\program files\\") ~= nil then
+      return 1
+    end
+    if l_0_4:match("^\\device\\harddiskvolume%d*\\program files %(x86%)\\") ~= nil then
+      return 1
+    end
+  end
+  if (string.sub)(l_0_7, 1, 2) == "7z" and (l_0_7 == "7z.exe" or l_0_7 == "7za.exe" or l_0_7 == "7zfm.exe" or l_0_7 == "7zg.exe" or (string.find)(l_0_7, "7z%d%d%d%d%-x64%.exe") ~= nil or (string.find)(l_0_7, "7z%d%d%d%d%.exe") ~= nil) and not (skip.IsHipsRuleEnabled)("be9ba2d9-53ea-4cdc-84e5-9b1eeee46550") then
+    return 1
+  end
+  if (string.sub)(l_0_7, 1, 4) == "npp." and (l_0_1(l_0_7, ".installer.x64.exe") or l_0_1(l_0_7, ".installer.exe")) then
+    return 1
+  end
+  if (string.sub)(l_0_7, 1, 7) == "rstudio" and (string.find)(l_0_7, "rstudio%d%.exe") ~= nil then
+    return 1
+  end
+  if l_0_1(l_0_6, ".html") or l_0_1(l_0_6, ".js") or l_0_1(l_0_6, ".css") then
+    if (string.find)(l_0_4, "\\doc\\", 1, true) ~= nil then
+      return 1
+    end
+    if (string.find)(l_0_4, "\\docs\\", 1, true) ~= nil then
+      return 1
+    end
+  end
+  local l_0_9, l_0_10 = l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\temp\\")
+  if l_0_9 ~= nil and l_0_10 ~= nil and l_0_9 == l_0_8:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\temp\\") and l_0_10 == l_0_8 then
+    return 1
+  end
+end
+do
+  if (string.sub)(l_0_7, 1, 4) == "npp." then
+    if l_0_1(l_0_7, ".installer.exe") and (string.find)(l_0_4, "^\\device\\harddiskvolume%d*\\program files %(x86%)\\notepad%+%+") ~= nil then
+      return 1
+    end
+    if l_0_1(l_0_7, ".installer.x64.exe") and (string.find)(l_0_4, "^\\device\\harddiskvolume%d*\\program files\\notepad%+%+") ~= nil then
+      return 1
+    end
+  end
+  if (l_0_1(l_0_8, "\\windows\\system32") or (string.find)(l_0_8, "\\program files\\windowsapps\\", 1, true) ~= nil) and (string.find)(l_0_4, "microsoft\\cryptneturlcache\\", 1, true) ~= nil then
+    return 1
+  end
+  if l_0_7 == "runtimebroker.exe" and l_0_1(l_0_8, "\\windows\\system32") and (string.find)(l_0_4, "appdata\\roaming\\microsoft\\systemcertificates\\my\\certificates", 1, true) ~= nil then
+    return 1
+  end
+  if l_0_7 == "waworkerhost.exe" then
+    if (string.find)(l_0_4, "microsoft\\cryptneturlcache\\", 1, true) ~= nil then
+      return 1
+    end
+    if l_0_6:match("^%d*$") then
+      return 1
+    end
+  end
+  if l_0_7 == "microsoft.office.web.certificatemanager.exe" and l_0_4:match("^\\device\\harddiskvolume(.*)\\programdata\\microsoft\\crypto\\rsa\\machinekeys") ~= nil then
+    return 1
+  end
+  if l_0_7 == "pingsender.exe" and l_0_1(l_0_8, "\\program files\\mozilla firefox") and (string.find)(l_0_4, "microsoft\\cryptneturlcache\\", 1, true) ~= nil then
+    return 1
+  end
+  if l_0_7 == "chrome.exe" then
+    if l_0_1(l_0_8, "\\google\\chrome\\application") and (string.find)(l_0_4, "microsoft\\cryptneturlcache\\", 1, true) ~= nil then
+      return 1
+    end
+    local l_0_11 = l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\google\\chrome\\user data")
+    if l_0_4 ~= nil and l_0_11 ~= nil and l_0_11 == l_0_8:match("^\\device\\harddiskvolume(.*)\\program files %(x86%)\\google\\chrome\\application") then
+      return 1
+    end
+  end
+  do
+    if l_0_7 == "msedge.exe" or l_0_7 == "msedgewebview2.exe" then
+      if l_0_1(l_0_8, "\\application") and (string.find)(l_0_4, "microsoft\\cryptneturlcache\\", 1, true) ~= nil then
+        return 1
+      end
+      local l_0_12, l_0_13 = l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\microsoft\\edge([^\\]*)\\user data")
+      local l_0_15, l_0_16, l_0_17 = , l_0_8:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\microsoft\\edge([^\\]*)\\application")
+      if l_0_13 ~= nil and l_0_12 ~= nil and l_0_12 == l_0_16 and l_0_13 == l_0_17 and l_0_15 == "^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\microsoft\\edge([^\\]*)\\application" then
+        return 1
+      end
+      local l_0_14 = nil
+      l_0_12 = l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\microsoft\\edge([^\\]*)\\application")
+      if l_0_13 ~= nil and l_0_12 ~= nil and l_0_12 == l_0_16 and l_0_13 == l_0_17 and l_0_15 == l_0_14 then
+        return 1
+      end
+      -- DECOMPILER ERROR at PC669: Overwrote pending register: R10 in 'AssignReg'
+
+      l_0_12 = l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\temp\\")
+      if l_0_13 ~= nil and l_0_12 ~= nil and l_0_12 == l_0_16 and l_0_13 == l_0_17 and l_0_14 ~= nil then
+        return 1
+      end
+      -- DECOMPILER ERROR at PC686: Overwrote pending register: R10 in 'AssignReg'
+
+      l_0_12 = l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\packages\\")
+      if l_0_13 ~= nil and l_0_12 ~= nil and l_0_12 == l_0_16 and l_0_13 == l_0_17 and l_0_14 ~= nil then
+        return 1
+      end
+      l_0_12 = l_0_4:match("^\\device\\harddiskvolume(.*)\\windows\\fonts\\")
+      if l_0_12 ~= nil and l_0_12 == l_0_16 and l_0_17 ~= nil and l_0_14 ~= nil then
+        return 1
+      end
+    end
+    do
+      -- DECOMPILER ERROR at PC716: Overwrote pending register: R10 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC717: Overwrote pending register: R11 in 'AssignReg'
+
+      if l_0_7 == "nuget.exe" and l_0_4:match(l_0_15) ~= nil and l_0_13 ~= nil then
+        return 1
+      end
+      do
+        if l_0_7 == "vlc-cache-gen.exe" then
+          local l_0_18 = l_0_4:match("^\\device\\harddiskvolume(.*)\\program files %(x86%)\\videolan\\vlc")
+          if l_0_18 ~= nil and l_0_18 == l_0_8:match("^\\device\\harddiskvolume(.*)\\program files %(x86%)\\videolan\\vlc") then
+            return 1
+          end
+        end
+        if (string.sub)(l_0_7, 1, 5) == "gimp-" and l_0_1(l_0_7, "-setup.tmp") and l_0_4:match("^\\device\\harddiskvolume(.*)\\program files\\gimp 2") ~= nil then
+          return 1
+        end
+        do
+          if (l_0_7 == "setup.exe" or l_0_7 == "un_a.exe") and l_0_0 == skip.SCANREASON_ONOPEN then
+            local l_0_19, l_0_20 = l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\temp\\")
+            -- DECOMPILER ERROR at PC783: Unhandled construct in 'MakeBoolean' P1
+
+            if l_0_19 ~= nil and l_0_20 ~= nil and l_0_19 == l_0_8:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\temp\\") and l_0_20 == l_0_8 then
+              return 1
+            end
+          end
+          if l_0_19 == nil then
+            l_0_19 = l_0_4:match("^\\device\\harddiskvolume(.*)\\program files\\mozilla ")
+          end
+          if l_0_19 == nil then
+            l_0_19 = l_0_4:match("^\\device\\harddiskvolume(.*)\\program files %(x86%)\\mozilla ")
+          end
+          if l_0_19 ~= nil and l_0_19 == l_0_8:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\temp") and l_0_8 ~= nil then
+            return 1
+          end
+          if l_0_3(l_0_7, l_0_8) == true then
+            if l_0_4:find("^\\device\\harddiskvolume%d*\\users\\[^\\]*\\appdata\\local\\packages") ~= nil then
+              return 1
+            end
+            if l_0_4:find("^\\device\\harddiskvolume%d*\\users\\[^\\]*\\appdata\\local\\temp\\photocache") ~= nil then
+              return 1
+            end
+            if l_0_4:find("^\\device\\harddiskvolume%d*\\users\\[^\\]*\\appdata\\local\\microsoft\\office") ~= nil then
+              return 1
+            end
+            if l_0_4:find("^\\device\\harddiskvolume%d*\\users\\[^\\]*\\appdata\\local\\microsoft\\msipc") ~= nil then
+              return 1
+            end
+            if l_0_4:find("microsoft\\cryptneturlcache\\", 1, true) ~= nil then
+              return 1
+            end
+          end
+          if l_0_7 == "officeclicktorun.exe" then
+            do
+              if l_0_8:match("^\\device\\harddiskvolume(.*)\\program files\\common files\\microsoft shared\\clicktorun") == nil then
+                local l_0_21 = l_0_8:match("^\\device\\harddiskvolume(.*)\\program files %(x86%)\\common files\\microsoft shared\\clicktorun")
+              end
+              -- DECOMPILER ERROR at PC862: Confused about usage of register: R9 in 'UnsetPending'
+
+              -- DECOMPILER ERROR at PC891: Confused about usage of register: R9 in 'UnsetPending'
+
+              if (((l_0_4:match("^\\device\\harddiskvolume(.*)\\program files\\common files\\microsoft shared\\clicktorun\\updates") == nil and l_0_4:match("^\\device\\harddiskvolume(.*)\\program files %(x86%)\\common files\\microsoft shared\\clicktorun\\updates") ~= nil) or l_0_4:match("^\\device\\harddiskvolume(.*)\\programdata\\microsoft\\clicktorun") == nil) and l_0_4:match("^\\device\\harddiskvolume(.*)\\program files\\microsoft office") ~= nil) or l_0_4:match("^\\device\\harddiskvolume(.*)\\program files %(x86%)\\microsoft office") == l_0_21 then
+                return 1
+              end
+              if l_0_1(l_0_6, ".pf") then
+                if l_0_5 == 4 then
+                  return 1
+                end
+                if l_0_4:match("^\\device\\harddiskvolume(.*)\\windows\\prefetch") ~= nil then
+                  if l_0_2(l_0_6, l_0_7) then
+                    return 1
+                  end
+                  if l_0_8:match("^\\device\\harddiskvolume(.*)\\windows\\") ~= nil then
+                    return 1
+                  end
+                end
+              end
+              if l_0_1(l_0_6, ".log") or l_0_1(l_0_6, ".log1") or l_0_1(l_0_6, ".log2") or l_0_1(l_0_6, ".cat") or l_0_1(l_0_6, ".sqm") or l_0_1(l_0_6, ".etl") or l_0_1(l_0_6, ".db") or l_0_1(l_0_6, ".db3") or l_0_1(l_0_6, ".db-wal") or l_0_1(l_0_6, ".db3-wal") or l_0_1(l_0_6, ".db-journal") or l_0_1(l_0_6, ".db3-journal") or l_0_1(l_0_6, ".bin") or l_0_1(l_0_6, ".dat") or l_0_1(l_0_6, ".dmp") or l_0_1(l_0_6, ".data") or l_0_1(l_0_6, ".mui") or l_0_1(l_0_6, ".edb") or l_0_1(l_0_6, ".chk") or l_0_1(l_0_6, ".ini") or l_0_1(l_0_6, ".evtx") or l_0_1(l_0_6, ".manifest") or l_0_1(l_0_6, ".hve") or l_0_1(l_0_6, ".tmp.xml") or l_0_1(l_0_6, ".tmp.werinternalmetadata.xml") or l_0_1(l_0_6, ".hdmp") or l_0_1(l_0_6, ".dmp") or l_0_1(l_0_6, ".wer") or l_0_1(l_0_6, ".sdb") or l_0_1(l_0_6, ".tmp.appcompat.txt") then
+                if l_0_5 == 4 then
+                  return 1
+                end
+                if l_0_8:match("^\\device\\harddiskvolume(.*)\\windows\\system32") ~= nil or l_0_8:match("^\\\\%?\\volume{%x%x%x%x%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%x%x%x%x%x%x%x%x}\\windows\\system32") ~= nil then
+                  return 1
+                end
+                do
+                  if l_0_8:match("^\\device\\harddiskvolume(.*)\\program files") == nil and l_0_8:match("^\\device\\harddiskvolume(.*)\\program files %(x86%)") == nil then
+                    local l_0_22 = l_0_8:match("^\\device\\harddiskvolume(.*)\\programdata")
+                  end
+                  -- DECOMPILER ERROR at PC1138: Confused about usage of register: R9 in 'UnsetPending'
+
+                  if l_0_22 ~= nil then
+                    return 1
+                  end
+                  do
+                    local l_0_23 = nil
+                    if (string.match)(l_0_7, "(%w+)%.") ~= nil and (string.find)(l_0_6, (string.match)(l_0_7, "(%w+)%."), 1, true) ~= nil then
+                      return 1
+                    end
+                    if l_0_7 == "firefox.exe" then
+                      if l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\([^\\]*)\\mozilla\\firefox\\") ~= nil and l_0_4 ~= nil and "^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\([^\\]*)\\mozilla\\firefox\\" ~= nil then
+                        return 1
+                      end
+                      if l_0_8:match("^\\device\\harddiskvolume(.*)\\program files\\mozilla firefox") ~= nil then
+                        if l_0_4:match("^\\device\\harddiskvolume(.*)\\program files\\mozilla firefox") ~= nil then
+                          return 1
+                        end
+                        if l_0_1(l_0_6, ".mui") or l_0_1(l_0_6, ".ttf") or l_0_1(l_0_6, ".icm") or l_0_1(l_0_6, ".db") or l_0_1(l_0_6, ".bin") then
+                          return 1
+                        end
+                      end
+                    end
+                    local l_0_24 = (string.find)(l_0_7, ".", 1, true)
+                    if l_0_24 == nil and (l_0_7 == "cp" or l_0_7 == "dash" or l_0_7 == "node" or l_0_7 == "npm" or l_0_7 == "grep" or l_0_7 == "cat" or l_0_7 == "dpkg" or l_0_7 == "dpkg-query" or l_0_7 == "sudo" or l_0_7 == "apt" or l_0_7 == "store" or l_0_7 == "apt-extracttemplates" or l_0_7 == "perl" or l_0_7 == "systemd-hwdb" or l_0_7 == "ldconfig" or l_0_7 == "update-alternatives") then
+                      local l_0_25, l_0_26, l_0_27 = l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\packages\\([^\\]*)\\localstate\\rootfs")
+                      if l_0_25 ~= nil and l_0_26 ~= nil and l_0_27 ~= nil then
+                        local l_0_28, l_0_29 = l_0_8:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\packages\\([^\\]*)\\localstate\\rootfs\\usr\\bin")
+                        if ("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\packages\\([^\\]*)\\localstate\\rootfs\\usr\\bin" ~= nil or l_0_25 == l_0_28) and l_0_26 == l_0_29 and l_0_27 == R15_PC1284 then
+                          return 1
+                        end
+                      end
+                    end
+                    do
+                      do
+                        if l_0_7 == "firefox.exe" or l_0_7 == "gimp-2.8.exe" or l_0_7 == "soffice.bin" or l_0_7 == "chrome.exe" then
+                          local l_0_30, l_0_31 = l_0_4:match("^\\device\\harddiskvolume(.*)\\programdata\\ul\\pcmark 10\\chops\\dlc\\([^\\]*)\\")
+                          -- DECOMPILER ERROR at PC1303: Overwrote pending register: R13 in 'AssignReg'
+
+                          -- DECOMPILER ERROR at PC1304: Overwrote pending register: R14 in 'AssignReg'
+
+                          if l_0_30 ~= nil and l_0_31 ~= nil then
+                            if l_0_30 == l_0_8:match(l_0_29) or l_0_31 == l_0_28 then
+                              return 1
+                            end
+                            if l_0_8:match("^\\device\\harddiskvolume(.*)\\programdata\\ul\\pcmark 10\\tmp\\") == l_0_30 then
+                              return 1
+                            end
+                          end
+                        end
+                        do
+                          if l_0_7 == "code.exe" then
+                            local l_0_32, l_0_33 = l_0_8:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\programs\\microsoft vs code")
+                            if l_0_32 ~= nil and l_0_33 ~= nil then
+                              if l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\roaming\\code") == l_0_32 and l_0_4 == l_0_33 then
+                                return 1
+                              end
+                              -- DECOMPILER ERROR at PC1338: Overwrote pending register: R15 in 'AssignReg'
+
+                              if l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\programs\\microsoft vs code") == l_0_32 and R13_PC1345 == l_0_33 then
+                                return 1
+                              end
+                            end
+                          end
+                          do
+                            if l_0_7 == "code - insiders.exe" then
+                              local l_0_34, l_0_35 = l_0_8:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\programs\\microsoft vs code insiders")
+                              if l_0_34 ~= nil and l_0_35 ~= nil then
+                                if l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\roaming\\code") == l_0_34 and R13_PC1345 == l_0_35 then
+                                  return 1
+                                end
+                                -- DECOMPILER ERROR at PC1367: Overwrote pending register: R15 in 'AssignReg'
+
+                                -- DECOMPILER ERROR at PC1370: Overwrote pending register: R13 in 'AssignReg'
+
+                                if l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\programs\\microsoft vs code insiders") == l_0_34 and R13_PC1345 == l_0_35 then
+                                  return 1
+                                end
+                              end
+                            end
+                            do
+                              if l_0_7 == "teams.exe" then
+                                local l_0_36, l_0_37 = l_0_8:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\microsoft\\teams")
+                                -- DECOMPILER ERROR at PC1387: Overwrote pending register: R13 in 'AssignReg'
+
+                                if l_0_36 ~= nil and l_0_37 ~= nil then
+                                  if l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\roaming\\microsoft\\teams") == l_0_36 and R13_PC1345 == l_0_37 then
+                                    return 1
+                                  end
+                                  -- DECOMPILER ERROR at PC1396: Overwrote pending register: R15 in 'AssignReg'
+
+                                  if l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\microsoft\\teams") == l_0_36 and R15_PC1284 == l_0_37 then
+                                    return 1
+                                  end
+                                end
+                              end
+                              if l_0_7 == "dllhost.exe" and l_0_1(l_0_8, "\\windows\\system32") then
+                                if l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\packages\\microsoftwindows.client.cbs_cw5n1h2txyewy\\appdata\\cachestorage") ~= nil and l_0_4 ~= nil then
+                                  return 1
+                                end
+                                -- DECOMPILER ERROR at PC1422: Overwrote pending register: R13 in 'AssignReg'
+
+                                if l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\packages\\microsoftwindows.client_cw5n1h2txyewy\\appdata\\cachestorage") ~= nil and R11_PC1429 ~= nil then
+                                  return 1
+                                end
+                              end
+                              do
+                                if l_0_7 == "_conda.exe" or l_0_7 == "python.exe" or l_0_7 == "pythonw.exe" then
+                                  local l_0_38, l_0_39 = l_0_8:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\miniconda%d"), R11_PC1429
+                                  -- DECOMPILER ERROR at PC1446: Overwrote pending register: R13 in 'AssignReg'
+
+                                  if l_0_38 ~= nil and l_0_39 ~= nil and l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\miniconda%d\\") == l_0_38 and R13_PC1345 == l_0_39 then
+                                    return 1
+                                  end
+                                  -- DECOMPILER ERROR at PC1455: Overwrote pending register: R13 in 'AssignReg'
+
+                                  -- DECOMPILER ERROR at PC1458: Overwrote pending register: R11 in 'AssignReg'
+
+                                  l_0_38 = l_0_8:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\anaconda%d")
+                                  -- DECOMPILER ERROR at PC1464: Overwrote pending register: R13 in 'AssignReg'
+
+                                  if l_0_38 ~= nil and l_0_39 ~= nil and l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\anaconda%d\\") == l_0_38 and R13_PC1345 == l_0_39 then
+                                    return 1
+                                  end
+                                  -- DECOMPILER ERROR at PC1473: Overwrote pending register: R13 in 'AssignReg'
+
+                                  l_0_38 = l_0_8:match("^\\device\\harddiskvolume(.*)\\programdata\\miniconda%d")
+                                  -- DECOMPILER ERROR at PC1479: Overwrote pending register: R13 in 'AssignReg'
+
+                                  -- DECOMPILER ERROR at PC1484: Overwrote pending register: R13 in 'AssignReg'
+
+                                  if l_0_38 ~= nil and l_0_4:match("^\\device\\harddiskvolume(.*)\\programdata\\miniconda%d") == l_0_38 then
+                                    return R13_PC1345
+                                  end
+                                  -- DECOMPILER ERROR at PC1486: Overwrote pending register: R13 in 'AssignReg'
+
+                                  l_0_38 = l_0_8:match("^\\device\\harddiskvolume(.*)\\programdata\\anaconda%d")
+                                  -- DECOMPILER ERROR at PC1492: Overwrote pending register: R13 in 'AssignReg'
+
+                                  -- DECOMPILER ERROR at PC1497: Overwrote pending register: R13 in 'AssignReg'
+
+                                  if l_0_38 ~= nil and l_0_4:match("^\\device\\harddiskvolume(.*)\\programdata\\anaconda%d") == l_0_38 then
+                                    return R13_PC1345
+                                  end
+                                end
+                                -- DECOMPILER ERROR at PC1501: Overwrote pending register: R11 in 'AssignReg'
+
+                                if l_0_7 == "machinelocalwatchdog.exe" and l_0_6:match("%w*") ~= nil then
+                                  return 1
+                                end
+                                if l_0_7 == "savservice.exe" and l_0_6:match("%w*") ~= nil then
+                                  return 1
+                                end
+                                if (l_0_7 == "postgres.exe" or l_0_7 == "postgresinstanceagentrunnerhost.exe") and l_0_6:match("%w*") ~= nil then
+                                  return 1
+                                end
+                                do
+                                  if l_0_7 == "javaw.exe" or l_0_7 == "java.exe" or l_0_7 == "javac.exe" then
+                                    local l_0_40, l_0_41 = l_0_8:match("^\\device\\harddiskvolume(.*)\\(.*)\\java\\jdk([^\\]*)\\bin")
+                                    -- DECOMPILER ERROR at PC1543: Overwrote pending register: R13 in 'AssignReg'
+
+                                    -- DECOMPILER ERROR at PC1544: Overwrote pending register: R15 in 'AssignReg'
+
+                                    if l_0_40 ~= nil and l_0_41 ~= nil and "^\\device\\harddiskvolume(.*)\\(.*)\\java\\jdk([^\\]*)\\bin" ~= nil then
+                                      R13_PC1345 = R13_PC1345(l_0_4, R15_PC1284)
+                                      -- DECOMPILER ERROR at PC1550: Overwrote pending register: R15 in 'AssignReg'
+
+                                      if R13_PC1345 == l_0_40 and l_0_4 == l_0_41 then
+                                        return R15_PC1284
+                                      end
+                                      -- DECOMPILER ERROR at PC1552: Overwrote pending register: R15 in 'AssignReg'
+
+                                      R15_PC1284 = R15_PC1284(l_0_4, "^\\device\\harddiskvolume(.*)\\(.*)\\java\\gwdlso\\")
+                                      if R15_PC1284 == l_0_40 and l_0_4 == l_0_41 then
+                                        return 1
+                                      end
+                                    end
+                                  end
+                                  do
+                                    if l_0_7 == "svchost.exe" or l_0_7 == "lsass.exe" or l_0_7 == "services.exe" or l_0_7 == "taskhostw.exe" then
+                                      local l_0_42 = l_0_8:match("^\\\\%?\\volume(.*)\\windows\\system32")
+                                      if l_0_42 ~= nil then
+                                        if l_0_4:match(R13_PC1345) == l_0_42 then
+                                          return 1
+                                        end
+                                        -- DECOMPILER ERROR at PC1581: Overwrote pending register: R13 in 'AssignReg'
+
+                                        -- DECOMPILER ERROR at PC1586: Overwrote pending register: R13 in 'AssignReg'
+
+                                        if l_0_4:match("^\\device\\vhdharddisk(.*)\\programdata") == l_0_42 then
+                                          return R13_PC1345
+                                        end
+                                        -- DECOMPILER ERROR at PC1588: Overwrote pending register: R13 in 'AssignReg'
+
+                                        R13_PC1345 = R13_PC1345(l_0_4, R15_PC1284)
+                                        if R13_PC1345 ~= nil then
+                                          return 1
+                                        end
+                                        -- DECOMPILER ERROR at PC1595: Overwrote pending register: R15 in 'AssignReg'
+
+                                        -- DECOMPILER ERROR at PC1600: Overwrote pending register: R15 in 'AssignReg'
+
+                                        if l_0_4:match("^\\device\\harddiskvolume(.*)\\programdata") ~= nil then
+                                          return R15_PC1284
+                                        end
+                                      end
+                                    end
+                                    do
+                                      if l_0_7 == "fusion360.exe" then
+                                        local l_0_43, l_0_44 = l_0_8:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\autodesk\\webdeploy\\production")
+                                        if l_0_43 ~= nil and l_0_44 ~= nil then
+                                          if l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\autodesk\\webdeploy\\production\\") == l_0_43 and R13_PC1345 == l_0_44 then
+                                            return 1
+                                          end
+                                          -- DECOMPILER ERROR at PC1620: Overwrote pending register: R15 in 'AssignReg'
+
+                                          -- DECOMPILER ERROR at PC1623: Overwrote pending register: R13 in 'AssignReg'
+
+                                          if l_0_4:match("^\\device\\harddiskvolume(.*)\\users\\([^\\]*)\\appdata\\local\\temp\\fusionstreamer\\") == l_0_43 and R13_PC1345 == l_0_44 then
+                                            return 1
+                                          end
+                                        end
+                                      end
+                                      return 0
+                                    end
+                                  end
+                                end
+                              end
+                            end
+                          end
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+

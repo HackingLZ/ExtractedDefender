@@ -1,0 +1,45 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4777.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = "remote_file_created_taint"
+local l_0_1, l_0_2, l_0_3, l_0_4 = nil, nil, nil, nil
+if (this_sigattrlog[1]).matched then
+  l_0_1 = (this_sigattrlog[1]).ppid
+else
+  if (this_sigattrlog[2]).matched then
+    l_0_1 = (this_sigattrlog[2]).ppid
+  else
+    if (this_sigattrlog[3]).matched then
+      l_0_1 = (this_sigattrlog[3]).ppid
+    end
+  end
+end
+if (this_sigattrlog[4]).matched then
+  l_0_3 = (this_sigattrlog[4]).utf8p1
+else
+  if (this_sigattrlog[5]).matched then
+    l_0_3 = (this_sigattrlog[5]).utf8p1
+  else
+    if (this_sigattrlog[6]).matched then
+      l_0_3 = (this_sigattrlog[6]).utf8p1
+    end
+  end
+end
+if (this_sigattrlog[7]).matched then
+  l_0_2 = (this_sigattrlog[7]).ppid
+end
+if (this_sigattrlog[8]).matched then
+  l_0_4 = (this_sigattrlog[8]).utf8p1
+end
+if l_0_1 == nil or l_0_2 == nil or l_0_3 == nil or l_0_4 == nil then
+  return mp.CLEAN
+end
+if isTainted(l_0_3, l_0_0) then
+  taint(l_0_4, l_0_0, 3600)
+  TrackPidAndTechniqueBM("BM", "T1105", "CommandAndControl")
+  return mp.INFECTED
+end
+return mp.CLEAN
+

@@ -1,0 +1,34 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 386.luac 
+
+-- params : ...
+-- function num : 0
+if IsLegacyOrgMachine() or IsTechniqueObservedForPid("BM", "ttexclusion") then
+  return mp.CLEAN
+end
+local l_0_0 = nil
+if (this_sigattrlog[2]).matched and (this_sigattrlog[2]).utf8p2 ~= nil then
+  l_0_0 = (this_sigattrlog[2]).utf8p2
+else
+  if (this_sigattrlog[3]).matched and (this_sigattrlog[3]).utf8p2 ~= nil then
+    l_0_0 = (this_sigattrlog[3]).utf8p2
+  else
+    if (this_sigattrlog[4]).matched and (this_sigattrlog[4]).utf8p2 ~= nil then
+      l_0_0 = (this_sigattrlog[4]).utf8p2
+    else
+      if (this_sigattrlog[5]).matched and (this_sigattrlog[5]).utf8p2 ~= nil then
+        l_0_0 = (this_sigattrlog[5]).utf8p2
+      end
+    end
+  end
+end
+if l_0_0 == nil then
+  return mp.CLEAN
+end
+if (string.find)((string.lower)(l_0_0), "iex", 1, true) ~= nil then
+  TrackCommandLineAndTechnique(l_0_0, "T1547.001", 0, "PersistenceRegistryPowershellBlock")
+  AddResearchData("BM", true)
+  return mp.INFECTED
+end
+return mp.CLEAN
+

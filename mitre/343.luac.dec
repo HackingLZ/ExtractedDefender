@@ -1,0 +1,26 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 343.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_1 = pcall(bm.get_current_process_startup_info)
+if l_0_0 and l_0_1 ~= nil then
+  local l_0_2 = l_0_1.command_line
+  local l_0_3 = l_0_1.ppid
+  if l_0_2 == nil then
+    return mp.CLEAN
+  end
+  if l_0_3 == nil then
+    return mp.CLEAN
+  end
+  local l_0_4 = (string.lower)(l_0_2)
+  if (l_0_4:find("powershell.exe") or (l_0_4.find)("pwsh.exe")) and l_0_4:match("%s+[%-/]en?c?o?d?e?d?c?o?m?m?a?n?d?%s+") then
+    TrackPidAndTechniqueBM(l_0_3, "T1059.001", "powershell-enc")
+  end
+  TrackPidAndTechniqueBM(l_0_3, "T1555.003", "webcreddiscovery")
+  return mp.INFECTED
+end
+do
+  return mp.CLEAN
+end
+

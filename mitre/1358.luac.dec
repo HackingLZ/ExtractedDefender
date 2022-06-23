@@ -1,0 +1,36 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1358.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC12: Overwrote pending register: R0 in 'AssignReg'
+
+if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p2 ~= nil then
+  local l_0_0 = nil
+else
+  do
+    do return mp.CLEAN end
+    local l_0_1 = nil
+    if (string.find)((string.lower)((bm.get_imagepath)()), "\\program files", 1, true) or (string.find)((string.lower)((bm.get_imagepath)()), "\\windows\\system32\\svchost.exe", 1, true) or (string.find)((string.lower)((bm.get_imagepath)()), "\\sources\\setup", 1, true) or (string.find)((string.lower)((bm.get_imagepath)()), "\\appdata\\local\\microsoft\\onedrive\\onedrive.exe", 1, true) or (string.find)((string.lower)((bm.get_imagepath)()), "\\appdata\\local\\perfservice\\perfservice.exe", 1, true) or (string.find)((string.lower)((bm.get_imagepath)()), "\\microsoft\\teams\\current\\teams.exe", 1, true) or (string.find)((string.lower)((bm.get_imagepath)()), "\\programdata\\bomgar", 1, true) or (string.find)((string.lower)((bm.get_imagepath)()), "\\windows\\regedit.exe", 1, true) or (string.find)((string.lower)((bm.get_imagepath)()), "\\appdata\\local\\google\\update\\", 1, true) or (string.find)((string.lower)((bm.get_imagepath)()), "\\sophos\\autoupdate\\cache\\", 1, true) or (string.find)((string.lower)((bm.get_imagepath)()), "\\msiexec.exe", 1, true) or (string.find)((string.lower)((bm.get_imagepath)()), "dellsystemdetect.exe", 1, true) then
+      return mp.CLEAN
+    end
+    local l_0_2 = nil
+    if (string.find)((string.lower)((mp.ContextualExpandEnvironmentVariables)(l_0_1)), "\\program files", 1, true) or (string.find)((string.lower)((mp.ContextualExpandEnvironmentVariables)(l_0_1)), "\\microsoft.compute.", 1, true) or (string.find)((string.lower)((mp.ContextualExpandEnvironmentVariables)(l_0_1)), "\\appdata\\local\\google\\update\\", 1, true) or (string.find)((string.lower)((mp.ContextualExpandEnvironmentVariables)(l_0_1)), "\\bginfo.exe", 1, true) or (string.find)((string.lower)((mp.ContextualExpandEnvironmentVariables)(l_0_1)), "\\dwrcst.exe", 1, true) then
+      return mp.CLEAN
+    end
+    local l_0_3 = nil
+    for l_0_7,l_0_8 in ipairs((mp.GetExecutablesFromCommandLine)(l_0_1)) do
+      local l_0_4 = nil
+      -- DECOMPILER ERROR at PC199: Confused about usage of register: R8 in 'UnsetPending'
+
+      if (sysio.IsFileExists)(R8_PC199) then
+        (bm.add_related_file)(R8_PC199)
+        if not (MpCommon.QueryPersistContext)(R8_PC199, "T1547.001") then
+          (MpCommon.AppendPersistContext)(R8_PC199, "T1547.001", 0)
+        end
+      end
+    end
+    return mp.INFECTED
+  end
+end
+

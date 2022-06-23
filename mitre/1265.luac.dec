@@ -1,0 +1,21 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1265.luac 
+
+-- params : ...
+-- function num : 0
+if is_excluded_parent_proc_auto() then
+  return mp.CLEAN
+end
+local l_0_0 = GetRealPidForScenario("BM")
+AddResearchData(l_0_0, true)
+if IsTacticObservedForPid(l_0_0, "ntdsexfil") and IsTechniqueObservedForPid(l_0_0, "T1140") then
+  return mp.INFECTED
+end
+if IsTechniqueObservedForPid(l_0_0, "T1047") or IsTechniqueObservedForPid(l_0_0, "T1021.006") then
+  return mp.INFECTED
+end
+if IsDetectionThresholdMet(l_0_0) then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

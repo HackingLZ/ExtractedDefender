@@ -1,0 +1,38 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4781.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = mp.SIGATTR_LOG_SZ
+local l_0_1 = {}
+local l_0_2 = 0
+local l_0_3 = 150000000
+if l_0_3 < (bm.GetSignatureMatchDuration)() then
+  return mp.CLEAN
+end
+if IsProcessExcludedFromRansomwareAnalysis() == true then
+  return mp.CLEAN
+end
+for l_0_7 = 1, l_0_0 do
+  local l_0_8 = (sigattr_tail[l_0_7]).attribute
+  if l_0_8 == 16385 and (sigattr_tail[l_0_7]).utf8p1 ~= nil then
+    local l_0_9 = (sigattr_tail[l_0_7]).utf8p1
+    if l_0_1[l_0_9] == nil then
+      l_0_1[l_0_9] = true
+      ;
+      (bm.add_related_file)(l_0_9)
+      if l_0_9:match("%.[^/%.]+$") == ".cpt" then
+        l_0_2 = l_0_2 + 1
+      end
+    end
+  end
+end
+if l_0_2 >= 10 then
+  addRelatedProcess()
+  reportRelatedBmHits()
+  TrackPidAndTechniqueBM("BM", "T1486", "Impact_CcryptEncryption")
+  RemediateProcessTreeForLinux()
+  return mp.INFECTED
+end
+return mp.CLEAN
+

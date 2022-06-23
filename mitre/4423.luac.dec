@@ -1,0 +1,26 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4423.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (this_sigattrlog[1]).utf8p2
+local l_0_1 = false
+if (string.find)(l_0_0, "com.apple.quarantine", 1, true) then
+  l_0_1 = true
+else
+  local l_0_2 = StringSplit(l_0_0, " ")
+  for l_0_6 = 1, #l_0_2 do
+    local l_0_7 = l_0_2[l_0_6]
+    if l_0_7:sub(1, 1) == "-" and (string.find)(l_0_7, "c", 1, true) then
+      l_0_1 = true
+    end
+  end
+end
+do
+  if l_0_1 then
+    TrackPidAndTechniqueBM("BM", "T1553.005", "DefenseEvasion-MOTW")
+    return mp.INFECTED
+  end
+  return mp.CLEAN
+end
+
