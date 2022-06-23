@@ -1,0 +1,18 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19015.luac 
+
+-- params : ...
+-- function num : 0
+if (pe.isvdllbase)((pe.get_regval)(pe.REG_EBX)) == false or (pe.isvdllimage)((pe.get_regval)(pe.REG_ECX)) == false or (mp.readu_u32)((pe.mmap_va_nofastfail)(pevars.sigaddr + 2, 4), 1) >= 4294966272 then
+  return mp.CLEAN
+end
+local l_0_0 = (mp.readu_u32)((pe.mmap_va)(pevars.sigaddr + 7, 4), 1)
+if (mp.readu_u16)((pe.mmap_va)((mp.bitand)((pe.get_regval)(pe.REG_EIP) + 11 + l_0_0, 4294967295), 4), 1) ~= 60811 then
+  return mp.CLEAN
+end
+;
+(pe.mmap_patch_va)(pevars.sigaddr, "\184\r\024\141>\144")
+;
+(mp.set_mpattribute)("FOPEX:Deep_Analysis_Disable_APILimit")
+return mp.INFECTED
+

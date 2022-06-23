@@ -1,0 +1,40 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19207.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_3 = nil
+do
+  if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p2 ~= nil then
+    local l_0_0, l_0_1, l_0_2 = false
+  end
+  if not contains(l_0_3, "process.*call.*create", false) then
+    return mp.CLEAN
+  end
+  local l_0_4, l_0_5, l_0_6, l_0_7 = , (string.find)(l_0_3, "/node%s*:([^%s]+).-call create [\'\"]([^\r\n]+)[\'\"]")
+  if not false then
+    return mp.CLEAN
+  end
+  local l_0_8 = nil
+  if contains(l_0_8, {"BTS FIX Gateway", "besclient", "epr.bat", "ADSelfService Plus"}) then
+    return mp.CLEAN
+  end
+  if contains(l_0_8, "cmd.*/c", false) then
+    local l_0_9 = nil
+    local l_0_10 = contains
+    local l_0_11 = l_0_8
+    l_0_10 = l_0_10(l_0_11, {" regsvr32", " rundll32", " wscript", " cscript", " mshta", " bitsadmin"})
+    if l_0_10 then
+      l_0_4 = true
+    end
+  end
+  do
+    if l_0_4 then
+      (bm.add_related_string)("WMICRemoteNode", tostring(l_0_7), bm.RelatedStringBMReport)
+      add_parents()
+      return mp.INFECTED
+    end
+    return mp.CLEAN
+  end
+end
+

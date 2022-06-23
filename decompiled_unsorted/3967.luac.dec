@@ -1,0 +1,31 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3967.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (sysio.RegOpenKey)("HKCR\\*\\shell\\filescout")
+if l_0_0 ~= nil then
+  (sysio.DeleteRegKey)(l_0_0, nil)
+end
+local l_0_1 = (sysio.RegOpenKey)("HKCR\\*\\shell\\unknownfile")
+if l_0_1 ~= nil then
+  (sysio.DeleteRegKey)(l_0_1, nil)
+end
+local l_0_2 = (sysio.RegOpenKey)("HKCR\\Unknown\\shell\\openas\\command")
+if l_0_2 ~= nil then
+  local l_0_3 = (sysio.GetRegValueAsString)(l_0_2, nil)
+  -- DECOMPILER ERROR at PC72: Unhandled construct in 'MakeBoolean' P1
+
+  -- DECOMPILER ERROR at PC72: Unhandled construct in 'MakeBoolean' P1
+
+  if l_0_3 ~= nil and ((string.find)((string.lower)(l_0_3), "filescout.exe") or (string.find)((string.lower)(l_0_3), "unknownfile.exe")) and Info.OSMajorVersion == 6 and Info.OSMinorVersion >= 2 and Info.OSMinorVersion <= 3 then
+    (sysio.SetRegValueAsStringExpand)(l_0_2, nil, "%SystemRoot%\\system32\\OpenWith.exe \"%1\"")
+  end
+  ;
+  (sysio.SetRegValueAsStringExpand)(l_0_2, nil, "%SystemRoot%\\system32\\rundll32.exe %SystemRoot%\\system32\\shell32.dll,OpenAs_RunDLL %1")
+  local l_0_4 = (sysio.GetRegValueAsString)(l_0_2, "fs_DelegateExecute")
+  if l_0_4 ~= nil and l_0_4 == "{e44e9428-bdbc-4987-a099-40dc8fd255e7}" then
+    (sysio.SetRegValueAsString)(l_0_2, "DelegateExecute", "{e44e9428-bdbc-4987-a099-40dc8fd255e7}")
+  end
+end
+

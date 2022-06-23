@@ -1,0 +1,65 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1336.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC12: Overwrote pending register: R0 in 'AssignReg'
+
+if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p2 ~= nil then
+  local l_0_0, l_0_1, l_0_4 = nil, nil
+  l_0_4 = this_sigattrlog
+  l_0_4 = l_0_4[1]
+  l_0_1 = l_0_4.ppid
+  local l_0_2, l_0_5 = nil
+end
+do
+  -- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
+
+  do
+    if l_0_0 ~= nil then
+      local l_0_3 = nil
+      if ((string.lower)(l_0_0)):find("reg%.?e?x?e?%p?%s+delete%s") or ((string.lower)(l_0_0)):find("reg%.?e?x?e?%p?%s+add%s") then
+        return mp.CLEAN
+      end
+      if ((string.lower)(l_0_0)):find("powershell%.exe.*%sset-") or ((string.lower)(l_0_0)):find("passwordexpirywarning", 1, true) then
+        return mp.CLEAN
+      end
+    end
+    local l_0_6, l_0_7 = nil
+    for l_0_11,l_0_12 in ipairs((bm.get_process_relationships)()) do
+      local l_0_8, l_0_9 = nil
+      -- DECOMPILER ERROR at PC57: Confused about usage of register: R8 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC62: Confused about usage of register: R9 in 'UnsetPending'
+
+      if R8_PC57.image_path ~= nil then
+        if ((string.lower)(R8_PC57.image_path)):find("windows\\ccm\\", 1, true) then
+          return mp.CLEAN
+        end
+        -- DECOMPILER ERROR at PC75: Confused about usage of register: R9 in 'UnsetPending'
+
+        if ((string.lower)(R8_PC57.image_path)):find("tripwire.*\\twexec%.exe") then
+          return mp.CLEAN
+        end
+        -- DECOMPILER ERROR at PC83: Confused about usage of register: R9 in 'UnsetPending'
+
+        if ((string.lower)(R8_PC57.image_path)):find("ruby%.exe", 1, true) then
+          return mp.CLEAN
+        end
+        -- DECOMPILER ERROR at PC93: Confused about usage of register: R9 in 'UnsetPending'
+
+        if ((string.lower)(R8_PC57.image_path)):find("verodin_backend%.exe", 1, true) then
+          return mp.CLEAN
+        end
+      end
+    end
+    if IsDetectionThresholdMet(l_0_7) then
+      TrackPidAndTechniqueBM(l_0_7, "T1003.005", "credentialdumping")
+      return mp.INFECTED
+    end
+    return mp.CLEAN
+  end
+end
+

@@ -1,0 +1,43 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3927.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILENAME))
+if l_0_0 ~= nil and #l_0_0 > 5 then
+  if (string.find)(l_0_0, "â€\174", 1, true) == nil then
+    return mp.CLEAN
+  end
+  local l_0_1 = (string.sub)(l_0_0, -7)
+  if l_0_1 == nil or #l_0_1 < 1 then
+    return mp.CLEAN
+  end
+  local l_0_2 = {}
+  l_0_2["â€\174.bat"] = "Lua:Context/RightToLeftOverride.DA"
+  l_0_2["â€\174.cmd"] = "Lua:Context/RightToLeftOverride.DA"
+  l_0_2["â€\174.lnk"] = "Lua:Context/RightToLeftOverride.DA"
+  l_0_2["â€\174.ps1"] = "Lua:Context/RightToLeftOverride.DA"
+  l_0_2["â€\174.vbe"] = "Lua:Context/RightToLeftOverride.DB"
+  l_0_2["â€\174.vbs"] = "Lua:Context/RightToLeftOverride.DB"
+  l_0_2["â€\174.js"] = "Lua:Context/RightToLeftOverride.DB"
+  l_0_2["â€\174.jse"] = "Lua:Context/RightToLeftOverride.DB"
+  l_0_2["â€\174.wsh"] = "Lua:Context/RightToLeftOverride.DB"
+  l_0_2["â€\174.wsf"] = "Lua:Context/RightToLeftOverride.DB"
+  l_0_2["â€\174.hta"] = "Lua:Context/RightToLeftOverride.DB"
+  l_0_2["â€\174.jar"] = "Lua:Context/RightToLeftOverride.DC"
+  l_0_2["â€\174.com"] = "Lua:Context/RightToLeftOverride.DD"
+  l_0_2["â€\174.exe"] = "Lua:Context/RightToLeftOverride.DD"
+  l_0_2["â€\174.scr"] = "Lua:Context/RightToLeftOverride.DD"
+  l_0_2["â€\174.pif"] = "Lua:Context/RightToLeftOverride.DD"
+  local l_0_3 = l_0_2[l_0_1]
+  if l_0_3 == nil then
+    return mp.CLEAN
+  end
+  ;
+  (mp.set_mpattribute)(l_0_3)
+  return mp.INFECTED
+end
+do
+  return mp.CLEAN
+end
+

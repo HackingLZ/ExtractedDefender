@@ -1,0 +1,65 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4262.luac 
+
+-- params : ...
+-- function num : 0
+split_path = function(l_1_0)
+  -- function num : 0_0
+  local l_1_1 = string.match
+  local l_1_2 = l_1_0
+  do
+    local l_1_3 = "(.-)([^\\]-([^\\%.]+))$"
+    do return l_1_1(l_1_2, l_1_3) end
+    -- DECOMPILER ERROR at PC6: Confused about usage of register R2 for local variables in 'ReleaseLocals'
+
+  end
+end
+
+IsDorkbotPath = function(l_2_0)
+  -- function num : 0_1
+  if l_2_0 == nil then
+    return false
+  end
+  local l_2_1 = (string.lower)(l_2_0)
+  if (string.find)(l_2_1, "\\temp\\adobe\\reader_sl%.exe$") ~= nil or (string.find)(l_2_1, "\\temp\\c731200$") ~= nil then
+    return true
+  end
+  if (string.find)(l_2_1, "\\application data\\screensaverpro%.scr$") ~= nil or (string.find)(l_2_1, "\\appdata\\roaming\\screensaverpro%.scr$") ~= nil or (string.find)(l_2_1, "\\application data\\c731200$") ~= nil or (string.find)(l_2_1, "\\appdata\\roaming\\c731200$") ~= nil or (string.find)(l_2_1, "\\application data\\temp%.bin$") ~= nil or (string.find)(l_2_1, "\\appdata\\roaming\\temp%.bin$") ~= nil or (string.find)(l_2_1, "\\appdata\\roaming\\update\\update%.exe$") ~= nil or (string.find)(l_2_1, "\\application data\\update\\update%.exe$") ~= nil or (string.find)(l_2_1, "\\appdata\\roaming\\update\\explorer%.exe$") ~= nil or (string.find)(l_2_1, "\\application data\\update\\explorer%.exe$") ~= nil or (string.find)(l_2_1, "\\appdata\\roaming\\windowsupdate\\updater%.exe$") ~= nil or (string.find)(l_2_1, "\\application data\\windowsupdate\\updater%.exe$") ~= nil then
+    return true
+  end
+  local l_2_2, l_2_3, l_2_4 = split_path(l_2_0)
+  if l_2_4 ~= "exe" and l_2_4 ~= "scr" then
+    return false
+  end
+  if ((string.find)((string.lower)(l_2_2), "\\application data\\identities\\$") ~= nil or (string.find)((string.lower)(l_2_2), "\\appdata\\roaming\\identities\\$") ~= nil or (string.find)((string.lower)(l_2_2), "\\appdata\\roaming\\microsoft\\windows\\themes\\$") ~= nil) and (string.find)(l_2_3, "%u%l%l%l%l%l%.exe$") ~= nil then
+    return true
+  end
+  return false
+end
+
+DeleteAutoRunEntries = function(l_3_0)
+  -- function num : 0_2
+  if l_3_0 then
+    local l_3_1 = (sysio.RegEnumValues)(l_3_0)
+    for l_3_5,l_3_6 in pairs(l_3_1) do
+      if l_3_6 then
+        local l_3_7 = (sysio.GetRegValueAsString)(l_3_0, l_3_6)
+        if l_3_7 and IsDorkbotPath(l_3_7) == true then
+          (sysio.DeleteRegValue)(l_3_0, l_3_6)
+          if (sysio.IsFileExists)(l_3_7) then
+            (Remediation.BtrDeleteFile)(l_3_7)
+          end
+        end
+      end
+    end
+  end
+end
+
+if (Remediation.Threat).Active and (string.match)((Remediation.Threat).Name, "Win32/Dorkbot") then
+  local l_0_0 = (sysio.RegExpandUserKey)("HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run")
+  for l_0_4,l_0_5 in pairs(l_0_0) do
+    local l_0_6 = (sysio.RegOpenKey)(l_0_5)
+    DeleteAutoRunEntries(l_0_6)
+  end
+end
+

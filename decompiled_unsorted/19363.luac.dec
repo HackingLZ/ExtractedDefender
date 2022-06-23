@@ -1,0 +1,64 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19363.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.isexe ~= true then
+  return mp.CLEAN
+end
+if peattributes.epinfirstsect ~= true then
+  return mp.CLEAN
+end
+if pehdr.NumberOfSections ~= 3 then
+  return mp.CLEAN
+end
+if pehdr.AddressOfEntryPoint <= 32768 then
+  return mp.CLEAN
+end
+if pehdr.AddressOfEntryPoint >= 45056 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfCode < 32768 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfCode > 49152 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfImage < 274432 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfImage > 323584 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfInitializedData <= 225280 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfInitializedData >= 278528 then
+  return mp.CLEAN
+end
+if (pesecs[1]).Characteristics ~= 1610612768 then
+  return mp.CLEAN
+end
+if (pesecs[pehdr.NumberOfSections]).Characteristics ~= 1073741888 then
+  return mp.CLEAN
+end
+if (pesecs[pehdr.NumberOfSections]).SizeOfRawData > 8192 then
+  return mp.CLEAN
+end
+if (pesecs[1]).SizeOfRawData < 32768 then
+  return mp.CLEAN
+end
+if (pesecs[1]).SizeOfRawData > 49152 then
+  return mp.CLEAN
+end
+if (pesecs[1]).NameDW ~= 2019914798 then
+  return mp.CLEAN
+end
+if (pesecs[pehdr.NumberOfSections]).NameDW ~= 1920168494 then
+  return mp.CLEAN
+end
+if (mp.readu_u16)(epcode, 1) ~= 60545 then
+  return mp.CLEAN
+end
+return mp.INFECTED
+

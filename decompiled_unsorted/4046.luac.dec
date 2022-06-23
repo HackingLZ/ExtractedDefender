@@ -1,0 +1,83 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4046.luac 
+
+-- params : ...
+-- function num : 0
+(mp.readprotection)(false)
+local l_0_0 = (mp.readfile)(0, (mp.getfilesize)())
+local l_0_1 = l_0_0:find("GI[dc]DNN[ZV]NNNNRNN")
+if l_0_1 == nil then
+  return mp.CLEAN
+end
+local l_0_2 = {}
+l_0_2.A = "N"
+l_0_2.B = "O"
+l_0_2.C = "P"
+l_0_2.D = "Q"
+l_0_2.E = "R"
+l_0_2.F = "S"
+l_0_2.G = "T"
+l_0_2.H = "U"
+l_0_2.I = "V"
+l_0_2.J = "W"
+l_0_2.K = "X"
+l_0_2.L = "Y"
+l_0_2.M = "Z"
+l_0_2.N = "A"
+l_0_2.O = "B"
+l_0_2.P = "C"
+l_0_2.Q = "D"
+l_0_2.R = "E"
+l_0_2.S = "F"
+l_0_2.T = "G"
+l_0_2.U = "H"
+l_0_2.V = "I"
+l_0_2.W = "J"
+l_0_2.X = "K"
+l_0_2.Y = "L"
+l_0_2.Z = "M"
+l_0_2.a = "n"
+l_0_2.b = "o"
+l_0_2.c = "p"
+l_0_2.d = "q"
+l_0_2.e = "r"
+l_0_2.f = "s"
+l_0_2.g = "t"
+l_0_2.h = "u"
+l_0_2.i = "v"
+l_0_2.j = "w"
+l_0_2.k = "x"
+l_0_2.l = "y"
+l_0_2.m = "z"
+l_0_2.n = "a"
+l_0_2.o = "b"
+l_0_2.p = "c"
+l_0_2.q = "d"
+l_0_2.r = "e"
+l_0_2.s = "f"
+l_0_2.t = "g"
+l_0_2.u = "h"
+l_0_2.v = "i"
+l_0_2.w = "j"
+l_0_2.x = "k"
+l_0_2.y = "l"
+l_0_2.z = "m"
+l_0_2["0"] = "0"
+l_0_2["1"] = "1"
+l_0_2["2"] = "2"
+l_0_2["3"] = "3"
+l_0_2["4"] = "4"
+l_0_2["5"] = "5"
+l_0_2["6"] = "6"
+l_0_2["7"] = "7"
+l_0_2["8"] = "8"
+l_0_2["9"] = "9"
+l_0_2["+"] = "+"
+l_0_2["/"] = "/"
+l_0_2["="] = "="
+local l_0_3 = l_0_0:match("[A-Za-z0-9+/=]+", l_0_1)
+local l_0_4 = l_0_3:gsub(".", l_0_2)
+;
+(mp.vfo_add_buffer)(l_0_4, "[Base64]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+return mp.CLEAN
+

@@ -1,0 +1,35 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18623.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC16: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[7]).matched and (this_sigattrlog[7]).utf8p1 ~= nil then
+    local l_0_0, l_0_2, l_0_3 = nil, nil
+  end
+  do
+    if (this_sigattrlog[9]).matched and (this_sigattrlog[9]).utf8p2 ~= nil then
+      local l_0_1, l_0_4 = , (string.lower)((this_sigattrlog[9]).utf8p2)
+    else
+    end
+    -- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
+
+    if (this_sigattrlog[10]).matched and (this_sigattrlog[10]).utf8p2 ~= nil then
+      local l_0_5 = nil
+      if not GetFileName(l_0_1) then
+        return mp.CLEAN
+      end
+      local l_0_6 = (string.lower)((this_sigattrlog[10]).utf8p2)
+      if contains(GetFileName(l_0_1), {"bedvitcom"}) then
+        return mp.CLEAN
+      end
+      if contains(l_0_6, GetFileName(l_0_1)) then
+        return mp.INFECTED
+      end
+      return mp.CLEAN
+    end
+  end
+end
+

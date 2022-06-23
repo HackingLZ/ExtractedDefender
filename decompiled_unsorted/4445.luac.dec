@@ -1,0 +1,89 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4445.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = function(l_1_0, l_1_1)
+  -- function num : 0_0
+  do return l_1_1 ~= nil and l_1_0 ~= nil and #l_1_1 <= #l_1_0 and (string.sub)(l_1_0, 1, (string.len)(l_1_1)) == l_1_1 end
+  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+end
+
+local l_0_1 = function(l_2_0, l_2_1)
+  -- function num : 0_1
+  do return l_2_1 ~= nil and l_2_0 ~= nil and #l_2_1 <= #l_2_0 and l_2_1 == "" or (string.sub)(l_2_0, -(string.len)(l_2_1)) == l_2_1 end
+  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+end
+
+local l_0_2 = function(l_3_0, l_3_1)
+  -- function num : 0_2
+  do return l_3_1 ~= nil and l_3_0 ~= nil and #l_3_0 == #l_3_1 and l_3_0 == l_3_1 end
+  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+end
+
+local l_0_3 = (skip.get_contextdata)(skip.CONTEXT_DATA_PROCESSNAME)
+local l_0_4 = (skip.get_contextdata)(skip.CONTEXT_DATA_FILEPATH)
+local l_0_5 = (skip.get_contextdata)(skip.CONTEXT_DATA_PROCESSDEVICEPATH)
+local l_0_6 = (skip.get_contextdata)(skip.CONTEXT_DATA_FILENAME)
+if l_0_2(l_0_3, "mdbulkimport") and l_0_0(l_0_5, "/System/Library/Frameworks/CoreServices.framework") then
+  return 1
+end
+if l_0_2(l_0_3, "Google Chrome") and l_0_2(l_0_5, "/Applications/Google Chrome.app/Contents/MacOS") then
+  if l_0_1(l_0_4, "/Library/Caches/Google/Chrome/Default/Code Cache/js") then
+    return 1
+  end
+  return 0
+end
+if l_0_2(l_0_3, "Google Chrome Helper") and l_0_1(l_0_5, "/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper") then
+  if l_0_1(l_0_4, "/Library/Caches/Google/Chrome/Default/Cache/Cache_Data") then
+    return 1
+  end
+  return 0
+end
+if l_0_2(l_0_3, "Microsoft PowerPoint") then
+  if l_0_0(l_0_6, "login.keychain-db") and l_0_1(l_0_4, "/Library/Keychains") then
+    return 1
+  end
+  return 0
+end
+if l_0_2(l_0_3, "Microsoft Outlook") and l_0_2(l_0_5, "/Applications/Microsoft Outlook.app/Contents/MacOS") then
+  if l_0_0(l_0_6, "login.keychain-db") and l_0_1(l_0_4, "/Library/Keychains") then
+    return 1
+  end
+  return 0
+end
+if l_0_2(l_0_3, "Microsoft Teams Helper") and l_0_2(l_0_5, "/Applications/Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper.app/Contents/MacOS") then
+  if l_0_1(l_0_4, "/Library/Application Support/Microsoft/Teams/Cache") then
+    return 1
+  end
+  return 0
+end
+if l_0_2(l_0_3, "Teams") and l_0_2(l_0_5, "/Applications/Microsoft Teams.app/Contents/MacOS") then
+  if l_0_2(l_0_6, "json") and l_0_1(l_0_4, "Library/Application Support/Microsoft/Teams") then
+    return 1
+  end
+  if l_0_0(l_0_6, "login.keychain-db") and l_0_1(l_0_4, "/Library/Keychains") then
+    return 1
+  end
+  return 0
+end
+if l_0_2(l_0_3, "Microsoft Word") and l_0_2(l_0_5, "/Applications/Microsoft Word.app/Contents/MacOS") then
+  if l_0_0(l_0_6, "login.keychain-db") and l_0_1(l_0_4, "/Library/Keychains") then
+    return 1
+  end
+  return 0
+end
+if l_0_2(l_0_3, "Microsoft Excel") and l_0_2(l_0_5, "/Applications/Microsoft Excel.app/Contents/MacOS") then
+  if l_0_0(l_0_6, "login.keychain-db") and l_0_1(l_0_4, "/Library/Keychains") then
+    return 1
+  end
+  return 0
+end
+if l_0_2(l_0_3, "Microsoft OneNote") and l_0_2(l_0_5, "/Applications/Microsoft OneNote.app/Contents/MacOS") then
+  if l_0_0(l_0_6, "login.keychain-db") and l_0_1(l_0_4, "/Library/Keychains") then
+    return 1
+  end
+  return 0
+end
+return 0
+

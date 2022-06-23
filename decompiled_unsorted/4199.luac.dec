@@ -1,0 +1,118 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4199.luac 
+
+-- params : ...
+-- function num : 0
+if not (mp.get_mpattribute)("SCPT:Worm:VBS/Jenxcus!Crypt34") then
+  return mp.CLEAN
+end
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 < 10000 or l_0_0 > 100000 then
+  return mp.CLEAN
+end
+local l_0_1 = tostring(footerpage)
+l_0_1 = (string.lower)(l_0_1)
+local l_0_2 = l_0_1:match("=replace%(%l-,\"(.-)\",vbcr%)")
+if l_0_2 == nil then
+  return mp.CLEAN
+end
+local l_0_3 = tostring(headerpage)
+local l_0_4 = l_0_3:match("%l=\"(%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a%a)\"")
+if l_0_4 == nil then
+  return mp.CLEAN
+end
+local l_0_5 = {}
+l_0_4:gsub(".", function(l_1_0)
+  -- function num : 0_0 , upvalues : l_0_5
+  (table.insert)(l_0_5, l_1_0)
+end
+)
+;
+(mp.readprotection)(false)
+local l_0_6 = (mp.readfile)(0, l_0_0)
+local l_0_7 = l_0_6:match("=\"\"\"\"\r\n%l-=\"(.-)\"\r\n")
+if l_0_7 == nil then
+  return mp.CLEAN
+end
+l_0_7 = l_0_7:gsub(l_0_2, "\r")
+local l_0_8 = l_0_7:match("(\".-\")")
+l_0_7 = l_0_7:gsub(l_0_8, "\"")
+fastAlphaTransform = function(l_2_0, l_2_1, l_2_2)
+  -- function num : 0_1
+  local l_2_3 = {}
+  local l_2_16 = "a"
+  local l_2_17 = "b"
+  local l_2_18 = "c"
+  local l_2_19 = "d"
+  local l_2_20 = "e"
+  local l_2_21 = "f"
+  local l_2_22 = "g"
+  local l_2_23 = "h"
+  local l_2_24 = "i"
+  local l_2_25 = "j"
+  local l_2_26 = "k"
+  local l_2_27 = "l"
+  local l_2_28 = "m"
+  local l_2_29 = "n"
+  local l_2_30 = "o"
+  local l_2_31 = "p"
+  local l_2_32 = "q"
+  local l_2_33 = "r"
+  local l_2_34 = "s"
+  local l_2_35 = "t"
+  local l_2_36 = "u"
+  local l_2_37 = "v"
+  local l_2_38 = "w"
+  local l_2_39 = "x"
+  local l_2_40 = "y"
+  local l_2_41 = "z"
+  local l_2_42 = "A"
+  local l_2_43 = "B"
+  local l_2_44 = "C"
+  local l_2_45 = "D"
+  local l_2_46 = "E"
+  local l_2_47 = "F"
+  local l_2_48 = "G"
+  local l_2_49 = "H"
+  local l_2_50 = "I"
+  local l_2_51 = "J"
+  local l_2_52 = "K"
+  local l_2_53 = "L"
+  local l_2_54 = "M"
+  local l_2_55 = "N"
+  local l_2_56 = "O"
+  local l_2_57 = "P"
+  do
+    local l_2_58 = "Q"
+    -- DECOMPILER ERROR at PC51: No list found for R3 , SetList fails
+
+    -- DECOMPILER ERROR at PC54: No list found for R3 , SetList fails
+
+    local l_2_4 = "R"
+    -- DECOMPILER ERROR at PC56: Overwrote pending register: R5 in 'AssignReg'
+
+    for l_2_20 = l_2_17, l_2_18, l_2_19 do
+      local l_2_5, l_2_6, l_2_7, l_2_8 = "S", "T", "U", "V"
+      local l_2_9, l_2_14 = "W", "X"
+      l_2_22 = l_2_3[l_2_20]
+      local l_2_15 = nil
+    end
+    -- DECOMPILER ERROR at PC64: Overwrote pending register: R6 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC64: Overwrote pending register: R5 in 'AssignReg'
+
+    local l_2_10, l_2_11 = nil
+    -- DECOMPILER ERROR at PC65: Overwrote pending register: R7 in 'AssignReg'
+
+    local l_2_12 = nil
+    local l_2_13 = nil
+    do return l_2_17(l_2_18, l_2_19, l_2_16) end
+    -- DECOMPILER ERROR at PC69: Confused about usage of register R8 for local variables in 'ReleaseLocals'
+
+  end
+end
+
+;
+(mp.vfo_add_buffer)(fastAlphaTransform(l_0_7, ".", l_0_5), "[Crypt34]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+return mp.CLEAN
+

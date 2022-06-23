@@ -1,0 +1,120 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19666.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_1 = nil, nil
+local l_0_2 = nil
+if MpCommon.SECURITY_MANDATORY_MEDIUM_RID < ((bm.get_current_process_startup_info)()).integrity_level then
+  return mp.CLEAN
+end
+local l_0_3 = nil
+if MpCommon.SECURITY_MANDATORY_MEDIUM_RID < ((MpCommon.GetProcessElevationAndIntegrityLevel)(((bm.get_current_process_startup_info)()).ppid)).IntegrityLevel then
+  return mp.CLEAN
+end
+if (this_sigattrlog[1]).matched then
+  l_0_2 = (string.lower)((this_sigattrlog[1]).utf8p1)
+  l_0_3 = (this_sigattrlog[1]).utf8p2
+else
+  if (this_sigattrlog[2]).matched then
+    l_0_2 = (string.lower)((this_sigattrlog[2]).utf8p1)
+    l_0_3 = (this_sigattrlog[2]).utf8p2
+  else
+    return mp.CLEAN
+  end
+end
+local l_0_4 = nil
+for l_0_8,l_0_9 in pairs({"c343ed84-a129-11d3-b799-0060b0f159ef", "5d09dd40-cdc4-4c56-b615-0d1e3b357c2b", "e81fb43c-b144-4d30-8033-c9338aa0ecb8", "c442ac41-9200-4770-8cc0-7cdb4f245c55", "00024512-0000-0000-c000-000000000046", "08d512d2-7d97-4e22-b7db-82791106c086", "83b0e426-d4ee-11d4-bedf-bab7f1eea455", "2d0e74b6-021a-11d5-9054-00508bf70a94", "9dc963f3-00ec-4bb0-a344-2d6cc1da19ab", "f90026a8-a02e-4f1c-a0c6-76955a119600", "c4f0910e-e0b4-4e68-8086-452730c7a26a", "6a481801-e531-11cf-a115-00a024158daf", "cd2425e4-8141-11d0-8ce4-444553540000", "fb2fe984-05f5-4512-9d9b-69d3de61f6d9", "c3101a8b-0ee1-4612-bfe9-41ffc1a3c19d", "99e2b362-3e4e-4255-9b29-41a7f40777ba", "32e26fd9-f435-4a20-a561-35d4b987cfdc", "017ce1a6-416f-4684-ae6a-02064420b30a"}) do
+  local l_0_5, l_0_6 = nil
+  -- DECOMPILER ERROR at PC85: Confused about usage of register: R9 in 'UnsetPending'
+
+  if (string.find)(l_0_2, "00024512-0000-0000-c000-000000000046", 1, true) then
+    return mp.CLEAN
+  end
+end
+local l_0_10 = nil
+if (string.match)(l_0_2, "inprocserver32.*") ~= nil and (string.len)((string.match)(l_0_2, "inprocserver32.*")) > 15 then
+  return mp.CLEAN
+end
+l_0_3 = (string.lower)((mp.ContextualExpandEnvironmentVariables)(l_0_3))
+if (sysio.IsFileExists)(l_0_3) then
+  if (string.find)(l_0_3, ":\\program files\\", 1, true) or (string.find)(l_0_3, ":\\program files (x86)\\", 1, true) or (string.find)(l_0_3, ":\\windows\\", 1, true) or (string.find)(l_0_3, "\\root\\office15\\interceptor.dll", -30, true) or (string.find)(l_0_3, "\\microsoft shared\\office15\\msoxev.dll", -37, true) or (string.find)(l_0_3, "\\appdata\\roaming\\microsoft\\mslang\\xml32.dll", -43, true) or (string.find)(l_0_3, "\\appdata\\local\\microsoft\\onedrive\\", 1, true) or (string.find)(l_0_3, "\\appdata\\local\\kingsoft\\wps office\\", 1, true) or (string.find)(l_0_3, "\\appdata\\local\\chromium\\update\\", 1, true) or (mp.IsKnownFriendlyFile)(l_0_3, true, false) == true then
+    return mp.CLEAN
+  end
+  local l_0_11 = nil
+  if (string.match)(l_0_3, "(v8_[a-f0-9]*_[a-f0-9]*%.tmp)$") ~= nil and (string.len)((string.match)(l_0_3, "(v8_[a-f0-9]*_[a-f0-9]*%.tmp)$")) <= 16 then
+    return mp.CLEAN
+  end
+  local l_0_12 = nil
+  do
+    if ((sysio.GetLastResult)()).Success and (sysio.GetFileLastWriteTime)(l_0_3) ~= 0 then
+      local l_0_13 = nil
+      -- DECOMPILER ERROR at PC253: Confused about usage of register: R7 in 'UnsetPending'
+
+      if (MpCommon.GetCurrentTimeT)() < (sysio.GetFileLastWriteTime)(l_0_3) / 10000000 - 11644473600 or (MpCommon.GetCurrentTimeT)() - ((sysio.GetFileLastWriteTime)(l_0_3) / 10000000 - 11644473600) > 600 then
+        return mp.CLEAN
+      end
+    end
+    if l_0_2 ~= nil and (string.len)(l_0_2) > 24 then
+      local l_0_14 = nil
+      -- DECOMPILER ERROR at PC277: Overwrote pending register: R8 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC282: Confused about usage of register: R8 in 'UnsetPending'
+
+      if nil ~= nil then
+        local l_0_15 = nil
+        -- DECOMPILER ERROR at PC297: Confused about usage of register: R9 in 'UnsetPending'
+
+        -- DECOMPILER ERROR at PC301: Confused about usage of register: R9 in 'UnsetPending'
+
+        if (string.lower)((mp.ContextualExpandEnvironmentVariables)((sysio.GetRegValueAsString)(nil, ""))) ~= nil and (string.len)((string.lower)((mp.ContextualExpandEnvironmentVariables)((sysio.GetRegValueAsString)(nil, "")))) > 0 and (string.lower)((mp.ContextualExpandEnvironmentVariables)((sysio.GetRegValueAsString)(nil, ""))) ~= l_0_3 then
+          local l_0_16 = nil
+          local l_0_17 = nil
+          local l_0_18 = 1
+          local l_0_19 = nil
+          local l_0_20 = 0
+          local l_0_21, l_0_22 = 0, 0
+          while 1 do
+            -- DECOMPILER ERROR at PC318: Overwrote pending register: R16 in 'AssignReg'
+
+            -- DECOMPILER ERROR at PC319: Overwrote pending register: R15 in 'AssignReg'
+
+            if l_0_20 < 8 then
+              if nil == nil then
+                break
+              end
+              -- DECOMPILER ERROR at PC327: Confused about usage of register: R15 in 'UnsetPending'
+
+              do
+                local l_0_24, l_0_25 = , nil
+                if (string.find)(l_0_3, "\\", l_0_18, true) == l_0_24 and (string.find)(l_0_3, l_0_19, l_0_18, true) then
+                  l_0_21 = l_0_21 + 1
+                end
+                l_0_18 = l_0_25 + 1
+                l_0_22 = l_0_22 + 1
+                -- DECOMPILER ERROR at PC351: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+                -- DECOMPILER ERROR at PC351: LeaveBlock: unexpected jumping out IF_STMT
+
+              end
+            end
+          end
+          if l_0_21 < 2 and l_0_22 > 2 then
+            local l_0_23 = nil
+            ;
+            (bm.add_related_file)(l_0_3)
+            ;
+            (bm.add_threat_file)(l_0_3)
+            ;
+            (mp.ReportLowfi)(l_0_3, 1827652614)
+            return mp.INFECTED
+          end
+        end
+      end
+    end
+    do
+      return mp.CLEAN
+    end
+  end
+end
+

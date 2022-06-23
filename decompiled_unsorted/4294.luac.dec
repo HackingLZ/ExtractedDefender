@@ -1,0 +1,182 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4294.luac 
+
+-- params : ...
+-- function num : 0
+ParseISOHeader = function(l_1_0)
+  -- function num : 0_0
+  (mp.readprotection)(false)
+  local l_1_1 = (mp.readfile)(32768, 16)
+  if l_1_1:find("\001CD001\001", 1, true) ~= 1 then
+    return mp.CLEAN
+  end
+  local l_1_2 = (mp.readfile)(32926, 4)
+  local l_1_3 = (string.byte)(l_1_2, 1) * 2048
+  if l_1_0 - 4 < l_1_3 then
+    return mp.CLEAN
+  end
+  local l_1_4 = (mp.readfile)(l_1_3, 4)
+  local l_1_5 = (string.byte)(l_1_4, 1)
+  if l_1_0 - 4 < l_1_3 + l_1_5 then
+    return mp.CLEAN
+  end
+  local l_1_6 = (mp.readfile)(l_1_3 + l_1_5, 4)
+  local l_1_7 = (string.byte)(l_1_6, 1)
+  if l_1_0 - 4 < l_1_3 + l_1_5 + l_1_7 then
+    return mp.CLEAN
+  end
+  local l_1_8 = (mp.readfile)(l_1_3 + l_1_5 + l_1_7, 4)
+  local l_1_9 = (string.byte)(l_1_8, 1)
+  if l_1_0 - 4 < l_1_3 + l_1_5 + l_1_7 + l_1_9 then
+    return mp.CLEAN
+  end
+  local l_1_10 = (mp.readfile)(l_1_3 + l_1_5 + l_1_7 + l_1_9, 4)
+  local l_1_11 = (string.byte)(l_1_10, 1)
+  if l_1_11 ~= 0 then
+    return mp.CLEAN
+  end
+  local l_1_12 = l_1_9 * 2048
+  if l_1_0 - 4 < l_1_12 then
+    return mp.CLEAN
+  end
+  local l_1_13 = (mp.readfile)(l_1_12, 4)
+  local l_1_14 = (string.byte)(l_1_13, 1)
+  if l_1_14 == 34 then
+    return mp.CLEAN
+  end
+  if l_1_0 - 4 < l_1_12 + l_1_14 then
+    return mp.CLEAN
+  end
+  local l_1_15 = (mp.readfile)(l_1_12 + l_1_14, 4)
+  local l_1_16 = (string.byte)(l_1_15, 1)
+  if l_1_14 == l_1_16 then
+    return mp.CLEAN
+  end
+  if l_1_0 - 4 < l_1_3 + l_1_5 + l_1_7 + 32 then
+    return mp.CLEAN
+  end
+  local l_1_17 = (mp.readfile)(l_1_3 + l_1_5 + l_1_7 + 32, 4)
+  local l_1_18 = (string.byte)(l_1_17, 1)
+  if l_1_18 < 3 or l_1_18 > 255 then
+    return mp.CLEAN
+  end
+  if l_1_0 < l_1_3 + l_1_5 + l_1_7 + 33 then
+    return mp.CLEAN
+  end
+  local l_1_19 = (mp.readfile)(l_1_3 + l_1_5 + l_1_7 + 33, l_1_18)
+  l_1_19 = (string.gsub)(l_1_19, ";1", "", 1)
+  local l_1_20 = ""
+  local l_1_21 = ""
+  if l_1_18 > 4 then
+    l_1_20 = (string.lower)((string.sub)(l_1_19, -4))
+  end
+  if l_1_18 > 3 then
+    l_1_21 = (string.lower)((string.sub)(l_1_19, -3))
+  end
+  local l_1_22 = {}
+  l_1_22[".vbs"] = "VBS"
+  l_1_22[".lnk"] = "LNK"
+  l_1_22[".wsf"] = "WSF"
+  l_1_22[".vbe"] = "VBE"
+  l_1_22[".jse"] = "JSE"
+  l_1_22[".hta"] = "HTA"
+  l_1_22[".exe"] = "EXE"
+  l_1_22[".dll"] = "DLL"
+  l_1_22[".com"] = "COM"
+  l_1_22[".scr"] = "SCR"
+  l_1_22[".pif"] = "PIF"
+  l_1_22[".ps1"] = "PS"
+  l_1_22[".bat"] = "BAT"
+  l_1_22[".js"] = "JS"
+  local l_1_23 = l_1_22[l_1_20]
+  local l_1_24 = l_1_22[l_1_21]
+  local l_1_25 = {}
+  l_1_25[".zip"] = "ZIP"
+  l_1_25[".rar"] = "RAR"
+  l_1_25[".ace"] = "ACE"
+  l_1_25[".iso"] = "ISO"
+  l_1_25[".arj"] = "ARJ"
+  l_1_25[".7z"] = "7Z"
+  l_1_25[".gz"] = "GZIP"
+  local l_1_26 = l_1_25[l_1_20]
+  local l_1_27 = l_1_25[l_1_21]
+  if l_1_23 ~= nil then
+    (mp.set_mpattribute)("Lua:SingleExecExtensionInISOFromEmail")
+    ;
+    (mp.set_mpattribute)("Lua:Single" .. l_1_23 .. "InISOFromEmail")
+  else
+    if l_1_24 ~= nil then
+      (mp.set_mpattribute)("Lua:SingleExecExtensionInISOFromEmail")
+      ;
+      (mp.set_mpattribute)("Lua:Single" .. l_1_24 .. "InISOFromEmail")
+    else
+      if l_1_26 ~= nil then
+        (mp.set_mpattribute)("Lua:SingleArchiveExtensionInISOFromEmail")
+        ;
+        (mp.set_mpattribute)("Lua:Single" .. l_1_26 .. "InISOFromEmail")
+      else
+        if l_1_27 ~= nil then
+          (mp.set_mpattribute)("Lua:SingleArchiveExtensionInISOFromEmail")
+          ;
+          (mp.set_mpattribute)("Lua:Single" .. l_1_27 .. "InISOFromEmail")
+        end
+      end
+    end
+  end
+end
+
+do
+  if not (mp.get_mpattribute)("Lua:ISOExt") and not (mp.get_mpattribute)("Lua:ISOFileFound") then
+    local l_0_0 = (mp.get_mpattribute)("Lua:LNKinISOFound")
+  end
+  local l_0_1 = nil
+  local l_0_2 = (mp.get_mpattribute)("Lua:SingleSuspiciousExtensionInZip")
+  local l_0_3 = (mp.get_mpattribute)("Lua:RarHasFileWithExeExtension")
+  local l_0_4 = (mp.get_mpattribute)("Lua:SingleSuspiciousExtensionIn7z")
+  local l_0_5 = (mp.get_mpattribute)("Lua:SingleSuspiciousExtensionInACE")
+  local l_0_6 = (mp.get_mpattribute)("BM_PDF_FILE")
+  local l_0_7 = (mp.get_mpattribute)("Lua:JARExt")
+  local l_0_8 = (mp.get_mpattribute)("MHSTR:MacroInside")
+  -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P3
+
+  -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P3
+
+  -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P3
+
+  -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P3
+
+  -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P3
+
+  -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P3
+
+  if (((mp.getfilesize)() <= 4194304 and l_0_2) or (mp.getfilesize)() > 2097152 or (mp.getfilesize)() < 307200 or (mp.getfilesize)() > 1048576 or (mp.getfilesize)() > 820000 or l_0_8) and mp.SCANREASON_ONMODIFIEDHANDLECLOSE == (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) and (mp.get_contextdata)(mp.CONTEXT_DATA_NEWLYCREATEDHINT) == true then
+    local l_0_9 = nil
+    local l_0_10 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_PROCESSNAME))
+    local l_0_11 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILEPATH))
+    if getCachePaths(l_0_10) ~= nil then
+      for l_0_15,l_0_16 in pairs(getCachePaths(l_0_10)) do
+        local l_0_12 = nil
+        -- DECOMPILER ERROR at PC117: Confused about usage of register: R16 in 'UnsetPending'
+
+        if l_0_11:find(R16_PC117, 1, true) ~= nil then
+          if l_0_2 == true or l_0_3 == true or l_0_4 == true or l_0_5 == true then
+            (mp.set_mpattribute)("MpForceScanArchives")
+          end
+          if l_0_7 == true then
+            (mp.set_mpattribute)("Lua:ContextJarFromEmailClient")
+          end
+          if l_0_1 == true then
+            ParseISOHeader(l_0_9)
+          end
+          return mp.INFECTED
+        end
+      end
+    end
+  end
+  do
+    l_0_10 = mp
+    l_0_10 = l_0_10.CLEAN
+    return l_0_10
+  end
+end
+

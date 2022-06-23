@@ -1,0 +1,156 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4267.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 < 153 then
+  return mp.CLEAN
+end
+;
+(mp.readprotection)(false)
+if (mp.readu_u16)(headerpage, 1) ~= 60000 then
+  return mp.CLEAN
+end
+if (mp.readu_u16)(headerpage, 3) == 0 then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.readu_u16)(headerpage, 3)
+local l_0_2 = (mp.readu_u16)(headerpage, 3 + l_0_1 + 8)
+local l_0_3 = (mp.readu_u16)(headerpage, 3 + l_0_1 + 10)
+if l_0_2 ~= 60000 then
+  return mp.CLEAN
+end
+if l_0_3 == 0 then
+  return mp.CLEAN
+end
+local l_0_4 = (mp.readu_u32)(headerpage, 3 + l_0_1 + 10 + 14)
+local l_0_5 = l_0_1 + l_0_3 + l_0_4 + 24
+if l_0_5 ~= l_0_0 then
+  return mp.CLEAN
+end
+;
+(mp.set_mpattribute)("Lua:SingleFileInARJ")
+local l_0_6 = 3 + l_0_1 + 8 + 50 - 1
+local l_0_7 = 256
+local l_0_8 = (mp.readfile)(l_0_6, l_0_6 + l_0_7)
+local l_0_9, l_0_10 = (string.find)(l_0_8, "\000", 1, true)
+local l_0_11 = (mp.readfile)(l_0_6, l_0_9 - 1)
+local l_0_12 = (string.lower)((string.sub)(l_0_11, -4))
+local l_0_13 = (string.lower)((string.sub)(l_0_11, -3))
+if l_0_13 == ".js" then
+  (mp.set_mpattribute)("Lua:SingleJSInARJ")
+  ;
+  (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+else
+  if l_0_13 == ".7z" then
+    (mp.set_mpattribute)("Lua:Single7zInInARJ")
+  else
+    if l_0_13 == ".gz" then
+      (mp.set_mpattribute)("Lua:SingleGZipInARJ")
+    end
+  end
+end
+if l_0_12 == ".zip" then
+  (mp.set_mpattribute)("Lua:SingleZipInARJ")
+  return mp.CLEAN
+else
+  if l_0_12 == ".vbs" then
+    (mp.set_mpattribute)("Lua:SingleVBSInARJ")
+    ;
+    (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+    return mp.CLEAN
+  else
+    if l_0_12 == ".lnk" then
+      (mp.set_mpattribute)("Lua:SingleLNKInARJ")
+      ;
+      (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+      return mp.CLEAN
+    else
+      if l_0_12 == ".wsf" then
+        (mp.set_mpattribute)("Lua:SingleWSFInARJ")
+        ;
+        (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+        return mp.CLEAN
+      else
+        if l_0_12 == ".vbe" then
+          (mp.set_mpattribute)("Lua:SingleVBEInARJ")
+          ;
+          (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+          return mp.CLEAN
+        else
+          if l_0_12 == ".jse" then
+            (mp.set_mpattribute)("Lua:SingleJSEInARJ")
+            ;
+            (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+            return mp.CLEAN
+          else
+            if l_0_12 == ".hta" then
+              (mp.set_mpattribute)("Lua:SingleHTAInARJ")
+              ;
+              (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+              return mp.CLEAN
+            else
+              if l_0_12 == ".exe" then
+                (mp.set_mpattribute)("Lua:SingleEXEInARJ")
+                ;
+                (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+                return mp.CLEAN
+              else
+                if l_0_12 == ".dll" then
+                  (mp.set_mpattribute)("Lua:SingleDLLInARJ")
+                  ;
+                  (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+                  return mp.CLEAN
+                else
+                  if l_0_12 == ".com" then
+                    (mp.set_mpattribute)("Lua:SingleCOMInARJ")
+                    ;
+                    (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+                    return mp.CLEAN
+                  else
+                    if l_0_12 == ".ps1" then
+                      (mp.set_mpattribute)("Lua:SinglePSInARJ")
+                      ;
+                      (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+                      return mp.CLEAN
+                    else
+                      if l_0_12 == ".bat" then
+                        (mp.set_mpattribute)("Lua:SingleBATInARJ")
+                        ;
+                        (mp.set_mpattribute)("Lua:SingleSuspiciousExtensionInARJ")
+                        return mp.CLEAN
+                      else
+                        if l_0_12 == ".rar" then
+                          (mp.set_mpattribute)("Lua:SingleRarInARJ")
+                          return mp.CLEAN
+                        else
+                          if l_0_12 == ".ace" then
+                            (mp.set_mpattribute)("Lua:SingleACEInARJ")
+                            return mp.CLEAN
+                          else
+                            if l_0_12 == ".iso" then
+                              (mp.set_mpattribute)("Lua:SingleISOInARJ")
+                              return mp.CLEAN
+                            else
+                              if l_0_12 == ".arj" then
+                                (mp.set_mpattribute)("Lua:SingleARJInARJ")
+                                return mp.CLEAN
+                              end
+                            end
+                          end
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+return mp.CLEAN
+

@@ -1,0 +1,39 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4805.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (bm.get_current_process_startup_info)()
+local l_0_1 = l_0_0.command_line
+local l_0_2 = (string.match)(l_0_1, "((%d+)%.(%d+)%.(%d+)%.(%d+))")
+if l_0_2 then
+  local l_0_3 = {}
+  -- DECOMPILER ERROR at PC47: No list found for R3 , SetList fails
+
+  -- DECOMPILER ERROR at PC48: Overwrote pending register: R4 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC49: Overwrote pending register: R5 in 'AssignReg'
+
+  for l_0_7,l_0_8 in ("ftp")("ftps") do
+    -- DECOMPILER ERROR at PC52: Overwrote pending register: R9 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC54: Overwrote pending register: R10 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC55: Overwrote pending register: R11 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC56: Overwrote pending register: R12 in 'AssignReg'
+
+    if (("http-post-form").find)("https-get-form", "https-post-form", "https-get", true) then
+      return mp.INFECTED
+    end
+  end
+end
+do
+  do
+    -- DECOMPILER ERROR at PC67: Overwrote pending register: R3 in 'AssignReg'
+
+    do return l_0_3 end
+    -- WARNING: undefined locals caused missing assignments!
+  end
+end
+

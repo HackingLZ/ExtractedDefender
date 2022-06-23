@@ -1,0 +1,49 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19424.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.isdll and peattributes.amd64_image then
+  if mp.HSTR_WEIGHT >= 4 then
+    if not (hstrlog[7]).matched and not (hstrlog[8]).matched and not (hstrlog[9]).matched and not (hstrlog[10]).matched then
+      (mp.set_mpattribute)("HSTR:VirTool:Win64/Obfuscator.G")
+    end
+    if not (hstrlog[6]).matched and (hstrlog[7]).matched ^ (hstrlog[8]).matched then
+      (mp.set_mpattribute)("HSTR:VirTool:Win64/Obfuscator.G2")
+      return mp.CLEAN
+    end
+    if mp.HSTR_WEIGHT >= 6 then
+      (mp.set_mpattribute)("HSTR:VirTool:Win64/Obfuscator.G3")
+      return mp.CLEAN
+    else
+      if mp.HSTR_WEIGHT == 4 or mp.HSTR_WEIGHT == 5 then
+        do
+          if ((((not (hstrlog[6]).matched or (hstrlog[7]).matched) and not (hstrlog[8]).matched) or (hstrlog[9]).matched) and not (hstrlog[10]).matched) or (hstrlog[11]).matched then
+            local l_0_0 = 0 + 1 + 1 + 1 + 1 + 1 + 1
+          end
+          -- DECOMPILER ERROR at PC114: Confused about usage of register: R0 in 'UnsetPending'
+
+          if l_0_0 <= 3 then
+            (mp.set_mpattribute)("HSTR:VirTool:Win64/Obfuscator.G5")
+            return mp.CLEAN
+          end
+          ;
+          (mp.set_mpattribute)("HSTR:VirTool:Win64/Obfuscator.G4")
+          do return mp.CLEAN end
+          ;
+          (pe.set_peattribute)("hstr_exhaustive", true)
+          ;
+          (pe.set_peattribute)("deep_analysis", true)
+          ;
+          (pe.reemulate)()
+          do return mp.CLEAN end
+          if mp.HSTR_WEIGHT >= 4 then
+            (mp.set_mpattribute)("HSTR:VirTool:Win64/Obfuscator.G1")
+          end
+          return mp.CLEAN
+        end
+      end
+    end
+  end
+end
+

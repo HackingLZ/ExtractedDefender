@@ -1,0 +1,17 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18173.luac 
+
+-- params : ...
+-- function num : 0
+if (this_sigattrlog[13]).matched and (this_sigattrlog[14]).matched then
+  local l_0_0 = (string.lower)((this_sigattrlog[13]).p1)
+  local l_0_1 = (string.lower)((this_sigattrlog[14]).p1)
+  if l_0_0 and (string.find)(l_0_0, "^(%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?)$") and l_0_1 and (string.len)(l_0_1) > 24 and (string.find)(l_0_1, "^/[%w/_%-=]+$") then
+    return mp.INFECTED
+  end
+  return mp.CLEAN
+end
+do
+  return mp.CLEAN
+end
+

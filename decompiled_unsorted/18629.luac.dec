@@ -1,0 +1,34 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18629.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.GetBruteMatchData)()
+local l_0_2 = l_0_0.match_offset + 17
+if l_0_0._is_footer then
+  l_0_2 = (mp.getfilesize)() - mp.FOOTERPAGE_SZ + l_0_2
+  local l_0_1 = nil
+end
+do
+  ;
+  (mp.readprotection)(false)
+  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
+
+  local l_0_3 = nil
+  ;
+  (mp.readprotection)(true)
+  if l_0_2 ~= nil then
+    for l_0_7 in (string.find)((mp.readfile)(l_0_2, l_0_1 - (l_0_2)), "[%w+/]+=?=?") do
+      local l_0_4 = nil
+      -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
+
+      if R7_PC36 ~= nil and R7_PC36 ~= "" then
+        (mp.vfo_add_buffer)("CWSHACK\000" .. (mp.base64decode)(R7_PC36, 15), "[PyMacZlib]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+      end
+    end
+  end
+  do
+    return mp.INFECTED
+  end
+end
+

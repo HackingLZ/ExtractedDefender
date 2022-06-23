@@ -1,0 +1,86 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4275.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilename)((mp.bitor)(mp.FILEPATH_QUERY_PATH, mp.FILEPATH_QUERY_LOWERCASE))
+if l_0_0 ~= nil and #l_0_0 > 10 then
+  local l_0_1 = (mp.getfilesize)()
+  if l_0_1 < 100 then
+    return mp.CLEAN
+  end
+  l_0_0 = normalize_path(l_0_0)
+  if l_0_0 == nil then
+    return mp.CLEAN
+  end
+  local l_0_2 = {}
+  l_0_2[":\\programdata"] = "programdata"
+  l_0_2["\\appdata\\roaming"] = "appdata"
+  l_0_2[":\\program files\\common files"] = "commonprogramfiles"
+  l_0_2[":\\program files (x86)\\common files"] = "commonprogramfilesx86"
+  l_0_2["\\appdata\\local"] = "localappdata"
+  l_0_2["\\appdata\\locallow"] = "locallowappdata"
+  l_0_2[":\\program files"] = "programfiles"
+  l_0_2[":\\program files (x86)"] = "programfilesx86"
+  l_0_2[":\\users\\public"] = "public"
+  l_0_2[":\\windows"] = "windir"
+  l_0_2[":\\windows\\system32"] = "sysdir"
+  l_0_2[":\\windows\\syswow64"] = "syswow64"
+  l_0_2["\\appdata\\local\\temp"] = "temp"
+  l_0_2[":\\windows\\system32\\wbem"] = "wbem"
+  l_0_2[":\\windows\\syswow64\\wbem"] = "wbem"
+  l_0_2[":\\windows\\servicing"] = "servicing"
+  for l_0_6,l_0_7 in pairs(l_0_2) do
+    if #l_0_6 < #l_0_0 then
+      local l_0_8 = (string.sub)(l_0_0, -#l_0_6)
+      if l_0_8 == l_0_6 then
+        local l_0_9 = "Lua:Context/FileInBasePath.A!" .. l_0_7
+        ;
+        (mp.set_mpattribute)(l_0_9)
+        return mp.CLEAN
+      end
+    end
+  end
+  if (string.sub)(l_0_0, 1, 2) == "\\\\" then
+    (mp.set_mpattribute)("Lua:Context/FileInNetworkShare.A")
+    return mp.CLEAN
+  end
+  if #l_0_0 > 35 then
+    if (string.sub)(l_0_0, 2, 17) == ":\\windows\\winsxs" then
+      (mp.set_mpattribute)("Lua:Context/FileInSubStrPath.A!winsxs")
+      return mp.CLEAN
+    end
+    if (string.sub)(l_0_0, 2, 31) == ":\\windows\\softwaredistribution" then
+      (mp.set_mpattribute)("Lua:Context/FileInSubStrPath.A!softwaredistribution")
+      return mp.CLEAN
+    end
+    if (string.sub)(l_0_0, 2, 15) == ":\\windows\\csc\\" then
+      (mp.set_mpattribute)("Lua:Context/FileInSubStrPath.A!csc")
+      return mp.CLEAN
+    end
+    if (string.sub)(l_0_0, 2, 20) == ":\\windows\\assembly\\" then
+      (mp.set_mpattribute)("Lua:Context/FileInSubStrPath.A!assembly")
+      return mp.CLEAN
+    end
+    if (string.sub)(l_0_0, 2, 21) == ":\\windows\\servicing\\" then
+      (mp.set_mpattribute)("Lua:Context/FileInSubStrPath.A!servicing")
+      return mp.CLEAN
+    end
+    if (string.sub)(l_0_0, 2, 35) == ":\\windows\\microsoft.net\\framework\\" or (string.sub)(l_0_0, 2, 37) == ":\\windows\\microsoft.net\\framework64\\" then
+      (mp.set_mpattribute)("Lua:Context/FileInSubStrPath.A!framework")
+      return mp.CLEAN
+    end
+    if (string.sub)(l_0_0, 2, 51) == ":\\programdata\\microsoft\\windows defender\\platform\\" then
+      (mp.set_mpattribute)("Lua:Context/FileInSubStrPath.A!wdplatform")
+      return mp.CLEAN
+    end
+    if (string.sub)(l_0_0, 2, 22) == ":\\windows\\installer\\{" then
+      (mp.set_mpattribute)("Lua:Context/FileInSubStrPath.A!windowsinstaller")
+      return mp.CLEAN
+    end
+  end
+end
+do
+  return mp.CLEAN
+end
+

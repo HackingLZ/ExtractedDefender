@@ -1,0 +1,62 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19527.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC189: Unhandled construct in 'MakeBoolean' P3
+
+if (pehdr.NumberOfSections >= 4 and (pesecs[2]).NameDW == 1634952494) or (((pesecs[3]).NameDW == 1633974062 and (pesecs[3]).Name == ".wdat1") or pehdr.NumberOfSections < 5 or pehdr.NumberOfSections >= 10 and ((pesecs[1]).NameDW == 1481002542 or pehdr.NumberOfSections < 6 or (pesecs[6]).NameDW == 1481002542)) then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

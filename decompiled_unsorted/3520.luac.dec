@@ -1,0 +1,27 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3520.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (sysio.RegOpenKey)("HKLM\\SOFTWARE\\Policies\\Google\\Chrome")
+do
+  if l_0_0 then
+    local l_0_1 = (sysio.GetRegValueAsString)(l_0_0, "DefaultNotificationsSetting")
+    if l_0_1 ~= nil then
+      (sysio.DeleteRegValue)(l_0_0, "DefaultNotificationsSetting")
+    end
+  end
+  l_0_0 = (sysio.RegOpenKey)("HKLM\\SOFTWARE\\Policies\\Google\\Chrome\\NotificationsAllowedForUrls")
+  if l_0_0 then
+    local l_0_2 = (sysio.RegEnumValues)(l_0_0)
+    if l_0_2 then
+      for l_0_6,l_0_7 in pairs(l_0_2) do
+        local l_0_8 = (sysio.GetRegValueAsString)(l_0_0, l_0_7)
+        if l_0_8 and (string.find)(l_0_8, "https://.+%.info") then
+          (sysio.DeleteRegValue)(l_0_0, l_0_7)
+        end
+      end
+    end
+  end
+end
+

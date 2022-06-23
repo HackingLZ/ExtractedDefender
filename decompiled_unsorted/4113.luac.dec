@@ -1,0 +1,54 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4113.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) ~= mp.SCANREASON_ONMODIFIEDHANDLECLOSE then
+  return mp.CLEAN
+end
+local l_0_0 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_PROCESSNAME))
+if l_0_0 == "w3wp.exe" then
+  local l_0_1 = (mp.get_contextdata)(mp.CONTEXT_DATA_PROCESS_PPID)
+  local l_0_2 = (string.lower)((mp.GetProcessCommandLine)(l_0_1))
+  if l_0_2 == nil or (string.len)(l_0_2) == 0 then
+    return mp.CLEAN
+  end
+  if (string.find)(l_0_2, "msexchangeowaapppool", 1, true) == nil and (string.find)(l_0_2, "msexchangeecpapppool", 1, true) == nil then
+    return mp.CLEAN
+  end
+else
+  do
+    if l_0_0 ~= "umworkerprocess.exe" then
+      return mp.CLEAN
+    end
+    local l_0_3 = (mp.getfilename)((mp.bitor)(mp.FILEPATH_QUERY_PATH, mp.FILEPATH_QUERY_LOWERCASE))
+    if (string.find)(l_0_3, "\\inetpub\\wwwroot\\", 1, true) == nil then
+      return mp.CLEAN
+    end
+    local l_0_4 = (mp.enum_mpattributesubstring)("SCPT:pyWebShell")
+    if #l_0_4 >= 5 then
+      return mp.INFECTED
+    end
+    local l_0_5 = (mp.enum_mpattributesubstring)("SCPT:CsharpWebShell")
+    if #l_0_5 >= 5 then
+      return mp.INFECTED
+    end
+    local l_0_6 = (mp.enum_mpattributesubstring)("SCPT:jsWebShell")
+    if #l_0_6 >= 3 then
+      return mp.INFECTED
+    end
+    local l_0_7 = (mp.enum_mpattributesubstring)("SCPT:jspWebShell")
+    if #l_0_7 >= 5 then
+      return mp.INFECTED
+    end
+    local l_0_8 = (mp.enum_mpattributesubstring)("SCPT:phpWebShell")
+    if #l_0_8 >= 5 then
+      return mp.INFECTED
+    end
+    if #l_0_4 + #l_0_5 + #l_0_6 + #l_0_7 + #l_0_8 >= 5 then
+      return mp.INFECTED
+    end
+    return mp.CLEAN
+  end
+end
+

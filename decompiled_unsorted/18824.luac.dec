@@ -1,0 +1,34 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18824.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (this_sigattrlog[1]).utf8p2
+if l_0_0 == nil then
+  return mp.CLEAN
+end
+local l_0_1, l_0_2 = (string.match)(l_0_0, " pid:(%d+) (.+)")
+if l_0_1 == nil or l_0_2 == nil then
+  return mp.CLEAN
+end
+local l_0_3 = (mp.GetPPidFromPid)(l_0_1)
+if l_0_3 == nil then
+  return mp.CLEAN
+end
+if (string.find)(l_0_2, "^ems$") then
+  (bm.trigger_sig)("AsyncTriggerEMS", "EMS", l_0_3)
+else
+  if (string.find)(l_0_2, "^sms:") then
+    local l_0_4 = (string.match)(l_0_2, "sms:(.+)")
+    ;
+    (bm.trigger_sig)("AsyncTriggerSMS", l_0_4, l_0_3)
+  else
+    do
+      if (string.find)(l_0_2, "^exhaustive$") then
+        (bm.trigger_sig)("AsyncTriggerProc", "Exhaustive", l_0_3)
+      end
+      return mp.INFECTED
+    end
+  end
+end
+

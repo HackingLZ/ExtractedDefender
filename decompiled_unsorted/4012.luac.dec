@@ -1,0 +1,23 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4012.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (string.lower)((mp.getfilename)())
+if (string.find)(l_0_0, "->c:\\c:c:../appdata\\roaming\\microsoft\\windows\\start menu\\programs\\startup\\", 1, true) or (string.find)(l_0_0, "->c:\\c:c:..\\appdata\\roaming\\microsoft\\windows\\start menu\\programs\\startup\\", 1, true) or (string.find)(l_0_0, "->c:\\c:c:../programdata\\microsoft\\windows\\start menu\\programs\\startup\\", 1, true) or (string.find)(l_0_0, "->c:\\c:\\programdata\\microsoft\\windows\\start menu\\programs\\startup\\", 1, true) or (string.find)(l_0_0, "->c:../appdata/roaming/microsoft/windows/start menu/programs/startup/", 1, true) then
+  local l_0_1 = (mp.get_parent_filehandle)()
+  if not (mp.is_handle_nil)(l_0_1) then
+    (mp.readprotection)(false)
+    local l_0_2 = (mp.readfile_by_handle)(l_0_1, 7, 7)
+    if l_0_2 ~= nil and (string.find)(l_0_2, "**ACE**", 1, true) then
+      (mp.set_mpattribute)("Lua:CVE-2018-20250-StartupACE")
+    end
+  end
+  do
+    do
+      do return mp.INFECTED end
+      return mp.CLEAN
+    end
+  end
+end
+

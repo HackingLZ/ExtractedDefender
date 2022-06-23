@@ -1,0 +1,16 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 16930.luac 
+
+-- params : ...
+-- function num : 0
+if mp.HSTR_WEIGHT >= 5 then
+  (mp.set_mpattribute)("HSTR:TrojanClicker:Win64/Fleercivet.B")
+end
+if mp.HSTR_WEIGHT >= 7 then
+  if pehdr.Machine == 332 then
+    (mp.changedetectionname)(805306451)
+  end
+  return mp.INFECTED
+end
+return mp.CLEAN
+

@@ -1,0 +1,25 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3591.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.GetResmgrBasePlugin)() ~= "AutorunInf" then
+  return mp.CLEAN
+end
+local l_0_0 = false
+local l_0_1 = false
+if (mp.get_mpattribute)("Win32/AutoIt") or (mp.get_mpattribute)("Win32/AutoIt_HSTR1") or (mp.get_mpattribute)("Win32/AutoIt_HSTR2") then
+  l_0_0 = true
+end
+if peattributes.isvbnative == true or peattributes.isvbpcode == true then
+  l_0_1 = true
+end
+if l_0_0 and not (mp.get_mpattribute)("AGGREGATOR:SuspiciousAutoIt") then
+  return mp.CLEAN
+end
+if l_0_1 and not (mp.get_mpattribute)("RPF:vb_mfic") and not (mp.get_mpattribute)("RPF:vb_hfic") then
+  return mp.CLEAN
+end
+do return mp.CLEAN end
+return mp.INFECTED
+

@@ -1,0 +1,11 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4191.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (string.lower)((mp.getfilename)())
+if (string.find)(l_0_0, "spreadsheet", 1, true) or (string.find)(l_0_0, "profile-", 1, true) or (string.find)(l_0_0, "cobranca", 1, true) or (string.find)(l_0_0, "boleto_", 1, true) or (string.find)(l_0_0, "detailed analysis ", 1, true) or (string.find)(l_0_0, "account_report", 1, true) or (string.find)(l_0_0, "msg_", 1, true) or (string.find)(l_0_0, "sales", 1, true) or (string.find)(l_0_0, "annual_report_", 1, true) or (string.find)(l_0_0, "meeting", 1, true) or (string.find)(l_0_0, "redacted", 1, true) or (string.find)(l_0_0, "foundation plan", 1, true) or (string.find)(l_0_0, "activities", 1, true) or (string.find)(l_0_0, "annual report", 1, true) or (string.find)(l_0_0, "company account", 1, true) or (string.find)(l_0_0, "picture", 1, true) or (string.find)(l_0_0, "photo", 1, true) or (string.find)(l_0_0, "fedex", 1, true) or (string.find)(l_0_0, "label_", 1, true) or (string.find)(l_0_0, ".wav.zip", 1, true) or (string.find)(l_0_0, "pdf.wsf", 1, true) or (string.find)(l_0_0, "doc.wsf", 1, true) or (string.find)(l_0_0, "xls.wsf", 1, true) or (string.find)(l_0_0, "ppt.wsf", 1, true) or (string.find)(l_0_0, ".fax.wsf", 1, true) or (string.find)(l_0_0, "facture", 1, true) or (string.find)(l_0_0, "receipt", 1, true) or (string.find)(l_0_0, "inv_no_", 1, true) or (string.find)(l_0_0, "last..?transactions") ~= nil or (string.find)(l_0_0, "contratto (", 1, true) then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

@@ -1,0 +1,28 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18523.luac 
+
+-- params : ...
+-- function num : 0
+if pehdr.Machine == 34404 then
+  if mp.HSTR_WEIGHT >= 18 then
+    (mp.changedetectionname)(805306420)
+    return mp.INFECTED
+  else
+    if mp.HSTR_WEIGHT >= 1 and (hstrlog[11]).matched then
+      (pe.set_peattribute)("hstr_exhaustive", true)
+      ;
+      (pe.reemulate)()
+    end
+  end
+  return mp.CLEAN
+else
+  if mp.HSTR_WEIGHT >= 18 then
+    return mp.INFECTED
+  else
+    if mp.HSTR_WEIGHT >= 7 then
+      (mp.set_mpattribute)("do_exhaustivehstr_rescan")
+    end
+  end
+end
+return mp.CLEAN
+

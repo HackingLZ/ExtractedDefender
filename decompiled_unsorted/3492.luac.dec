@@ -1,0 +1,26 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3492.luac 
+
+-- params : ...
+-- function num : 0
+if pehdr.Subsystem ~= 1 then
+  return mp.CLEAN
+end
+if pehdr.Machine ~= 332 then
+  return mp.CLEAN
+end
+if (mp.getfilesize)() < 4096 then
+  return mp.CLEAN
+end
+for l_0_3 = 1, pehdr.NumberOfSections do
+  if (mp.bitand)((pesecs[l_0_3]).Characteristics, 2147483648) ~= 2147483648 then
+    return mp.CLEAN
+  end
+end
+;
+(mp.readprotection)(false)
+if (mp.readfile)((pesecs[1]).PointerToRawData, 4) == "(re)" then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

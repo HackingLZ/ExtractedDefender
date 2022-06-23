@@ -1,0 +1,23 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 2620.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON)
+if l_0_0 ~= mp.SCANREASON_UNKNOWN and l_0_0 ~= mp.SCANREASON_ONOPEN and l_0_0 ~= mp.SCANREASON_ONMODIFIEDHANDLECLOSE then
+  return mp.CLEAN
+end
+local l_0_1 = "XplatMalwareScanTrigger"
+local l_0_2 = (MpCommon.AtomicCounterValue)(l_0_1 .. "AC")
+if l_0_2 == nil or l_0_2 < 5 then
+  return mp.CLEAN
+end
+local l_0_3 = (mp.getfilename)(mp.FILEPATH_QUERY_PATH)
+if l_0_3 == nil or #l_0_3 < 2 then
+  return mp.CLEAN
+end
+if not pcall(MpCommon.RollingQueueQueryKey, l_0_1, l_0_3) or not MpCommon.RollingQueueQueryKey then
+  return mp.CLEAN
+end
+return mp.INFECTED
+

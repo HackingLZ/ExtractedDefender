@@ -1,0 +1,16 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 80.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.GetUACMetadata)()
+do
+  if l_0_0 ~= nil and l_0_0.Type == mp.AMSI_UAC_REQUEST_TYPE_EXE and l_0_0.TrustState ~= mp.AMSI_UAC_TRUST_STATE_TRUSTED then
+    local l_0_1 = (string.lower)((l_0_0.Info).ApplicationName)
+    if (string.find)(l_0_1, "\\downloads", 1, true) then
+      (mp.ReportInternalDetection)((l_0_0.Info).ApplicationName, 3201970721, mp.TYPE_PERSIST)
+    end
+  end
+  return mp.CLEAN
+end
+

@@ -1,0 +1,36 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3547.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 < 30000000 then
+  return mp.CLEAN
+end
+local l_0_1 = tostring(headerpage)
+local l_0_2, l_0_3, l_0_4 = (string.find)(l_0_1, "\n.\n.\n.\n.\n.\n.\n.\n.\n.\n")
+for l_0_8 = 1, 100 do
+  -- DECOMPILER ERROR at PC28: Overwrote pending register: R8 in 'AssignReg'
+
+end
+;
+(mp.readprotection)(false)
+local l_0_9 = (mp.readfile)(l_0_0 / 10, 50000)
+if l_0_9 == nil then
+  return mp.CLEAN
+end
+-- DECOMPILER ERROR at PC44: Overwrote pending register: R3 in 'AssignReg'
+
+-- DECOMPILER ERROR at PC47: Overwrote pending register: R8 in 'AssignReg'
+
+for l_0_13 = 1, 1000, l_0_8 do
+  -- DECOMPILER ERROR at PC56: Overwrote pending register: R3 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC57: Overwrote pending register: R9 in 'AssignReg'
+
+end
+if l_0_3 > 10000 then
+  return mp.LOWFI
+end
+return mp.CLEAN
+

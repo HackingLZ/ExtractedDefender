@@ -1,0 +1,29 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 717.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = false
+local l_0_1 = (bm.get_current_process_startup_info)()
+if l_0_1 ~= nil and l_0_1.ppid ~= nil then
+  local l_0_2, l_0_3 = (bm.get_process_relationships)()
+  if l_0_3 ~= nil then
+    for l_0_7,l_0_8 in ipairs(l_0_3) do
+      if l_0_8.image_path ~= nil and l_0_8.ppid ~= nil then
+        TrackPidAndTechniqueBM(l_0_8.ppid, "T1548.002", "uac_bypass_trg")
+        l_0_0 = true
+      end
+    end
+  end
+end
+do
+  if l_0_0 then
+    l_0_2 = mp
+    l_0_2 = l_0_2.INFECTED
+    return l_0_2
+  end
+  l_0_2 = mp
+  l_0_2 = l_0_2.CLEAN
+  return l_0_2
+end
+

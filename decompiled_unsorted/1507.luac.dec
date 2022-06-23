@@ -1,0 +1,28 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1507.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_PROCESSNAME))
+if l_0_0 ~= "regsvr32.exe" then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.getfilename)(mp.FILEPATH_QUERY_LOWERCASE)
+local l_0_2 = "DllDroppedByExcel"
+local l_0_3 = (MpCommon.QueryPersistContext)(l_0_1, l_0_2)
+if l_0_3 then
+  return mp.INFECTED
+end
+local l_0_4 = (mp.getfilename)(mp.FILEPATH_QUERY_LOWERCASE)
+local l_0_5 = "DllDroppedByPowerShell"
+local l_0_6 = (MpCommon.QueryPersistContext)(l_0_4, l_0_5)
+if l_0_6 then
+  return mp.INFECTED
+end
+local l_0_7 = (mp.getfilename)(mp.FILEPATH_QUERY_LOWERCASE)
+local l_0_8 = "CabDroppedByExcel"
+if (MpCommon.QueryPersistContext)(l_0_7, l_0_8) then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

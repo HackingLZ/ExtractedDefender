@@ -1,0 +1,19 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 176.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_1 = nil, nil
+local l_0_2, l_0_3 = nil
+if pcall(mp.GetParentProcInfo) and mp.GetParentProcInfo ~= nil then
+  l_0_2 = (mp.GetParentProcInfo).ppid
+  l_0_3 = (mp.GetParentProcInfo).image_path
+end
+if l_0_2 ~= nil and l_0_3 ~= nil then
+  TrackPidAndTechnique(l_0_2, "T1087", "account_discovery")
+  if IsDetectionThresholdMet(l_0_2) then
+    return mp.LOWFI
+  end
+end
+return mp.CLEAN
+

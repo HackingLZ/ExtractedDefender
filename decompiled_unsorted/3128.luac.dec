@@ -1,0 +1,13 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3128.luac 
+
+-- params : ...
+-- function num : 0
+(MpDetection.ScanResource)("thread://name=Worm:Win32/Gamarue.gen!A,proc=msiexec.exe")
+;
+(MpDetection.ScanResource)("thread://name=Worm:Win32/Gamarue.gen!B,proc=svchost.exe")
+;
+(MpDetection.ScanResource)("thread://name=Worm:Win32/Gamarue.gen!B,proc=wuauclt.exe")
+;
+(MpDetection.ScanResource)("thread://name=Worm:Win32/Gamarue.gen!B,proc=wupdmgr.exe")
+

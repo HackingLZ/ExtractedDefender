@@ -1,0 +1,21 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3369.luac 
+
+-- params : ...
+-- function num : 0
+if not (mp.get_mpattribute)("TEL:Exploit:O97M/Blinky.C!dha") then
+  return mp.CLEAN
+end
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 > 6000 then
+  return mp.CLEAN
+end
+if l_0_0 < 2000 then
+  return mp.CLEAN
+end
+local l_0_1 = (string.lower)((mp.getfilename)())
+if (string.find)(l_0_1, "(rtf0000)", 1, true) ~= nil then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

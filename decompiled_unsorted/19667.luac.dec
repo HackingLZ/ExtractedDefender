@@ -1,0 +1,119 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19667.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = function(l_1_0, l_1_1, l_1_2)
+  -- function num : 0_0
+  if l_1_0 == nil then
+    return false
+  end
+  l_1_0 = (string.lower)(l_1_0)
+  if l_1_1 ~= nil and (string.find)(l_1_0, l_1_1, 1, true) then
+    return true
+  end
+  if l_1_2 ~= nil and (string.find)(l_1_0, l_1_2, 1, true) then
+    return true
+  end
+  return false
+end
+
+local l_0_1, l_0_2 = nil, nil
+if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).wp1 ~= nil then
+  l_0_1 = (string.lower)((this_sigattrlog[1]).utf8p1)
+end
+if (this_sigattrlog[2]).matched and (this_sigattrlog[2]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[2]).utf8p1)
+end
+if l_0_1 == nil and l_0_2 == nil then
+  return mp.CLEAN
+end
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC661: Unhandled construct in 'MakeBoolean' P3
+
+if ((this_sigattrlog[3]).matched and l_0_0((this_sigattrlog[3]).utf8p2, l_0_1, l_0_2)) or not (this_sigattrlog[4]).matched or not (this_sigattrlog[5]).matched or not (this_sigattrlog[6]).matched or not (this_sigattrlog[7]).matched or not (this_sigattrlog[8]).matched or not (this_sigattrlog[9]).matched or not (this_sigattrlog[10]).matched or not (this_sigattrlog[11]).matched or not (this_sigattrlog[12]).matched or not (this_sigattrlog[13]).matched or not (this_sigattrlog[14]).matched or not (this_sigattrlog[15]).matched or not (this_sigattrlog[16]).matched or not (this_sigattrlog[17]).matched or not (this_sigattrlog[18]).matched or not (this_sigattrlog[19]).matched or not (this_sigattrlog[20]).matched or not (this_sigattrlog[21]).matched or not (this_sigattrlog[22]).matched or not (this_sigattrlog[23]).matched or not (this_sigattrlog[24]).matched or not (this_sigattrlog[25]).matched or not (this_sigattrlog[26]).matched or not (this_sigattrlog[27]).matched or not (this_sigattrlog[28]).matched or not (this_sigattrlog[29]).matched or not (this_sigattrlog[30]).matched or not (this_sigattrlog[31]).matched or not (this_sigattrlog[32]).matched or not (this_sigattrlog[33]).matched or not (this_sigattrlog[34]).matched or not (this_sigattrlog[35]).matched or not (this_sigattrlog[36]).matched or not (this_sigattrlog[37]).matched or not (this_sigattrlog[38]).matched or not (this_sigattrlog[39]).matched or not (this_sigattrlog[40]).matched or not (this_sigattrlog[41]).matched or not (this_sigattrlog[42]).matched or not (this_sigattrlog[43]).matched or not (this_sigattrlog[44]).matched or not (this_sigattrlog[45]).matched or (this_sigattrlog[46]).matched and l_0_0((this_sigattrlog[46]).utf8p2, l_0_1, l_0_2) then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

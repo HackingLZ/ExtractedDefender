@@ -1,0 +1,31 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1075.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC14: Overwrote pending register: R0 in 'AssignReg'
+
+if (this_sigattrlog[2]).matched then
+  local l_0_0, l_0_1, l_0_2 = nil
+else
+  do
+    do return mp.CLEAN end
+    -- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
+
+    if (string.match)(l_0_0, "/addfile [^ ]+ \\\\.\\[^ ]* [^ ]+") ~= nil then
+      return mp.INFECTED
+    else
+      -- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
+
+      if (string.match)(l_0_0, "/addfile [^ ]+ \\\\[^ ]\\C$[^ ]* [^ ]+") ~= nil then
+        return mp.INFECTED
+      end
+    end
+    local l_0_3 = nil
+    if IsProcNameInParentProcessTree("BM", {"winword.exe", "mspub.exe", "excel.exe", "powerpnt.exe", "powershell.exe", "cscript.exe", "wscript.exe", "iexplore.exe", "microsoftedge.exe", "microsoftedgecp.exe", "chrome.exe", "firefox.exe", "python.exe", "mshta.exe", "rundll32.exe", "regsvr32.exe", "psexesvc.exe", "psexec.exe", "services.exe", "wininit.exe", "explorer.exe"}) then
+      return mp.INFECTED
+    end
+    return mp.CLEAN
+  end
+end
+

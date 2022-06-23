@@ -1,0 +1,44 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4023.luac 
+
+-- params : ...
+-- function num : 0
+if pehdr.NumberOfSections ~= 6 then
+  return mp.CLEAN
+end
+if (pesecs[1]).SizeOfRawData ~= 0 or (pesecs[2]).SizeOfRawData ~= 0 or (pesecs[3]).SizeOfRawData ~= 0 or (pesecs[4]).SizeOfRawData ~= 0 then
+  return mp.CLEAN
+end
+if (pesecs[5]).SizeOfRawData < 2097151 then
+  return mp.CLEAN
+end
+if (pesecs[1]).Name ~= ".text" then
+  return mp.CLEAN
+end
+if (pesecs[2]).Name ~= ".rdata" then
+  return mp.CLEAN
+end
+if (pesecs[3]).Name ~= ".data" then
+  return mp.CLEAN
+end
+if (string.match)((pesecs[4]).Name, "^%.%a%a%a%a?%a?0$") == nil then
+  return mp.CLEAN
+end
+if (string.match)((pesecs[5]).Name, "^%.%a%a%a%a?%a?1$") == nil then
+  return mp.CLEAN
+end
+if (pesecs[6]).Name ~= ".rsrc" then
+  return mp.CLEAN
+end
+do
+  if peattributes.dt_error_heur_exit_criteria then
+    local l_0_0 = (pe.get_versioninfo)()
+    if l_0_0 ~= nil and (string.find)(l_0_0.LegalCopyright, "Copyright http://simple%-files.com %(C%)") ~= nil then
+      (mp.set_mpattribute)("Program:Win32/SimpleFileInstaller")
+      return mp.CLEAN
+    end
+    return mp.INFECTED
+  end
+  return mp.CLEAN
+end
+

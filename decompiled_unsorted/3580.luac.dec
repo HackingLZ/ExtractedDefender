@@ -1,0 +1,26 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3580.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.getfilesize)() < 524288 then
+  (mp.readprotection)(false)
+  local l_0_0 = (mp.readfile)(0, (mp.getfilesize)())
+  local l_0_1 = l_0_0:find("=\"", 1, true)
+  if l_0_1 == nil then
+    return mp.CLEAN
+  end
+  local l_0_2 = l_0_0:match("[%d,]+", l_0_1 + 2)
+  local l_0_3 = {}
+  for l_0_7 = 0, 255 do
+    local l_0_8 = (string.format)("%d", l_0_7)
+    l_0_3[l_0_8] = (string.format)("%c", l_0_7)
+  end
+  local l_0_9 = (string.gsub)(l_0_2, "(%d+),", l_0_3)
+  ;
+  (mp.vfo_add_buffer)(l_0_9, "[Ascii]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+end
+do
+  return mp.CLEAN
+end
+

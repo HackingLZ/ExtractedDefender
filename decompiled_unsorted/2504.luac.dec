@@ -1,0 +1,22 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 2504.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC217: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC217: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC217: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC217: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC217: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC217: Unhandled construct in 'MakeBoolean' P3
+
+if ((hstrlog[1]).matched and (hstrlog[16]).matched and (hstrlog[17]).matched and (hstrlog[18]).matched and (hstrlog[19]).matched and (hstrlog[20]).matched and (hstrlog[21]).matched and (hstrlog[22]).matched) or not (hstrlog[23]).matched or not (hstrlog[24]).matched or not (hstrlog[25]).matched or not (hstrlog[26]).matched or not (hstrlog[27]).matched or not (hstrlog[28]).matched or not (hstrlog[29]).matched or not (hstrlog[30]).matched or not (hstrlog[31]).matched or not (hstrlog[32]).matched or not (hstrlog[33]).matched or not (hstrlog[34]).matched or not (hstrlog[35]).matched or not (hstrlog[36]).matched or not (hstrlog[37]).matched or not (hstrlog[38]).matched or not (hstrlog[39]).matched or not (hstrlog[4]).matched or not (hstrlog[5]).matched or not (hstrlog[6]).matched or not (hstrlog[7]).matched or not (hstrlog[8]).matched or not (hstrlog[9]).matched or (hstrlog[10]).matched and (hstrlog[11]).matched and (hstrlog[12]).matched and (hstrlog[13]).matched and ((hstrlog[14]).matched or (hstrlog[15]).matched) then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

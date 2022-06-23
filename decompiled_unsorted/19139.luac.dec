@@ -1,0 +1,42 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19139.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC12: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p2 ~= nil then
+    local l_0_0 = nil
+  else
+  end
+  -- DECOMPILER ERROR at PC40: Overwrote pending register: R0 in 'AssignReg'
+
+  do
+    if (not (this_sigattrlog[2]).matched or (this_sigattrlog[2]).utf8p2 == nil or (this_sigattrlog[3]).matched) and (this_sigattrlog[3]).utf8p2 ~= nil then
+      local l_0_1, l_0_2, l_0_3, l_0_4 = (this_sigattrlog[2]).utf8p2
+    else
+    end
+    do
+      if not (this_sigattrlog[4]).matched or (this_sigattrlog[4]).utf8p2 == nil or (this_sigattrlog[4]).utf8p2 ~= nil then
+        local l_0_5 = nil
+        bm_AddRelatedFileFromCommandLine(l_0_5, "|.xls|.doc|.ppt|.pps|docx|pptx|ppsx|xlsx|.rtf|.js|.vbs|.wsf|.jse|.vbe|")
+        if (this_sigattrlog[9]).matched then
+          (mp.ReportLowfi)((this_sigattrlog[9]).utf8p1, 147270772)
+        end
+        if (this_sigattrlog[10]).matched then
+          (mp.ReportLowfi)((this_sigattrlog[10]).utf8p1, 982105579)
+        end
+        if (this_sigattrlog[11]).matched then
+          (mp.ReportLowfi)((this_sigattrlog[11]).utf8p1, 1815722029)
+        end
+        if (this_sigattrlog[12]).matched then
+          (mp.ReportLowfi)((this_sigattrlog[12]).utf8p1, 1078932623)
+        end
+        return mp.INFECTED
+      end
+      return mp.CLEAN
+    end
+  end
+end
+

@@ -1,0 +1,31 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 11.luac 
+
+-- params : ...
+-- function num : 0
+if pehdr.NumberOfSections ~= 4 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfImage ~= 1949696 then
+  return mp.CLEAN
+end
+if (mp.readu_u32)(headerpage, 585) ~= 1481659694 then
+  return mp.CLEAN
+end
+if headerpage[589] ~= 50 then
+  return mp.CLEAN
+end
+if (mp.readu_u32)(headerpage, 593) ~= 442368 then
+  return mp.CLEAN
+end
+if (mp.readu_u32)(headerpage, 621) ~= 3221225536 then
+  return mp.CLEAN
+end
+;
+(mp.readprotection)(false)
+local l_0_0 = (mp.readfile)((pe.foffset_rva)(pehdr.AddressOfEntryPoint), 31)
+if (mp.crc32)(-1, l_0_0, 1, 31) ~= 1627014330 then
+  return mp.CLEAN
+end
+return mp.INFECTED
+

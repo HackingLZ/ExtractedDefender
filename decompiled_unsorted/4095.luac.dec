@@ -1,0 +1,59 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4095.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON)
+if l_0_0 ~= mp.SCANREASON_ONOPEN and l_0_0 ~= mp.SCANREASON_ONMODIFIEDHANDLECLOSE then
+  return mp.CLEAN
+end
+local l_0_1 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_PROCESSNAME))
+if l_0_1 ~= "cmd.exe" and not (mp.get_mpattribute)("BM_CMD_EXE") then
+  return mp.CLEAN
+end
+local l_0_2 = (mp.get_contextdata)(mp.CONTEXT_DATA_PROCESS_PPID)
+local l_0_3 = (mp.GetProcessCommandLine)(l_0_2)
+if l_0_3 == nil then
+  return mp.CLEAN
+end
+local l_0_4 = (string.len)(l_0_3)
+if l_0_4 < 1000 then
+  return mp.CLEAN
+end
+do
+  if l_0_4 > 1000 then
+    local l_0_5 = 1000
+  end
+  local l_0_6 = nil
+  local l_0_7 = 0
+  local l_0_8 = 0
+  local l_0_9 = 0
+  local l_0_10 = 0
+  local l_0_11 = 0
+  if l_0_11 >= 30 then
+    (mp.set_mpattribute)("LUA:Dosfuscator2Semicolon")
+  end
+  local l_0_12 = true
+  _ = (string.gsub)((string.gsub)(l_0_3, "%^[&<>%^|\\]", ""), "%^", "", 30)
+  if l_0_7 >= 30 then
+    (mp.set_mpattribute)("LUA:DosfuscatorExp")
+    l_0_12 = true
+  end
+  if l_0_8 > 10 then
+    (mp.set_mpattribute)("LUA:DosfuscatorSharp")
+    l_0_12 = true
+  end
+  if l_0_9 > 30 then
+    (mp.set_mpattribute)("LUA:DosfuscatorComma")
+    l_0_12 = true
+  end
+  if l_0_10 > 30 then
+    (mp.set_mpattribute)("LUA:DosfuscatorParenthesis")
+    l_0_12 = true
+  end
+  if l_0_12 then
+    return mp.INFECTED
+  end
+  return mp.CLEAN
+end
+

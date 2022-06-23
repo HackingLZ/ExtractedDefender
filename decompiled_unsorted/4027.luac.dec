@@ -1,0 +1,24 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4027.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 < 32 or l_0_0 > 65536 then
+  return mp.CLEAN
+end
+if (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) ~= mp.SCANREASON_ONMODIFIEDHANDLECLOSE then
+  return mp.CLEAN
+end
+if not (mp.get_contextdata)(mp.CONTEXT_DATA_NEWLYCREATEDHINT) then
+  return mp.CLEAN
+end
+local l_0_1 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILENAME))
+if l_0_1 == nil then
+  return mp.CLEAN
+end
+if (string.find)(l_0_1, "r3adm3", 1, true) or (string.find)(l_0_1, "decrypt_information", 1, true) or (string.find)(l_0_1, "how_to_back_files", 1, true) or (string.find)(l_0_1, "^hillary.") or (string.find)(l_0_1, "^ykcol.") or (string.find)(l_0_1, "^osiris.") or (string.find)(l_0_1, "^_[%w]+_readme_") or (string.find)(l_0_1, "_how_to_decrypt_my_files_[%w]+_") or (string.find)(l_0_1, "_help_decrypt_[%w]+_") or (string.find)(l_0_1, "_r_e_a_d___t_h_i_s___[%w]+_") or (string.find)(l_0_1, "_help_help_help_[%w]+") or (string.find)(l_0_1, "^_read_this_file_[%w]+_") then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

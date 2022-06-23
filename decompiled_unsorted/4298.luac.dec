@@ -1,0 +1,139 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4298.luac 
+
+-- params : ...
+-- function num : 0
+removeRunningmalicious = function(l_1_0, l_1_1)
+  -- function num : 0_0
+  local l_1_2 = (sysio.GetRegValueAsString)(l_1_0, l_1_1)
+  local l_1_3 = (string.gsub)(l_1_2, "\" ..", "\"")
+  l_1_3 = (string.gsub)(l_1_3, "\"", "")
+  if (sysio.IsFileExists)(l_1_3) then
+    (Remediation.BtrDeleteFile)(l_1_3)
+  end
+end
+
+removeStartupmalicious = function(l_2_0)
+  -- function num : 0_1
+  local l_2_1 = nil
+  local l_2_2 = nil
+  for l_2_6,l_2_7 in pairs((sysio.RegExpandUserKey)("HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders")) do
+    local l_2_3 = nil
+    -- DECOMPILER ERROR at PC8: Confused about usage of register: R7 in 'UnsetPending'
+
+    if R7_PC8 ~= nil and (sysio.RegOpenKey)(R7_PC8) ~= nil then
+      l_2_2 = (sysio.GetRegValueAsString)((sysio.RegOpenKey)(R7_PC8), "Startup")
+      if (sysio.IsFolderExists)(l_2_2) then
+        local l_2_9 = nil
+        -- DECOMPILER ERROR at PC41: Confused about usage of register: R9 in 'UnsetPending'
+
+        if (sysio.IsFileExists)(l_2_2 .. "\\" .. l_2_0 .. ".exe") then
+          (Remediation.BtrDeleteFile)(l_2_2 .. "\\" .. l_2_0 .. ".exe")
+        end
+      end
+    end
+  end
+end
+
+enumhkcuregrun = function(l_3_0)
+  -- function num : 0_2
+  if l_3_0 then
+    local l_3_1 = (sysio.RegEnumValues)(l_3_0)
+    for l_3_5,l_3_6 in pairs(l_3_1) do
+      if l_3_6 ~= nil and (string.match)(l_3_6, "^%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x$") then
+        local l_3_7 = (sysio.GetRegValueAsString)(l_3_0, l_3_6)
+        if l_3_7 ~= nil and (string.match)(l_3_7, ".exe\" ..") then
+          removeRunningmalicious(l_3_0, l_3_6)
+          removeStartupmalicious(l_3_6)
+          ;
+          (Remediation.BtrDeleteRegValue)("HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\\\" .. l_3_6)
+        end
+      end
+    end
+  end
+end
+
+enumhklmregrun = function(l_4_0)
+  -- function num : 0_3
+  if l_4_0 then
+    local l_4_1 = (sysio.RegEnumValues)(l_4_0)
+    for l_4_5,l_4_6 in pairs(l_4_1) do
+      if l_4_6 ~= nil and (string.match)(l_4_6, "^%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x$") then
+        local l_4_7 = (sysio.GetRegValueAsString)(l_4_0, l_4_6)
+        if l_4_7 ~= nil and (string.match)(l_4_7, ".exe\" ..") then
+          removeRunningmalicious(l_4_0, l_4_6)
+          removeStartupmalicious(l_4_6)
+          ;
+          (Remediation.BtrDeleteRegValue)("HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\\\" .. l_4_6)
+        end
+      end
+    end
+  end
+end
+
+enumhkcudi = function(l_5_0)
+  -- function num : 0_4
+  if l_5_0 then
+    local l_5_1 = (sysio.RegEnumValues)(l_5_0)
+    for l_5_5,l_5_6 in pairs(l_5_1) do
+      if l_5_6 ~= nil and (string.match)(l_5_6, "^di$") then
+        local l_5_7 = (sysio.GetRegValueAsString)(l_5_0, l_5_6)
+        if l_5_7 ~= nil and (string.match)(l_5_7, "!") then
+          (Remediation.BtrDeleteRegValue)("HKCU\\\\" .. l_5_6)
+        end
+      end
+    end
+  end
+end
+
+enumhkcusoft = function(l_6_0)
+  -- function num : 0_5
+  for l_6_4,l_6_5 in pairs(l_6_0) do
+    if l_6_5 then
+      local l_6_6 = (sysio.RegOpenKey)(l_6_5)
+      if l_6_6 then
+        local l_6_7 = (sysio.RegEnumKeys)(l_6_6)
+        for l_6_11,l_6_12 in pairs(l_6_7) do
+          if l_6_12 ~= nil and (string.match)(l_6_12, "^%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x$") then
+            local l_6_13 = "HKCU\\Software\\" .. l_6_12
+            local l_6_14 = (sysio.RegOpenKey)(l_6_13)
+            if l_6_14 then
+              local l_6_15 = (sysio.RegEnumValues)(l_6_14)
+              for l_6_19,l_6_20 in pairs(l_6_15) do
+                if l_6_20 ~= nil and ((string.match)(l_6_20, "kl") or (string.match)(l_6_20, "US")) then
+                  (Remediation.BtrDeleteRegKey)(l_6_13)
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  -- DECOMPILER ERROR at PC72: Confused about usage of register R5 for local variables in 'ReleaseLocals'
+
+end
+
+if (Remediation.Threat).Active and (string.match)((Remediation.Threat).Name, "Bladabindi") then
+  local l_0_0 = (sysio.RegExpandUserKey)("HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run")
+  for l_0_4,l_0_5 in pairs(l_0_0) do
+    if l_0_5 ~= nil then
+      local l_0_6 = (sysio.RegOpenKey)(l_0_5)
+      if l_0_6 ~= nil then
+        enumhkcuregrun(l_0_6)
+      end
+    end
+  end
+  local l_0_7 = (sysio.RegExpandUserKey)("HKCU")
+  for l_0_11,l_0_12 in pairs(l_0_7) do
+    if l_0_12 then
+      local l_0_13 = (sysio.RegOpenKey)(l_0_12)
+      enumhkcudi(l_0_13)
+    end
+  end
+  local l_0_14 = (sysio.RegExpandUserKey)("HKCU\\Software")
+  enumhkcusoft(l_0_14)
+  local l_0_15 = (sysio.RegOpenKey)("HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run")
+  enumhklmregrun(l_0_15)
+end
+

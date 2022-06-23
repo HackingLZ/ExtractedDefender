@@ -1,0 +1,85 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 457.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_1, l_0_2, l_0_7, l_0_8, l_0_9, l_0_10, l_0_11, l_0_12, l_0_13, l_0_14, l_0_15, l_0_16, l_0_17, l_0_18, l_0_19, l_0_20 = nil, nil, nil
+for l_0_6 = 1, mp.SIGATTR_LOG_SZ do
+  local l_0_3, l_0_4, l_0_5 = nil
+  -- DECOMPILER ERROR at PC6: Confused about usage of register: R6 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC11: Confused about usage of register: R6 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC16: Confused about usage of register: R6 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
+
+  if (sigattr_head[l_0_10]).matched and (sigattr_head[l_0_10]).attribute == 16401 and (sigattr_head[l_0_10]).utf8p1 ~= nil then
+    l_0_3 = (string.lower)((sigattr_head[l_0_10]).utf8p1)
+    -- DECOMPILER ERROR at PC30: Confused about usage of register: R6 in 'UnsetPending'
+
+    l_0_4 = (string.lower)((sigattr_head[l_0_10]).utf8p2)
+    -- DECOMPILER ERROR at PC35: Confused about usage of register: R6 in 'UnsetPending'
+
+    l_0_5 = (sigattr_head[l_0_10]).ppid
+    break
+  end
+end
+do
+  -- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
+
+  if l_0_3 == nil or l_0_4 == nil then
+    return mp.CLEAN
+  end
+  -- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
+
+  if #l_0_3 >= 1 and (string.sub)(l_0_3, 1, 1) == "%" then
+    return mp.CLEAN
+  end
+  -- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
+
+  if (MpCommon.QueryPersistContextNoPath)(l_0_5, "FilePersistContextToProcessRelay.B") == true then
+    return mp.CLEAN
+  end
+  local l_0_21 = nil
+  local l_0_22 = nil
+  if (string.match)(l_0_21, "([^\\]+)$") == nil then
+    return mp.CLEAN
+  end
+  local l_0_23 = nil
+  if (mp.GetExecutablesFromCommandLine)(l_0_22) == nil then
+    return mp.CLEAN
+  end
+  for l_0_27,l_0_28 in ipairs((mp.GetExecutablesFromCommandLine)(l_0_22)) do
+    local l_0_24, l_0_25, l_0_26 = false
+    -- DECOMPILER ERROR at PC96: Confused about usage of register: R10 in 'UnsetPending'
+
+    -- DECOMPILER ERROR at PC104: Confused about usage of register: R10 in 'UnsetPending'
+
+    -- DECOMPILER ERROR at PC110: Confused about usage of register: R10 in 'UnsetPending'
+
+    -- DECOMPILER ERROR at PC118: Confused about usage of register: R10 in 'UnsetPending'
+
+    if (string.sub)(l_0_14, -#l_0_25) ~= l_0_25 and (sysio.IsFileExists)(l_0_14) and (MpCommon.GetPersistContextCount)(l_0_14) > 0 and (MpCommon.GetPersistContextCount)(l_0_14) <= 100 then
+      for l_0_34,l_0_35 in ipairs((MpCommon.GetPersistContext)(l_0_14)) do
+        local l_0_32, l_0_33 = nil
+        -- DECOMPILER ERROR at PC124: Confused about usage of register: R17 in 'UnsetPending'
+
+        if #R17_PC124 >= 4 and (string.match)(R17_PC124, "^[tT][0-9][0-9][0-9][0-9]") then
+          TrackPidAndTechniqueBM(l_0_23, (string.match)(R17_PC124, "^([tT][0-9][0-9][0-9][0-9][%.]?[0-9]?[0-9]?[0-9]?):?(.*)"), R23_PC143)
+          l_0_24 = true
+        end
+      end
+    end
+  end
+  if l_0_24 == true then
+    (MpCommon.AppendPersistContextNoPath)(l_0_23, "FilePersistContextToProcessRelay.B", 0)
+    return mp.INFECTED
+  end
+  return mp.CLEAN
+end
+

@@ -1,0 +1,35 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 870.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) ~= mp.SCANREASON_ONOPEN then
+  return mp.CLEAN
+end
+if not peattributes.isexe or peattributes.isdamaged or (mp.get_contextdata)(mp.CONTEXT_DATA_OPEN_CREATEPROCESS_HINT) ~= true then
+  return mp.CLEAN
+end
+local l_0_0, l_0_1 = (mp.getfilename)((mp.bitor)((mp.bitor)(mp.FILEPATH_QUERY_FNAME, mp.FILEPATH_QUERY_PATH), mp.FILEPATH_QUERY_LOWERCASE))
+if l_0_0:sub(1, 8) == "\\device\\" then
+  l_0_0 = ((mp.PathToWin32Path)(l_0_0)):lower()
+end
+do
+  local l_0_2 = {}
+  -- DECOMPILER ERROR at PC94: No list found for R2 , SetList fails
+
+  -- DECOMPILER ERROR at PC95: Overwrote pending register: R3 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC96: Overwrote pending register: R4 in 'AssignReg'
+
+  for l_0_6,l_0_7 in ((mp.ContextualExpandEnvironmentVariables)("%ProgramFiles%") or "")((mp.ContextualExpandEnvironmentVariables)("%ProgramFiles(x86)%") or "") do
+    if l_0_7 ~= "" and (l_0_0:sub(1, #l_0_7)):lower() == l_0_7:lower() then
+      return mp.CLEAN
+    end
+  end
+  if (mp.IsTrustedFile)(true) then
+    return mp.CLEAN
+  end
+  do return mp.INFECTED end
+  -- WARNING: undefined locals caused missing assignments!
+end
+

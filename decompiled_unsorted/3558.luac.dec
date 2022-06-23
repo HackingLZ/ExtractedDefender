@@ -1,0 +1,25 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3558.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = mp.CLEAN
+if (mp.readu_u32)(headerpage, 5) == 2309737967 then
+  (mp.set_mpattribute)("Lua:NtdsditEsedbFileHeader.A")
+  ;
+  (mp.set_mpattribute)("BM_Ntdsdit_ESEDB_FILE")
+  l_0_0 = mp.INFECTED
+end
+if (mp.readu_u32)(headerpage, 1) == 22233924 then
+  (mp.set_mpattribute)("BM_ADML_FILE")
+  l_0_0 = mp.INFECTED
+end
+if (mp.readu_u32)(headerpage, 1) == 1181117509 and (mp.readu_u32)(headerpage, 5) == 6646889 then
+  (mp.set_mpattribute)("BM_EVTX_FILE")
+  l_0_0 = mp.INFECTED
+end
+if l_0_0 == mp.INFECTED then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

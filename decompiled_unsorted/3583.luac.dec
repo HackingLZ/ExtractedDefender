@@ -1,0 +1,23 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3583.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = "chrome.exe|msedge.exe|firefox.exe|iexplore.exe"
+if (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) == mp.SCANREASON_ONOPEN and l_0_0:find((mp.get_contextdata)(mp.CONTEXT_DATA_PROCESSNAME)) then
+  local l_0_1 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILENAME))
+  local l_0_2 = {}
+  l_0_2.vbs = true
+  l_0_2.ps1 = true
+  l_0_2[".js"] = true
+  l_0_2.jse = true
+  l_0_2.vbe = true
+  local l_0_3 = (string.sub)(l_0_1, -3)
+  if l_0_3 ~= nil and l_0_2[l_0_3] == true then
+    return mp.INFECTED
+  end
+end
+do
+  return mp.CLEAN
+end
+

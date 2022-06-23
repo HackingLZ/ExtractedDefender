@@ -1,0 +1,124 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1062.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = 5
+local l_0_1 = "servicestop"
+local l_0_2 = ""
+local l_0_3 = {}
+if (this_sigattrlog[1]).matched then
+  l_0_2 = (this_sigattrlog[1]).utf8p2
+  local l_0_4 = #l_0_3 + 1
+  l_0_3[l_0_4] = l_0_2:match("stop ([^%s]+)")
+else
+  do
+    if (this_sigattrlog[2]).matched then
+      l_0_2 = (this_sigattrlog[2]).utf8p2
+      local l_0_5 = #l_0_3 + 1
+      l_0_3[l_0_5] = l_0_2:match("pause ([^%s]+)")
+    else
+      do
+        if (this_sigattrlog[3]).matched then
+          l_0_2 = (this_sigattrlog[3]).utf8p2
+          local l_0_6 = #l_0_3 + 1
+          l_0_3[l_0_6] = l_0_2:match("stop ([^%s]+)")
+        else
+          do
+            if (this_sigattrlog[4]).matched then
+              l_0_2 = (this_sigattrlog[4]).utf8p2
+              local l_0_7 = #l_0_3 + 1
+              l_0_3[l_0_7] = l_0_2:match("delete ([^%s]+)")
+            else
+              do
+                if (this_sigattrlog[6]).matched then
+                  l_0_2 = (this_sigattrlog[6]).utf8p2
+                  local l_0_8 = #l_0_3 + 1
+                  l_0_3[l_0_8] = l_0_2:match("/im ([^%s]+)")
+                else
+                  do
+                    if (this_sigattrlog[7]).matched then
+                      l_0_2 = (this_sigattrlog[7]).utf8p2
+                      local l_0_9 = #l_0_3 + 1
+                      l_0_3[l_0_9] = l_0_2:match("-im ([^%s]+)")
+                    else
+                      do
+                        if (this_sigattrlog[5]).matched then
+                          l_0_2 = (this_sigattrlog[5]).utf8p2
+                          local l_0_10 = (string.match)(l_0_2, "ame%s-([^%-%/]+)%s-[%-%/]")
+                          if (string.find)(l_0_10, ",", 1, true) then
+                            l_0_10 = (string.gsub)(l_0_10, " ", "")
+                            for l_0_14,l_0_15 in ipairs(split(l_0_10, ",")) do
+                              l_0_3[#l_0_3 + 1] = l_0_15
+                            end
+                          end
+                        else
+                          do
+                            if (this_sigattrlog[8]).matched then
+                              l_0_2 = (this_sigattrlog[8]).utf8p2
+                              local l_0_16 = #l_0_3 + 1
+                              l_0_3[l_0_16] = l_0_2:match("uninstall ([^%s]+)")
+                            else
+                              do
+                                if (this_sigattrlog[9]).matched then
+                                  l_0_2 = (this_sigattrlog[9]).utf8p2
+                                  local l_0_17 = #l_0_3 + 1
+                                  l_0_3[l_0_17] = l_0_2:match("service%-where%-([\'\"][^%s]+[\'\"])")
+                                else
+                                  do
+                                    if (this_sigattrlog[10]).matched then
+                                      l_0_2 = (this_sigattrlog[10]).utf8p2
+                                      local l_0_18 = #l_0_3 + 1
+                                      l_0_3[l_0_18] = l_0_2:match("set-service ([^%s]+)")
+                                    else
+                                      do
+                                        if (this_sigattrlog[11]).matched then
+                                          l_0_2 = (this_sigattrlog[11]).utf8p2
+                                          local l_0_19 = #l_0_3 + 1
+                                          l_0_3[l_0_19] = l_0_2:match("(%%.*%%)")
+                                        end
+                                        do
+                                          if l_0_0 < #l_0_3 then
+                                            for l_0_23,l_0_24 in pairs(l_0_3) do
+                                              (bm.add_related_string)("service_kill", l_0_24, bm.RelatedStringBMReport)
+                                            end
+                                            return mp.INFECTED
+                                          end
+                                          for l_0_28,l_0_29 in pairs(l_0_3) do
+                                            local l_0_30 = (MpCommon.QueryPersistContextNoPath)(l_0_1, l_0_29)
+                                            if not l_0_30 then
+                                              (MpCommon.AppendPersistContextNoPath)(l_0_1, l_0_29, 600)
+                                            end
+                                          end
+                                          local l_0_31 = (MpCommon.GetPersistContextCountNoPath)(l_0_1)
+                                          if l_0_0 < l_0_31 then
+                                            l_0_3 = (table.concat)((MpCommon.GetPersistContextNoPath)(l_0_1), ";")
+                                            ;
+                                            (bm.add_related_string)("service_stop", l_0_3, bm.RelatedStringBMReport)
+                                            ;
+                                            (MpCommon.SetPersistContextNoPath)(l_0_1, {}, 1)
+                                            return mp.INFECTED
+                                          end
+                                          return mp.CLEAN
+                                        end
+                                      end
+                                    end
+                                  end
+                                end
+                              end
+                            end
+                          end
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+

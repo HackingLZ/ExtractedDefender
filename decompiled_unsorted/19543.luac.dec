@@ -1,0 +1,91 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19543.luac 
+
+-- params : ...
+-- function num : 0
+checkProcessTree = function(l_1_0, l_1_1)
+  -- function num : 0_0
+  if l_1_0 == nil or l_1_1 == nil or type(l_1_1) ~= "table" then
+    return nil
+  end
+  local l_1_2 = l_1_0
+  local l_1_3 = {}
+  for l_1_7,l_1_8 in ipairs(l_1_1) do
+    local l_1_9 = 0
+    local l_1_10, l_1_11 = (bm.get_process_relationships)(l_1_2)
+    for l_1_15,l_1_16 in ipairs(l_1_11) do
+      if (mp.bitand)(l_1_16.reason_ex, 1) == 1 and (string.sub)(l_1_16.image_path, -(string.len)(l_1_8)) == l_1_8 then
+        l_1_2 = l_1_16.ppid
+        l_1_9 = l_1_9 + 1
+      end
+      if l_1_9 > 1 then
+        return nil
+      end
+    end
+    if l_1_9 == 0 then
+      return nil
+    end
+    ;
+    (table.insert)(l_1_3, l_1_2)
+  end
+  return l_1_3
+end
+
+local l_0_0, l_0_1 = nil, nil
+if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p2 ~= nil then
+  l_0_0 = (this_sigattrlog[1]).ppid
+  l_0_1 = (this_sigattrlog[1]).utf8p2
+else
+  if (this_sigattrlog[2]).matched and (this_sigattrlog[2]).utf8p2 ~= nil then
+    l_0_0 = (this_sigattrlog[2]).ppid
+    l_0_1 = (this_sigattrlog[2]).utf8p2
+  else
+    if (this_sigattrlog[3]).matched and (this_sigattrlog[3]).utf8p2 ~= nil then
+      l_0_0 = (this_sigattrlog[3]).ppid
+      l_0_1 = (this_sigattrlog[3]).utf8p2
+    end
+  end
+end
+if l_0_0 == nil or l_0_1 == nil then
+  return mp.CLEAN
+end
+local l_0_2 = {}
+-- DECOMPILER ERROR at PC63: No list found for R2 , SetList fails
+
+-- DECOMPILER ERROR at PC64: Overwrote pending register: R3 in 'AssignReg'
+
+-- DECOMPILER ERROR at PC65: Overwrote pending register: R4 in 'AssignReg'
+
+local l_0_3 = ("cmd.exe")("powershell.exe", l_0_2)
+if l_0_3 == nil then
+  return mp.CLEAN
+end
+do
+  if l_0_1 ~= nil then
+    local l_0_4 = {}
+    l_0_4[".xls"] = true
+    l_0_4[".doc"] = true
+    l_0_4[".ppt"] = true
+    l_0_4[".pps"] = true
+    l_0_4.docx = true
+    l_0_4.pptx = true
+    l_0_4.ppsx = true
+    l_0_4.xlsx = true
+    l_0_4[".rtf"] = true
+    l_0_4[".xml"] = true
+    l_0_4.dotx = true
+    l_0_4.dotm = true
+    l_0_4[".odt"] = true
+    l_0_4.xlsb = true
+    l_0_4.xltx = true
+    l_0_4.xltm = true
+    l_0_4.xlam = true
+    l_0_4[".xla"] = true
+    l_0_4.docm = true
+    l_0_4.xlsm = true
+    l_0_4.pptm = true
+    bm_AddRelatedFileFromCommandLine(l_0_1, l_0_4)
+  end
+  return mp.INFECTED
+end
+

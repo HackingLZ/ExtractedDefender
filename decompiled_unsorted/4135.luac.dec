@@ -1,0 +1,15 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4135.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.getfilesize)() > 2048000 or (mp.getfilesize)() < 10240 then
+  return mp.CLEAN
+end
+if (mp.get_mpattribute)("is_packed_not_vfo") or (mp.get_mpattribute)("Themida_Attr") or (mp.get_mpattribute)("PEPCODE:VirTool:Win32/VMProtect") or (mp.get_mpattribute)("Lowfi:HSTR:Win32/Obfuscator.Enigma") or (mp.get_mpattribute)("RPF:FileHasTaggant") or (mp.get_mpattribute)("SIGATTR:DelphiFile") or (mp.get_mpattribute)("HSTR:Trojan:Win32/IsDelphi") or (mp.get_mpattribute)("HSTR:Win32/DelphiFile") or (mp.get_mpattribute)("HSTR:CABSFX_RESOURCES") or (mp.get_mpattribute)("//InnoSetup_Installer") or (mp.get_mpattribute)("//Lua:NSIS_Installer") or (mp.get_mpattribute)("HSTR:NSIS.gen!A") or (mp.get_mpattribute)("//SmartInstallMaker") or (mp.get_mpattribute)("HSTR:Win32/Exprio.gen!lowfi") or (mp.get_mpattribute)("HSTR:Detects_VirtualPC_VMWare") or (mp.get_mpattribute)("SIGATTR:FindWindowFileMon") or (mp.get_mpattribute)("HSTR:MinGWFile") or (mp.get_mpattributesubstring)("HSTR:PossibleVcEpStub") or (mp.get_mpattributesubstring)("Molebox") or (mp.get_mpattributesubstring)("AutoIt") or (mp.get_mpattributesubstring)("Virus") then
+  return mp.CLEAN
+end
+;
+(mp.set_mpattribute)("Lua:OpclogClassifierThrottle")
+return mp.CLEAN
+

@@ -1,0 +1,22 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3560.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.bitand)((mp.readu_u16)(headerpage, 21), 1) ~= 1 then
+  return mp.CLEAN
+end
+local l_0_0 = (string.lower)((string.sub)((mp.getfilename)(), -4))
+if l_0_0 ~= ".lnk" then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.getfilesize)()
+if l_0_1 > 1000 then
+  return mp.CLEAN
+end
+local l_0_2 = tostring(headerpage)
+if (string.find)(l_0_2, "\005\000\000\160\003", 1, true) ~= nil and (string.find)(l_0_2, "‡O\208 \234:i\016¢ÿ\b\000+00\157", 0, true) ~= nil then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

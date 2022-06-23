@@ -1,0 +1,21 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3384.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 < 500000 then
+  return mp.CLEAN
+end
+local l_0_1 = (string.lower)((mp.getfilename)())
+if (string.find)(l_0_1, "->word/activex/activex") ~= nil then
+  (mp.readprotection)(false)
+  local l_0_2 = (mp.readfile)(65536, 3000)
+  if (string.find)(l_0_2, "j&X1É‰âd\255\019YZ", 1, true) ~= nil then
+    return mp.INFECTED
+  end
+end
+do
+  return mp.CLEAN
+end
+

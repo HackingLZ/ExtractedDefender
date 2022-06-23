@@ -1,0 +1,29 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3919.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON)
+if l_0_0 == mp.SCANREASON_ONMODIFIEDHANDLECLOSE and (mp.get_contextdata)(mp.CONTEXT_DATA_NEWLYCREATEDHINT) == true then
+  local l_0_1 = {}
+  l_0_1["winword.exe"] = ""
+  l_0_1["excel.exe"] = ""
+  l_0_1["powerpnt.exe"] = ""
+  local l_0_2 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_PROCESSNAME))
+  local l_0_3 = (mp.PathToWin32Path)((mp.get_contextdata)(mp.CONTEXT_DATA_PROCESSDEVICEPATH))
+  if l_0_3 == nil then
+    return mp.CLEAN
+  end
+  l_0_3 = (string.lower)(l_0_3)
+  if l_0_1[l_0_2] and l_0_3:sub(2) == ":\\program files\\microsoft office" then
+    local l_0_4 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILENAME))
+    local l_0_5 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILEPATH))
+    if l_0_5:sub(-5) == "\\temp" and l_0_4:sub(-4) == ".exe" then
+      (mp.set_mpattribute)("Lua:ContextualDropOfficeTmpExe.A")
+    end
+  end
+end
+do
+  return mp.CLEAN
+end
+

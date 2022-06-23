@@ -1,0 +1,71 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 2499.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (bm.get_current_process_startup_info)()
+if l_0_0 == nil then
+  return mp.CLEAN
+end
+if MpCommon.SECURITY_MANDATORY_HIGH_RID <= l_0_0.integrity_level then
+  return mp.CLEAN
+end
+local l_0_1 = (bm.get_imagepath)()
+if l_0_1 == nil then
+  return mp.CLEAN
+end
+l_0_1 = (string.lower)(l_0_1)
+if (string.find)(l_0_1, "\\windowsapps\\", 1, true) ~= nil then
+  return mp.CLEAN
+end
+if (string.find)(l_0_1, "\\appdata\\local\\packages\\", 1, true) ~= nil then
+  return mp.CLEAN
+end
+local l_0_2 = 4294967295
+local l_0_3 = nil
+if (this_sigattrlog[1]).matched then
+  l_0_3 = (mp.ContextualExpandEnvironmentVariables)((this_sigattrlog[1]).utf8p1)
+  if l_0_3 ~= nil then
+    l_0_2 = (mp.GetFileAttributes)(l_0_3)
+    if l_0_2 ~= 4294967295 and (mp.bitand)(l_0_2, 1024) == 1024 then
+      (bm.add_related_file)(l_0_3)
+      return mp.INFECTED
+    end
+  end
+end
+l_0_2 = 4294967295
+l_0_3 = nil
+if (this_sigattrlog[2]).matched then
+  l_0_3 = (mp.ContextualExpandEnvironmentVariables)((this_sigattrlog[2]).utf8p1)
+  if l_0_3 ~= nil then
+    l_0_2 = (mp.GetFileAttributes)(l_0_3)
+    if l_0_2 ~= 4294967295 and (mp.bitand)(l_0_2, 1024) == 1024 then
+      (bm.add_related_file)(l_0_3)
+      return mp.INFECTED
+    end
+  end
+end
+l_0_2 = 4294967295
+l_0_3 = nil
+if (this_sigattrlog[3]).matched then
+  l_0_3 = (mp.ContextualExpandEnvironmentVariables)((this_sigattrlog[3]).utf8p1)
+  if l_0_3 ~= nil then
+    l_0_2 = (mp.GetFileAttributes)(l_0_3)
+    if l_0_2 ~= 4294967295 and (mp.bitand)(l_0_2, 1024) == 1024 then
+      return mp.INFECTED
+    end
+  end
+end
+l_0_2 = 4294967295
+l_0_3 = nil
+if (this_sigattrlog[4]).matched then
+  l_0_3 = (mp.ContextualExpandEnvironmentVariables)((this_sigattrlog[4]).utf8p1)
+  if l_0_3 ~= nil then
+    l_0_2 = (mp.GetFileAttributes)(l_0_3)
+    if l_0_2 ~= 4294967295 and (mp.bitand)(l_0_2, 1024) == 1024 then
+      return mp.INFECTED
+    end
+  end
+end
+return mp.CLEAN
+

@@ -1,0 +1,13 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18683.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = pevars.sigaddr
+local l_0_1 = (pe.mmap_va)(l_0_0 + 2287, 32)
+if (mp.readu_u32)(l_0_1, 1) ~= 1935939071 or (mp.readu_u32)(l_0_1, 5) ~= 3277652040 or (mp.readu_u16)(l_0_1, 9) == 52428 or (mp.readu_u32)(l_0_1, 11) == 3435973836 or (mp.readu_u32)(l_0_1, 15) == 3435973836 or (mp.readu_u32)(l_0_1, 18) == 3435973836 or (mp.readu_u32)(l_0_1, 22) ~= 1098924136 then
+  (mp.set_mpattribute)("PEBMPAT:VirTool:Win32/Autoit!obfuscated")
+  return mp.CLEAN
+end
+return mp.SUSPICIOUS
+

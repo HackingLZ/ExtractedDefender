@@ -1,0 +1,18 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3563.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) ~= mp.SCANREASON_ONOPEN then
+  return mp.CLEAN
+end
+;
+(mp.set_mpattribute)("MpDisableCaching")
+local l_0_0 = (mp.getfilename)((mp.bitor)(mp.FILEPATH_QUERY_FULL, mp.FILEPATH_QUERY_LOWERCASE))
+local l_0_1 = {}
+;
+(table.insert)(l_0_1, l_0_0)
+;
+(MpCommon.SetPersistContextNoPath)("Lua:Metload.A", l_0_1, 0)
+return mp.INFECTED
+

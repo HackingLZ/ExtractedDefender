@@ -1,0 +1,37 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3896.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 < 16 or l_0_0 > 1048576 then
+  return mp.CLEAN
+end
+if mp.HEADERPAGE_SZ == 0 then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.getfilename)()
+if l_0_1:find("\\Temporary Internet Files\\Content.IE5\\") then
+  return mp.CLEAN
+end
+local l_0_2, l_0_3 = nil, nil
+l_0_2 = l_0_1:find("%.%w+$")
+if l_0_2 == nil then
+  return mp.CLEAN
+end
+local l_0_4 = l_0_1:sub(l_0_2, l_0_3)
+local l_0_5 = false
+if l_0_4 == ".asp" or l_0_4 == ".aspx" or l_0_4 == ".php" or l_0_4 == ".php5" or l_0_4 == ".phtml" or l_0_4 == ".cgi" or l_0_4 == ".pl" or l_0_4 == ".cfm" or l_0_4 == ".cfc" or l_0_4 == ".jsp" or l_0_4 == ".js" or l_0_4 == ".py" or l_0_4 == ".rb" then
+  l_0_5 = true
+end
+if l_0_5 == false then
+  return mp.CLEAN
+end
+if (mp.crc32)(0, headerpage, 1, 3) == 3665532023 then
+  if mp.FOOTERPAGE_SZ ~= 0 and (mp.crc32)(0, footerpage, mp.FOOTERPAGE_SZ - 1, 2) == 1814796034 then
+    return mp.CLEAN
+  end
+  return mp.INFECTED
+end
+return mp.CLEAN
+

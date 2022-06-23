@@ -1,0 +1,37 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19231.luac 
+
+-- params : ...
+-- function num : 0
+offset2bin = function(l_1_0)
+  -- function num : 0_0
+  local l_1_1 = string.format
+  local l_1_2 = "%c%c%c%c"
+  local l_1_3 = (mp.bitand)(l_1_0, 255)
+  local l_1_4 = (mp.bitand)((mp.shr32)(l_1_0, 8), 255)
+  local l_1_5 = (mp.bitand)((mp.shr32)(l_1_0, 16), 255)
+  do
+    local l_1_6, l_1_7, l_1_8, l_1_9 = (mp.bitand)((mp.shr32)(l_1_0, 24), 255), .end
+    do return l_1_1(l_1_2, l_1_3, l_1_4, l_1_5, l_1_6, l_1_7, l_1_8, l_1_9) end
+    -- DECOMPILER ERROR at PC37: Confused about usage of register R2 for local variables in 'ReleaseLocals'
+
+  end
+end
+
+local l_0_0 = 33
+if (string.byte)((pe.mmap_va)(pevars.sigaddr + 16, 1)) == 131 then
+  l_0_0 = 30
+end
+if (mp.bitand)((mp.readu_u32)((pe.mmap_va)(pevars.sigaddr - 4, 4), 1), 16777215) == 15401588 then
+  (pe.mmap_patch_va)(pevars.sigaddr - 2, "êê")
+end
+local l_0_1 = (pe.mmap_va)(pevars.sigaddr + l_0_0, 256)
+local l_0_2 = (string.find)(l_0_1, "ãU\252", 1, true)
+if l_0_2 ~= nil then
+  (pe.mmap_patch_va)(pevars.sigaddr + l_0_0, "\235")
+  ;
+  (pe.mmap_patch_va)(pevars.sigaddr + l_0_0 + 1, offset2bin(l_0_2 - 3))
+  return mp.INFECTED
+end
+return mp.CLEAN
+

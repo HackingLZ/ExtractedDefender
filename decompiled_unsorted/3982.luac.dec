@@ -1,0 +1,29 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3982.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = {}
+-- DECOMPILER ERROR at PC12: No list found for R0 , SetList fails
+
+-- DECOMPILER ERROR at PC13: Overwrote pending register: R1 in 'AssignReg'
+
+local l_0_1 = Infrastructure_CheckMSEpresence()
+-- DECOMPILER ERROR at PC20: Overwrote pending register: R2 in 'AssignReg'
+
+do
+  local l_0_2 = ("p1%.exe")()
+  -- DECOMPILER ERROR at PC24: Overwrote pending register: R3 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC25: Overwrote pending register: R4 in 'AssignReg'
+
+  if l_0_1 then
+    ("p2%.exe")("p3%.exe")
+  else
+    if l_0_2 then
+      FixTamperedExclusionRegEntries("HKLM\\SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\")
+    end
+  end
+  -- WARNING: undefined locals caused missing assignments!
+end
+

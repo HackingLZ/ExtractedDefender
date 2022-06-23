@@ -1,0 +1,41 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 2557.luac 
+
+-- params : ...
+-- function num : 0
+if (this_sigattrlog[1]).matched then
+  local l_0_0 = parseLogonEvent(this_sigattrlog[1])
+  if isRelevantLogon(l_0_0) then
+    addLogonEvent(l_0_0, true)
+    if analyzeSuccess(l_0_0) then
+      local l_0_1, l_0_2 = analyzeSuccess(l_0_0)
+      local l_0_3 = nil
+      l_0_3 = getCounterValue("RDP_Ip-" .. l_0_0.Ip)
+      decayAndUpdateCounter("RDP_Ip-" .. l_0_0.Ip, l_0_3 * -1)
+      l_0_3 = getCounterValue("RDP_Usr-" .. l_0_0.TFUN)
+      decayAndUpdateCounter("RDP_Usr-" .. l_0_0.TFUN, l_0_3 * -1)
+      if (mp.bitand)(l_0_1, 1) == 1 then
+        local l_0_4 = getRDPTelemetryData(l_0_2, l_0_0)
+        l_0_4.CONTEXT_SOURCE = "LBFS"
+        l_0_4.current_event = (this_sigattrlog[1]).utf8p2
+        local l_0_5 = SafeGetUrlReputation
+        local l_0_6 = {}
+        -- DECOMPILER ERROR at PC70: No list found for R6 , SetList fails
+
+        -- DECOMPILER ERROR at PC71: Overwrote pending register: R7 in 'AssignReg'
+
+        l_0_5 = l_0_5(l_0_6, l_0_0.Ip)
+        if l_0_5 == -1 then
+          l_0_5 = bm
+          l_0_5 = l_0_5.trigger_sig
+          l_0_6 = "BruteForceDetectionAdditionalString"
+          l_0_5(l_0_6, (this_sigattrlog[1]).utf8p1)
+        end
+      end
+    end
+  end
+end
+do
+  return mp.CLEAN
+end
+

@@ -1,0 +1,50 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18680.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC16: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[3]).matched and (this_sigattrlog[3]).utf8p2 ~= nil then
+    local l_0_0, l_0_1, l_0_2, l_0_3, l_0_4 = nil
+  else
+  end
+  -- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
+
+  if (not (this_sigattrlog[4]).matched or (this_sigattrlog[4]).utf8p2 == nil or (string.lower)((this_sigattrlog[4]).utf8p2) ~= nil) and (string.len)((string.lower)((this_sigattrlog[4]).utf8p2)) > 3 then
+    local l_0_5 = nil
+    local l_0_6 = contains
+    local l_0_7 = l_0_5
+    l_0_6 = l_0_6(l_0_7, {"transfer", "addfile"})
+    if l_0_6 then
+      l_0_6 = contains
+      l_0_7 = l_0_5
+      l_0_6 = l_0_6(l_0_7, "\\share$\\")
+      if not l_0_6 then
+        l_0_6 = contains
+        l_0_7 = l_0_5
+        l_0_6 = l_0_6(l_0_7, "\\admin$\\")
+        if not l_0_6 then
+          l_0_6 = contains
+          l_0_7 = l_0_5
+          l_0_6 = l_0_6(l_0_7, " \\\\")
+          if not l_0_6 then
+            l_0_6 = contains
+            l_0_7 = l_0_5
+            l_0_6 = l_0_6(l_0_7, " \"\"\\\\")
+          end
+        end
+      end
+      if l_0_6 then
+        l_0_6 = mp
+        l_0_6 = l_0_6.INFECTED
+        return l_0_6
+      end
+    end
+  end
+  do
+    return mp.CLEAN
+  end
+end
+

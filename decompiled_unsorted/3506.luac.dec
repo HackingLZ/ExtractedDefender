@@ -1,0 +1,24 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3506.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.get_contextdata)(mp.CONTEXT_DATA_FILEPATH)
+do
+  if l_0_0 ~= nil and l_0_0:len() > 5 then
+    local l_0_1 = (string.lower)(l_0_0)
+    if l_0_0:len() > 8 and (string.sub)(l_0_0, 1, 8) == "\\device\\" then
+      l_0_1 = (string.lower)((mp.PathToWin32Path)(l_0_0))
+    end
+    if l_0_1:len() == 6 then
+      if l_0_1 == "\\\\?\\c:" then
+        return mp.INFECTED
+      else
+        ;
+        (mp.set_mpattribute)("Lua:FileBaseFolderInOtherDrive")
+      end
+    end
+  end
+  return mp.CLEAN
+end
+

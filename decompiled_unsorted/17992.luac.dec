@@ -1,0 +1,10 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 17992.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.get_mpattribute)("do_exhaustivehstr_rescan_vbinject_fa") and (mp.getfilesize)() == 208384 and pehdr.NumberOfSections == 3 and (pesecs[2]).SizeOfRawData == 8192 and (pesecs[2]).VirtualAddress == 131072 and (pesecs[2]).Name == "UPX1" then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

@@ -1,0 +1,45 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19169.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) == mp.SCANREASON_ONOPEN and (mp.get_contextdata)(mp.CONTEXT_DATA_OPEN_CREATEPROCESS_HINT) then
+  local l_0_0 = (mp.getfilename)()
+  local l_0_1 = ((MpCommon.GetPersistContext)(l_0_0))
+  local l_0_2, l_0_3, l_0_4 = nil, nil, nil
+  if l_0_1 ~= nil then
+    for l_0_8,l_0_9 in ipairs(l_0_1) do
+      local l_0_10 = (string.match)(l_0_9, "^AppName:([%w%.]+)$")
+      if l_0_10 ~= nil then
+        l_0_2 = l_0_10
+      end
+      l_0_10 = (string.match)(l_0_9, "^AppVersion:([%w%.]+)$")
+      if l_0_10 ~= nil then
+        l_0_3 = l_0_10
+      end
+      l_0_10 = (string.match)(l_0_9, "^AppVersionStr:([%w%.]+)$")
+      if l_0_10 ~= nil then
+        l_0_4 = l_0_10
+      end
+    end
+  end
+  do
+    if l_0_2 == nil then
+      return mp.CLEAN
+    end
+    local l_0_11 = "app_version_" .. l_0_2
+    local l_0_12 = 31536000
+    do
+      local l_0_13 = 50
+      if l_0_3 ~= nil then
+        AppendToRollingQueue(l_0_11, l_0_0, l_0_3, l_0_12, l_0_13)
+      else
+        if l_0_4 ~= nil then
+          AppendToRollingQueue(l_0_11, l_0_0, l_0_4, l_0_12, l_0_13)
+        end
+      end
+      return mp.INFECTED
+    end
+  end
+end
+

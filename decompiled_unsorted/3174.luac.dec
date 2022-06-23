@@ -1,0 +1,26 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3174.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 > 550000 and l_0_0 < 600000 then
+  return mp.INFECTED
+end
+if l_0_0 > 120000 and l_0_0 < 300000 then
+  return mp.INFECTED
+end
+if l_0_0 > 40000 and l_0_0 < 70000 then
+  return mp.INFECTED
+end
+if l_0_0 > 10000 and l_0_0 < 15000 then
+  return mp.INFECTED
+end
+if l_0_0 > 7600 and l_0_0 < 7700 then
+  return mp.INFECTED
+end
+if l_0_0 > 4100 and l_0_0 < 4300 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

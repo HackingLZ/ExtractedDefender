@@ -1,0 +1,11 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18428.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = pehdr.ImageBase + pehdr.AddressOfEntryPoint
+if (hstrlog[1]).VA == l_0_0 or (hstrlog[2]).VA == l_0_0 or (hstrlog[3]).VA == l_0_0 or (hstrlog[4]).VA == l_0_0 or (hstrlog[5]).VA == l_0_0 or (hstrlog[6]).VA == l_0_0 or (hstrlog[7]).VA == l_0_0 or (hstrlog[8]).VA == l_0_0 + 7 or (hstrlog[9]).VA == l_0_0 + 7 or (hstrlog[10]).VA == l_0_0 + 12 or (hstrlog[11]).VA == l_0_0 + 2 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

@@ -1,0 +1,20 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 763.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.GetResmgrBasePlugin)() ~= "Regkeyvalue" then
+  return mp.CLEAN
+end
+local l_0_0 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILEPATH))
+if l_0_0 == nil then
+  return mp.CLEAN
+end
+if (string.find)(l_0_0, "hklm\\software\\microsoft\\windows\\currentversion\\winevt\\publishers\\{751ef305-6c6e-4fed-b847-02ef79d26aef}", 1, true) == nil then
+  return mp.CLEAN
+end
+if (sysio.RegOpenKey)("HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Publishers\\{0a002690-3839-4e3a-b3b6-96d8df868d99}") == nil then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

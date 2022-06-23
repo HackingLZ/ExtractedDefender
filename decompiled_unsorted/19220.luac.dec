@@ -1,0 +1,40 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19220.luac 
+
+-- params : ...
+-- function num : 0
+if not (this_sigattrlog[3]).matched or not (this_sigattrlog[3]).wp2 then
+  return mp.CLEAN
+end
+local l_0_0 = (MpCommon.GetPersistContextNoPath)("mshta_start")
+if l_0_0 then
+  for l_0_4,l_0_5 in ipairs(l_0_0) do
+    l_0_5 = (mp.ContextualExpandEnvironmentVariables)(l_0_5)
+    if (sysio.IsFileExists)(l_0_5) and not (mp.IsKnownFriendlyFile)(l_0_5, false, false) then
+      (mp.ReportLowfi)(l_0_5, 1632017330)
+    end
+  end
+  local l_0_6 = (this_sigattrlog[3]).utf8p2
+  if l_0_6 then
+    l_0_6 = l_0_6:lower()
+    if (string.find)(l_0_6, "windows\\ccm", 1, true) or (string.find)(l_0_6, "\\ccm\\systemtemp\\", 1, true) then
+      return mp.CLEAN
+    end
+    local l_0_7 = (mp.GetExecutablesFromCommandLine)(l_0_6)
+    if l_0_7 then
+      for l_0_11,l_0_12 in ipairs(l_0_7) do
+        l_0_12 = (mp.ContextualExpandEnvironmentVariables)(l_0_12)
+        if (sysio.IsFileExists)(l_0_12) and not (mp.IsKnownFriendlyFile)(l_0_12, false, false) then
+          (mp.ReportLowfi)(l_0_12, 705262311)
+        end
+      end
+    end
+    do
+      do
+        do return mp.INFECTED end
+        return mp.CLEAN
+      end
+    end
+  end
+end
+

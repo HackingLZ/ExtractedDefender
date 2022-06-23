@@ -1,0 +1,27 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18582.luac 
+
+-- params : ...
+-- function num : 0
+if not isTamperProtectionOn() then
+  return mp.CLEAN
+end
+local l_0_0 = (mp.GetScannedPPID)()
+if l_0_0 == "" or l_0_0 == nil then
+  return mp.CLEAN
+end
+local l_0_1 = (string.lower)((mp.GetProcessCommandLine)(l_0_0))
+local l_0_2 = {}
+-- DECOMPILER ERROR at PC27: No list found for R2 , SetList fails
+
+local l_0_3 = false
+-- DECOMPILER ERROR at PC29: Overwrote pending register: R4 in 'AssignReg'
+
+for l_0_7,l_0_8 in ("(?:set|add)-mppreference\\s+-exclusionpath\\s+\\w:\\\\\\s*[,;]\\s*\\w+?")(l_0_2) do
+  l_0_3 = (MpCommon.StringRegExpSearch)(l_0_8, l_0_1)
+  if l_0_3 then
+    return mp.LOWFI
+  end
+end
+return mp.CLEAN
+

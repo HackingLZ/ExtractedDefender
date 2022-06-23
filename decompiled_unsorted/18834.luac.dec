@@ -1,0 +1,40 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18834.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC11: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[4]).matched then
+    local l_0_0, l_0_1 = nil
+  end
+  -- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
+
+  if l_0_0 ~= nil and (string.find)(l_0_0, "\\\\amd.com\\", 1, true) then
+    return mp.CLEAN
+  end
+  local l_0_2 = nil
+  local l_0_3 = nil
+  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
+
+  if ((bm.get_current_process_startup_info)()).command_line ~= nil then
+    local l_0_4 = nil
+    for l_0_8,l_0_9 in ipairs((mp.GetExecutablesFromCommandLine)(((bm.get_current_process_startup_info)()).command_line)) do
+      local l_0_5 = nil
+      -- DECOMPILER ERROR at PC42: Confused about usage of register: R8 in 'UnsetPending'
+
+      R8_PC42 = (mp.ContextualExpandEnvironmentVariables)(R8_PC42)
+      if (sysio.IsFileExists)(R8_PC42) then
+        (bm.add_related_file)(R8_PC42)
+      end
+    end
+  end
+  do
+    add_parents()
+    return mp.INFECTED
+  end
+end
+

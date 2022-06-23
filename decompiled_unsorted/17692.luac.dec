@@ -1,0 +1,20 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 17692.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.hasappendeddata then
+  local l_0_0 = (mp.getfilesize)()
+  local l_0_1 = pehdr.NumberOfSections
+  local l_0_2 = (pesecs[l_0_1]).PointerToRawData + (pesecs[l_0_1]).SizeOfRawData
+  if l_0_2 + 4 < l_0_0 then
+    (mp.readprotection)(false)
+    if (mp.readfile)(l_0_2, 4) == "SO!#" then
+      return mp.INFECTED
+    end
+  end
+end
+do
+  return mp.CLEAN
+end
+

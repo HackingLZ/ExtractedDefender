@@ -1,0 +1,23 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 17850.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (pe.get_versioninfo)()
+if l_0_0 == nil then
+  return mp.CLEAN
+end
+if (string.lower)(l_0_0.CompanyName) == "microsoft corporation" then
+  return mp.INFECTED
+end
+if (string.lower)(l_0_0.CompanyName) == "adobe corporation" then
+  return mp.INFECTED
+end
+if (string.lower)(l_0_0.CompanyName) == "pfu limited" then
+  return mp.INFECTED
+end
+if (string.lower)(l_0_0.CompanyName) == " scriptlogic corporation" then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

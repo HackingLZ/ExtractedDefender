@@ -1,0 +1,49 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19127.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.isexe ~= true then
+  return mp.CLEAN
+end
+if peattributes.hasstandardentry == true then
+  return mp.CLEAN
+end
+if pehdr.NumberOfSections ~= 4 then
+  return mp.CLEAN
+end
+if pehdr.TimeDateStamp ~= 0 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfHeaders ~= 1024 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfCode < 1536 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfCode > 2048 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfInitializedData ~= 4608 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfUninitializedData ~= 0 then
+  return mp.CLEAN
+end
+if pehdr.BaseOfCode ~= 4096 then
+  return mp.CLEAN
+end
+if pehdr.FileAlignment ~= 512 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfHeaders ~= 1024 then
+  return mp.CLEAN
+end
+if pehdr.Subsystem ~= 2 then
+  return mp.CLEAN
+end
+if pehdr.CheckSum ~= 94440 then
+  return mp.CLEAN
+end
+return mp.INFECTED
+

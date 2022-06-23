@@ -1,0 +1,10 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 2325.luac 
+
+-- params : ...
+-- function num : 0
+if (((((((((hstrlog[5]).matched and not (hstrlog[6]).matched) or (hstrlog[7]).matched) and not (hstrlog[8]).matched) or (hstrlog[9]).matched) and not (hstrlog[10]).matched) or (hstrlog[11]).matched) and not (hstrlog[1]).matched) or not (hstrlog[2]).matched or 0 + 1 + 1 + 1 + 1 + 1 + 1 + 1 ~= 7 or (not (hstrlog[3]).hitcount and (hstrlog[4]).hitcount <= 10) or (hstrlog[5]).hitcount > 5) then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

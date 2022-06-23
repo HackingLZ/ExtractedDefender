@@ -1,0 +1,41 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18898.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_1 = nil
+do
+  if (this_sigattrlog[2]).matched and (this_sigattrlog[2]).utf8p1 ~= nil then
+    local l_0_0 = (this_sigattrlog[2]).utf8p1
+  end
+  local l_0_2 = nil
+  -- DECOMPILER ERROR at PC26: Overwrote pending register: R2 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC29: Overwrote pending register: R1 in 'AssignReg'
+
+  do
+    if (not (this_sigattrlog[1]).matched or (this_sigattrlog[1]).utf8p1 == nil or nil ~= nil) and l_0_2 ~= nil then
+      local l_0_3, l_0_4 = nil
+      -- DECOMPILER ERROR at PC39: Overwrote pending register: R3 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC44: Overwrote pending register: R4 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC67: Confused about usage of register: R4 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC75: Confused about usage of register: R4 in 'UnsetPending'
+
+      if (sysio.IsFileExists)(nil) and (sysio.IsFileExists)(nil) and (mp.IsKnownFriendlyFile)(nil, true, false) and not (mp.IsKnownFriendlyFile)(nil, true, false) then
+        (bm.add_related_file)(nil)
+        ;
+        (bm.request_SMS)(l_0_3, "l")
+        ;
+        (bm.add_action)("SingleProcessScan", 100)
+        return mp.INFECTED
+      end
+    end
+    return mp.CLEAN
+  end
+end
+

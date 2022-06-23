@@ -1,0 +1,41 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4053.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = 805306514
+local l_0_1 = (MpDetection.GetCurrentThreat)()
+for l_0_5,l_0_6 in pairs(l_0_1.Resources) do
+  if l_0_6.Schema == "file" and (crypto.bitand)(l_0_6.Type, MpCommon.MPRESOURCE_TYPE_CONCRETE) == MpCommon.MPRESOURCE_TYPE_CONCRETE then
+    Infrastructure_DetectionReportFolder(l_0_0, l_0_6.Path, true)
+  end
+end
+local l_0_7 = (sysio.ExpandFilePath)("%appdata%", true)
+if l_0_7 ~= nil then
+  for l_0_11,l_0_12 in pairs(l_0_7) do
+    local l_0_13 = l_0_12 .. "\\Microsoft\\Windows\\Start Menu\\Programs\\PPC-software\\PPC-software.lnk"
+    if (sysio.IsFileExists)(l_0_13) then
+      Infrastructure_DetectionReportFolder(l_0_0, l_0_13, true)
+    end
+  end
+end
+do
+  l_0_7 = (sysio.ExpandFilePath)("%userprofile%", true)
+  if l_0_7 ~= nil then
+    for l_0_17,l_0_18 in pairs(l_0_7) do
+      local l_0_19 = l_0_18 .. "\\Documents\\PPC-software\\log.txt"
+      if (sysio.IsFileExists)(l_0_19) then
+        Infrastructure_DetectionReportFolder(l_0_0, l_0_19, false)
+      end
+    end
+  end
+  do
+    Infrastructure_ReportSoftwareRegistryByKey(l_0_0, "PPC-software")
+    Infrastructure_ReportSoftwareRegistryByKey(l_0_0, "PPC-softwareLanguage")
+    ;
+    (MpDetection.ReportResource)("regkey", "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\PPC-software", l_0_0, false)
+    ;
+    (MpDetection.ReportResource)("regkey", "HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\App Paths\\PPC-software", l_0_0, false)
+  end
+end
+

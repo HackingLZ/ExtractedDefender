@@ -1,0 +1,62 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4277.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.GetUACMetadata)()
+if l_0_0.Type == mp.AMSI_UAC_REQUEST_TYPE_EXE then
+  if ((string.sub)((string.lower)((l_0_0.Info).ApplicationName), -24) == "exesampleuacdetected.exe" or (string.sub)((string.lower)((l_0_0.Info).CommandLine), -25) == "exesampleuacdetected.exe\"") and (mp.TriggerScanResource)("file", (l_0_0.Info).ApplicationName) == mp.INFECTED then
+    return mp.TRUE
+  end
+  if (string.sub)((string.lower)((l_0_0.Info).CommandLine), -62) == "exesampleuacdetected-9f298338-4c4e-49e8-bd3b-9a3d453c9b79.exe\"" then
+    (mp.TriggerScanResource)("file", (l_0_0.Info).ApplicationName)
+    return mp.FALSE
+  end
+  if (string.sub)((string.lower)((l_0_0.Info).ApplicationName), -58) == "uacsamplerequired-a9bd18c3-77b3-4796-a852-232135ad4e6b.exe" or (string.sub)((string.lower)((l_0_0.Info).CommandLine), -59) == "uacsamplerequired-a9bd18c3-77b3-4796-a852-232135ad4e6b.exe\"" then
+    (mp.TriggerScanResource)("file", (l_0_0.Info).ApplicationName)
+    return mp.FALSE
+  end
+  if (string.sub)((string.lower)((l_0_0.Info).ApplicationName), -59) == "uacsampleexpensive-1dd483a0-149d-4020-81af-a9b0b5a2f535.exe" or (string.sub)((string.lower)((l_0_0.Info).CommandLine), -60) == "uacsampleexpensive-1dd483a0-149d-4020-81af-a9b0b5a2f535.exe\"" then
+    (mp.TriggerScanResource)("file", (l_0_0.Info).ApplicationName)
+    return mp.FALSE
+  end
+  if (string.sub)((string.lower)((l_0_0.Info).ApplicationName), -55) == "uacsamplelowfi-811e7c62-ee68-4292-b4c1-17f1d4ce13a8.exe" or (string.sub)((string.lower)((l_0_0.Info).CommandLine), -56) == "uacsamplelowfi-811e7c62-ee68-4292-b4c1-17f1d4ce13a8.exe\"" then
+    (mp.TriggerScanResource)("file", (l_0_0.Info).ApplicationName)
+    return mp.FALSE
+  end
+end
+if l_0_0.Type == mp.AMSI_UAC_REQUEST_TYPE_COM and (string.lower)((l_0_0.Info).Clsid) == "48012511-82cc-48f3-ae5b-40c7401a5a09" and (mp.TriggerScanResource)("file", (l_0_0.Info).ServerBinary) == mp.INFECTED then
+  return mp.TRUE
+end
+if l_0_0.Type == mp.AMSI_UAC_REQUEST_TYPE_MSI then
+  if (l_0_0.Info).ProductName ~= "MyProductName-31995211-347d-4da9-ae9e-d0de2944d600" then
+    return mp.FALSE
+  end
+  if (l_0_0.Info).Version ~= "MyVersion-31995211-347d-4da9-ae9e-d0de2944d600" and (l_0_0.Info).Version ~= "1.00.0000" then
+    return mp.FALSE
+  end
+  if (l_0_0.Info).Manufacturer ~= "MyManufacturer-31995211-347d-4da9-ae9e-d0de2944d600" then
+    return mp.FALSE
+  end
+  return mp.TRUE
+end
+if l_0_0.Type == mp.AMSI_UAC_REQUEST_TYPE_AX and (l_0_0.Info).SourceURL == "http://www.maliciousurl-695dba18-2bb9-429a-a9a6-fe89a0eb945e.com/" and (mp.TriggerScanResource)("file", (l_0_0.Info).LocalInstallPath) == mp.INFECTED then
+  return mp.TRUE
+end
+if l_0_0.Type == mp.AMSI_UAC_REQUEST_TYPE_PACKAGED_APP then
+  if (l_0_0.Info).ApplicationName ~= "AppName-e1db12d7-cc43-4412-8602-381d6b667a36" then
+    return mp.FALSE
+  end
+  if (l_0_0.Info).CommandLine ~= "CommandLine-e1db12d7-cc43-4412-8602-381d6b667a36" then
+    return mp.FALSE
+  end
+  if (l_0_0.Info).PackageFamilyName ~= "FamilyName-e1db12d7-cc43-4412-8602-381d6b667a36" then
+    return mp.FALSE
+  end
+  if (l_0_0.Info).ApplicationId ~= "AppId-e1db12d7-cc43-4412-8602-381d6b667a36" then
+    return mp.FALSE
+  end
+  return mp.TRUE
+end
+return mp.FALSE
+

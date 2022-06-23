@@ -1,0 +1,26 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 17814.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC12: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p1 ~= nil then
+    local l_0_0, l_0_1 = nil, nil
+  end
+  -- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
+
+  local l_0_2 = nil
+  local l_0_3 = R1_PC23
+  local l_0_4 = ((bm.get_imagepath)())
+  -- DECOMPILER ERROR at PC31: Overwrote pending register: R3 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
+
+  if (l_0_4 == nil or nil ~= nil) and l_0_3 ~= nil and (string.lower)(nil) == (string.lower)(l_0_3) then
+    return mp.INFECTED
+  end
+  return mp.CLEAN
+end
+

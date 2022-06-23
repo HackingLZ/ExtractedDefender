@@ -1,0 +1,228 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19661.luac 
+
+-- params : ...
+-- function num : 0
+if (versioning.GetTestMode)() ~= 65000 and (MpCommon.IsSampled)(1000, true, true, true) == false then
+  return mp.CLEAN
+end
+local l_0_0, l_0_1 = nil, nil
+if (this_sigattrlog[5]).matched then
+  l_0_0 = (this_sigattrlog[5]).utf8p1
+  l_0_1 = 3
+else
+  if (this_sigattrlog[6]).matched then
+    l_0_0 = (this_sigattrlog[6]).utf8p1
+    l_0_1 = 4
+  else
+    if (this_sigattrlog[7]).matched then
+      l_0_0 = (this_sigattrlog[7]).utf8p1
+      l_0_1 = 7
+    else
+      if (this_sigattrlog[8]).matched then
+        l_0_0 = (this_sigattrlog[8]).utf8p1
+        l_0_1 = 8
+      else
+        if (this_sigattrlog[9]).matched then
+          l_0_0 = (this_sigattrlog[9]).utf8p1
+          l_0_1 = 9
+        else
+          if (this_sigattrlog[10]).matched then
+            l_0_0 = (this_sigattrlog[10]).utf8p1
+            l_0_1 = 10
+          else
+            if (this_sigattrlog[11]).matched then
+              l_0_0 = (this_sigattrlog[11]).utf8p1
+              l_0_1 = 11
+            else
+              if (this_sigattrlog[12]).matched then
+                l_0_0 = (this_sigattrlog[12]).utf8p1
+                l_0_1 = 13
+              else
+                if (this_sigattrlog[13]).matched then
+                  l_0_0 = (this_sigattrlog[13]).utf8p1
+                  l_0_1 = 14
+                else
+                  if (this_sigattrlog[14]).matched then
+                    l_0_0 = (this_sigattrlog[14]).utf8p1
+                    l_0_1 = 19
+                  else
+                    if (this_sigattrlog[15]).matched then
+                      l_0_0 = (this_sigattrlog[15]).utf8p1
+                      l_0_1 = 20
+                    else
+                      if (this_sigattrlog[16]).matched then
+                        l_0_0 = (this_sigattrlog[16]).utf8p1
+                        l_0_1 = 21
+                      else
+                        if (this_sigattrlog[17]).matched then
+                          l_0_0 = (this_sigattrlog[17]).utf8p1
+                          l_0_1 = 22
+                        else
+                          if (this_sigattrlog[18]).matched then
+                            l_0_0 = (this_sigattrlog[18]).utf8p1
+                            l_0_1 = 23
+                          else
+                            if (this_sigattrlog[19]).matched then
+                              l_0_0 = (this_sigattrlog[19]).utf8p1
+                              l_0_1 = 26
+                            else
+                              if (this_sigattrlog[20]).matched then
+                                l_0_0 = (this_sigattrlog[20]).utf8p1
+                                l_0_1 = 27
+                              else
+                                if (this_sigattrlog[21]).matched then
+                                  l_0_0 = (this_sigattrlog[21]).utf8p1
+                                  l_0_1 = 30
+                                else
+                                  if (this_sigattrlog[22]).matched then
+                                    l_0_0 = (this_sigattrlog[22]).utf8p1
+                                    l_0_1 = 31
+                                  else
+                                    if (this_sigattrlog[23]).matched then
+                                      l_0_0 = (this_sigattrlog[23]).utf8p1
+                                      l_0_1 = 32
+                                    else
+                                      if (this_sigattrlog[24]).matched then
+                                        l_0_0 = (this_sigattrlog[24]).utf8p1
+                                        l_0_1 = 34
+                                      else
+                                        if (this_sigattrlog[25]).matched then
+                                          l_0_0 = (this_sigattrlog[25]).utf8p1
+                                          l_0_1 = 38
+                                        else
+                                          if (this_sigattrlog[26]).matched then
+                                            l_0_0 = (this_sigattrlog[26]).utf8p1
+                                            l_0_1 = 40
+                                          else
+                                            if (this_sigattrlog[27]).matched then
+                                              l_0_0 = (this_sigattrlog[27]).utf8p1
+                                              l_0_1 = 56
+                                            else
+                                              if (this_sigattrlog[28]).matched then
+                                                l_0_0 = (this_sigattrlog[28]).utf8p1
+                                                l_0_1 = 57
+                                              else
+                                                if (this_sigattrlog[29]).matched then
+                                                  l_0_0 = (this_sigattrlog[29]).utf8p1
+                                                  l_0_1 = 58
+                                                else
+                                                  if (this_sigattrlog[30]).matched then
+                                                    l_0_0 = (this_sigattrlog[30]).utf8p1
+                                                    l_0_1 = 99
+                                                  else
+                                                    if (this_sigattrlog[31]).matched then
+                                                      l_0_0 = (this_sigattrlog[31]).utf8p1
+                                                      l_0_1 = 100
+                                                    else
+                                                      if (this_sigattrlog[32]).matched then
+                                                        l_0_0 = (this_sigattrlog[32]).utf8p1
+                                                        l_0_1 = 101
+                                                      else
+                                                        if (this_sigattrlog[33]).matched then
+                                                          l_0_0 = (this_sigattrlog[33]).utf8p1
+                                                          l_0_1 = 102
+                                                        else
+                                                          if (this_sigattrlog[34]).matched then
+                                                            l_0_0 = (this_sigattrlog[34]).utf8p1
+                                                            l_0_1 = 103
+                                                          else
+                                                            if (this_sigattrlog[35]).matched then
+                                                              l_0_0 = (this_sigattrlog[35]).utf8p1
+                                                              l_0_1 = 104
+                                                            else
+                                                              if (this_sigattrlog[36]).matched then
+                                                                l_0_0 = (this_sigattrlog[36]).utf8p1
+                                                                l_0_1 = 105
+                                                              else
+                                                                if (this_sigattrlog[37]).matched then
+                                                                  l_0_0 = (this_sigattrlog[37]).utf8p1
+                                                                  l_0_1 = 106
+                                                                else
+                                                                  if (this_sigattrlog[38]).matched then
+                                                                    l_0_0 = (this_sigattrlog[38]).utf8p1
+                                                                    l_0_1 = 107
+                                                                  else
+                                                                    if (this_sigattrlog[39]).matched then
+                                                                      l_0_0 = (this_sigattrlog[39]).utf8p1
+                                                                      l_0_1 = 108
+                                                                    else
+                                                                      if (this_sigattrlog[40]).matched then
+                                                                        l_0_0 = (this_sigattrlog[40]).utf8p1
+                                                                        l_0_1 = 109
+                                                                      else
+                                                                        if (this_sigattrlog[41]).matched then
+                                                                          l_0_0 = (this_sigattrlog[41]).utf8p1
+                                                                          l_0_1 = 253
+                                                                        else
+                                                                          if (this_sigattrlog[42]).matched then
+                                                                            l_0_0 = (this_sigattrlog[42]).utf8p1
+                                                                            l_0_1 = 254
+                                                                          else
+                                                                            if (this_sigattrlog[43]).matched then
+                                                                              l_0_0 = (this_sigattrlog[43]).utf8p1
+                                                                              l_0_1 = 259
+                                                                            else
+                                                                              return mp.CLEAN
+                                                                            end
+                                                                          end
+                                                                        end
+                                                                      end
+                                                                    end
+                                                                  end
+                                                                end
+                                                              end
+                                                            end
+                                                          end
+                                                        end
+                                                      end
+                                                    end
+                                                  end
+                                                end
+                                              end
+                                            end
+                                          end
+                                        end
+                                      end
+                                    end
+                                  end
+                                end
+                              end
+                            end
+                          end
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+local l_0_2 = lastIndexOf(l_0_0, ".", #l_0_0 - 7)
+local l_0_3 = (string.lower)((string.sub)(l_0_0, l_0_2 + 1))
+if not l_0_3 then
+  return mp.CLEAN
+end
+local l_0_4 = l_0_3 .. "_" .. l_0_1
+l_0_0 = (string.lower)(l_0_0)
+if not l_0_0 then
+  return mp.CLEAN
+end
+local l_0_5, l_0_6 = (mp.CheckUrl)(l_0_0)
+if l_0_5 == 1 and l_0_6 == 1 then
+  return mp.CLEAN
+end
+local l_0_7 = (MpCommon.QueryPersistContextNoPath)("deprecatedDnsRecordType", l_0_4)
+if not l_0_7 then
+  (MpCommon.AppendPersistContextNoPath)("deprecatedDnsRecordType", l_0_4, 3600)
+end
+if (MpCommon.GetPersistContextCountNoPath)("deprecatedDnsRecordType") > 5 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

@@ -1,0 +1,13 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3332.luac 
+
+-- params : ...
+-- function num : 0
+if not (mp.get_mpattribute)("MacOS:HSTR:Generality.E") then
+  return mp.CLEAN
+end
+if #(mp.enum_mpattributesubstring)("Detection:Exploit:iPhoneOS") == 0 and #(mp.enum_mpattributesubstring)("TEL:Exploit:iPhoneOS") == 0 and #(mp.enum_mpattributesubstring)("Detection:Exploit:MacOS") == 0 and #(mp.enum_mpattributesubstring)("TEL:Exploit:MacOS") == 0 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

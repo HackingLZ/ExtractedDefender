@@ -1,0 +1,67 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19420.luac 
+
+-- params : ...
+-- function num : 0
+if (this_sigattrlog[4]).matched then
+  return mp.INFECTED
+end
+local l_0_0 = nil
+if (this_sigattrlog[3]).matched and (this_sigattrlog[3]).utf8p2 ~= nil then
+  l_0_0 = ((mp.ContextualExpandEnvironmentVariables)((this_sigattrlog[3]).utf8p2)):lower()
+end
+local l_0_1 = {}
+-- DECOMPILER ERROR at PC32: No list found for R1 , SetList fails
+
+-- DECOMPILER ERROR at PC33: Overwrote pending register: R2 in 'AssignReg'
+
+-- DECOMPILER ERROR at PC34: Overwrote pending register: R3 in 'AssignReg'
+
+-- DECOMPILER ERROR at PC35: Overwrote pending register: R4 in 'AssignReg'
+
+if not (" -encode ")(" -decode ", " -urlcache ") then
+  return mp.CLEAN
+end
+if contains(l_0_0, "takari regulatory") then
+  return mp.CLEAN
+end
+if contains(l_0_0, "template master") then
+  return mp.CLEAN
+end
+local l_0_2 = (string.lower)((bm.get_imagepath)())
+if contains(l_0_2, "outlook.exe") then
+  return mp.CLEAN
+end
+if contains(l_0_2, "\\olk.exe") then
+  return mp.CLEAN
+end
+local l_0_3 = {}
+-- DECOMPILER ERROR at PC86: No list found for R3 , SetList fails
+
+local l_0_4 = {}
+l_0_4.min = 1
+l_0_4.max = 5
+if not QueryProcContext(l_0_3, l_0_4) then
+  return mp.CLEAN
+end
+local l_0_5 = {}
+-- DECOMPILER ERROR at PC101: No list found for R5 , SetList fails
+
+local l_0_6 = {}
+l_0_6.min = 1
+l_0_6.max = 5
+if not QueryProcContext(l_0_5, l_0_6) then
+  return mp.CLEAN
+end
+local l_0_7 = (mp.GetExecutablesFromCommandLine)(l_0_0)
+if l_0_7 ~= nil then
+  for l_0_11,l_0_12 in ipairs(l_0_7) do
+    if l_0_12 ~= nil and l_0_12 ~= "" and (sysio.IsFileExists)(l_0_12) and not (mp.IsKnownFriendlyFile)(l_0_12, false, false) then
+      (bm.add_related_file)(l_0_12)
+    end
+  end
+end
+do
+  return mp.INFECTED
+end
+

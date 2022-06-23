@@ -1,0 +1,22 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3326.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+local l_0_1 = 0
+if l_0_0 >= 4096 then
+  l_0_1 = 4096
+else
+  l_0_1 = l_0_0
+end
+;
+(mp.readprotection)(false)
+local l_0_2 = (mp.readfile)(0, l_0_1)
+local l_0_3, l_0_4, l_0_5, l_0_6, l_0_7 = (string.find)(l_0_2, "\\picw(%d+).+wbmbitspixel(%d+)\\.+wbmwidthbytes(%d+)")
+local l_0_8 = l_0_5 * l_0_6
+if tonumber(l_0_8) < tonumber(l_0_7) then
+  return mp.LOWFI
+end
+return mp.CLEAN
+

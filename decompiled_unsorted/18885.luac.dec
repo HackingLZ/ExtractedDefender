@@ -1,0 +1,34 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18885.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = nil
+local l_0_1 = nil
+if (sysio.IsFileExists)((string.lower)((mp.PathToWin32Path)((bm.get_imagepath)()))) and not (mp.IsKnownFriendlyFile)((string.lower)((mp.PathToWin32Path)((bm.get_imagepath)())), true, false) then
+  (bm.add_related_string)("VaultAccess", (string.lower)((mp.PathToWin32Path)((bm.get_imagepath)())), bm.RelatedStringBMReport)
+  ;
+  (bm.add_related_file)((string.lower)((mp.PathToWin32Path)((bm.get_imagepath)())))
+  return mp.INFECTED
+end
+local l_0_2, l_0_3 = , (bm.get_process_relationships)()
+if l_0_3 ~= nil then
+  for l_0_7,l_0_8 in ipairs(l_0_3) do
+    local l_0_4 = nil
+    -- DECOMPILER ERROR at PC46: Confused about usage of register: R8 in 'UnsetPending'
+
+    if R8_PC46.image_path ~= nil then
+      l_0_1 = (string.lower)((mp.PathToWin32Path)(R8_PC46.image_path))
+      if (sysio.IsFileExists)(l_0_1) and not (mp.IsKnownFriendlyFile)(l_0_1, true, false) then
+        (bm.add_related_string)("VaultAccess", l_0_1, bm.RelatedStringBMReport)
+        ;
+        (bm.add_related_file)(l_0_1)
+        return mp.INFECTED
+      end
+    end
+  end
+end
+do
+  return mp.CLEAN
+end
+

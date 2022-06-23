@@ -1,0 +1,36 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 32.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON)
+if l_0_0 == mp.SCANREASON_ONOPEN or l_0_0 == mp.SCANREASON_ONMODIFIEDHANDLECLOSE then
+  local l_0_1 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILENAME))
+  if (mp.getfilesize)() == 81 and (string.sub)(l_0_1, -3) == ".ph" then
+    (mp.set_mpattribute)("Lua:SefnitConfig2")
+  else
+    local l_0_2 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILEPATH))
+    if ((string.sub)(l_0_2, -27) == "\\application policy service" or (string.sub)(l_0_2, -30) == "\\windows internet name service") and ((string.sub)(l_0_1, -4) == ".exe" or (string.sub)(l_0_1, -4) == ".dll") then
+      (mp.set_mpattribute)("Lowfi:Lua:SefnitFilenameTorComponent")
+    end
+    if (string.sub)(l_0_2, -5) == "\\dfrg" and l_0_1 == "runner.exe" then
+      (mp.set_mpattribute)("Lowfi:Lua:TrojanSefnitBitcoinMining")
+    end
+  end
+end
+do
+  do
+    if (headerpage[2] == 42 and headerpage[3] == 26 and headerpage[4] == 175 and headerpage[5] == 220) or headerpage[2] == 225 and headerpage[3] == 58 and headerpage[4] == 192 and headerpage[5] == 106 then
+      local l_0_3 = (mp.crc32)(0, headerpage, 2, 64)
+      if l_0_3 == 1980615234 then
+        return mp.INFECTED
+      else
+        if l_0_3 == 2557802102 then
+          return mp.INFECTED
+        end
+      end
+    end
+    return mp.CLEAN
+  end
+end
+

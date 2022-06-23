@@ -1,0 +1,24 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18048.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = nil
+local l_0_1, l_0_2 = , pcall(mp.GetParentProcInfo)
+if l_0_2 and mp.GetParentProcInfo ~= nil then
+  l_0_1 = (mp.GetParentProcInfo).ppid
+end
+if l_0_1 ~= nil then
+  if IsPidExcluded(l_0_1) then
+    return mp.CLEAN
+  end
+  if IsTacticObservedForPid(l_0_1, "processinjection") then
+    return mp.LOWFI
+  end
+end
+local l_0_3 = nil
+if (mp.GetScannedPPID)() ~= "" and (mp.GetScannedPPID)() ~= nil and IsTacticObservedForPid((mp.GetScannedPPID)(), "processinjection_target") then
+  return mp.LOWFI
+end
+return mp.CLEAN
+

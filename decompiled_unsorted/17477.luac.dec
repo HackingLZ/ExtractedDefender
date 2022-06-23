@@ -1,0 +1,14 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 17477.luac 
+
+-- params : ...
+-- function num : 0
+(mp.readprotection)(false)
+local l_0_0 = (mp.getfilesize)()
+local l_0_1 = tostring((mp.readfile)(0, l_0_0))
+l_0_1 = (string.lower)(l_0_1)
+if (string.find)(l_0_1, "j7pjsibhd9dztmzk7ddgdohxux5lws3aa9fqa9lxwkrk4omnzgqt6euej4i", 1, true) ~= nil then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

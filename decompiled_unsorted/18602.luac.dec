@@ -1,0 +1,27 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18602.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (hstrlog[3]).VA + 42
+local l_0_1 = (pe.mmap_va)(l_0_0, 4)
+if (string.byte)(l_0_1, 1) == 69 then
+  l_0_0 = l_0_0 + 5
+else
+  if (string.byte)(l_0_1, 1) == 133 then
+    l_0_0 = l_0_0 + 8
+  else
+    return mp.CLEAN
+  end
+end
+l_0_1 = (pe.mmap_va)(l_0_0, 4)
+local l_0_2 = (mp.readu_u32)(l_0_1, 1)
+local l_0_3 = (pe.mmap_va)(l_0_2, 16)
+if (string.sub)(l_0_3, 1, 7) == "dfghjkl" then
+  return mp.INFECTED
+end
+if (string.sub)(l_0_3, 1, 14) == "dfertter2342zc" then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

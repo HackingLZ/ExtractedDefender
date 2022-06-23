@@ -1,0 +1,50 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 865.luac 
+
+-- params : ...
+-- function num : 0
+if not (mp.IsHipsRuleEnabled)("fd960b4a-d8d7-4590-a6ce-0219df56a135") then
+  return mp.CLEAN
+end
+local l_0_0 = (mp.getfilename)((mp.bitor)(mp.FILEPATH_QUERY_FNAME, mp.FILEPATH_QUERY_LOWERCASE))
+if l_0_0:len() < 9 then
+  return mp.CLEAN
+end
+local l_0_1 = {}
+l_0_1[".doc"] = ""
+l_0_1[".xls"] = ""
+l_0_1[".ppt"] = ""
+l_0_1[".pdf"] = ""
+l_0_1[".jpg"] = ""
+l_0_1[".gif"] = ""
+l_0_1[".png"] = ""
+l_0_1[".pic"] = ""
+l_0_1[".txt"] = ""
+l_0_1[".mp3"] = ""
+l_0_1["®cod"] = ""
+l_0_1["®slx"] = ""
+l_0_1["®tpp"] = ""
+l_0_1["®fdp"] = ""
+l_0_1["®gpj"] = ""
+l_0_1["®fig"] = ""
+l_0_1["®gnp"] = ""
+l_0_1["®cip"] = ""
+l_0_1["®txt"] = ""
+l_0_1["\1743pm"] = ""
+local l_0_2 = {}
+l_0_2[".docx"] = ""
+l_0_2[".xlsx"] = ""
+l_0_2[".pptx"] = ""
+l_0_2["®xcod"] = ""
+l_0_2["®xlsx"] = ""
+l_0_2["®xtpp"] = ""
+local l_0_3 = (string.sub)(l_0_0, -8)
+if l_0_1[(string.sub)(l_0_3, 1, 4)] and (string.sub)(l_0_3, -4) == ".exe" then
+  (mp.set_mpattribute)("Lua:ASRContextEXEDoubleExtension")
+end
+l_0_3 = (string.sub)(l_0_0, -9)
+if l_0_2[(string.sub)(l_0_3, 1, 5)] and (string.sub)(l_0_3, -4) == ".exe" then
+  (mp.set_mpattribute)("Lua:ASRContextEXEDoubleExtension")
+end
+return mp.CLEAN
+

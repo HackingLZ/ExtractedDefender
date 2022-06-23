@@ -1,0 +1,280 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4325.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 ~= nil and l_0_0 >= 8192 then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.enum_mpattributesubstring)("SCPT:ClnWordsCat1")
+local l_0_2 = (mp.enum_mpattributesubstring)("SCPT:ClnWordsCat2")
+local l_0_3 = (mp.enum_mpattributesubstring)("SCPT:ClnWordsCat3")
+if #l_0_1 >= 1 or #l_0_1 + #l_0_2 >= 6 or #l_0_3 >= 3 then
+  return mp.CLEAN
+end
+local l_0_4 = (mp.enum_mpattributesubstring)("SCPT:RansomNoteCat1")
+local l_0_5 = (mp.enum_mpattributesubstring)("SCPT:RansomNoteCat2")
+local l_0_6 = (mp.enum_mpattributesubstring)("SCPT:RansomNoteCat3")
+local l_0_7 = (mp.enum_mpattributesubstring)("SCPT:RansomNoteCat4")
+local l_0_8 = (mp.enum_mpattributesubstring)("SCPT:RansomNoteCat5")
+local l_0_9 = (mp.enum_mpattributesubstring)("SCPT:RansomNoteCat6")
+local l_0_10 = #l_0_4 + #l_0_5
+if l_0_10 == 0 or #l_0_6 == 0 or #l_0_7 + #l_0_8 + #l_0_9 <= 2 then
+  return mp.CLEAN
+end
+if mp.HEADERPAGE_SZ < 1596 then
+  return mp.CLEAN
+end
+local l_0_11 = tostring(headerpage)
+local l_0_12 = {}
+l_0_12.infect = 500
+l_0_12.ransom = 500
+l_0_12.attack = 200
+l_0_12.corrupt = 200
+l_0_12.damage = 200
+l_0_12.locked = 200
+l_0_12.payment = 200
+l_0_12.purchase = 200
+l_0_12.recover = 200
+l_0_12.restore = 200
+l_0_12.secret = 200
+l_0_12.hacked = 100
+l_0_12["buy bitcoins"] = 500
+l_0_12["decrypt data"] = 500
+l_0_12["decrypt files"] = 500
+l_0_12["decryption tool"] = 500
+l_0_12["encrypted files"] = 500
+l_0_12["files encrypted"] = 500
+l_0_12.onion = 500
+l_0_12["recover files"] = 500
+l_0_12["restore files"] = 500
+l_0_12["aes-128"] = 200
+l_0_12.bitcoin = 200
+l_0_12["rsa-1024"] = 200
+l_0_12["rsa-2048"] = 200
+l_0_12["send decryption"] = 200
+l_0_12["tor browser"] = 200
+l_0_12["tor project"] = 200
+l_0_12.torbrowser = 200
+l_0_12["tor-browser"] = 200
+l_0_12.wallet = 200
+l_0_12["aes 128"] = 100
+l_0_12["aes 256"] = 100
+l_0_12["aes-256"] = 100
+l_0_12["airmail.cc"] = 100
+l_0_12["bitmessage.ch"] = 100
+l_0_12.cipher = 100
+l_0_12.cryptocurrencies = 100
+l_0_12["cryptography algorithm"] = 100
+l_0_12.cryptosystem = 100
+l_0_12.extension = 100
+l_0_12["firemail.cc"] = 100
+l_0_12.guarantee = 100
+l_0_12["important files"] = 100
+l_0_12["mail.ch"] = 100
+l_0_12["private key"] = 100
+l_0_12.protonmail = 100
+l_0_12["rsa 1024"] = 100
+l_0_12["rsa 2048"] = 100
+l_0_12["tuta.io"] = 100
+l_0_12.tutanota = 100
+l_0_12["return files"] = 50
+l_0_12["third part"] = 50
+l_0_12["third-part"] = 50
+l_0_12["write email"] = 50
+l_0_12.weakness = 20
+l_0_12.decryption = 100
+l_0_12.encryption = 100
+l_0_12.overwrite = 100
+l_0_12.permanent = 100
+l_0_12.scam = 100
+l_0_12.unlock = 100
+l_0_12["valuable data"] = 100
+l_0_12.dropbox = 50
+l_0_12.encrypted = 50
+l_0_12.files = 50
+l_0_12.identification = 50
+l_0_12.important = 50
+l_0_12.impossib = 50
+l_0_12.irrevocably = 50
+l_0_12.lose = 50
+l_0_12.paying = 50
+l_0_12.personal = 50
+l_0_12.price = 50
+l_0_12.program = 50
+l_0_12.shutdown = 50
+l_0_12.strong = 50
+l_0_12.warning = 50
+l_0_12.website = 50
+l_0_12.assistance = 20
+l_0_12.attention = 20
+l_0_12.business = 20
+l_0_12.chat = 20
+l_0_12.computer = 20
+l_0_12.data = 20
+l_0_12.documents = 20
+l_0_12.download = 20
+l_0_12.folder = 20
+l_0_12.follow = 20
+l_0_12.free = 20
+l_0_12.hours = 20
+l_0_12.https = 20
+l_0_12.hxxps = 20
+l_0_12.information = 20
+l_0_12.install = 20
+l_0_12.instruction = 20
+l_0_12.mail = 20
+l_0_12.money = 20
+l_0_12.photos = 20
+l_0_12.possible = 20
+l_0_12.private = 20
+l_0_12.problem = 20
+l_0_12["return"] = 20
+l_0_12.send = 20
+l_0_12.server = 20
+l_0_12.software = 20
+l_0_12.sure = 20
+l_0_12.time = 20
+l_0_12.tool = 20
+l_0_12.unique = 20
+l_0_12.video = 20
+l_0_12.danger = 200
+l_0_12.locker = 100
+l_0_12.greetings = 20
+l_0_12.welcome = 20
+l_0_12.sorry = 100
+l_0_12["what happened"] = 50
+l_0_12["crypto locker"] = 500
+l_0_12["bad news"] = 100
+l_0_12["do not worry"] = 100
+l_0_12["dont worry"] = 100
+l_0_12["contact us"] = 50
+l_0_12["restore file"] = 200
+l_0_12["please be careful"] = 200
+l_0_12["read this text carefully"] = 200
+l_0_12["do not modify"] = 200
+l_0_12["do not delete"] = 200
+l_0_12["do not rename"] = 200
+l_0_12["do not try restore"] = 200
+l_0_12.decoded = 50
+l_0_12["your network"] = 100
+l_0_12["personal files"] = 200
+l_0_12["all your data"] = 200
+l_0_12["recover my files"] = 200
+l_0_12["bitcoin network"] = 200
+l_0_12["bitcoin wallet"] = 200
+l_0_12.bitfinex = 200
+l_0_12.bitpanda = 200
+l_0_12.bitquick = 200
+l_0_12.bitstamp = 200
+l_0_12.bittybot = 200
+l_0_12.bittylicious = 200
+l_0_12.btcdirect = 200
+l_0_12.coinatmradar = 200
+l_0_12.coinbase = 200
+l_0_12.coincafe = 200
+l_0_12.coincorner = 200
+l_0_12.coindesk = 200
+l_0_12.coinfinity = 200
+l_0_12.coinfloor = 200
+l_0_12.coinhouse = 200
+l_0_12.coinmama = 200
+l_0_12.cubits = 200
+l_0_12["file decryption costs money"] = 500
+l_0_12["free decryption"] = 200
+l_0_12["get private key"] = 200
+l_0_12["got hacked"] = 500
+l_0_12["guarantee before paying"] = 500
+l_0_12["guarantee file recovery"] = 500
+l_0_12["guaranteed recovery"] = 500
+l_0_12.happycoins = 200
+l_0_12["install tor"] = 500
+l_0_12["irrevocably changed"] = 200
+l_0_12.localbitcoins = 200
+l_0_12["military grade algorithms"] = 500
+l_0_12["much expensive"] = 100
+l_0_12["obtain bitcoins"] = 200
+l_0_12["permanent data loss"] = 200
+l_0_12["permanently deleted"] = 200
+l_0_12["purchase bitcoins"] = 500
+l_0_12["purchase decrypt tool"] = 200
+l_0_12["recovering files"] = 200
+l_0_12["rename encrypted files"] = 200
+l_0_12["military grade encryption"] = 500
+l_0_12["strongest encryption"] = 500
+l_0_12["bad luck"] = 100
+l_0_12["compromised data downloaded"] = 100
+l_0_12["contain valuable data"] = 50
+l_0_12["decryption test"] = 100
+l_0_12["decryptor home page"] = 100
+l_0_12["easiest way"] = 50
+l_0_12["enough time"] = 50
+l_0_12["following steps"] = 50
+l_0_12["may cause increased price"] = 200
+l_0_12["never restore"] = 100
+l_0_12["original files back"] = 100
+l_0_12["payment method"] = 200
+l_0_12["payments history"] = 50
+l_0_12.paypal = 100
+l_0_12["personal code"] = 100
+l_0_12["personal id"] = 50
+l_0_12["personal identification number"] = 50
+l_0_12["secret server !!!"] = 100
+l_0_12["security problem"] = 50
+l_0_12["special price"] = 100
+l_0_12["specified time"] = 50
+l_0_12["strong encryption"] = 200
+l_0_12["unique key"] = 100
+l_0_12["waste time trying"] = 200
+l_0_12["waste valuable time searching"] = 200
+l_0_12["data using third party software"] = 200
+l_0_12["data within"] = 20
+l_0_12["data without payment"] = 200
+l_0_12["get answer"] = 20
+l_0_12["key file"] = 20
+l_0_12["letter must contain"] = 20
+l_0_12["please follow"] = 50
+l_0_12["please note"] = 50
+l_0_12["please scroll"] = 50
+l_0_12["price depends"] = 100
+l_0_12.protected = 20
+l_0_12["send one"] = 20
+l_0_12["send us"] = 20
+l_0_12["send us prvkey"] = 200
+l_0_12["software payments"] = 200
+l_0_12.sooner = 50
+l_0_12["telegram id"] = 20
+l_0_12["total received"] = 20
+l_0_12["trust us"] = 100
+l_0_12["try searching"] = 200
+l_0_12["use free decryption tools"] = 200
+l_0_12.victim = 100
+l_0_12["within 24 hours"] = 200
+l_0_12["without saving prvkey"] = 200
+l_0_12["write us"] = 20
+local l_0_13 = 0
+local l_0_14 = 0
+for l_0_18,l_0_19 in pairs(l_0_12) do
+  while 1 do
+    local l_0_20 = (string.find)(l_0_11, l_0_18, 0 + 1)
+    if l_0_20 == nil then
+      break
+    end
+    if 0 == 0 then
+      l_0_14 = l_0_14 + 1
+    end
+    l_0_13 = l_0_13 + l_0_19
+    -- DECOMPILER ERROR at PC342: Confused about usage of register: R21 in 'UnsetPending'
+
+    local l_0_21 = 0 + 1
+    if l_0_21 == 5 then
+      break
+    end
+  end
+end
+if 2500 <= l_0_13 and 10 <= l_0_14 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

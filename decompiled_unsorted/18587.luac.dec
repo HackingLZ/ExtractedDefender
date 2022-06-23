@@ -1,0 +1,36 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18587.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC12: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[3]).matched and (this_sigattrlog[3]).utf8p2 ~= nil then
+    local l_0_0, l_0_1, l_0_2, l_0_3, l_0_5, l_0_6 = nil, nil
+  else
+  end
+  -- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
+
+  if not (this_sigattrlog[4]).matched or (this_sigattrlog[4]).utf8p2 == nil or contains((this_sigattrlog[4]).utf8p2, "%-[eE][ncodemaNCODEMA]*%s+", false) then
+    local l_0_4 = nil
+    -- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
+
+    if contains(NormalizeCmdline("powershell", (this_sigattrlog[4]).utf8p2), "vmblastsg") then
+      l_0_4 = NormalizeCmdline("powershell", (this_sigattrlog[4]).utf8p2)
+    end
+  else
+    do
+      do return mp.CLEAN end
+      -- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
+
+      if contains(l_0_4, "absg-worker.js") and contains(l_0_4, "req.connection.end") then
+        return mp.INFECTED
+      end
+      return mp.CLEAN
+    end
+  end
+end
+

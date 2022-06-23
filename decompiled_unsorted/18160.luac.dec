@@ -1,0 +1,18 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18160.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (hstrlog[1]).VA
+local l_0_1 = (pe.mmap_va)(l_0_0 + 8, 4)
+local l_0_2 = (string.byte)(l_0_1, 1) + (string.byte)(l_0_1, 2) * 256 + (string.byte)(l_0_1, 3) * 65536
+if l_0_2 < 1048575 then
+  (mp.readprotection)(false)
+  local l_0_3 = (pe.mmap_va)(l_0_0, l_0_2)
+  ;
+  (mp.vfo_add_buffer)(l_0_3, "[Cabinet]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+end
+do
+  return mp.CLEAN
+end
+

@@ -1,0 +1,45 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3895.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 > 65536 then
+  return mp.CLEAN
+end
+;
+(mp.readprotection)(false)
+local l_0_1 = (mp.readfile)(0, l_0_0)
+local l_0_2, l_0_3 = (string.gsub)(l_0_1, "chr%(&o(%d%d%d)&%)", function(l_1_0)
+  -- function num : 0_0
+  local l_1_1 = string.format
+  local l_1_2 = "\"%c\""
+  do
+    local l_1_3, l_1_4, l_1_5 = tonumber(l_1_0, 8), .end
+    do return l_1_1(l_1_2, l_1_3, l_1_4, l_1_5) end
+    -- DECOMPILER ERROR at PC9: Confused about usage of register R2 for local variables in 'ReleaseLocals'
+
+  end
+end
+)
+if l_0_2 and l_0_3 > 10 then
+  l_0_2 = (string.gsub)(l_0_2, "chr%(&o(%d%d)&%)", function(l_2_0)
+  -- function num : 0_1
+  local l_2_1 = string.format
+  local l_2_2 = "\"%c\""
+  do
+    local l_2_3, l_2_4, l_2_5 = tonumber(l_2_0, 8), .end
+    do return l_2_1(l_2_2, l_2_3, l_2_4, l_2_5) end
+    -- DECOMPILER ERROR at PC9: Confused about usage of register R2 for local variables in 'ReleaseLocals'
+
+  end
+end
+)
+  l_0_2 = (string.gsub)(l_0_2, "\"&\"(.)\"", "%1")
+  l_0_2 = (string.gsub)(l_0_2, "\"&\"", "")
+  l_0_2 = (string.gsub)(l_0_2, "&\"", "")
+  ;
+  (mp.vfo_add_buffer)(l_0_2, "[Obfuscator.AB]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+end
+return mp.CLEAN
+

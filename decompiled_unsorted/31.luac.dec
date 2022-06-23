@@ -1,0 +1,42 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 31.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilename)()
+if l_0_0:len() < 35 then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.getfilesize)()
+if l_0_1 < 177 or l_0_1 > 2048 then
+  return mp.CLEAN
+end
+if (string.sub)(l_0_0, -3) ~= ".ct" then
+  return mp.CLEAN
+end
+if l_0_0:find("[\\]") ~= nil then
+  l_0_0 = l_0_0:match("([^\\]+)$")
+end
+if l_0_0:len() ~= 35 then
+  return mp.CLEAN
+end
+if (mp.crc32)(0, headerpage, 2, 16) == 3649324682 then
+  return mp.INFECTED
+end
+if (mp.crc32)(0, headerpage, 2, 16) == 2453981930 then
+  return mp.INFECTED
+end
+local l_0_2 = (mp.getfilename)()
+if l_0_2:find("\\049e7fb749be2cdf169e28bb0a27254f\\7d0b14cec8baf661c8a240560c5b7c32.ct") ~= nil then
+  return mp.INFECTED
+end
+if l_0_2:find("\\049e7fb749be2cdf169e28bb0a27254f\\74338f611481d85755401412c5513fb5.ct") ~= nil then
+  return mp.INFECTED
+end
+if l_0_2:find("\\049e7fb749be2cdf169e28bb0a27254f\\181084e525a65ef540c63d60ce07f836.ct") ~= nil then
+  return mp.INFECTED
+end
+;
+(mp.set_mpattribute)("Lua:Sefnit_Config_CT")
+return mp.CLEAN
+

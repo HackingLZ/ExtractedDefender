@@ -1,0 +1,81 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4175.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILENAME))
+if l_0_0 ~= nil and #l_0_0 > 5 then
+  local l_0_1 = (string.sub)(l_0_0, 0, 3)
+  if l_0_1 ~= "â€\174" then
+    return mp.CLEAN
+  end
+  if (string.find)(l_0_0, ".", 1, true) == nil then
+    return mp.CLEAN
+  end
+  local l_0_2 = {}
+  l_0_2.bat = true
+  l_0_2.exe = true
+  l_0_2.scr = true
+  l_0_2.cmd = true
+  l_0_2.com = true
+  l_0_2.lnk = true
+  l_0_2.pif = true
+  l_0_2.vbe = true
+  l_0_2.vbs = true
+  l_0_2[".js"] = true
+  l_0_2.jse = true
+  l_0_2.wsh = true
+  l_0_2.wsf = true
+  l_0_2.ps1 = true
+  l_0_2.jar = true
+  l_0_2.hta = true
+  local l_0_3 = (string.sub)(l_0_0, -3)
+  if l_0_2[l_0_3] ~= nil then
+    if #l_0_0 >= 10 then
+      local l_0_4 = {}
+      l_0_4["cod."] = "doc"
+      l_0_4["cod "] = "doc"
+      l_0_4.xcod = "docx"
+      l_0_4["slx."] = "xls"
+      l_0_4.xslx = "xlsx"
+      l_0_4["tpp."] = "ppt"
+      l_0_4.xtpp = "pptx"
+      l_0_4["ftr."] = "rtf"
+      l_0_4["fdp."] = "pdf"
+      l_0_4["txt."] = "txt"
+      l_0_4["ini."] = "ini"
+      l_0_4["4pm."] = "mp4"
+      l_0_4["3pm."] = "mp3"
+      l_0_4["vaw."] = "wav"
+      l_0_4["iva."] = "avi"
+      l_0_4["vkm."] = "mkv"
+      l_0_4.bvmr = "rmvb"
+      l_0_4["vmw."] = "wmv"
+      l_0_4["vom."] = "mov"
+      l_0_4["gpj."] = "jpg"
+      l_0_4["gnp."] = "png"
+      l_0_4["pmb."] = "bmp"
+      l_0_4["pg3."] = "3gp"
+      l_0_4["piz."] = "zip"
+      l_0_4["rar."] = "rar"
+      l_0_4.lmth = "html"
+      l_0_4["mth."] = "htm"
+      local l_0_5 = (string.sub)(l_0_0, 4, 7)
+      if l_0_4[l_0_5] ~= nil then
+        (mp.set_mpattribute)("Lua:Context/RightToLeftOverride.A!fake_" .. l_0_4[l_0_5])
+        ;
+        (mp.set_mpattribute)("Lua:Context/RightToLeftOverride.A!masquerading")
+        return mp.INFECTED
+      end
+    end
+    do
+      do
+        ;
+        (mp.set_mpattribute)("Lua:Context/RightToLeftOverride.A!suspicious")
+        do return mp.INFECTED end
+        return mp.CLEAN
+      end
+    end
+  end
+end
+

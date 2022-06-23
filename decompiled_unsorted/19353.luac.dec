@@ -1,0 +1,30 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19353.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = false
+if (hstrlog[15]).matched and ((hstrlog[16]).matched or (hstrlog[17]).matched or (hstrlog[18]).matched or (hstrlog[19]).matched) then
+  l_0_0 = true
+end
+if (hstrlog[1]).matched and (hstrlog[6]).matched and peattributes.isexe and peattributes.headerchecksum0 and not peattributes.no_comruntime and pehdr.NumberOfSections == 3 and (pesecs[1]).Name == ".text" and (pesecs[2]).Name == ".rsrc" and (pesecs[pehdr.NumberOfSections]).Name == ".reloc" then
+  if (((hstrlog[7]).matched or ((hstrlog[8]).matched or (hstrlog[9]).matched) and ((hstrlog[10]).matched or (hstrlog[11]).matched) and ((hstrlog[12]).matched or (hstrlog[13]).matched))) then
+    if (hstrlog[14]).matched or l_0_0 then
+      return mp.INFECTED
+    else
+      if (hstrlog[2]).matched or (hstrlog[3]).matched or (hstrlog[4]).matched or (hstrlog[5]).matched then
+        return mp.INFECTED
+      else
+        if (hstrlog[20]).matched then
+          return mp.INFECTED
+        else
+          return mp.SUSPICIOUS
+        end
+      end
+    end
+  else
+    return mp.CLEAN
+  end
+end
+return mp.CLEAN
+

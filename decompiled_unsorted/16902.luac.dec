@@ -1,0 +1,11 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 16902.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if ((pesecs[1]).Name == "sijJ" or (pesecs[1]).Name == "EVJ") and (pesecs[2]).Name == ".mr" and peattributes.no_security == true and l_0_0 >= 119808 and l_0_0 <= 169984 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

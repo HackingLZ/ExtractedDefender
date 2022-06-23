@@ -1,0 +1,209 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4316.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = function(l_1_0)
+  -- function num : 0_0
+  local l_1_1 = (MpCommon.ExpandEnvironmentVariables)("%windir%")
+  if (sysio.IsFileExists)(l_1_1 .. "\\Tasks\\" .. l_1_0 .. ".job") then
+    (MpDetection.ReportResource)("file", l_1_1 .. "\\Tasks\\" .. l_1_0 .. ".job", 805306487, false)
+  end
+  local l_1_2 = l_1_1 .. "\\System32"
+  if (sysio.IsFileExists)(l_1_2 .. "\\Tasks\\" .. l_1_0) then
+    (MpDetection.ReportResource)("file", l_1_2 .. "\\Tasks\\" .. l_1_0, 805306487, false)
+  end
+  local l_1_3 = "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\Taskcache\\Tree\\" .. l_1_0
+  local l_1_4 = (sysio.RegOpenKey)(l_1_3)
+  if l_1_4 then
+    local l_1_5 = (sysio.GetRegValueAsString)(l_1_4, "Id")
+    if (string.len)(l_1_5) == 38 and (string.match)(l_1_5, "{%x%x%x%x%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%x%x%x%x%x%x%x%x}") then
+      local l_1_6 = "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\Taskcache\\Tasks\\" .. l_1_5
+      local l_1_7 = (sysio.RegOpenKey)(l_1_6)
+      if l_1_7 then
+        local l_1_8 = (sysio.GetRegValueAsString)(l_1_7, "Path")
+        if (string.sub)(l_1_8, 1, 1) == "\\" then
+          l_1_8 = (string.sub)(l_1_8, 2)
+        end
+        if l_1_8 == l_1_0 then
+          (MpDetection.ReportResource)("regkey", l_1_6, 805306487, false)
+          ;
+          (MpDetection.ReportResource)("regkey", l_1_3, 805306487, false)
+        end
+      end
+    end
+  end
+end
+
+local l_0_6 = function(l_2_0, l_2_1)
+  -- function num : 0_1 , upvalues : l_0_0
+  local l_2_2 = (sysio.RegOpenKey)(l_2_0)
+  if l_2_2 then
+    local l_2_3 = (sysio.GetRegValueAsString)(l_2_2, "TaskName")
+    local l_2_4 = (sysio.GetRegValueAsString)(l_2_2, "dll-file-name")
+    if l_2_3 ~= nil and l_2_4 ~= nil then
+      local l_2_5 = (sysio.GetRegValueAsString)(l_2_2, "InstallDir")
+      if (string.find)((string.lower)(l_2_5), "\\appdata\\local\\", 1, true) then
+        local l_2_6 = (sysio.GetRegValueAsString)(l_2_2, "Version")
+        local l_2_7 = (sysio.GetRegValueAsString)(l_2_2, "Instgrp")
+        local l_2_8 = (string.sub)(l_2_7, 1, 2)
+        if l_2_8 == "PF" and l_2_6 == l_2_7 then
+          l_2_1 = (string.sub)(l_2_1, 2, -2)
+          local l_2_9 = (sysio.GetRegValueAsString)(l_2_2, "InstallId")
+          if l_2_1 == l_2_9 and (sysio.IsFolderExists)(l_2_5) then
+            (MpDetection.ReportResource)("regkey", l_2_0, 805306487, false)
+            local l_2_10 = (sysio.FindFiles)(l_2_5, "*.*", 0)
+            for l_2_14,l_2_15 in pairs(l_2_10) do
+              (MpDetection.ReportResource)("file", l_2_15, 805306487, false)
+            end
+            ;
+            (MpDetection.ReportResource)("folder", l_2_5, 805306487, false)
+            l_0_0(l_2_3)
+            return true
+          end
+        end
+      end
+    end
+  end
+  do
+    return false
+  end
+end
+
+if (string.find)(((MpDetection.GetCurrentThreat)()).Name, "BrowserModifier:Win32/Prifou", 1, true) then
+  do
+    if not (function(l_4_0)
+  -- function num : 0_3 , upvalues : l_0_2
+  local l_4_15, l_4_16, l_4_17, l_4_18 = nil
+  for l_4_4,l_4_5 in pairs(l_4_0.Resources) do
+    if l_4_5.Schema == "file" then
+      local l_4_6, l_4_7, l_4_8, l_4_9 = Infrastructure_SplitThreatPath(l_4_5.Path)
+      if (string.sub)(l_4_6, 1, 4) == "\\\\?\\" then
+        l_4_6 = (string.sub)(l_4_6, 5)
+      end
+      if (string.sub)(l_4_6, -1) == "\\" then
+        l_4_6 = (string.sub)(l_4_6, 1, -2)
+      end
+      local l_4_13 = string.find
+      local l_4_14 = (string.lower)(l_4_6)
+      l_4_13 = l_4_13(l_4_14, "\\appdata\\local\\", 1, true)
+      if l_4_13 and (l_4_9 == "exe" or l_4_9 == "dll") then
+        l_4_13 = l_4_6
+        l_4_14 = "\\rkey.dat"
+        l_4_13 = l_4_13 .. l_4_14
+        local l_4_10 = nil
+        l_4_14 = sysio
+        l_4_14 = l_4_14.IsFileExists
+        l_4_10 = l_4_13
+        l_4_14 = l_4_14(l_4_10)
+        if l_4_14 then
+          l_4_14 = l_0_2
+          local l_4_11 = nil
+          l_4_10 = l_4_13
+          local l_4_12 = nil
+          return l_4_14(l_4_10)
+        end
+        do
+          for i_1,i_2 in pairs((sysio.FindFiles)(l_4_6, "*.txt", 0)) do
+            do
+              do return l_0_2(i_2) end
+              -- DECOMPILER ERROR at PC81: Confused about usage of register R12 for local variables in 'ReleaseLocals'
+
+              -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out DO_STMT
+
+            end
+          end
+          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out DO_STMT
+
+          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_STMT
+
+          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+          -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_STMT
+
+        end
+      end
+    end
+  end
+  do return false end
+  -- DECOMPILER ERROR at PC87: Confused about usage of register R11 for local variables in 'ReleaseLocals'
+
+end
+)((MpDetection.GetCurrentThreat)()) then
+      (function()
+  -- function num : 0_4 , upvalues : l_0_1
+  local l_5_0 = (sysio.RegExpandUserKey)("HKCU\\Software")
+  if l_5_0 then
+    for l_5_4,l_5_5 in pairs(l_5_0) do
+      local l_5_6 = (sysio.RegOpenKey)(l_5_5)
+      if l_5_6 then
+        local l_5_7 = (sysio.RegEnumKeys)(l_5_6)
+        if l_5_7 then
+          for l_5_11,l_5_12 in pairs(l_5_7) do
+            if (string.len)(l_5_12) == 34 and (string.match)(l_5_12, "{%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x}") and l_0_1(l_5_5 .. "\\" .. l_5_12, l_5_12) then
+              return true
+            end
+          end
+        end
+      end
+    end
+  end
+  do
+    do return false end
+    -- DECOMPILER ERROR at PC56: Confused about usage of register R2 for local variables in 'ReleaseLocals'
+
+  end
+end
+)()
+    end
+    ;
+    (function(l_6_0)
+  -- function num : 0_5 , upvalues : l_0_0
+  for l_6_4,l_6_5 in pairs(l_6_0.Resources) do
+    if l_6_5.Schema == "file" and (crypto.bitand)(l_6_5.Type, MpCommon.MPRESOURCE_TYPE_CONCRETE) == MpCommon.MPRESOURCE_TYPE_CONCRETE then
+      local l_6_6, l_6_7, l_6_8, l_6_9 = Infrastructure_SplitThreatPath(l_6_5.Path)
+      if (string.len)(l_6_7) == 38 and (string.match)(l_6_7, "{%x%x%x%x%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%x%x%x%x%x%x%x%x}") then
+        l_6_6 = (string.lower)(l_6_6)
+        if (string.sub)(l_6_6, 1, 4) == "\\\\?\\" then
+          l_6_6 = (string.sub)(l_6_6, 5)
+        end
+        if (string.sub)(l_6_6, -1) == "\\" then
+          l_6_6 = (string.sub)(l_6_6, 1, -2)
+        end
+        if ((string.find)(l_6_6, "\\appdata\\local\\", 1, true) or (string.find)(l_6_6, "\\appdata\\roaming\\", 1, true)) and l_6_9 == "exe" then
+          local l_6_10 = 0
+          local l_6_11 = {}
+          -- DECOMPILER ERROR at PC92: No list found for R11 , SetList fails
+
+          -- DECOMPILER ERROR at PC93: Overwrote pending register: R12 in 'AssignReg'
+
+          -- DECOMPILER ERROR at PC94: Overwrote pending register: R13 in 'AssignReg'
+
+          for l_6_15,l_6_16 in ("TTL.DAT")("STTL.DAT") do
+            if (sysio.IsFileExists)(l_6_6 .. "\\" .. l_6_16) and l_6_10 == 2 then
+              local l_6_17 = (sysio.FindFiles)(l_6_6, "*.*", 0)
+              for l_6_21,l_6_22 in pairs(l_6_17) do
+                (MpDetection.ReportResource)("file", l_6_22, 805306487, false)
+              end
+              ;
+              (MpDetection.ReportResource)("folder", l_6_6, 805306487, false)
+              l_0_0(l_6_7)
+              return true
+            end
+          end
+        end
+      end
+    end
+  end
+  do return false end
+  -- WARNING: undefined locals caused missing assignments!
+end
+)((MpDetection.GetCurrentThreat)())
+    -- DECOMPILER ERROR at PC33: freeLocal<0 in 'ReleaseLocals'
+
+    -- WARNING: undefined locals caused missing assignments!
+  end
+end
+

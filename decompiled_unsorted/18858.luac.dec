@@ -1,0 +1,25 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18858.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilename)((mp.bitor)(mp.FILEPATH_QUERY_FNAME, mp.FILEPATH_QUERY_LOWERCASE))
+if #l_0_0 < 5 then
+  return mp.CLEAN
+end
+if (string.sub)(l_0_0, -5) ~= ".xlsb" then
+  return mp.CLEAN
+end
+if (mp.get_mpattribute)("RPF:TopLevelFile") then
+  (mp.set_mpattribute)("Lua:IOAVTopLevelXLSBFile")
+  ;
+  (mp.set_mpattribute)("//Lua:GIOAVTopLevelXLSBFile")
+else
+  if not (mp.get_mpattribute)("//Lua:GIOAVFirstXLSBFileInContainer") then
+    (mp.set_mpattribute)("Lua:IOAVFirstXLSBFileInContainer")
+    ;
+    (mp.set_mpattribute)("//Lua:GIOAVFirstXLSBFileInContainer")
+  end
+end
+return mp.CLEAN
+

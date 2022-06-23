@@ -1,0 +1,19 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 17732.luac 
+
+-- params : ...
+-- function num : 0
+if not peattributes.isvbnative and not peattributes.isvbpcode then
+  return mp.CLEAN
+end
+if (hstrlog[1]).matched then
+  local l_0_0 = (hstrlog[1]).VA
+  local l_0_1 = "HSTR:VirTool:Win32/VBInject.gen!LM_ptr_" .. (string.format)("%.08x", l_0_0 + 62)
+  ;
+  (mp.set_mpattribute)(l_0_1)
+  return mp.INFECTED
+end
+do
+  return mp.CLEAN
+end
+

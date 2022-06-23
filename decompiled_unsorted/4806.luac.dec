@@ -1,0 +1,42 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4806.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = 30000000
+local l_0_1 = (bm.GetSignatureMatchDuration)()
+if l_0_0 < l_0_1 then
+  return mp.CLEAN
+end
+local l_0_2 = nil
+if (this_sigattrlog[6]).matched and (this_sigattrlog[6]).wp2 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[6]).utf8p2)
+else
+  if (this_sigattrlog[7]).matched and (this_sigattrlog[7]).wp2 ~= nil then
+    l_0_2 = (string.lower)((this_sigattrlog[7]).utf8p2)
+  else
+    if (this_sigattrlog[8]).matched and (this_sigattrlog[8]).wp2 ~= nil then
+      l_0_2 = (string.lower)((this_sigattrlog[8]).utf8p2)
+    end
+  end
+end
+if l_0_2 ~= nil then
+  local l_0_3 = (mp.GetExecutablesFromCommandLine)(l_0_2)
+  for l_0_7,l_0_8 in ipairs(l_0_3) do
+    l_0_8 = (mp.ContextualExpandEnvironmentVariables)(l_0_8)
+    if (sysio.IsFileExists)(l_0_8) then
+      return mp.CLEAN
+    end
+  end
+  do
+    do
+      if (string.find)(l_0_2, ".py", 1, true) or (string.find)(l_0_2, ".pl", 1, true) or (string.find)(l_0_2, ".rb", 1, true) then
+        return mp.CLEAN
+      end
+      reportRelatedBmHits()
+      addRelatedProcess()
+      return mp.INFECTED
+    end
+  end
+end
+

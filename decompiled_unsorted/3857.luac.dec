@@ -1,0 +1,33 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3857.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.get_mpattribute)("SCRIPT:Worm:JS/Bondat!lnk") and (mp.get_mpattribute)("PACKED_WITH:[CMDEmbedded]") then
+  local l_0_0 = tostring(headerpage)
+  do
+    if l_0_0:match("/c start wscript \"(%.Trashes\\%d+\\%l+%.js)\" &") == nil then
+      local l_0_1 = l_0_0:match("/c start wscript%.exe \"(%.Trashes\\%d+\\%l+%.js)\" &")
+      if l_0_1 == nil then
+        return mp.CLEAN
+      end
+    end
+    local l_0_2 = nil
+    do
+      local l_0_3 = nil
+      if (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) == mp.SCANREASON_ONOPEN or (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) == mp.SCANREASON_ONMODIFIEDHANDLECLOSE then
+        l_0_3 = (mp.PathToWin32Path)((mp.get_contextdata)(mp.CONTEXT_DATA_FILEPATH))
+      end
+      if l_0_3 == nil then
+        l_0_3 = ((mp.getfilename)()):match("(.+)\\[^\\]+$")
+      end
+      if l_0_3 == nil then
+        return mp.CLEAN
+      end
+      ;
+      (mp.ReportLowfi)(l_0_3 .. "\\" .. l_0_2, 2916175846)
+      return mp.CLEAN
+    end
+  end
+end
+

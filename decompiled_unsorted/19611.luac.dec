@@ -1,0 +1,133 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19611.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_1 = pcallEx("get_startup_info", bm.get_current_process_startup_info)
+do
+  local l_0_2 = l_0_0 and l_0_1 ~= nil and l_0_1.ppid ~= nil and l_0_1.ppid or ""
+  do
+    local l_0_4, l_0_5 = nil
+    if not pcallEx("reportHostsToBlock", function()
+  -- function num : 0_0 , upvalues : l_0_3
+  local l_1_0 = {}
+  local l_1_1 = GetRollingQueueKeys("015b9d6d_" .. l_0_3)
+  if l_1_1 ~= nil and type(l_1_1) == "table" then
+    local l_1_2 = {}
+    local l_1_3 = false
+    for l_1_7,l_1_8 in ipairs(l_1_1) do
+      local l_1_9 = getHostType(l_1_8)
+      if l_1_9 == 3 then
+        l_1_2[l_1_8] = true
+        l_1_3 = true
+      else
+        if l_1_9 == -1 then
+          break
+        else
+          ;
+          (table.insert)(l_1_0, l_1_8)
+        end
+      end
+    end
+    do
+      if l_1_3 then
+        local l_1_10 = (mp.GetDnsCacheRecordsByType)(1)
+        for l_1_14,l_1_15 in ipairs(l_1_10) do
+          if l_1_15 ~= nil and l_1_15.DnsName ~= nil and l_1_15.RecordData ~= nil and l_1_2[l_1_15.DnsName] then
+            (table.insert)(l_1_0, "0;" .. l_1_15.RecordData .. ";" .. l_1_15.DnsName)
+          end
+        end
+        if #l_1_0 ~= #l_1_1 then
+          l_1_10 = (mp.GetDnsCacheRecordsByType)(28)
+          for l_1_19,l_1_20 in ipairs(l_1_10) do
+            if l_1_20 ~= nil and l_1_20.DnsName ~= nil and l_1_20.RecordData ~= nil and l_1_2[l_1_20.DnsName] then
+              (table.insert)(l_1_0, "0;" .. l_1_20.RecordData .. ";" .. l_1_20.DnsName)
+            end
+          end
+        end
+      end
+      do
+        l_1_2 = #l_1_0
+        if l_1_2 == 0 then
+          l_1_2 = pcallEx
+          l_1_3 = "bm.GetConnectionHistory"
+          l_1_10 = bm
+          l_1_10 = l_1_10.GetConnectionHistory
+          l_1_2 = l_1_2(l_1_3, l_1_10)
+          local l_1_21, l_1_22 = nil
+          if l_1_2 then
+            local l_1_23 = nil
+            l_1_21 = pairs
+            l_1_22 = 
+            l_1_21 = l_1_21(l_1_22)
+            for l_1_27,l_1_28 in l_1_21 do
+              local l_1_26, l_1_27, l_1_28 = nil
+              l_1_26 = l_1_25.Direction
+              if l_1_26 ~= nil then
+                l_1_26 = l_1_25.Direction
+                if l_1_26 == 0 then
+                  l_1_26 = l_1_25.DestinationAddressHigh
+                  local l_1_29 = nil
+                  l_1_27 = l_1_25.DestinationAddressLow
+                  local l_1_30 = nil
+                  l_1_28 = isAddressInternal
+                  l_1_29 = l_1_26
+                  l_1_30 = l_1_27
+                  l_1_28 = l_1_28(l_1_29, l_1_30)
+                  if not l_1_28 then
+                    l_1_28 = addressToIpString
+                    l_1_29 = l_1_26
+                    l_1_30 = l_1_27
+                    l_1_28 = l_1_28(l_1_29, l_1_30)
+                    local l_1_31 = nil
+                    l_1_29 = l_1_25.DestinationPort
+                    l_1_29, l_1_10 = l_1_10[l_1_29], {[443] = true, [80] = true, [8080] = true, [47872] = true, [8443] = true, [8888] = true, [20480] = true, [4444] = true, [8081] = true, [81] = true, [7777] = true, [8000] = true, [8088] = true, [4443] = true, [1234] = true, [4433] = true, [1443] = true}
+                    if l_1_29 then
+                      l_1_29 = table
+                      l_1_29 = l_1_29.insert
+                      l_1_30 = l_1_0
+                      l_1_31 = "1;"
+                      l_1_31 = l_1_31 .. l_1_28
+                      l_1_29(l_1_30, l_1_31)
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+        do
+          local l_1_32 = nil
+          l_1_3 = pairs
+          l_1_10 = l_1_0
+          l_1_3 = l_1_3(l_1_10)
+          for l_1_36,l_1_37 in l_1_3 do
+            local l_1_33, l_1_34, l_1_35, l_1_36, l_1_37 = nil
+            l_1_32, l_1_2 = l_1_2[l_1_23], {}
+            if not l_1_32 then
+              l_1_32 = bm
+              l_1_32 = l_1_32.add_related_string
+              l_1_33 = "cs_conn"
+              l_1_34 = 
+              l_1_35 = bm
+              l_1_35 = l_1_35.RelatedStringBMReport
+              l_1_32(l_1_33, l_1_34, l_1_35)
+              l_1_2[l_1_23] = true
+            end
+          end
+          -- DECOMPILER ERROR at PC188: Confused about usage of register R7 for local variables in 'ReleaseLocals'
+
+        end
+      end
+    end
+  end
+end
+) then
+      reportPcallEx()
+    end
+    do return mp.INFECTED end
+    -- DECOMPILER ERROR at PC29: freeLocal<0 in 'ReleaseLocals'
+
+  end
+end
+

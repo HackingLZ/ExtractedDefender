@@ -1,0 +1,14 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4270.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (string.lower)((mp.getfilename)())
+if (string.find)(l_0_0, ".docx->", 1, true) or (string.find)(l_0_0, ".doc->", 1, true) then
+  return mp.CLEAN
+end
+if (string.find)(l_0_0, "boleto", 1, true) ~= nil or (string.find)(l_0_0, "pdf%.jar") ~= nil or (string.find)(l_0_0, "payment", 1, true) ~= nil or (string.find)(l_0_0, "order%.jar") ~= nil or (string.find)(l_0_0, "invoice", 1, true) ~= nil or (string.find)(l_0_0, "fatura", 1, true) ~= nil or (string.find)(l_0_0, "statement_%d+%.jar") ~= nil or (string.find)(l_0_0, "confirmation", 1, true) ~= nil or (string.find)(l_0_0, "bol_atualizado", 1, true) ~= nil or (string.find)(l_0_0, "-dhl%.jar") ~= nil or (string.find)(l_0_0, "img_%d+%.jar") ~= nil or (string.find)(l_0_0, "%.pdf") ~= nil or (string.find)(l_0_0, "or..?amento") ~= nil or (string.find)(l_0_0, "bank ", 1, true) ~= nil or (string.find)(l_0_0, "bank_", 1, true) ~= nil or (string.find)(l_0_0, "citibank", 1, true) ~= nil or (string.find)(l_0_0, "urgent", 1, true) ~= nil or (string.find)(l_0_0, "ups.*%.jar", 1, true) ~= nil or (string.find)(l_0_0, "pedido_", 1, true) ~= nil or (string.find)(l_0_0, "siparis", 1, true) ~= nil or (string.find)(l_0_0, "nfe%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d.-%.jar") ~= nil or (string.find)(l_0_0, "statement..?of..?account") ~= nil or (string.find)(l_0_0, "tt..?copy.jar") ~= nil or (string.find)(l_0_0, "swift..?copy.jar") ~= nil or (string.find)(l_0_0, "delivery..?notif") ~= nil or (string.find)(l_0_0, "po..?%d%d%d%d%d%d%d.jar") ~= nil or (string.find)(l_0_0, "po.?scan%d+.jar") ~= nil or (string.find)(l_0_0, "arquivo_fiscal", 1, true) ~= nil or (string.find)(l_0_0, "quotation", 1, true) or (string.find)(l_0_0, "shipment", 1, true) or (string.find)(l_0_0, "inquiry", 1, true) or (string.find)(l_0_0, "tracking", 1, true) or (string.find)(l_0_0, "pdf.jar", 1, true) or (string.find)(l_0_0, "doc.jar", 1, true) or (string.find)(l_0_0, "png.jar", 1, true) or (string.find)(l_0_0, "ofertadodia", 1, true) or (string.find)(l_0_0, "purchase..?order") ~= nil or (string.find)(l_0_0, "new order", 1, true) ~= nil or (string.find)(l_0_0, "rfq ", 1, true) ~= nil or (string.find)(l_0_0, "%d%d_pdf_.+kb%).jar") ~= nil or (string.find)(l_0_0, "certificado.?digital") ~= nil or (string.find)(l_0_0, "docx.jar", 1, true) or (string.find)(l_0_0, "bill.?details") ~= nil or (string.find)(l_0_0, "curriculum.?vit") ~= nil then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

@@ -1,0 +1,21 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18479.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = 144
+local l_0_1 = (pe.mmap_va)(pevars.sigaddr, l_0_0)
+local l_0_2 = 66
+while (string.byte)(l_0_1, l_0_2) == 104 do
+  if l_0_0 < l_0_2 then
+    return mp.CLEAN
+  end
+  if 0 + 1 >= 20 then
+    return mp.CLEAN
+  end
+end
+if (mp.readu_u32)(l_0_1, l_0_2) == 1146486612 and (mp.readu_u32)(l_0_1, l_0_2 + 4) == 3296978315 and (mp.readu_u16)(l_0_1, l_0_2 + 8) == 24912 and (string.byte)(l_0_1, l_0_2 + 10) == 233 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

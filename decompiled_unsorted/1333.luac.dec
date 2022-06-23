@@ -1,0 +1,42 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1333.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC15: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p2 ~= nil then
+    local l_0_0 = nil
+  else
+  end
+  -- DECOMPILER ERROR at PC49: Overwrote pending register: R0 in 'AssignReg'
+
+  do
+    if (not (this_sigattrlog[2]).matched or (this_sigattrlog[2]).utf8p2 == nil or (this_sigattrlog[3]).matched) and (this_sigattrlog[3]).utf8p2 ~= nil then
+      local l_0_1 = ((this_sigattrlog[2]).utf8p1):lower()
+    else
+    end
+    -- DECOMPILER ERROR at PC83: Overwrote pending register: R0 in 'AssignReg'
+
+    do
+      if (not (this_sigattrlog[4]).matched or (this_sigattrlog[4]).utf8p2 == nil or (this_sigattrlog[5]).matched) and (this_sigattrlog[5]).utf8p2 ~= nil then
+        local l_0_2, l_0_3, l_0_4 = ((this_sigattrlog[4]).utf8p1):lower()
+      end
+      -- DECOMPILER ERROR at PC85: Confused about usage of register: R0 in 'UnsetPending'
+
+      if not contains(l_0_2, (mp.ContextualExpandEnvironmentVariables)("%systemdrive%")) then
+        return mp.CLEAN
+      end
+      local l_0_5 = nil
+      if not contains(l_0_5, {"program files", "\\rclone\\", "\\rclone-v", "cmmagent.exe", "cymulateagent.exe"}) then
+        TrackPidAndTechniqueBM("BM", "T1567", "ExfilOverWeb")
+        reportRelatedBmHits()
+        add_parents()
+        return mp.INFECTED
+      end
+      return mp.CLEAN
+    end
+  end
+end
+

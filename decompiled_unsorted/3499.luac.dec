@@ -1,0 +1,21 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3499.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 < 15000 or l_0_0 > 60000 then
+  return mp.CLEAN
+end
+;
+(mp.readprotection)(false)
+local l_0_1 = (mp.readfile)(0, l_0_0)
+local l_0_2 = l_0_1:match("=%s-[Dd][Ee][Cc][Rr][Yy][Pp][Tt]%([Ss][Tt][Rr][Rr][Ee][Vv][Ee][Rr][Ss][Ee]%(\"(.-)\"%)%)")
+if l_0_2 == nil then
+  return mp.CLEAN
+end
+l_0_2 = l_0_2:reverse()
+;
+(mp.vfo_add_buffer)(l_0_2, "[ReverseB64]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+return mp.CLEAN
+

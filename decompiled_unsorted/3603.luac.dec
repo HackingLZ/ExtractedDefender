@@ -1,0 +1,22 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3603.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.getfilesize)() == 32 then
+  local l_0_0 = (string.lower)((mp.getfilename)())
+  if (string.sub)(l_0_0, -4) == ".png" then
+    local l_0_1, l_0_2 = l_0_0:match("(.+\\)([^\\]+)$")
+    if ((string.sub)(l_0_1, -18) == "\\appdata\\locallow\\" or (string.sub)(l_0_1, -33) == "\\local settings\\application data\\") and (string.match)(l_0_2, "^%l%l%l%l%l%l%l%l%l%l%.png$") then
+      (mp.readprotection)(false)
+      local l_0_3 = (mp.readfile)(0, 32)
+      if not (string.match)(l_0_3, "[^%x]") then
+        return mp.INFECTED
+      end
+    end
+  end
+end
+do
+  return mp.CLEAN
+end
+

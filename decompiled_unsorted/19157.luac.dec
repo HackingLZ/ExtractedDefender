@@ -1,0 +1,49 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19157.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.no_relocs ~= true then
+  return mp.CLEAN
+end
+if peattributes.isexe ~= true then
+  return mp.CLEAN
+end
+if pehdr.MajorLinkerVersion ~= 6 then
+  return mp.CLEAN
+end
+if peattributes.epinfirstsect ~= true then
+  return mp.CLEAN
+end
+if pehdr.NumberOfSections ~= 4 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfImage < 262144 then
+  return mp.CLEAN
+end
+if pehdr.SizeOfImage > 389120 then
+  return mp.CLEAN
+end
+if pehdr.AddressOfEntryPoint < 192512 then
+  return mp.CLEAN
+end
+if pehdr.AddressOfEntryPoint > 323584 then
+  return mp.CLEAN
+end
+if pehdr.NumberOfSections < pevars.epsec then
+  return mp.CLEAN
+end
+if (pesecs[pevars.epsec]).SizeOfRawData < 217088 then
+  return mp.CLEAN
+end
+if (pesecs[pevars.epsec]).SizeOfRawData > 327680 then
+  return mp.CLEAN
+end
+if ((pehdr.DataDirectory)[2]).Size < 160 then
+  return mp.CLEAN
+end
+if ((pehdr.DataDirectory)[2]).Size > 240 then
+  return mp.CLEAN
+end
+return mp.INFECTED
+

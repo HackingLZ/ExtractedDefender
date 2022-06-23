@@ -1,0 +1,49 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1353.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (string.lower)((mp.ContextualExpandEnvironmentVariables)((this_sigattrlog[1]).utf8p1))
+if l_0_0 == nil or l_0_0 == "" then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.ContextualExpandEnvironmentVariables)("%programfiles(x86)%")
+if l_0_1 == nil or l_0_1 == "" then
+  return mp.CLEAN
+end
+local l_0_2 = (mp.ContextualExpandEnvironmentVariables)("%programfiles%")
+if l_0_2 == nil or l_0_2 == "" then
+  return mp.CLEAN
+end
+if (string.find)(l_0_0, l_0_1 .. "\\microsoft office\\office..\\outlook.exe") == nil and (string.find)(l_0_0, l_0_1 .. "\\microsoft office\\root\\office..\\outlook.exe") == nil and (string.find)(l_0_0, l_0_1 .. "\\windowsapps\\[^\\]+\\office..\\outlook.exe") == nil and (string.find)(l_0_0, l_0_2 .. "\\microsoft office\\office..\\outlook.exe") == nil and (string.find)(l_0_0, l_0_2 .. "\\microsoft office\\root\\office..\\outlook.exe") == nil and (string.find)(l_0_0, l_0_2 .. "\\windowsapps\\[^\\]+\\office..\\outlook.exe") == nil then
+  return mp.CLEAN
+end
+local l_0_3 = (string.lower)((mp.ContextualExpandEnvironmentVariables)((this_sigattrlog[2]).utf8p2))
+if l_0_3 == nil or l_0_3 == "" then
+  return mp.CLEAN
+end
+if (string.find)(l_0_3, "\\?rundll32%.exe\"?%s+\"?.*shell32%.dll\"?%s*,%s*control_rundll%s+\"?.*srchadmin.dll\"?") == nil then
+  return mp.CLEAN
+end
+local l_0_4 = (string.lower)((mp.ContextualExpandEnvironmentVariables)((this_sigattrlog[3]).utf8p1))
+if l_0_4 == nil or l_0_4 == "" then
+  return mp.CLEAN
+end
+local l_0_5 = (mp.ContextualExpandEnvironmentVariables)("%windir%")
+if l_0_5 == nil or l_0_5 == "" then
+  return mp.CLEAN
+end
+if (string.find)(l_0_4, l_0_5 .. "\\system32\\srchadmin.dll", 1, true) ~= nil then
+  return mp.CLEAN
+end
+if (string.find)(l_0_4, l_0_5 .. "\\syswow64\\srchadmin.dll", 1, true) ~= nil then
+  return mp.CLEAN
+end
+if (string.find)(l_0_4, l_0_5 .. "\\winsxs\\amd64_[^\\]+\\srchadmin.dll") ~= nil then
+  return mp.CLEAN
+end
+if (string.find)(l_0_4, l_0_5 .. "\\winsxs\\wow64_[^\\]+\\srchadmin.dll") ~= nil then
+  return mp.CLEAN
+end
+return mp.INFECTED
+

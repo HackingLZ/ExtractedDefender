@@ -1,0 +1,60 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19364.luac 
+
+-- params : ...
+-- function num : 0
+if (hstrlog[14]).matched or (hstrlog[21]).matched or (hstrlog[22]).matched then
+  (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!k7.A0")
+else
+  if (hstrlog[15]).matched then
+    (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!upk.1")
+    ;
+    (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!k4_k5.0_4242")
+    ;
+    (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!k7.A0")
+  else
+    if (hstrlog[16]).matched then
+      (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!upk.1")
+      ;
+      (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN.4")
+      ;
+      (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!k4_k5.0_4343")
+      ;
+      (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!k7.A0")
+    else
+      if (hstrlog[17]).matched then
+        (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!k7.1E")
+      else
+        if (hstrlog[18]).matched then
+          (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!upk.1")
+          ;
+          (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN.4")
+          ;
+          (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!k7.1E")
+        else
+          if (hstrlog[19]).matched then
+            (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!upk.1")
+            ;
+            (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN.4")
+            ;
+            (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!k4_k5.0_4444")
+            ;
+            (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!k7.A0")
+          else
+            if (hstrlog[20]).matched then
+              (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!upk.1")
+              ;
+              (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN.4")
+              ;
+              (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!k4_k5.0_4545")
+              ;
+              (mp.set_mpattribute)("HSTR:VirTool:Win32/Obfuscator.PN!k7.A0")
+            end
+          end
+        end
+      end
+    end
+  end
+end
+return mp.INFECTED
+

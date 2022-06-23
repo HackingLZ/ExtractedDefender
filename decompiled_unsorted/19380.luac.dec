@@ -1,0 +1,45 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19380.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.GetScannedPPID)()
+local l_0_1 = (mp.GetProcessCommandLine)(l_0_0)
+if l_0_1 == nil then
+  return mp.CLEAN
+end
+if (string.len)(l_0_1) < 1024 then
+  return mp.CLEAN
+end
+local l_0_2 = (string.match)(l_0_1, "(JABlAHgAdABQAGEA[a-zA-Z0-9%+/]+=-)")
+if l_0_2 == nil then
+  return mp.CLEAN
+end
+l_0_2 = (string.sub)(l_0_2, 1, 512)
+local l_0_3 = (mp.base64decode)(l_0_2, 15)
+if l_0_3 == nil then
+  return mp.CLEAN
+end
+l_0_3 = (string.gsub)(l_0_3, "%z", "")
+l_0_3 = (string.lower)((string.gsub)(l_0_3, " ", ""))
+if (string.find)(l_0_3, "confpath", 1, true) and (string.find)(l_0_3, "archivename", 1, true) and (string.find)(l_0_3, "taskname", 1, true) and (string.find)(l_0_3, "domain", 1, true) then
+  local l_0_4 = (string.match)(l_0_3, "%$taskname=\"(.-)\"")
+  if l_0_4 ~= nil then
+    local l_0_5 = (mp.GetParentProcInfo)()
+    if l_0_5 ~= nil then
+      local l_0_6 = (string.lower)(l_0_5.image_path)
+      local l_0_7 = l_0_6:match("([^\\]+)$")
+      local l_0_8 = "svchost.exe|taskeng.exe|taskhostw.exe"
+      if l_0_7 ~= nil and (string.find)(l_0_8, l_0_7) then
+        (mp.TriggerScanResource)("taskscheduler", "C:\\Windows\\System32\\Tasks\\" .. l_0_4)
+      end
+    end
+  end
+  do
+    do
+      do return mp.INFECTED end
+      return mp.CLEAN
+    end
+  end
+end
+

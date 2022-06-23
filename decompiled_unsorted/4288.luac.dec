@@ -1,0 +1,137 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4288.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_1, l_0_2, l_0_3, l_0_4 = nil, nil
+if mp.HEADERPAGE_SZ < 1024 then
+  return mp.CLEAN
+end
+if (mp.readu_u32)(headerpage, 1) ~= 561144146 then
+  return mp.CLEAN
+end
+if (mp.readu_u16)(headerpage, 5) ~= 1818 then
+  return mp.CLEAN
+end
+local l_0_6 = nil
+-- DECOMPILER ERROR at PC86: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC86: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC86: Unhandled construct in 'MakeBoolean' P3
+
+if (((mp.get_mpattribute)("Lua:RarHasFileNameWithPassword") or (mp.get_mpattribute)("Lua:RarHasEncryptedFile") or (mp.get_mpattribute)("Lua:RarHasStoredFileWithExeExtension")) and (mp.get_mpattribute)("RPF:TopLevelFile")) or (mp.get_mpattribute)("Lua:RarHasFileWithExeExtension") and (mp.getfilesize)() < 100000 and (mp.getfilesize)() > 512 and (mp.get_mpattribute)("RPF:TopLevelFile") then
+  (mp.readprotection)(false)
+  local l_0_7 = nil
+  while 1 do
+    -- DECOMPILER ERROR at PC96: Confused about usage of register: R4 in 'UnsetPending'
+
+    -- DECOMPILER ERROR at PC100: Confused about usage of register: R5 in 'UnsetPending'
+
+    if 0 < 10 and 7 ~= 0 then
+      do
+        local l_0_8, l_0_9, l_0_10, l_0_11, l_0_12, l_0_13 = , (function(l_1_0, l_1_1)
+  -- function num : 0_0 , upvalues : l_0_5, l_0_1
+  if l_1_1 < l_1_0 + 7 then
+    return 0
+  end
+  local l_1_2 = (mp.readfile)(l_1_0, 7)
+  local l_1_3 = (string.byte)(l_1_2, 3)
+  local l_1_4 = (mp.readu_u16)(l_1_2, 6)
+  local l_1_5 = 0
+  if l_1_3 == 122 and l_1_0 + 48 < l_1_1 then
+    l_1_2 = (mp.readfile)(l_1_0, 48)
+    l_1_5 = (mp.readu_u32)(l_1_2, 8)
+    if (string.byte)(l_1_2, 27) == 3 and (string.sub)(l_1_2, 33, 35) == "CMT" then
+      (mp.set_mpattribute)("Lua:RarHasCommentBlock")
+    end
+  else
+    if l_1_3 == 116 and l_1_0 + 48 < l_1_1 then
+      l_0_5 = l_0_5 + 1
+      l_1_2 = (mp.readfile)(l_1_0, 48)
+      l_1_5 = (mp.readu_u32)(l_1_2, 8)
+      if (string.byte)(l_1_2, 26) == 48 then
+        (mp.set_mpattribute)("Lua:RarHasStoredFile")
+      end
+      local l_1_6 = (mp.readu_u16)(l_1_2, 4)
+      if (mp.bitand)(l_1_6, 4) == 4 then
+        (mp.set_mpattribute)("Lua:RarHasEncryptedFile")
+      end
+      local l_1_7 = (mp.readu_u16)(l_1_2, 27)
+      if l_1_7 > 4 and l_1_7 < 288 then
+        do
+          if (mp.bitand)(l_1_6, 256) == 256 then
+            local l_1_8, l_1_9 = 32 + 8
+          end
+          -- DECOMPILER ERROR at PC123: Confused about usage of register: R8 in 'UnsetPending'
+
+          -- DECOMPILER ERROR at PC129: Confused about usage of register: R8 in 'UnsetPending'
+
+          if l_1_0 + l_1_8 + l_1_7 < l_1_1 then
+            local l_1_10 = nil
+            if (l_1_7 > 8 and l_1_7 < 64 and ((mp.readfile)(l_1_0 + l_1_8, l_1_7)):find("[Pp][Aa][Ss][Ss][Ww][Oo][Rr][Dd]")) or l_1_7 > 8 and l_1_7 < 64 and ((mp.readfile)(l_1_0 + l_1_8, l_1_7)):find("[Tt][Oo] [Oo][Pp][Ee][Nn]") then
+              (mp.set_mpattribute)("Lua:RarHasFileNameWithPassword")
+            end
+            if ((mp.readfile)(l_1_0 + l_1_8, l_1_7) == "to open enter 1234" and l_1_5 == 1) or (mp.readfile)(l_1_0 + l_1_8, l_1_7) == "1 2 3 4" and l_1_5 == 1 then
+              (mp.set_mpattribute)("Lua:RarHasMizenotaPWFile")
+            end
+            local l_1_11 = nil
+            local l_1_12 = {[".bat"] = "", [".cmd"] = "", [".com"] = "", [".cpl"] = "", [".exe"] = "", [".pif"] = "", [".scr"] = "", [".vbs"] = "", [".lnk"] = "", [".wsf"] = "", [".vbe"] = "", [".jse"] = "", [".hta"] = "", [".js"] = ""}
+            if l_1_12[(string.sub)(l_1_11, -4)] or l_1_12[(string.sub)(l_1_11, -3)] then
+              (mp.set_mpattribute)("Lua:RarHasFileWithExeExtension")
+              l_0_1 = l_0_1 + 1
+              if (mp.bitand)(l_1_6, 4) == 4 then
+                (mp.set_mpattribute)("Lua:RarHasEncryptedFileWithExeExtension")
+              end
+              if (string.byte)(l_1_2, 26) == 48 then
+                (mp.set_mpattribute)("Lua:RarHasStoredFileWithExeExtension")
+              end
+            end
+          end
+          do
+            if l_1_3 ~= 115 then
+              return 0
+            end
+            return l_1_0 + l_1_4 + l_1_5
+          end
+        end
+      end
+    end
+  end
+end
+)(7, (mp.getfilesize)()), 0 + 1
+        -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+        -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out IF_STMT
+
+      end
+    end
+  end
+  if l_0_6 == 1 and l_0_7 == 1 then
+    if (mp.get_mpattribute)("RPF:AnyFileHasIOAVURL") then
+      if (mp.get_mpattribute)("Lua:RarHasStoredFileWithExeExtension") then
+        (mp.set_mpattribute)("Lua:RarHasSingleStoredFileWithExeExtension")
+        ;
+        (mp.set_mpattribute)("//Lua:GIOAVTopLevelRarHasSingleStoredFileWithExeExtension")
+      else
+        ;
+        (mp.set_mpattribute)("//Lua:GIOAVTopLevelRarHasSingleFileWithExeExtension")
+      end
+    end
+    ;
+    (mp.set_mpattribute)("Lua:RarHasSingleFileWithExeExtension")
+  end
+  if l_0_6 == 1 then
+    (mp.set_mpattribute)("Lua:SingleFileInRar")
+    ;
+    (mp.UfsSetMetadataBool)("Lua:SingleFileInRar", true)
+  end
+end
+do
+  do
+    do return mp.CLEAN end
+    -- DECOMPILER ERROR at PC149: freeLocal<0 in 'ReleaseLocals'
+
+  end
+end
+

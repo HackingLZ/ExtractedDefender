@@ -1,0 +1,49 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18499.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_2 = nil, nil
+if (this_sigattrlog[2]).matched then
+  local l_0_1 = nil
+else
+  do
+    -- DECOMPILER ERROR at PC16: Overwrote pending register: R1 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC25: Overwrote pending register: R1 in 'AssignReg'
+
+    if not (this_sigattrlog[3]).matched or (this_sigattrlog[4]).matched then
+      local l_0_3, l_0_6 = , (this_sigattrlog[2]).wp1
+    else
+      do
+        -- DECOMPILER ERROR at PC38: Overwrote pending register: R2 in 'AssignReg'
+
+        do
+          if (this_sigattrlog[5]).matched then
+            local l_0_7 = nil
+          end
+          -- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
+
+          -- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
+
+          if l_0_6 ~= nil then
+            local l_0_4, l_0_5 = (string.lower)((mp.utf16to8)(l_0_6))
+            if (string.find)(l_0_4, "\\ms%l+%.exe:%d+$") then
+              return mp.INFECTED
+            end
+          else
+            do
+              -- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
+
+              if nil ~= nil and (string.find)(nil, "\\windows\\\\%d+$") then
+                return mp.INFECTED
+              end
+              return mp.CLEAN
+            end
+          end
+        end
+      end
+    end
+  end
+end
+

@@ -1,0 +1,29 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18787.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC15: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p2 ~= nil then
+    local l_0_0, l_0_1, l_0_2 = nil
+  else
+  end
+  if not (this_sigattrlog[2]).matched or (this_sigattrlog[2]).utf8p2 == nil or not ((this_sigattrlog[2]).utf8p2):lower() then
+    return mp.CLEAN
+  end
+  local l_0_3 = nil
+  local l_0_4 = {"(?:rundll32|regsvr32)(?:.exe)?\\s+\\w:\\\\(?:programdata|users\\\\public)\\\\[^\\\\]+\\.\\w{2,4}\\s*[,\\w$]+", "(?:rundll32|regsvr32)(?:.exe)?\\s+%userprofile%\\\\[^\\\\]+\\.\\w{2,4}\\s*[,\\w$]+"}
+  for l_0_8,l_0_9 in ipairs(l_0_4) do
+    local l_0_5 = false
+    -- DECOMPILER ERROR at PC49: Confused about usage of register: R7 in 'UnsetPending'
+
+    l_0_5 = (MpCommon.StringRegExpSearch)(R7_PC49, l_0_3)
+    if l_0_5 then
+      return mp.INFECTED
+    end
+  end
+  return mp.CLEAN
+end
+

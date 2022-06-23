@@ -1,0 +1,406 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4334.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = function(l_1_0, l_1_1)
+  -- function num : 0_0
+  local l_1_2 = (string.sub)(l_1_1, 1, -5)
+  local l_1_3 = "HKLM\\SYSTEM\\CurrentControlSet\\services\\" .. l_1_2
+  local l_1_4 = (sysio.RegOpenKey)(l_1_3)
+  if l_1_4 then
+    local l_1_5 = (sysio.GetRegValueAsString)(l_1_4, "Description")
+    local l_1_6 = (sysio.GetRegValueAsString)(l_1_4, "DisplayName")
+    if l_1_6 == l_1_2 and l_1_5 == l_1_2 then
+      local l_1_7 = (sysio.GetRegValueAsString)(l_1_4, "ImagePath")
+      local l_1_8 = (string.sub)(l_1_0 .. l_1_1, -53)
+      if l_1_7 ~= nil and l_1_8 == (string.lower)(l_1_7) then
+        (MpDetection.ReportResource)("regkey", l_1_3, 805306488, false)
+        return true
+      end
+    end
+  end
+  do
+    return false
+  end
+end
+
+local l_0_1 = function(l_2_0)
+  -- function num : 0_1
+  local l_2_1 = "HKLM\\SYSTEM\\CurrentControlSet\\services"
+  local l_2_2 = (sysio.RegOpenKey)(l_2_1)
+  if l_2_2 then
+    local l_2_3 = (sysio.RegEnumKeys)(l_2_2)
+    if l_2_3 then
+      for l_2_7,l_2_8 in pairs(l_2_3) do
+        if (string.len)(l_2_8) == 32 and (string.match)(l_2_8, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x") then
+          local l_2_9 = l_2_1 .. "\\" .. l_2_8
+          local l_2_10 = (sysio.RegOpenKey)(l_2_9)
+          if l_2_10 then
+            local l_2_11 = (sysio.GetRegValueAsString)(l_2_10, "DisplayName")
+            if l_2_11 == l_2_8 then
+              local l_2_12 = (sysio.GetRegValueAsString)(l_2_10, "ImagePath")
+              if l_2_12 ~= nil and (string.len)(l_2_12) > 80 then
+                l_2_12 = (string.lower)(l_2_12)
+                if (string.sub)(l_2_12, 1, 1) == "\"" then
+                  l_2_12 = (string.sub)(l_2_12, 2, -2)
+                end
+                local l_2_13 = (string.sub)(l_2_12, 1, -37)
+                local l_2_14 = (string.sub)(l_2_12, -36)
+                if l_2_13 == (string.lower)(l_2_0) and (string.match)(l_2_14, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%.exe") then
+                  (MpDetection.ReportResource)("regkey", l_2_9, 805306488, false)
+                  return true
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  do
+    l_2_3 = false
+    return l_2_3
+  end
+end
+
+local l_0_2 = function(l_3_0)
+  -- function num : 0_2
+  local l_3_1 = (string.len)(l_3_0)
+  do
+    if (sysio.IsFolderExists)(l_3_0) then
+      local l_3_2 = (sysio.FindFiles)(l_3_0, "*", 1)
+      for l_3_6,l_3_7 in pairs(l_3_2) do
+        if (sysio.IsFileExists)(l_3_7) then
+          (MpDetection.ReportResource)("file", l_3_7, 805306488, false)
+          local l_3_8, l_3_9, l_3_10, l_3_11 = Infrastructure_SplitThreatPath(l_3_7)
+          if l_3_1 < (string.len)(l_3_8) and (sysio.IsFolderExists)(l_3_8) then
+            (MpDetection.ReportResource)("folder", l_3_8, 805306488, false)
+          end
+        end
+      end
+      ;
+      (MpDetection.ReportResource)("folder", l_3_0, 805306488, false)
+      return true
+    end
+    return false
+  end
+end
+
+local l_0_5 = function(l_4_0, l_4_1)
+  -- function num : 0_3 , upvalues : l_0_2
+  local l_4_2 = "HKLM\\SOFTWARE"
+  local l_4_3 = "HKLM\\SOFTWARE\\Wow6432Node"
+  local l_4_4 = (sysio.RegOpenKey)(l_4_2)
+  if l_4_4 then
+    local l_4_5 = (sysio.RegEnumKeys)(l_4_4)
+    if l_4_5 then
+      for l_4_9,l_4_10 in pairs(l_4_5) do
+        local l_4_11 = (string.lower)((string.sub)(l_4_10, 1, 1))
+        if l_4_11 == "s" or l_4_11 == "w" then
+          local l_4_12 = l_4_2 .. "\\" .. l_4_10
+          local l_4_13 = (sysio.RegOpenKey)(l_4_12)
+          if l_4_13 then
+            local l_4_14 = (sysio.GetRegValueAsString)(l_4_13, "uid")
+            local l_4_15 = (sysio.GetRegValueAsString)(l_4_13, "aid")
+            if l_4_0 == l_4_14 and l_4_1 == l_4_15 then
+              (MpDetection.ReportResource)("regkey", l_4_12, 805306488, false)
+              local l_4_16 = l_4_3 .. "\\" .. l_4_10
+              if (sysio.RegOpenKey)(l_4_16) then
+                (MpDetection.ReportResource)("regkey", l_4_16, 805306488, false)
+              end
+              local l_4_17 = (MpCommon.ExpandEnvironmentVariables)("%ALLUSERSPROFILE%")
+              local l_4_18 = l_4_17 .. "\\Microsoft\\Windows\\Start Menu\\Programs\\" .. l_4_10 .. "\\"
+              l_0_2(l_4_18)
+              l_4_18 = l_4_17 .. "\\Start Menu\\Programs\\" .. l_4_10 .. "\\"
+              l_0_2(l_4_18)
+              return true
+            end
+          end
+        end
+      end
+    end
+  end
+  do
+    l_4_5 = false
+    return l_4_5
+  end
+end
+
+local l_0_7 = function(l_5_0)
+  -- function num : 0_4 , upvalues : l_0_2
+  local l_5_1 = (sysio.RegOpenKey)(l_5_0)
+  if l_5_1 then
+    local l_5_2 = (sysio.RegEnumKeys)(l_5_1)
+    if l_5_2 then
+      for l_5_6,l_5_7 in pairs(l_5_2) do
+        if (string.len)(l_5_7) == 32 and (string.match)(l_5_7, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x") then
+          local l_5_8 = l_5_0 .. "\\" .. l_5_7
+          local l_5_9 = (sysio.RegOpenKey)(l_5_8)
+          if l_5_9 then
+            local l_5_10 = (sysio.GetRegValueAsString)(l_5_9, "UninstallString")
+            local l_5_11 = (sysio.GetRegValueAsString)(l_5_9, "DisplayName")
+            if (l_5_11 == "Social2Search" or l_5_11 == "Wajam") and l_5_10 ~= nil and (string.len)(l_5_10) == 47 and (string.match)((string.lower)(l_5_10), ":\\windows\\%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%.exe") then
+              if (sysio.IsFileExists)(l_5_10) then
+                (MpDetection.ReportResource)("file", l_5_10, 805306488, false)
+              end
+              local l_5_12 = (sysio.GetRegValueAsString)(l_5_9, "InstallLocation")
+              do
+                do
+                  if l_5_12 ~= nil and (string.len)(l_5_12) > 48 then
+                    local l_5_13 = (string.lower)(l_5_12)
+                    if (string.sub)(l_5_13, 2, 16) == ":\\program files" and (string.match)((string.sub)(l_5_13, -32, -1), "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x") then
+                      l_0_2(l_5_12)
+                    end
+                  end
+                  ;
+                  (MpDetection.ReportResource)("regkey", l_5_8, 805306488, false)
+                  do return true end
+                  -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out DO_STMT
+
+                  -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+                  -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_STMT
+
+                  -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+                  -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_STMT
+
+                  -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+                  -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_STMT
+
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  l_5_2 = false
+  return l_5_2
+end
+
+local l_0_8 = function(l_6_0)
+  -- function num : 0_5
+  local l_6_1 = (MpCommon.ExpandEnvironmentVariables)("%windir%")
+  if (sysio.IsFileExists)(l_6_1 .. "\\Tasks\\" .. l_6_0 .. ".job") then
+    (MpDetection.ReportResource)("file", l_6_1 .. "\\Tasks\\" .. l_6_0 .. ".job", 805306488, false)
+  end
+  local l_6_2 = l_6_1 .. "\\System32"
+  if (sysio.IsFileExists)(l_6_2 .. "\\Tasks\\" .. l_6_0) then
+    (MpDetection.ReportResource)("file", l_6_2 .. "\\Tasks\\" .. l_6_0, 805306488, false)
+  end
+  local l_6_3 = "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\Taskcache\\Tree\\" .. l_6_0
+  local l_6_4 = (sysio.RegOpenKey)(l_6_3)
+  if l_6_4 then
+    local l_6_5 = (sysio.GetRegValueAsString)(l_6_4, "Id")
+    if (string.len)(l_6_5) == 38 and (string.match)(l_6_5, "{%x%x%x%x%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%x%x%x%x%x%x%x%x}") then
+      local l_6_6 = "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\Taskcache\\Tasks\\" .. l_6_5
+      local l_6_7 = (sysio.RegOpenKey)(l_6_6)
+      if l_6_7 then
+        local l_6_8 = (sysio.GetRegValueAsString)(l_6_7, "Path")
+        if l_6_8 ~= nil and (string.sub)(l_6_8, 1, 1) == "\\" then
+          l_6_8 = (string.sub)(l_6_8, 2)
+        end
+        if l_6_8 == l_6_0 then
+          (MpDetection.ReportResource)("regkey", l_6_6, 805306488, false)
+          ;
+          (MpDetection.ReportResource)("regkey", l_6_3, 805306488, false)
+        end
+      end
+    end
+  end
+end
+
+if (string.find)(((MpDetection.GetCurrentThreat)()).Name, "BrowserModifier:Win32/Soctuseer", 1, true) then
+  for l_0_12,l_0_13 in pairs(((MpDetection.GetCurrentThreat)()).Resources) do
+    local l_0_9, l_0_10, l_0_11 = function(l_7_0)
+  -- function num : 0_6 , upvalues : l_0_5
+  if (sysio.IsFolderExists)(l_7_0) then
+    local l_7_1 = (sysio.FindFiles)(l_7_0, "*.ps1", 0)
+    for l_7_5,l_7_6 in pairs(l_7_1) do
+      if (sysio.IsFileExists)(l_7_6) then
+        local l_7_7, l_7_8, l_7_9, l_7_10 = Infrastructure_SplitThreatPath(l_7_6)
+        if (string.match)(l_7_9, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%.ps1") then
+          if (string.sub)(l_7_6, 1, 4) == "\\\\?\\" then
+            l_7_6 = (string.sub)(l_7_6, 5)
+          end
+          local l_7_11 = (sysio.GetFileSize)(l_7_6)
+          if l_7_11 > 20000 and l_7_11 < 80000 then
+            local l_7_12 = (sysio.ReadFile)(l_7_6, 0, 25)
+            if l_7_12 ~= nil and (string.lower)(l_7_12) == "$lnlfd = \"01000000d08c9dd" then
+              (MpDetection.ReportResource)("file", l_7_6, 805306488, false)
+              local l_7_13 = (string.sub)(l_7_9, 1, -5)
+              l_0_5(l_7_13)
+              return true
+            end
+          end
+        end
+      end
+    end
+  end
+  do
+    l_7_1 = false
+    return l_7_1
+  end
+end
+, function(l_8_0)
+  -- function num : 0_7
+  local l_8_1 = (sysio.RegOpenKey)(l_8_0)
+  if l_8_1 then
+    local l_8_2 = (sysio.RegEnumValues)(l_8_1)
+    for l_8_6,l_8_7 in pairs(l_8_2) do
+      if (string.match)(l_8_7, "%a:\\Windows\\System32\\drivers\\%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%.sys") or (string.match)(l_8_7, "%a:\\program files\\%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x\\") or (string.match)(l_8_7, "%a:\\Windows\\%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%.exe") then
+        (MpDetection.ReportResource)("regkeyvalue", l_8_0 .. "\\\\" .. l_8_7, 805306488, false)
+      end
+    end
+  end
+end
+
+    -- DECOMPILER ERROR at PC27: Confused about usage of register: R13 in 'UnsetPending'
+
+    -- DECOMPILER ERROR at PC32: Confused about usage of register: R13 in 'UnsetPending'
+
+    -- DECOMPILER ERROR at PC41: Confused about usage of register: R13 in 'UnsetPending'
+
+    if (true).Schema == "file" and (crypto.bitand)((true).Type, MpCommon.MPRESOURCE_TYPE_CONCRETE) == MpCommon.MPRESOURCE_TYPE_CONCRETE then
+      local l_0_17 = Infrastructure_SplitThreatPath((true).Path)
+      l_0_17 = (string.lower)(l_0_17)
+      if (string.sub)(l_0_17, 1, 4) == "\\\\?\\" then
+        l_0_17 = (string.sub)(l_0_17, 5)
+      end
+      if (string.sub)(l_0_17, -1) ~= "\\" then
+        l_0_17 = l_0_17 .. "\\"
+      end
+      -- DECOMPILER ERROR at PC97: Overwrote pending register: R19 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P1
+
+      if (string.find)(l_0_17, "system32\\drivers", 1, true) and R17_PC81 == "sys" and (string.len)(R19_PC86) == 36 and (string.match)(R19_PC86, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%.sys") then
+        l_0_0(R19_PC86, R20_PC99)
+      end
+    end
+    -- DECOMPILER ERROR at PC103: Overwrote pending register: R19 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC111: Overwrote pending register: R19 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC117: Overwrote pending register: R19 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC118: Overwrote pending register: R20 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC124: Overwrote pending register: R19 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC125: Overwrote pending register: R20 in 'AssignReg'
+
+    if (string.sub)(R19_PC86, R20_PC99, 16) == ":\\program files" and (string.len)(R19_PC86) == 32 and (string.match)(R19_PC86, R20_PC99) then
+      local l_0_18 = nil
+      -- DECOMPILER ERROR at PC132: Overwrote pending register: R19 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC133: Overwrote pending register: R19 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC134: Overwrote pending register: R20 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC138: Overwrote pending register: R19 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC139: Overwrote pending register: R19 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC140: Overwrote pending register: R20 in 'AssignReg'
+
+      if (R17_PC81 == "exe" or R17_PC81 == "sys") and R19_PC86 == 36 then
+        R19_PC86 = R19_PC86(R20_PC99, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x")
+        if R19_PC86 then
+          R19_PC86 = l_0_2
+          -- DECOMPILER ERROR at PC146: Overwrote pending register: R20 in 'AssignReg'
+
+          R19_PC86 = R19_PC86(R20_PC99)
+          if R19_PC86 then
+            R19_PC86 = l_0_1
+            -- DECOMPILER ERROR at PC151: Overwrote pending register: R20 in 'AssignReg'
+
+            R19_PC86(R20_PC99)
+          end
+        else
+          if R17_PC81 == "dll" then
+            R19_PC86 = string
+            R19_PC86 = R19_PC86.sub
+            -- DECOMPILER ERROR at PC158: Overwrote pending register: R20 in 'AssignReg'
+
+            R19_PC86 = R19_PC86(R20_PC99, 1, -34)
+            l_0_17 = R19_PC86
+            R19_PC86 = string
+            R19_PC86 = R19_PC86.len
+            -- DECOMPILER ERROR at PC165: Overwrote pending register: R20 in 'AssignReg'
+
+            R19_PC86 = R19_PC86(R20_PC99)
+            if R19_PC86 > 32 then
+              R19_PC86 = string
+              R19_PC86 = R19_PC86.sub
+              -- DECOMPILER ERROR at PC171: Overwrote pending register: R20 in 'AssignReg'
+
+              R19_PC86 = R19_PC86(R20_PC99, -33, -2)
+              local l_0_19 = nil
+              -- DECOMPILER ERROR at PC175: Overwrote pending register: R20 in 'AssignReg'
+
+              -- DECOMPILER ERROR at PC176: Overwrote pending register: R20 in 'AssignReg'
+
+              R20_PC99 = R20_PC99(R19_PC86, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x")
+              if R20_PC99 then
+                R20_PC99 = l_0_2
+                R20_PC99 = R20_PC99(l_0_17)
+                if R20_PC99 then
+                  R20_PC99 = l_0_1
+                  R20_PC99(l_0_17)
+                end
+              end
+            end
+          end
+        end
+        do
+          -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+          -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out IF_STMT
+
+          -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+          -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out IF_STMT
+
+        end
+      end
+    end
+  end
+  local l_0_20 = nil
+  if (sysio.RegExpandUserKey)("HKCU\\Software\\WajIEnhance") then
+    for l_0_24,l_0_25 in pairs((sysio.RegExpandUserKey)("HKCU\\Software\\WajIEnhance")) do
+      local l_0_21, l_0_22, l_0_23 = nil
+      -- DECOMPILER ERROR at PC204: Confused about usage of register: R14 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC213: Overwrote pending register: R17 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC214: Overwrote pending register: R17 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC223: Overwrote pending register: R19 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC230: Overwrote pending register: R19 in 'AssignReg'
+
+      -- DECOMPILER ERROR at PC231: Overwrote pending register: R20 in 'AssignReg'
+
+      if (sysio.RegOpenKey)(l_0_17) and (sysio.GetRegValueAsString)(R17_PC81, "unique_id") ~= nil and R17_PC81 ~= nil and l_0_5(R19_PC86, R20_PC99) then
+        (MpDetection.ReportResource)(R19_PC86, R20_PC99, 805306488, false)
+      end
+    end
+  end
+  do
+    l_0_7("HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall")
+    l_0_7("HKLM\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall")
+    do
+      local l_0_29 = nil
+      l_0_20((MpCommon.ExpandEnvironmentVariables)("%windir%"))
+      l_0_29("HKLM\\SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\Paths")
+      -- DECOMPILER ERROR at PC253: freeLocal<0 in 'ReleaseLocals'
+
+    end
+  end
+end
+

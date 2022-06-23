@@ -1,0 +1,22 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3489.luac 
+
+-- params : ...
+-- function num : 0
+if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p2 ~= nil then
+  local l_0_0 = 0
+  local l_0_1 = (this_sigattrlog[1]).utf8p2
+  l_0_1 = (string.gsub)(l_0_1, "`", "")
+  if l_0_0 > 3 then
+    l_0_1 = (string.lower)(l_0_1)
+    if (string.find)(l_0_1, "frombase64string", 1, true) or (string.find)(l_0_1, "webclient", 1, true) or (string.find)(l_0_1, "newscriptblock", 1, true) or (string.find)(l_0_1, "http", 1, true) then
+      return mp.INFECTED
+    end
+  end
+end
+do
+  -- DECOMPILER ERROR at PC68: Overwrote pending register: R0 in 'AssignReg'
+
+  return l_0_0.CLEAN
+end
+

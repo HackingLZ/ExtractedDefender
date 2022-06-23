@@ -1,0 +1,25 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18842.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.executes_from_dynamic_memory then
+  if (pehdr.SizeOfImage > 2031616 and pehdr.SizeOfImage < 2097152) or pehdr.SizeOfImage > 2359296 and pehdr.SizeOfImage < 2539520 then
+    (mp.changedetectionname)(805306373)
+    return mp.INFECTED
+  end
+  -- DECOMPILER ERROR at PC53: Unhandled construct in 'MakeBoolean' P3
+
+  if (pehdr.SizeOfImage > 5111808 and pehdr.SizeOfImage < 5177344) or pehdr.SizeOfImage <= 4849664 or pehdr.SizeOfImage > 5308416 and pehdr.SizeOfImage < 5373952 then
+    return mp.INFECTED
+  end
+  ;
+  (mp.changedetectionname)(805306374)
+  return mp.SUSPICIOUS
+end
+if mp.HSTR_WEIGHT == 6 then
+  (mp.set_mpattribute)("Obfuscator_LowFi")
+  return mp.CLEAN
+end
+return mp.CLEAN
+

@@ -1,0 +1,16 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3241.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (MpDetection.GetCurrentThreat)()
+if (string.find)(l_0_0.Name, "Detrahere", 1, true) then
+  local l_0_1 = (MpCommon.ExpandEnvironmentVariables)("%windir%")
+  if l_0_1 then
+    local l_0_2 = l_0_1 .. "\\system32"
+    if (sysio.IsFolderExists)(l_0_2) then
+      (MpDetection.ScanResource)("folder://" .. l_0_2)
+    end
+  end
+end
+

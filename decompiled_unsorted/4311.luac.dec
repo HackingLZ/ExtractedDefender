@@ -1,0 +1,270 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4311.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 > 300000 then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.enum_mpattributesubstring)("SCPT:GeneralityExploitStrRare")
+local l_0_2 = (mp.enum_mpattributesubstring)("SCPT:GeneralityExploitStrCommon")
+if #l_0_1 >= 2 or #l_0_1 >= 1 and #l_0_2 >= 2 then
+  if not (mp.get_mpattribute)("RPF:TopLevelFile") then
+    local l_0_3 = (((string.sub)((mp.get_contextdata)(mp.CONTEXT_DATA_FILENAME), -5)):lower()):match("(%.%w+)$")
+    local l_0_4 = {}
+    l_0_4[".zip"] = ""
+    l_0_4[".tar"] = ""
+    l_0_4[".gz"] = ""
+    l_0_4[".tgz"] = ""
+    if not l_0_4[l_0_3] then
+      return mp.CLEAN
+    end
+  end
+  do
+    local l_0_5 = (mp.enum_mpattributesubstring)("SCPT:GeneralityCleanStr")
+    if #l_0_5 >= 1 then
+      return mp.CLEAN
+    end
+    local l_0_6 = (mp.enum_mpattributesubstring)("TEL:Exploit:")
+    if #l_0_6 > 0 then
+      return mp.CLEAN
+    end
+    make_set = function(l_1_0)
+  -- function num : 0_0
+  local l_1_1 = {}
+  local l_1_2 = {}
+  for l_1_6,l_1_7 in pairs(l_1_0) do
+    if not l_1_1[l_1_7] then
+      l_1_1[l_1_7] = true
+      ;
+      (table.insert)(l_1_2, l_1_7)
+    end
+  end
+  return l_1_2
+end
+
+    l_0_1 = make_set((mp.enum_mpattributesubstring)("SCPT:GeneralityExploitStrRare"))
+    l_0_2 = make_set((mp.enum_mpattributesubstring)("SCPT:GeneralityExploitStrCommon"))
+    if #l_0_1 >= 2 or #l_0_1 >= 1 and #l_0_2 >= 2 then
+      local l_0_7 = (mp.getfilename)((mp.bitor)(mp.FILEPATH_QUERY_FULL, mp.FILEPATH_QUERY_LOWERCASE))
+      if l_0_7:find("\\program files", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\system32", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("metasploit", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("nessus", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("kali", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("canvas", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("routersploit", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("ps4-exploit", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("exploitdb", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("packetstorm", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("exploit-database", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\ps4", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\game", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\impact\\", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\vulndisco", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("oscp", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("clamav", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\orbital", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("part00", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\calibre", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("books", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("exploitpack", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("logs\\", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("advisory", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\docs\\freebsd\\", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("infection_monkey", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\ioc", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("smb_nt_trans", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("ropmaker", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("chatlog", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("ctf", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("picus", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\test\\es6\\", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\js\\chunk-", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\embedded\\framework\\", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\regress-", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("chrome\\user data\\default\\extensions\\", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\chakracore\\test\\", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\wp-content\\", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("fuzzdb", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\winamax", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\bug_finder_example", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\milw0rm.com\\", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\cat-s\\", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\ps3", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\hackthebox", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\antsword", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\discord", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\east-master", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\steamapps\\", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("github", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("immunity\\exploits", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("exploitsdb-master", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\homework", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\nsemail", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\d2sec", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\servicedesk", 1, true) then
+        return mp.CLEAN
+      end
+      if l_0_7:find("\\windows\\imecache\\", 1, true) then
+        return mp.CLEAN
+      end
+      local l_0_8 = ((string.sub)((mp.getfilename)((mp.bitor)(mp.FILEPATH_QUERY_FNAME, mp.FILEPATH_QUERY_LOWERCASE)), -5)):match("(%.%w+)$")
+      local l_0_9 = {}
+      l_0_9[".js"] = ""
+      l_0_9[".html"] = ""
+      l_0_9[".wasm"] = ""
+      l_0_9[".wat"] = ""
+      local l_0_10 = {}
+      l_0_10[".c"] = ""
+      l_0_10[".cpp"] = ""
+      l_0_10[".cxx"] = ""
+      l_0_10[".h"] = ""
+      l_0_10[".m"] = ""
+      l_0_10[".md"] = ""
+      l_0_10[".txt"] = ""
+      l_0_10[".bin"] = ""
+      l_0_10[".asm"] = ""
+      local l_0_11 = {}
+      l_0_11[".py"] = ""
+      l_0_11[".pyc"] = ""
+      l_0_11[".ps1"] = ""
+      l_0_11[".vbs"] = ""
+      l_0_11[".vba"] = ""
+      l_0_11[".sh"] = ""
+      if l_0_9[l_0_8] then
+        (mp.set_mpattribute)("Lua:GeneralityExploitBrowser")
+      end
+      if l_0_10[l_0_8] then
+        (mp.set_mpattribute)("Lua:GeneralityExploitCpp")
+      end
+      if l_0_11[l_0_8] then
+        (mp.set_mpattribute)("Lua:GeneralityExploitScript")
+        local l_0_12 = (mp.enum_mpattributesubstring)("SCPT:GeneralityIoT")
+        if #l_0_12 >= 1 then
+          (mp.set_mpattribute)("Lua:GeneralityExploitIoT")
+        end
+      end
+      do
+        do
+          do return mp.INFECTED end
+          return mp.CLEAN
+        end
+      end
+    end
+  end
+end
+

@@ -1,0 +1,35 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3745.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = ""
+local l_0_1 = ""
+local l_0_2 = (mp.getfilesize)()
+if l_0_2 < 20481 or l_0_2 > 69632 then
+  return mp.CLEAN
+end
+;
+(mp.readprotection)(false)
+local l_0_3 = (mp.readfile)(l_0_2 - 8192, 4096)
+local l_0_4 = tostring(l_0_3)
+if (string.find)(l_0_4, "Excel 4", 1, true) ~= nil then
+  (mp.set_mpattribute)("Lua:Excel40")
+  l_0_0 = "Found"
+end
+if l_0_0 ~= "Found" then
+  return mp.CLEAN
+end
+local l_0_5 = (mp.readfile)(l_0_2 - 12288, 4096)
+local l_0_6 = tostring(l_0_5)
+if (string.find)(l_0_6, "win10\000\000\000\030\000\000\000\016\000\000\000Micr", 1, true) ~= nil then
+  l_0_1 = "Found"
+end
+if l_0_1 ~= "Found" then
+  return mp.CLEAN
+end
+local l_0_7 = (mp.readfile)(12288, 8192)
+;
+(mp.vfo_add_buffer)(l_0_7, "[Testing]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+return mp.CLEAN
+

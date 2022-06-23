@@ -1,0 +1,46 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19030.luac 
+
+-- params : ...
+-- function num : 0
+if (pesecs[pehdr.NumberOfSections]).NameDW ~= 1633972270 then
+  return mp.CLEAN
+end
+if peattributes.epscn_islast ~= true then
+  return mp.CLEAN
+end
+if (pesecs[1]).NameDW ~= 2019914798 then
+  return mp.CLEAN
+end
+if pehdr.NumberOfSections ~= 5 then
+  return mp.CLEAN
+end
+if peattributes.hasstandardentry == true then
+  return mp.CLEAN
+end
+if peattributes.epscn_writable == false then
+  return mp.CLEAN
+end
+if epcode[1] ~= 80 then
+  return mp.CLEAN
+end
+if epcode[2] ~= 104 then
+  return mp.CLEAN
+end
+if epcode[7] ~= 232 then
+  return mp.CLEAN
+end
+if epcode[12] ~= 232 then
+  return mp.CLEAN
+end
+if epcode[17] ~= 51 then
+  return mp.CLEAN
+end
+if epcode[18] ~= 192 then
+  return mp.CLEAN
+end
+if epcode[19] ~= 64 then
+  return mp.CLEAN
+end
+return mp.INFECTED
+

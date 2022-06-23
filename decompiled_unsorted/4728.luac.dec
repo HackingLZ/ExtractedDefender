@@ -1,0 +1,41 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4728.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_1 = nil
+local l_0_2 = "ssh-brute-"
+local l_0_3 = 100
+local l_0_4 = 30
+local l_0_5 = 0
+do
+  if (this_sigattrlog[3]).matched then
+    local l_0_0 = 10
+  end
+  if l_0_1 ~= nil then
+    local l_0_6 = nil
+    local l_0_7, l_0_8 = , pcall(MpCommon.RollingQueueCreate, l_0_2 .. l_0_1, l_0_3, l_0_4, 0)
+    if not l_0_8 then
+      return mp.CLEAN
+    end
+    if not l_0_8 then
+      return mp.CLEAN
+    end
+    -- DECOMPILER ERROR at PC52: Overwrote pending register: R7 in 'AssignReg'
+
+    if not l_0_8 then
+      return mp.CLEAN
+    end
+    if l_0_6 <= l_0_5 then
+      pcall(MpCommon.RollingQueueErase, l_0_7)
+      return mp.INFECTED
+    end
+  end
+  do
+    do
+      do return mp.CLEAN end
+      -- WARNING: undefined locals caused missing assignments!
+    end
+  end
+end
+

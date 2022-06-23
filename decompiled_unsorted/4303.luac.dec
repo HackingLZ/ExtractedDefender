@@ -1,0 +1,165 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4303.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = function(l_1_0, l_1_1)
+  -- function num : 0_0
+  local l_1_2 = (string.sub)(l_1_1, 1, -5)
+  local l_1_3 = "HKLM\\SYSTEM\\CurrentControlSet\\services\\" .. l_1_2
+  local l_1_4 = (sysio.RegOpenKey)(l_1_3)
+  if l_1_4 then
+    local l_1_5 = (sysio.GetRegValueAsString)(l_1_4, "DisplayName")
+    if l_1_5 == l_1_2 then
+      l_1_0 = (string.lower)(l_1_0)
+      if (string.sub)(l_1_0, 1, 4) == "\\\\?\\" then
+        l_1_0 = (string.sub)(l_1_0, 5)
+      end
+      if (string.sub)(l_1_0, -1) ~= "\\" then
+        l_1_0 = l_1_0 .. "\\"
+      end
+      local l_1_6 = (string.sub)(l_1_0 .. l_1_1, -53)
+      local l_1_7 = (sysio.GetRegValueAsString)(l_1_4, "ImagePath")
+      if l_1_7 ~= nil and l_1_6 == (string.lower)(l_1_7) then
+        (sysio.StopService)(l_1_2)
+        ;
+        (sysio.DeleteService)(l_1_2)
+        ;
+        (sysio.DeleteRegKey)(l_1_4, nil)
+      end
+    end
+  end
+end
+
+local l_0_1 = function(l_2_0)
+  -- function num : 0_1
+  do
+    if (sysio.IsFolderExists)(l_2_0) then
+      local l_2_1 = (sysio.FindFiles)(l_2_0, "*", 1)
+      for l_2_5,l_2_6 in pairs(l_2_1) do
+        (sysio.DeleteFile)(l_2_6)
+        if not ((sysio.GetLastResult)()).Success then
+          (Remediation.BtrDeleteFile)(l_2_6)
+        end
+      end
+      return true
+    end
+    return false
+  end
+end
+
+local l_0_3 = function()
+  -- function num : 0_2 , upvalues : l_0_1
+  local l_3_0 = "HKLM\\SYSTEM\\CurrentControlSet\\services"
+  local l_3_1 = (sysio.RegOpenKey)(l_3_0)
+  if l_3_1 then
+    local l_3_2 = (sysio.RegEnumKeys)(l_3_1)
+    if l_3_2 then
+      for l_3_6,l_3_7 in pairs(l_3_2) do
+        if (string.len)(l_3_7) == 32 and (string.match)(l_3_7, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x") then
+          local l_3_8 = l_3_0 .. "\\" .. l_3_7
+          local l_3_9 = (sysio.RegOpenKey)(l_3_8)
+          if l_3_9 then
+            local l_3_10 = (sysio.GetRegValueAsString)(l_3_9, "Description")
+            local l_3_11 = (sysio.GetRegValueAsString)(l_3_9, "DisplayName")
+            if l_3_11 ~= nil and l_3_10 ~= nil and l_3_11 == l_3_7 and (string.lower)(l_3_10) == "enhances experience when browsing the web." then
+              local l_3_12 = (sysio.GetRegValueAsString)(l_3_9, "ImagePath")
+              if l_3_12 ~= nil and (string.len)(l_3_12) > 80 then
+                if (string.sub)(l_3_12, 1, 1) == "\"" then
+                  l_3_12 = (string.sub)(l_3_12, 2, -2)
+                end
+                local l_3_13, l_3_14, l_3_15, l_3_16 = Infrastructure_SplitThreatPath(l_3_12)
+                if l_3_16 ~= nil and l_3_16 == "exe" and l_3_15 ~= nil and (string.len)(l_3_15) == 36 and l_3_14 ~= nil and (string.len)(l_3_14) == 32 and (string.match)(l_3_15, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%.exe") and (string.match)(l_3_14, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x") and l_3_13 ~= nil and (string.len)(l_3_13) > 16 and (string.sub)((string.lower)(l_3_13), 2, 16) == ":\\program files" then
+                  (sysio.StopService)(l_3_7)
+                  ;
+                  (sysio.DeleteService)(l_3_7)
+                  ;
+                  (sysio.DeleteRegKey)(l_3_9, nil)
+                  l_0_1(l_3_13)
+                  return true
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  do
+    l_3_2 = nil
+    return l_3_2
+  end
+end
+
+local l_0_4 = function(l_4_0)
+  -- function num : 0_3
+  local l_4_1 = (sysio.RegOpenKey)(l_4_0)
+  if l_4_1 then
+    local l_4_2 = (sysio.RegEnumKeys)(l_4_1)
+    if l_4_2 then
+      for l_4_6,l_4_7 in pairs(l_4_2) do
+        if (string.len)(l_4_7) == 32 and (string.match)(l_4_7, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x") then
+          local l_4_8 = l_4_0 .. "\\" .. l_4_7
+          local l_4_9 = (sysio.RegOpenKey)(l_4_8)
+          if l_4_9 then
+            local l_4_10 = (sysio.GetRegValueAsString)(l_4_9, "UninstallString")
+            local l_4_11 = (sysio.GetRegValueAsString)(l_4_9, "DisplayName")
+            if l_4_11 == "Social2Search" and l_4_10 ~= nil and (string.len)(l_4_10) == 47 and (string.match)((string.lower)(l_4_10), ":\\windows\\%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%.exe") then
+              if (sysio.IsFileExists)(l_4_10) then
+                (sysio.DeleteFile)(l_4_10)
+              end
+              ;
+              (sysio.DeleteRegKey)(l_4_9, nil)
+              return true
+            end
+          end
+        end
+      end
+    end
+  end
+  do
+    l_4_2 = false
+    return l_4_2
+  end
+end
+
+-- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
+
+if (string.find)((Remediation.Threat).Name, "BrowserModifier:Win32/Soctuseer", 1, true) then
+  do
+    for l_0_8,l_0_9 in ipairs((Remediation.Threat).Resources) do
+      local l_0_5 = nil
+      -- DECOMPILER ERROR at PC20: Confused about usage of register: R9 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC24: Confused about usage of register: R9 in 'UnsetPending'
+
+      if (true).Schema == "file" then
+        local l_0_11, l_0_12, l_0_13 = Infrastructure_SplitThreatPath((true).Path)
+        if (string.find)(l_0_11, "system32\\drivers", 1, true) and R13_PC35 == "sys" and (string.len)(l_0_13) == 36 and (string.match)(l_0_13, "%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%.sys") then
+          do
+            do
+              l_0_0(l_0_11, l_0_13)
+              do break end
+              -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out DO_STMT
+
+              -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+              -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out IF_STMT
+
+              -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+              -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out IF_STMT
+
+            end
+          end
+        end
+      end
+    end
+    l_0_3()
+    l_0_4("HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall")
+    l_0_4("HKLM\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall")
+    -- DECOMPILER ERROR at PC65: freeLocal<0 in 'ReleaseLocals'
+
+  end
+end
+

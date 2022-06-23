@@ -1,0 +1,63 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1335.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = this_sigattrlog[2]
+if not l_0_0 or not l_0_0.matched then
+  return mp.CLEAN
+end
+local l_0_1 = l_0_0.utf8p2
+if not l_0_1 then
+  return mp.CLEAN
+end
+local l_0_2 = (string.match)(l_0_1, "injectiontype[:=](%a+)")
+if not l_0_2 then
+  return mp.CLEAN
+end
+if #l_0_1 ~= 14 + #l_0_2 and #l_0_1 ~= 14 + #l_0_2 + 1 then
+  return mp.CLEAN
+end
+local l_0_3 = this_sigattrlog[1]
+if not l_0_3 or not l_0_3.matched then
+  return mp.CLEAN
+end
+local l_0_4 = l_0_3.utf8p2
+if not l_0_4 then
+  return mp.CLEAN
+end
+local l_0_5 = (string.match)(l_0_4, "injectiontype:(%a+);")
+if not l_0_5 then
+  return mp.CLEAN
+end
+do
+  if l_0_5 ~= "allocvmremote" or not (string.match)(l_0_4, "localvmallocregionsize:(%d+);") then
+    local l_0_6 = (string.match)(l_0_4, "vmregionsize:(%d+);")
+  end
+  -- DECOMPILER ERROR at PC80: Confused about usage of register: R6 in 'UnsetPending'
+
+  if not l_0_6 then
+    return mp.CLEAN
+  end
+  local l_0_7 = nil
+  if not l_0_3.ppid then
+    return mp.CLEAN
+  end
+  -- DECOMPILER ERROR at PC93: Confused about usage of register: R7 in 'UnsetPending'
+
+  do
+    local l_0_8, l_0_9, l_0_10, l_0_11, l_0_12 = , (MpCommon.IsFriendlyProcess)(l_0_3.ppid) and "1" or "0"
+    ;
+    (bm.add_related_string)("ci_al", l_0_5, bm.RelatedStringBMReport)
+    ;
+    (bm.add_related_string)("ci_tp", l_0_2, bm.RelatedStringBMReport)
+    ;
+    (bm.add_related_string)("ci_sz", l_0_7, bm.RelatedStringBMReport)
+    -- DECOMPILER ERROR at PC125: Confused about usage of register: R8 in 'UnsetPending'
+
+    ;
+    (bm.add_related_string)("ci_fr", l_0_9, bm.RelatedStringBMReport)
+    return mp.INFECTED
+  end
+end
+

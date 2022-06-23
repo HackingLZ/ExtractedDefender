@@ -1,0 +1,29 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18632.luac 
+
+-- params : ...
+-- function num : 0
+if (this_sigattrlog[3]).matched and (this_sigattrlog[3]).utf8p1 ~= nil and (this_sigattrlog[4]).matched and (this_sigattrlog[4]).utf8p1 ~= nil then
+  local l_0_0 = (string.lower)((this_sigattrlog[3]).utf8p1)
+  local l_0_1 = (string.lower)((this_sigattrlog[4]).utf8p1)
+  if l_0_0:match("([^\\]+)$") ~= l_0_1 then
+    return mp.CLEAN
+  end
+  local l_0_2 = {}
+  l_0_2["winword.exe"] = true
+  l_0_2["excel.exe"] = true
+  l_0_2["outlook.exe"] = true
+  l_0_2["olk.exe"] = true
+  l_0_2["splwow64.exe"] = true
+  l_0_2["deletelogfiles.exe"] = true
+  l_0_2["dw20.exe"] = true
+  l_0_2["microsoft.uev.synccontroller.exe"] = true
+  if l_0_2[l_0_1] then
+    return mp.CLEAN
+  end
+  return mp.INFECTED
+end
+do
+  return mp.CLEAN
+end
+

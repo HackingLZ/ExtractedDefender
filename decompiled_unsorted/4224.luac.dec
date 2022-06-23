@@ -1,0 +1,112 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4224.luac 
+
+-- params : ...
+-- function num : 0
+if epcode[1] ~= 104 then
+  return mp.CLEAN
+end
+local l_0_0 = pehdr.ImageBase
+if l_0_0 ~= 4194304 then
+  return mp.CLEAN
+end
+;
+(mp.readprotection)(false)
+local l_0_1 = (mp.readu_u32)(epcode, 2)
+if l_0_1 < l_0_0 then
+  return mp.CLEAN
+end
+local l_0_2 = (mp.readfile)(l_0_1 - l_0_0, 52)
+if (mp.readu_u32)(l_0_2, 1) ~= 557138518 then
+  return mp.CLEAN
+end
+local l_0_3 = (mp.readu_u32)(l_0_2, 45)
+local l_0_4 = (mp.readu_u32)(l_0_2, 49)
+if l_0_4 < l_0_0 then
+  return mp.CLEAN
+end
+local l_0_5 = (mp.readfile)(l_0_4 - l_0_0, 8)
+if (mp.readu_u32)(l_0_5, 1) ~= 500 then
+  return mp.CLEAN
+end
+local l_0_6 = (mp.readu_u32)(l_0_5, 5)
+if l_0_6 < l_0_0 then
+  return mp.CLEAN
+end
+local l_0_7 = (mp.readfile)(l_0_6 - l_0_0, 68)
+local l_0_8 = (mp.readu_u16)(l_0_7, 43)
+local l_0_9 = 0
+local l_0_10 = (mp.readu_u32)(l_0_7, 49)
+if l_0_10 < l_0_0 then
+  return mp.CLEAN
+end
+local l_0_13 = 50
+do
+  if l_0_8 <= l_0_13 then
+    local l_0_11, l_0_12 = false
+  end
+  for l_0_17 = 0, l_0_13 do
+    local l_0_14 = nil
+    -- DECOMPILER ERROR at PC116: Confused about usage of register: R16 in 'UnsetPending'
+
+    local l_0_19 = nil
+    if (mp.readu_u32)((mp.readfile)(l_0_10 - l_0_0 + R16_PC116 * 48, 32), 29) == 0 and not l_0_14 then
+      (mp.set_mpattribute)("Lua:VB.ObjectWithNoMethods")
+      l_0_14 = true
+    end
+    l_0_9 = l_0_9 + (mp.readu_u32)((mp.readfile)(l_0_10 - l_0_0 + R16_PC116 * 48, 32), 29)
+  end
+  local l_0_20 = nil
+  if l_0_3 - l_0_1 > 393216 then
+    (mp.set_mpattribute)("Lua:VB.SubMainDistanceGT_0x60000")
+  end
+  ;
+  (mp.set_mpattribute)("Lua:VB.TotalMethods:" .. tostring(l_0_9))
+  ;
+  (mp.set_mpattribute)("Lua:VB.TotalObjects:" .. tostring(l_0_8))
+  if l_0_9 >= 25 and l_0_9 <= 35 and (l_0_8 == 2 or l_0_8 == 3) and l_0_3 == 0 then
+    (mp.set_mpattribute)("Lua:VB.SuspiciousCrypter.A")
+  else
+    if l_0_9 >= 45 and l_0_9 <= 68 and (l_0_8 == 2 or l_0_8 == 3) and l_0_3 == 0 then
+      (mp.set_mpattribute)("Lua:VB.SuspiciousCrypter.B")
+    else
+      -- DECOMPILER ERROR at PC197: Confused about usage of register: R13 in 'UnsetPending'
+
+      if l_0_9 >= 38 and l_0_9 <= 68 and l_0_8 >= 2 and l_0_8 <= 5 and l_0_3 - l_0_1 > 393216 then
+        (mp.set_mpattribute)("Lua:VB.SuspiciousCrypter.C")
+      else
+        -- DECOMPILER ERROR at PC210: Confused about usage of register: R13 in 'UnsetPending'
+
+        if l_0_9 == 0 and l_0_8 >= 5 and l_0_8 <= 8 and l_0_3 - l_0_1 > 393216 then
+          (mp.set_mpattribute)("Lua:VB.SuspiciousCrypter.D")
+        else
+          if l_0_9 == 23 and l_0_8 == 2 and l_0_3 == 0 then
+            (mp.set_mpattribute)("Lua:VB.SuspiciousCrypter.E")
+          else
+            -- DECOMPILER ERROR at PC234: Confused about usage of register: R13 in 'UnsetPending'
+
+            if l_0_9 == 0 and (l_0_8 == 3 or l_0_8 == 4) and l_0_3 - l_0_1 > 413696 then
+              (mp.set_mpattribute)("Lua:VB.SuspiciousCrypter.F")
+            else
+              -- DECOMPILER ERROR at PC247: Confused about usage of register: R13 in 'UnsetPending'
+
+              if l_0_9 == 0 and l_0_8 >= 9 and l_0_8 <= 12 and l_0_3 - l_0_1 > 393216 then
+                (mp.set_mpattribute)("Lua:VB.SuspiciousCrypter.G")
+              else
+                if l_0_9 == 0 and l_0_8 >= 24 then
+                  (mp.set_mpattribute)("Lua:VB.SuspiciousCrypter.H")
+                else
+                  if l_0_9 == 147 and l_0_8 == 14 then
+                    (mp.set_mpattribute)("Lua:VB.SuspiciousCrypter.I")
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  return mp.CLEAN
+end
+

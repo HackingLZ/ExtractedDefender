@@ -1,0 +1,14 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19605.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (bm.get_current_process_startup_info)()
+local l_0_1 = l_0_0.command_line
+l_0_1 = (string.lower)((string.gsub)(l_0_1, "`", ""))
+local l_0_2 = (string.gsub)(l_0_1, " ", "")
+if (string.find)(l_0_2, ".downloadstring(\'ht", 1, true) or (string.find)(l_0_2, ".downloadstring(\'\\\\", 1, true) or (string.find)(l_0_2, ".downloadstring($", 1, true) or (string.find)(l_0_2, ").\'downloadstring\'(", 1, true) or (string.find)(l_0_2, ".openread(\'http", 1, true) or (string.find)(l_0_2, ".open(\'get\',\'http", 1, true) or (string.find)(l_0_2, ".invoke(\'http", 1, true) or (string.find)(l_0_2, "get-itemproperty", 1, true) or (string.find)(l_0_2, ".entrypoint.invoke($", 1, true) or (string.find)(l_0_2, "|iex", 1, true) or (string.find)(l_0_2, ";iex$", 1, true) or (string.find)(l_0_2, ";iex($", 1, true) or (string.find)(l_0_2, ")).readtoend()", 1, true) or (string.find)(l_0_2, "\\admin$\\", 1, true) or (string.find)(l_0_2, "iex($env:", 1, true) or (string.find)(l_0_2, "x(iwr(\'http", 1, true) or (string.find)(l_0_2, "\\users\\public\\", 1, true) or (string.find)(l_0_2, "\\appdata\\roaming\\", 1, true) or (string.find)(l_0_2, ")).invoke(((", 1, true) or (string.find)(l_0_1, "gp -pa hk", 1, true) or (string.find)(l_0_1, "gp -path hk", 1, true) or (string.find)(l_0_1, "[wmiclass] ", 1, true) or (string.find)(l_0_1, "(gv ", 1, true) or (string.find)(l_0_1, "(gal ", 1, true) or (string.find)(l_0_1, "(gcm ", 1, true) or (string.find)(l_0_1, ");sal ", 1, true) or (string.find)(l_0_1, ");sv ", 1, true) then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

@@ -1,0 +1,115 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 507.luac 
+
+-- params : ...
+-- function num : 0
+is_in = function(l_1_0, l_1_1)
+  -- function num : 0_0
+  if (string.match)(l_1_0, l_1_1) ~= nil then
+    return true
+  else
+    return false
+  end
+end
+
+do
+  if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p2 ~= nil then
+    local l_0_0 = (string.lower)((this_sigattrlog[1]).utf8p2)
+    if is_in(l_0_0, "mitconfig\\mitconfig\\postsetup") then
+      return mp.CLEAN
+    end
+    if is_in(l_0_0, "\\printix%.net\\printix client") then
+      return mp.CLEAN
+    end
+  end
+  do
+    if (this_sigattrlog[2]).matched and (this_sigattrlog[2]).utf8p2 ~= nil then
+      local l_0_1 = (string.lower)((this_sigattrlog[2]).utf8p2)
+      if is_in(l_0_1, "\\uninstallxpertagent%.ps1") then
+        return mp.CLEAN
+      end
+      if is_in(l_0_1, "\\approot\\bin\\webrolemonitor%.ps1") then
+        return mp.CLEAN
+      end
+      if is_in(l_0_1, "\\uninstallsqe%.ps1") then
+        return mp.CLEAN
+      end
+      if is_in(l_0_1, "\\installstandingqueryextension%.ps1") then
+        return mp.CLEAN
+      end
+      if is_in(l_0_1, "\\program files\\altiris\\altiris agent\\") then
+        return mp.CLEAN
+      end
+      if is_in(l_0_1, "\\chr\\source\\chr-maintenance%.ps1") then
+        return mp.CLEAN
+      end
+      if is_in(l_0_1, "\\addtaskextraskriver%.ps1") then
+        return mp.CLEAN
+      end
+    end
+    local l_0_2 = nil
+    if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p2 ~= nil then
+      l_0_2 = (this_sigattrlog[1]).utf8p2
+    else
+      if (this_sigattrlog[2]).matched and (this_sigattrlog[2]).utf8p2 ~= nil then
+        l_0_2 = (this_sigattrlog[2]).utf8p2
+      else
+        if (this_sigattrlog[3]).matched and (this_sigattrlog[3]).utf8p2 ~= nil then
+          l_0_2 = (this_sigattrlog[3]).utf8p2
+        end
+      end
+    end
+    if l_0_2 ~= nil then
+      local l_0_3 = (mp.GetExecutablesFromCommandLine)(l_0_2)
+      for l_0_7,l_0_8 in ipairs(l_0_3) do
+        if (sysio.IsFileExists)(l_0_8) then
+          (bm.add_related_file)(l_0_8)
+        end
+      end
+    end
+    do
+      l_0_3 = nil
+      local l_0_9 = nil
+      l_0_9 = this_sigattrlog
+      l_0_9 = l_0_9[5]
+      l_0_9 = l_0_9.matched
+      if l_0_9 then
+        l_0_9 = this_sigattrlog
+        l_0_9 = l_0_9[5]
+        l_0_9 = l_0_9.utf8p2
+        if l_0_9 ~= nil then
+          l_0_9 = this_sigattrlog
+          l_0_9 = l_0_9[5]
+          l_0_3 = l_0_9.utf8p2
+        end
+      end
+      if l_0_3 ~= nil then
+        l_0_9 = mp
+        l_0_9 = l_0_9.GetExecutablesFromCommandLine
+        l_0_9 = l_0_9(l_0_3)
+        local l_0_10 = nil
+        l_0_10 = ipairs
+        l_0_10 = l_0_10(l_0_9)
+        for l_0_14,l_0_15 in l_0_10 do
+          local l_0_15 = nil
+          l_0_15 = sysio
+          l_0_15 = l_0_15.IsFileExists
+          l_0_15 = l_0_15(l_0_14)
+          if l_0_15 then
+            l_0_15 = bm
+            l_0_15 = l_0_15.add_related_file
+            l_0_15(l_0_14)
+          end
+        end
+      end
+      do
+        l_0_9 = mp
+        l_0_9 = l_0_9.INFECTED
+        do return l_0_9 end
+        -- DECOMPILER ERROR at PC218: Confused about usage of register R3 for local variables in 'ReleaseLocals'
+
+      end
+    end
+  end
+end
+

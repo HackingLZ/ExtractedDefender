@@ -1,0 +1,70 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4170.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = "none"
+if (mp.readu_u32)(headerpage, 1) == 1585332259 then
+  l_0_0 = "VBE"
+else
+  if ((mp.readu_u32)(headerpage, 1) == 1667594309 and (mp.readu_u32)(headerpage, 5) == 677737589) or (mp.get_mpattribute)("TARG:VBSWithExecute") then
+    l_0_0 = "VBSExecute"
+  else
+    if (mp.get_mpattribute)("TARG:VBSWithConsecutiveV") then
+      l_0_0 = "VBSConsecutiveV"
+    else
+      if (mp.get_mpattribute)("RPF:AnyFileHasIOAVURL") then
+        local l_0_1 = (string.lower)((mp.getfilename)())
+        if (string.sub)(l_0_1, -4) == ".vbs" then
+          l_0_0 = "VBSWithURL"
+        end
+      end
+    end
+  end
+end
+do
+  local l_0_2 = (mp.getfilesize)()
+  if l_0_2 < 12288 then
+    return mp.CLEAN
+  end
+  ;
+  (mp.readprotection)(false)
+  local l_0_3 = (mp.readfile)(l_0_2 - 12288, 12288)
+  local l_0_4 = l_0_3:find("\'\' SIG \'\' Begin signature block", 1, true)
+  if l_0_4 == nil then
+    return mp.CLEAN
+  end
+  if l_0_0 == "VBE" then
+    (mp.set_mpattribute)("Lua:SignedVBEFile")
+  else
+    if l_0_0 == "VBSExecute" then
+      (mp.set_mpattribute)("Lua:SignedVBSFileWitExecute")
+    else
+      if l_0_0 == "VBSConsecutiveV" then
+        (mp.set_mpattribute)("Lua:SignedVBSFileWithVBSConsecutiveV")
+      else
+        if l_0_0 == "VBSWithURL" then
+          (mp.set_mpattribute)("Lua:SignedVBSFileWithURL")
+        end
+      end
+    end
+  end
+  ;
+  (mp.UfsSetMetadataBool)("Lua:SignedVBEVBSFile", true)
+  if (string.sub)(l_0_0, 1, 3) == "VBS" then
+    local l_0_5 = (mp.get_parent_filehandle)()
+    local l_0_6, l_0_7 = pcall(mp.get_filesize_by_handle, l_0_5)
+    if l_0_6 == false then
+      (mp.UfsSetMetadataBool)("Lua:SignedVBEVBSTopFile", true)
+    end
+  end
+  do
+    l_0_4 = l_0_4 + 31
+    l_0_3 = l_0_3:sub(l_0_4)
+    l_0_3 = l_0_3:gsub("\'\' SIG \'\' ", "")
+    ;
+    (mp.vfo_add_buffer)(l_0_3, "[ScriptSigBlock]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+    return mp.CLEAN
+  end
+end
+

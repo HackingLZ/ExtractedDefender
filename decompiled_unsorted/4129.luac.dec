@@ -1,0 +1,63 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4129.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILEPATH))
+if l_0_0 == nil or (string.len)(l_0_0) < 22 or (string.find)(l_0_0, "\\appdata\\local\\temp\\", 1, true) == nil then
+  return mp.CLEAN
+end
+local l_0_1 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_FILENAME))
+if l_0_1 == nil or (string.len)(l_0_1) < 5 then
+  return mp.CLEAN
+end
+local l_0_2 = (string.sub)(l_0_1, -4)
+if l_0_2 == nil or (string.len)(l_0_2) < 4 then
+  return mp.CLEAN
+end
+local l_0_3 = {}
+l_0_3[".xls"] = "excel"
+l_0_3.xlsx = "excel"
+l_0_3.xlsm = "excel"
+l_0_3.xlsb = "excel"
+l_0_3.xltx = "excel"
+l_0_3.xltm = "excel"
+l_0_3.xlam = "excel"
+l_0_3[".xla"] = "excel"
+l_0_3[".doc"] = "word"
+l_0_3.docx = "word"
+l_0_3.docm = "word"
+l_0_3.dotx = "word"
+l_0_3.dotm = "word"
+l_0_3[".rtf"] = "word"
+l_0_3[".ppt"] = "powerpoint"
+l_0_3.pptm = "powerpoint"
+l_0_3[".pps"] = "powerpoint"
+l_0_3.pptx = "powerpoint"
+l_0_3.ppsx = "powerpoint"
+l_0_3[".odt"] = "odt"
+l_0_3[".xml"] = "xml"
+if l_0_3[l_0_2] == nil then
+  return mp.CLEAN
+end
+local l_0_4 = (string.match)(l_0_0, "\\appdata\\local\\temp\\(.+)")
+if l_0_4 == nil or (string.len)(l_0_4) < 4 then
+  return mp.CLEAN
+end
+if (string.find)(l_0_4, "\\", 1, true) ~= nil then
+  return mp.CLEAN
+end
+local l_0_5 = {}
+l_0_5.zip = "temp%x_.+%.zip"
+l_0_5.rar = "rar$.+"
+l_0_5["7zip"] = "7z.+"
+l_0_5.wzip = "wz.+"
+local l_0_6 = l_0_3[l_0_2]
+for l_0_10,l_0_11 in pairs(l_0_5) do
+  if (string.match)(l_0_4, l_0_11) ~= nil then
+    (mp.set_mpattribute)("Lua:OfficeExtractedFileInZip.A!" .. l_0_10 .. "_" .. l_0_6)
+    return mp.INFECTED
+  end
+end
+return mp.CLEAN
+

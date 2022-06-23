@@ -1,0 +1,48 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4089.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = 805306511
+local l_0_1 = ""
+local l_0_2 = (MpDetection.GetCurrentThreat)()
+for l_0_6,l_0_7 in pairs(l_0_2.Resources) do
+  if l_0_7.Schema == "file" and (crypto.bitand)(l_0_7.Type, MpCommon.MPRESOURCE_TYPE_CONCRETE) == MpCommon.MPRESOURCE_TYPE_CONCRETE then
+    Infrastructure_DetectionReportFolder(l_0_0, l_0_7.Path, true)
+    l_0_1 = l_0_7.Path
+  end
+end
+local l_0_8 = (string.match)(l_0_1, "%a:\\Program Files.*\\ReviverSoft\\")
+if l_0_8 ~= nil then
+  if (sysio.IsFolderExists)(l_0_8) then
+    (MpDetection.ReportResource)("folder", l_0_8, l_0_0, false)
+  end
+  local l_0_9 = "\\\\?\\" .. l_0_8 .. "Smart Monitor\\ReviverSoftSmartMonitorService.exe"
+  if (sysio.IsFileExists)(l_0_9) then
+    Infrastructure_DetectionReportFolder(l_0_0, l_0_9, true)
+  end
+end
+do
+  local l_0_10 = (sysio.ExpandFilePath)("%Common_AppData%")
+  if l_0_10 ~= nil then
+    local l_0_11 = l_0_10[2] .. "\\ReviverSoft\\"
+    local l_0_12 = l_0_11 .. "PC Reviver\\PCReviver.ini"
+    if (sysio.IsFileExists)(l_0_12) then
+      Infrastructure_DetectionReportFolder(l_0_0, l_0_12, true)
+      ;
+      (MpDetection.ReportResource)("folder", l_0_11, l_0_0, false)
+    end
+    l_0_11 = l_0_10[2] .. "\\Microsoft\\Windows\\Start Menu\\Programs\\ReviverSoft\\"
+    l_0_12 = l_0_11 .. "PC Reviver\\PC Reviver.lnk"
+    if (sysio.IsFileExists)(l_0_12) then
+      Infrastructure_DetectionReportFolder(l_0_0, l_0_12, true)
+      ;
+      (MpDetection.ReportResource)("folder", l_0_11, l_0_0, false)
+    end
+  end
+  do
+    Infrastructure_ReportRegistryAppId(l_0_0, "ReviverSoftSmartMonitorService.exe")
+    Infrastructure_ReportRegistryAppId(l_0_0, "SmartAlertsService.exe")
+  end
+end
+

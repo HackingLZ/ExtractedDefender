@@ -1,0 +1,27 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3735.luac 
+
+-- params : ...
+-- function num : 0
+if mp.HEADERPAGE_SZ < 1024 then
+  return mp.CLEAN
+end
+if (mp.readu_u32)(headerpage, 1) ~= 67324752 then
+  return mp.CLEAN
+end
+if (mp.readu_u16)(headerpage, 9) == 0 and (mp.readu_u32)(headerpage, 23) ~= 0 then
+  (mp.set_mpattribute)("Lua:ZipNoCompression")
+  if (mp.readu_u32)(headerpage, 19) == 4294967295 and (mp.readu_u32)(headerpage, 23) == 4294967295 then
+    local l_0_0 = 31 + (mp.readu_u16)(headerpage, 27) + (mp.readu_u16)(headerpage, 29)
+    if l_0_0 < 1008 and (mp.readu_u32)(headerpage, l_0_0) == 67324752 then
+      (mp.set_mpattribute)("Lua:MizenotaDoubleZip")
+    end
+  end
+end
+do
+  if (mp.bitand)((mp.readu_u16)(headerpage, 7), 1) == 1 then
+    (mp.set_mpattribute)("Lua:ZipEncrypted")
+  end
+  return mp.CLEAN
+end
+

@@ -1,0 +1,37 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3557.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (string.lower)(tostring(footerpage))
+local l_0_1 = {}
+-- DECOMPILER ERROR at PC9: No list found for R1 , SetList fails
+
+-- DECOMPILER ERROR at PC10: Overwrote pending register: R2 in 'AssignReg'
+
+local l_0_2 = "(%(\"cmd.exe.+%);)"
+-- DECOMPILER ERROR at PC11: Overwrote pending register: R3 in 'AssignReg'
+
+local l_0_3 = "(\"cmd.exe /c .+%);)"
+for l_0_7 = 1, l_0_2 do
+  l_0_3 = (string.match)(l_0_0, l_0_1[l_0_7])
+  if l_0_3 then
+    l_0_0 = l_0_3
+    break
+  end
+end
+do
+  do
+    if l_0_3 then
+      local l_0_8, l_0_9 = (string.gsub)(l_0_0, "%^", "")
+      if l_0_8 and l_0_9 > 20 then
+        l_0_8 = (string.gsub)(l_0_8, "[ \n\r\t]", "")
+        ;
+        (mp.vfo_add_buffer)(l_0_8, "[CMDEmbedded]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+        return mp.INFECTED
+      end
+    end
+    return mp.CLEAN
+  end
+end
+

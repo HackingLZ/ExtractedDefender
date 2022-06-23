@@ -1,0 +1,28 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4117.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON)
+if l_0_0 == mp.SCANREASON_ONMODIFIEDHANDLECLOSE and (mp.get_contextdata)(mp.CONTEXT_DATA_NEWLYCREATEDHINT) == true then
+  local l_0_1 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_PROCESSNAME))
+  local l_0_2 = "amazon-ssm-agent.exe|waworkerhost.exe|gcemetadatascripts.exe|ruby.exe|ssm-document-worker.exe|glyph.publisher.exe|ssm-agent-worker.exe|screenconnect.clientservice.exe|cfn-init.exe|winhup.exe|cloudtestagent.exe|microsoft.management.services.intunewindowsagent.exe|azcopy.exe|agentexecutor.exe|gitlab-runner.exe|scriptrunner.exe|cagservice.exe|ltsvc.exe|jumpcloud-agent-updater.exe|"
+  if l_0_2:find(l_0_1, 1, true) then
+    return mp.CLEAN
+  end
+  local l_0_3 = "cyserver.exe|aemagent.exe|pangphip.exe"
+  if l_0_3:find(l_0_1, 1, true) then
+    return mp.CLEAN
+  end
+  local l_0_4 = (mp.getfilename)((mp.bitor)(mp.FILEPATH_QUERY_FNAME, mp.FILEPATH_QUERY_LOWERCASE))
+  local l_0_5 = "appveyor.yml|cscompmeta|resume_db.json|metadata_db.json|userscript.bat|userscript.ps1|"
+  if l_0_5:find(l_0_4, 1, true) then
+    return mp.CLEAN
+  end
+  TrackPidAndTechnique("AMSI", "T1105", "ingress_tool")
+  return mp.INFECTED
+end
+do
+  return mp.CLEAN
+end
+

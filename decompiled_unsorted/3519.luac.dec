@@ -1,0 +1,20 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3519.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = ""
+local l_0_1 = (mp.enum_mpattributesubstring)("PUA:")
+if l_0_1 ~= nil and #l_0_1 > 0 then
+  for l_0_5,l_0_6 in ipairs(l_0_1) do
+    local l_0_7 = (string.lower)(l_0_6)
+    if (string.find)(l_0_7, "coinminer", 1, true) == nil and (string.find)(l_0_7, "namedminer", 1, true) == nil and (string.find)(l_0_7, "miner", 1, true) ~= nil then
+      l_0_0 = (string.format)("%s%s|", l_0_0, l_0_7)
+    end
+  end
+  if l_0_0 ~= "" then
+    (mp.UfsSetMetadataStringA)("LUAUFS:MinerDets", l_0_0)
+  end
+end
+return mp.CLEAN
+

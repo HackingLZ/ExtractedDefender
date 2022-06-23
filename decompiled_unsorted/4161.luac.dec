@@ -1,0 +1,40 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4161.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 >= 4096 then
+  return mp.CLEAN
+end
+if (mp.get_mpattribute)("PACKED_WITH:[EmbeddedString]") then
+  return mp.CLEAN
+end
+local l_0_1 = (string.lower)(tostring(headerpage))
+l_0_1 = (string.gsub)(l_0_1, " ", "")
+local l_0_2, l_0_3, l_0_4, l_0_5 = (string.match)(l_0_1, "%$(%w+)=%$(%w+)%.replace%(\"(.)\",\"0x\"%).split%(\"(.)\"%);")
+if l_0_2 == l_0_3 then
+  local l_0_6 = (string.match)(l_0_1, "%);%$" .. l_0_2 .. "=\"(..-)\";")
+  if l_0_6 == nil then
+    return mp.CLEAN
+  end
+  if (string.find)(l_0_4, "[%^%$%(%)%%%.%[%]%*%+%-%?]") then
+    l_0_4 = "%" .. l_0_4
+  end
+  if (string.find)(l_0_5, "[%^%$%(%)%%%.%[%]%*%+%-%?]") then
+    l_0_5 = "%" .. l_0_5
+  end
+  l_0_6 = (string.gsub)(l_0_6, l_0_4, "")
+  l_0_6 = (string.gsub)(l_0_6, l_0_5, "")
+  if (string.len)(l_0_6) < 256 then
+    return mp.CLEAN
+  end
+  local l_0_7 = "4D5A9000000000000000000050450000" .. "4C010100000000000000000000000000" .. "78000F000B0100000000000000000000" .. "00000000D0000000000000000C000000" .. "00004000000100000001000004000000" .. "01000000040000000000000000300000" .. "C5000000000000000300000000000000" .. "00000000000000000000000000000000" .. "00000000000000000000000000000000" .. "0000000000000000000000002E746578" .. "7400000000200000D000000000200000" .. "D0000000000000000000000000000000" .. "400030E0000000000000000000000000" .. l_0_6
+  ;
+  (mp.vfo_add_buffer)(fastHex2Bin(l_0_7, "([0-9A-Fa-f][0-9A-Fa-f])"), "[hextobin]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+  return mp.INFECTED
+end
+do
+  return mp.CLEAN
+end
+

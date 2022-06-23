@@ -1,0 +1,36 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18561.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC15: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[3]).matched and (this_sigattrlog[3]).utf8p2 ~= nil then
+    local l_0_0, l_0_1, l_0_2 = nil
+  else
+  end
+  if (this_sigattrlog[4]).matched and (this_sigattrlog[4]).utf8p2 ~= nil then
+    local l_0_3 = ((this_sigattrlog[4]).utf8p2):lower()
+    local l_0_4 = contains
+    local l_0_5 = l_0_3
+    l_0_4 = l_0_4(l_0_5, {"-exclusionprocess"})
+    if l_0_4 then
+      l_0_4 = bm
+      l_0_4 = l_0_4.add_related_string
+      l_0_5 = "MpTamperRemoteProc"
+      l_0_4(l_0_5, l_0_3, bm.RelatedStringBMReport)
+      l_0_4 = reportSessionInformation
+      l_0_4()
+      l_0_4 = add_parents
+      l_0_4()
+      l_0_4 = mp
+      l_0_4 = l_0_4.INFECTED
+      return l_0_4
+    end
+    l_0_4 = mp
+    l_0_4 = l_0_4.CLEAN
+    return l_0_4
+  end
+end
+

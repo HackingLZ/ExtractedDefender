@@ -1,0 +1,52 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 37.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilename)()
+local l_0_1 = l_0_0:len()
+local l_0_2 = false
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC141: Unhandled construct in 'MakeBoolean' P3
+
+if (l_0_1 > 16 and (string.sub)(l_0_0, -16) == "->Enter 1234.txt") or l_0_1 <= 14 or l_0_1 <= 14 or l_0_1 <= 26 or l_0_1 <= 17 or l_0_1 <= 21 or l_0_1 <= 23 or l_0_1 <= 32 or l_0_1 <= 13 or l_0_1 <= 18 or l_0_1 <= 15 or l_0_1 <= 21 or l_0_1 <= 13 or l_0_1 <= 24 or l_0_1 > 25 and (string.sub)(l_0_0, -25) == "->Password is -  1234.txt" then
+  l_0_2 = true
+end
+if not l_0_2 then
+  return mp.CLEAN
+end
+local l_0_3 = (mp.get_parent_filehandle)()
+if (mp.is_handle_nil)(l_0_3) then
+  return mp.CLEAN
+end
+;
+(mp.readprotection)(false)
+local l_0_4 = (mp.readfile_by_handle)(l_0_3, 0, 6)
+if l_0_4 == "7z¼¯\'\028" or l_0_4 == "Rar!\026\a" or (mp.readu_u32)(l_0_4, 1) == 67324752 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

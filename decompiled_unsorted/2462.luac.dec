@@ -1,0 +1,41 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 2462.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (bm.get_current_process_startup_info)()
+if l_0_0.integrity_level == MpCommon.SECURITY_MANDATORY_SYSTEM_RID then
+  return mp.CLEAN
+end
+local l_0_1 = (string.lower)((this_sigattrlog[1]).utf8p2)
+for l_0_5 in (string.gmatch)(l_0_1, "[^|]+") do
+  if not (string.find)(l_0_5, "fileshares", 1, true) then
+    return mp.CLEAN
+  end
+end
+do
+  if not (sysio.RegOpenKey)("HKLM\\SOFTWARE\\POLICIES\\Microsoft\\Windows Defender\\Signature Updates") then
+    local l_0_6, l_0_7 = (sysio.RegOpenKey)("HKLM\\SOFTWARE\\Microsoft\\Windows Defender\\Signature Updates")
+    if not l_0_6 then
+      l_0_7 = mp
+      l_0_7 = l_0_7.INFECTED
+      return l_0_7
+    end
+  end
+  -- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
+
+  local l_0_8 = nil
+  if not (sysio.GetRegValueAsString)(l_0_6, "DefinitionUpdateFileSharesSources") then
+    return mp.INFECTED
+  end
+  for l_0_12 in (string.gmatch)((sysio.GetRegValueAsString)(l_0_6, "DefinitionUpdateFileSharesSources"), "[^|]+") do
+    local l_0_9 = nil
+    -- DECOMPILER ERROR at PC71: Confused about usage of register: R7 in 'UnsetPending'
+
+    if (string.find)(l_0_5, "\\\\[^\\]+\\[^\\]+") then
+      return mp.CLEAN
+    end
+  end
+  return mp.INFECTED
+end
+

@@ -1,0 +1,88 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 783.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_1 = pcall(bm.get_current_process_startup_info)
+if l_0_0 then
+  local l_0_2 = l_0_1.command_line
+  if l_0_2 ~= nil then
+    l_0_2 = (string.lower)(l_0_2)
+    local l_0_3 = (mp.GetExecutablesFromCommandLine)(l_0_2)
+    for l_0_7,l_0_8 in ipairs(l_0_3) do
+      l_0_8 = (mp.ContextualExpandEnvironmentVariables)(l_0_8)
+      if (sysio.IsFileExists)(l_0_8) then
+        (bm.add_related_file)(l_0_8)
+      end
+    end
+  end
+end
+do
+  l_0_2, l_0_3 = nil
+  local l_0_9, l_0_10 = nil
+  l_0_9 = this_sigattrlog
+  l_0_9 = l_0_9[4]
+  l_0_9 = l_0_9.matched
+  if l_0_9 then
+    l_0_9 = this_sigattrlog
+    l_0_9 = l_0_9[4]
+    l_0_9 = l_0_9.utf8p2
+    if l_0_9 ~= nil then
+      l_0_9 = this_sigattrlog
+      l_0_9 = l_0_9[4]
+      l_0_2 = l_0_9.utf8p2
+    end
+  end
+  l_0_9 = this_sigattrlog
+  l_0_9 = l_0_9[5]
+  l_0_9 = l_0_9.matched
+  if l_0_9 then
+    l_0_9 = this_sigattrlog
+    l_0_9 = l_0_9[5]
+    l_0_9 = l_0_9.utf8p1
+    if l_0_9 ~= nil then
+      l_0_9 = this_sigattrlog
+      l_0_9 = l_0_9[5]
+      l_0_3 = l_0_9.utf8p1
+    end
+  end
+  l_0_9 = this_sigattrlog
+  l_0_9 = l_0_9[6]
+  l_0_9 = l_0_9.matched
+  if l_0_9 then
+    l_0_9 = this_sigattrlog
+    l_0_9 = l_0_9[6]
+    l_0_9 = l_0_9.utf8p1
+    if l_0_9 ~= nil then
+      l_0_9 = this_sigattrlog
+      l_0_9 = l_0_9[6]
+      l_0_3 = l_0_9.utf8p1
+    end
+  end
+  if l_0_2 ~= nil and l_0_3 ~= nil then
+    l_0_9 = string
+    l_0_9 = l_0_9.lower
+    l_0_10 = l_0_2
+    l_0_9 = l_0_9(l_0_10)
+    l_0_2 = l_0_9
+    l_0_9 = string
+    l_0_9 = l_0_9.lower
+    l_0_9 = l_0_9(l_0_10(l_0_3, "\\([^\\]+)$"))
+    local l_0_11 = nil
+    -- DECOMPILER ERROR at PC101: Overwrote pending register: R6 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC107: Overwrote pending register: R6 in 'AssignReg'
+
+    if l_0_2:find(l_0_9) and (sysio.IsFileExists)(l_0_11) then
+      (bm.add_threat_file)(l_0_11)
+    end
+  end
+  do
+    l_0_9 = mp
+    l_0_9 = l_0_9.INFECTED
+    do return l_0_9 end
+    -- DECOMPILER ERROR at PC112: Confused about usage of register R5 for local variables in 'ReleaseLocals'
+
+  end
+end
+

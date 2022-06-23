@@ -1,0 +1,21 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1458.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (bm.get_current_process_startup_info)()
+if l_0_0.integrity_level < MpCommon.SECURITY_MANDATORY_SYSTEM_RID then
+  return mp.CLEAN
+end
+local l_0_1, l_0_2 = (bm.get_process_relationships)()
+if l_0_1 then
+  for l_0_6,l_0_7 in ipairs(l_0_1) do
+    if l_0_7.image_path and (mp.bitand)(l_0_7.reason_ex, 1) == 1 and (string.find)(l_0_7.image_path, "\\consent.exe", 1, true) then
+      return mp.INFECTED
+    end
+  end
+end
+do
+  return mp.CLEAN
+end
+

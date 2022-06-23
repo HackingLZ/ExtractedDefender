@@ -1,0 +1,31 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4703.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = ((string.lower)((bm.get_imagepath)()))
+local l_0_1, l_0_2 = nil, nil
+l_0_1 = (string.find)(l_0_0, "/google-chrome", 1, true)
+if l_0_1 ~= nil and l_0_2 ~= nil then
+  return mp.INFECTED
+end
+-- DECOMPILER ERROR at PC30: Overwrote pending register: R2 in 'AssignReg'
+
+l_0_1 = (string.find)(l_0_0, "/chromium-browser", 1, true)
+if l_0_1 ~= nil and l_0_2 ~= nil then
+  return mp.INFECTED
+end
+-- DECOMPILER ERROR at PC46: Overwrote pending register: R2 in 'AssignReg'
+
+l_0_1 = (string.find)(l_0_0, "/soffice", 1, true)
+if l_0_1 ~= nil and l_0_2 ~= nil then
+  return mp.INFECTED
+end
+-- DECOMPILER ERROR at PC62: Overwrote pending register: R2 in 'AssignReg'
+
+l_0_1 = (string.find)(l_0_0, "/firefox", 1, true)
+if l_0_1 ~= nil and l_0_2 ~= nil then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

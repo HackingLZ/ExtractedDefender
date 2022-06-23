@@ -1,0 +1,32 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4426.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_4 = nil
+if (this_sigattrlog[2]).matched then
+  local l_0_0, l_0_1, l_0_2, l_0_3 = "base64_plist_creation"
+else
+  do
+    -- DECOMPILER ERROR at PC25: Overwrote pending register: R0 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
+
+    -- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
+
+    if (not (this_sigattrlog[3]).matched or l_0_4 ~= nil) and l_0_4 ~= "" then
+      if (MpCommon.GetPersistContextCountNoPath)(l_0_0) > 0 then
+        (MpCommon.AppendPersistContextNoPath)(l_0_0, l_0_4, 3600)
+      else
+        local l_0_5 = nil
+        ;
+        (MpCommon.SetPersistContextNoPath)(l_0_5, {[1] = l_0_4}, 3600)
+      end
+      do
+        do return mp.INFECTED end
+        return mp.CLEAN
+      end
+    end
+  end
+end
+

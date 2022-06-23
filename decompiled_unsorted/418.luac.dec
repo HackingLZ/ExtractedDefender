@@ -1,0 +1,34 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 418.luac 
+
+-- params : ...
+-- function num : 0
+if (this_sigattrlog[3]).matched and (this_sigattrlog[3]).utf8p2 ~= nil then
+  local l_0_0, l_0_1 = (bm.get_process_relationships)()
+  for l_0_5,l_0_6 in ipairs(l_0_1) do
+    if l_0_6.image_path ~= nil and l_0_6.ppid ~= nil and (string.find)((string.lower)(l_0_6.image_path), "\\rundll32.exe", 1, true) then
+      TrackPidAndTechniqueBM(l_0_6.ppid, "T1218.011", "Proxy_Exec")
+      local l_0_7 = extractDllForRegproc(l_0_6.cmd_line)
+      if l_0_7 then
+        l_0_7 = (mp.ContextualExpandEnvironmentVariables)(l_0_7)
+        if (sysio.IsFileExists)(l_0_7) then
+          local l_0_8 = (sysio.GetFileLastWriteTime)(l_0_7)
+          if ((sysio.GetLastResult)()).Success and l_0_8 ~= 0 then
+            l_0_8 = l_0_8 / 10000000 - 11644473600
+            local l_0_9 = (MpCommon.GetCurrentTimeT)()
+            if l_0_9 < l_0_8 or l_0_9 - (l_0_8) > 3600 then
+              (bm.add_related_file)(l_0_7)
+              return mp.INFECTED
+            end
+          end
+        end
+      end
+    end
+  end
+end
+do
+  l_0_0 = mp
+  l_0_0 = l_0_0.CLEAN
+  return l_0_0
+end
+

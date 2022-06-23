@@ -1,0 +1,10 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18148.luac 
+
+-- params : ...
+-- function num : 0
+if pehdr.NumberOfSections == 5 and pevars.epsec == 1 and (pesecs[pevars.epsec]).Name == ".text" and (pesecs[pevars.epsec]).SizeOfRawData >= 237568 and (pesecs[pevars.epsec]).SizeOfRawData <= 393216 and (pesecs[pehdr.NumberOfSections]).Name == ".reloc" and (pesecs[pehdr.NumberOfSections]).SizeOfRawData >= 9216 and (pesecs[pehdr.NumberOfSections]).SizeOfRawData <= 12288 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

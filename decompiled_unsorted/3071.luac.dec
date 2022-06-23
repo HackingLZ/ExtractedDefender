@@ -1,0 +1,21 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3071.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.readu_u16)(headerpage, 1) ~= 33328 then
+  return mp.CLEAN
+end
+local l_0_0 = headerpage[3] * 256 + headerpage[4] + 4
+if l_0_0 < 256 then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.getfilesize)()
+if l_0_1 <= l_0_0 then
+  return mp.CLEAN
+end
+if l_0_1 - l_0_0 < 256 then
+  return mp.CLEAN
+end
+return mp.INFECTED
+

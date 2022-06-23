@@ -1,0 +1,42 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19334.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.get_mpattribute)("SIGATTR:AntiEmuRaceThread") and (hstrlog[1]).matched then
+  local l_0_0 = 0
+  local l_0_1 = (mp.hstr_full_log)()
+  for l_0_5,l_0_6 in pairs(l_0_1) do
+    if l_0_6.matched and l_0_5 ~= "filter1" then
+      l_0_0 = l_0_6.VA
+    end
+  end
+  if l_0_0 == 0 then
+    return mp.CLEAN
+  end
+  local l_0_7 = l_0_0 - pehdr.AddressOfEntryPoint
+  if l_0_7 < 48 and l_0_7 > -48 then
+    return mp.CLEAN
+  end
+  local l_0_8 = (pe.mmap_va)(pehdr.AddressOfEntryPoint + pehdr.ImageBase, 16)
+  local l_0_9 = (mp.readu_u32)(l_0_8, 1)
+  if (mp.bitand)(l_0_9, 16777215) ~= 15204458 then
+    return mp.CLEAN
+  end
+  local l_0_10 = l_0_0 - pehdr.AddressOfEntryPoint - 7 - pehdr.ImageBase
+  ;
+  (mp.readprotection)(false)
+  local l_0_11 = (mp.readfile)(0, (mp.getfilesize)())
+  ;
+  (mp.writeu_u32)(l_0_11, (pe.foffset_rva)(pehdr.AddressOfEntryPoint + 1), 15326001)
+  ;
+  (mp.writeu_u32)(l_0_11, (pe.foffset_rva)(pehdr.AddressOfEntryPoint + 4), l_0_10)
+  ;
+  (mp.vfo_add_buffer)(l_0_11, "[Obfuscator.AKH0]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+  ;
+  (mp.set_mpattribute)("HSTR:PatchAntiEmuRaceThread")
+end
+do
+  return mp.CLEAN
+end
+

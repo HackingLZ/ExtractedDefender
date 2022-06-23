@@ -1,0 +1,17 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18287.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.isdll and (hstrlog[3]).matched then
+  local l_0_0 = (hstrlog[3]).VA + 6
+  local l_0_1 = (mp.readu_u32)((pe.mmap_va)(l_0_0 + 1, 4), 1)
+  local l_0_2 = (pe.mmap_va)(l_0_1, 95)
+  if (string.sub)(l_0_2, 1, 95) == "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\CLSID\\{871C5380-42A0-1069-A2EA-08002B30309D}" then
+    return mp.INFECTED
+  end
+end
+do
+  return mp.LOWFI
+end
+

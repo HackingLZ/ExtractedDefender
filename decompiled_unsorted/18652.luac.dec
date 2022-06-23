@@ -1,0 +1,14 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18652.luac 
+
+-- params : ...
+-- function num : 0
+(mp.readprotection)(false)
+local l_0_0 = (mp.getfilesize)()
+local l_0_1 = tostring((mp.readfile)(0, l_0_0))
+l_0_1 = (string.lower)(l_0_1)
+if (string.find)(l_0_1, "cmdrun = \"hkcu\\\\software\\\\microsoft\\\\windows\\\\currentversion\\\\run", 1, true) ~= nil and (string.find)(l_0_1, ".colocanorun = \"reg add \" %+ string.fromcharcode%(34%) %+ cmdrun %+ string.fromcharcode%(34%) %+ runcmd;") ~= nil and (string.find)(l_0_1, "new activexobject%(appshl%)") ~= nil then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

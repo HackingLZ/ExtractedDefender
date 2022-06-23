@@ -1,0 +1,37 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19162.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.epinfirstsect and peattributes.entrybyte55 and not peattributes.epscn_eqsizes and (pesecs[pehdr.NumberOfSections]).Name == ".rsrc" then
+  if pehdr.NumberOfSections == 8 then
+    if pehdr.SizeOfImage >= 196608 and pehdr.SizeOfImage <= 327680 then
+      return mp.INFECTED
+    end
+    if pehdr.SizeOfImage >= 1310720 and pehdr.SizeOfImage <= 1769472 then
+      return mp.INFECTED
+    end
+  end
+  if pehdr.NumberOfSections == 6 then
+    if pehdr.SizeOfImage >= 1048576 and pehdr.SizeOfImage <= 1310720 then
+      return mp.INFECTED
+    end
+    if pehdr.SizeOfImage >= 131072 and pehdr.SizeOfImage <= 167936 then
+      return mp.INFECTED
+    end
+    if pehdr.SizeOfImage >= 217088 and pehdr.SizeOfImage <= 282624 then
+      return mp.INFECTED
+    end
+    if pehdr.SizeOfImage >= 466944 and pehdr.SizeOfImage <= 557056 then
+      return mp.INFECTED
+    end
+    if pehdr.SizeOfImage >= 749568 and pehdr.SizeOfImage <= 946176 then
+      return mp.INFECTED
+    end
+  end
+  if pehdr.NumberOfSections == 7 and pehdr.SizeOfImage >= 217088 and pehdr.SizeOfImage <= 589824 then
+    return mp.INFECTED
+  end
+end
+return mp.CLEAN
+

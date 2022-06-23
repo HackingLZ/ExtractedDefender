@@ -1,0 +1,113 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4243.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = function(l_1_0, l_1_1)
+  -- function num : 0_0
+  local l_1_2 = {}
+  l_1_2[1952539182] = ""
+  l_1_2[1684890414] = ""
+  l_1_2[1836016430] = ""
+  l_1_2[1819304750] = ""
+  l_1_2[1702389038] = ""
+  l_1_2[1718186030] = ""
+  l_1_2[1919120174] = ""
+  l_1_2[1935832622] = ""
+  l_1_2[1802398766] = ""
+  l_1_2[1718843182] = ""
+  l_1_2[1700951598] = ""
+  l_1_2[1702062638] = ""
+  l_1_2[1635018798] = ""
+  l_1_2[1936338432] = ""
+  l_1_2[1819042862] = ""
+  l_1_2[2019782446] = ""
+  l_1_2[1918986798] = ""
+  l_1_2[1668511534] = ""
+  l_1_2[1752397614] = ""
+  local l_1_3 = (mp.bitor)((mp.readu_u32)(l_1_0, l_1_1), 538976288)
+  if l_1_2[l_1_3] or l_1_2[(mp.bitand)(l_1_3, 4294967040)] then
+    return true
+  end
+  return false
+end
+
+if not (mp.IsHipsRuleEnabled)("be9ba2d9-53ea-4cdc-84e5-9b1eeee46550") then
+  return mp.CLEAN
+end
+if (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) ~= mp.SCANREASON_ONMODIFIEDHANDLECLOSE then
+  return mp.CLEAN
+end
+if (mp.get_contextdata)(mp.CONTEXT_DATA_NEWLYCREATEDHINT) ~= true then
+  return mp.CLEAN
+end
+if mp.HEADERPAGE_SZ < 1024 then
+  return mp.CLEAN
+end
+if (mp.readu_u32)(headerpage, 1) ~= 67324752 then
+  return mp.CLEAN
+end
+if (mp.bitand)((mp.readu_u16)(headerpage, 7), 1) ~= 1 then
+  return mp.CLEAN
+end
+local l_0_2 = function(l_2_0)
+  -- function num : 0_1 , upvalues : l_0_0
+  if (mp.readu_u32)(footerpage, l_2_0 + 1) == 33639248 and l_2_0 + 48 < mp.FOOTERPAGE_SZ then
+    local l_2_1 = 47
+    local l_2_2 = (mp.readu_u16)(footerpage, l_2_0 + 29)
+    if (mp.bitand)((mp.readu_u16)(footerpage, l_2_0 + 9), 1) == 1 and l_2_2 > 4 and l_2_0 + l_2_1 + l_2_2 < mp.FOOTERPAGE_SZ and l_0_0(footerpage, l_2_0 + l_2_1 + l_2_2 - 4) then
+      return true, 0
+    end
+    local l_2_3 = l_2_0 + l_2_1 + l_2_2 + (mp.readu_u16)(footerpage, l_2_0 + 31) - 1
+    return false, l_2_3
+  end
+end
+
+local l_0_3 = 31
+if (mp.readu_u16)(headerpage, 27) > 4 and l_0_3 + (mp.readu_u16)(headerpage, 27) < mp.HEADERPAGE_SZ and l_0_0(headerpage, l_0_3 + (mp.readu_u16)(headerpage, 27) - 4) then
+  (mp.set_mpattribute)("Lua:ZipHasEncryptedFileWithExeExtension")
+  return mp.CLEAN
+end
+local l_0_4 = nil
+local l_0_5 = (mp.getfilesize)()
+do
+  if (mp.readu_u32)(footerpage, mp.FOOTERPAGE_SZ - 21) ~= 101010256 then
+    local l_0_6 = nil
+    if (tostring(footerpage)):find("PK\005\006", 1, true) == nil then
+      return mp.CLEAN
+    end
+  end
+  -- DECOMPILER ERROR at PC121: Confused about usage of register: R5 in 'UnsetPending'
+
+  local l_0_7 = nil
+  local l_0_8 = (mp.readu_u32)(footerpage, l_0_6 + 16)
+  -- DECOMPILER ERROR at PC128: Overwrote pending register: R7 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC133: Overwrote pending register: R7 in 'AssignReg'
+
+  if l_0_5 < mp.FOOTERPAGE_SZ then
+    local l_0_9 = 0
+    do
+      local l_0_10 = 0
+      while 1 do
+        -- DECOMPILER ERROR at PC147: Overwrote pending register: R9 in 'AssignReg'
+
+        if l_0_10 < 3 and l_0_9 + 4 < mp.FOOTERPAGE_SZ then
+          if nil then
+            (mp.set_mpattribute)("Lua:ZipHasEncryptedFileWithExeExtension")
+            return mp.CLEAN
+          end
+          l_0_10 = l_0_10 + 1
+          -- DECOMPILER ERROR at PC158: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+          -- DECOMPILER ERROR at PC158: LeaveBlock: unexpected jumping out IF_STMT
+
+        end
+      end
+      do return mp.CLEAN end
+      -- DECOMPILER ERROR at PC162: freeLocal<0 in 'ReleaseLocals'
+
+    end
+  end
+end
+

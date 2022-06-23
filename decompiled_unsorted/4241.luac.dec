@@ -1,0 +1,103 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4241.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (pe.get_versioninfo)()
+if l_0_0 ~= nil then
+  local l_0_1 = (string.lower)(l_0_0.OriginalFilename)
+  if l_0_1 ~= nil then
+    (mp.set_mpattribute)("MpInternal_researchdata=OFN=" .. l_0_1)
+    local l_0_4, l_0_5 = (MpCommon.StringRegExpSearch)("(procexp|handle|tcpview)", l_0_1)
+    if l_0_4 == true then
+      return mp.CLEAN
+    end
+  end
+end
+do
+  local l_0_2 = ""
+  local l_0_3 = mp.get_mpattribute
+  l_0_3 = l_0_3("HSTR:ProcessHacker")
+  if l_0_3 then
+    l_0_2 = "ProcessHacker"
+  else
+    l_0_3 = mp
+    l_0_3 = l_0_3.get_mpattribute
+    l_0_3 = l_0_3("HSTR:ProcessExplorer")
+    if l_0_3 then
+      l_0_2 = "ProcessExplorer"
+    end
+  end
+  l_0_3 = function()
+  -- function num : 0_0
+  for l_1_3 = 1, pehdr.NumberOfSections do
+    if tostring((pesecs[l_1_3]).Name) == ".rsrc" then
+      return (pesecs[l_1_3]).PointerToRawData, (pesecs[l_1_3]).VirtualAddress
+    end
+  end
+end
+
+  local l_0_6 = function(l_2_0)
+  -- function num : 0_1
+  local l_2_1 = (mp.readfile)(l_2_0, 20)
+  local l_2_2 = (mp.readu_u16)(l_2_1, 15)
+  local l_2_3 = l_2_0 + 16
+  return l_2_2, l_2_3
+end
+
+  local l_0_7 = function(l_3_0)
+  -- function num : 0_2
+  local l_3_1 = (mp.readfile)(l_3_0, 8)
+  local l_3_2 = (mp.readu_u32)(l_3_1, 1)
+  local l_3_3 = (mp.readu_u32)(l_3_1, 5)
+  local l_3_4 = (mp.bitand)(l_3_2, 2147483647)
+  local l_3_5 = (mp.bitand)(l_3_2, 4294901760)
+  local l_3_6 = (mp.bitand)(l_3_2, 65535)
+  local l_3_7 = (mp.shr32)((mp.bitand)(l_3_3, 2147483648), 31)
+  local l_3_8 = (mp.bitand)(l_3_3, 2147483647)
+  return l_3_2, l_3_3, l_3_4, l_3_5, l_3_6, l_3_7, l_3_8
+end
+
+  local l_0_8 = function(l_4_0)
+  -- function num : 0_3
+  local l_4_1 = (mp.readfile)(l_4_0, 20)
+  local l_4_2 = (mp.readu_u32)(l_4_1, 1)
+  local l_4_3 = (mp.readu_u32)(l_4_1, 5)
+  local l_4_4 = (mp.readu_u32)(l_4_1, 9)
+  local l_4_5 = (mp.readu_u32)(l_4_1, 13)
+  return l_4_2, l_4_3, l_4_4, l_4_5
+end
+
+  ;
+  (mp.readprotection)(false)
+  local l_0_9, l_0_10 = l_0_3()
+  local l_0_11, l_0_12 = l_0_6(l_0_9)
+  for l_0_16 = 0, l_0_11 do
+    local l_0_17 = l_0_12 + l_0_16 * 8
+    local l_0_18, l_0_19, l_0_20, l_0_21, l_0_22, l_0_23, l_0_24 = l_0_7(l_0_17)
+    local l_0_25 = l_0_9 + l_0_24
+    local l_0_26, l_0_27 = l_0_6(l_0_25)
+    for l_0_31 = 0, l_0_26 do
+      local l_0_32 = l_0_27 + l_0_31 * 8
+      local l_0_33, l_0_34, l_0_35, l_0_36, l_0_37, l_0_38, l_0_39 = l_0_7(l_0_32)
+      local l_0_40 = l_0_9 + l_0_39
+      local l_0_41, l_0_42 = l_0_6(l_0_40)
+      for l_0_46 = 0, l_0_41 do
+        local l_0_47 = l_0_42 + l_0_46 * 8
+        local l_0_48, l_0_49, l_0_50, l_0_51, l_0_52, l_0_53, l_0_54 = l_0_7(l_0_47)
+        local l_0_55 = l_0_9 + l_0_54
+        local l_0_56, l_0_57 = l_0_8(l_0_55)
+        if l_0_10 < l_0_56 then
+          local l_0_58 = l_0_56 - l_0_10 + l_0_9
+          local l_0_59 = (mp.readfile)(l_0_58, 2)
+          if l_0_59 == "MZ" then
+            (mp.set_mpattribute)("MpInternal_researchdata=Driver=" .. l_0_2)
+            return mp.INFECTED
+          end
+        end
+      end
+    end
+  end
+  return mp.CLEAN
+end
+

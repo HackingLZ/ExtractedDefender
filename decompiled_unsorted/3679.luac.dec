@@ -1,0 +1,27 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3679.luac 
+
+-- params : ...
+-- function num : 0
+if not (mp.IsHipsRuleEnabled)("be9ba2d9-53ea-4cdc-84e5-9b1eeee46550") then
+  return mp.CLEAN
+end
+if (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) ~= mp.SCANREASON_ONMODIFIEDHANDLECLOSE then
+  return mp.CLEAN
+end
+local l_0_0 = {}
+l_0_0["iexplore.exe"] = true
+l_0_0["firefox.exe"] = true
+l_0_0["chrome.exe"] = true
+l_0_0["opera.exe"] = true
+l_0_0["microsoftedge.exe"] = true
+l_0_0["browser_broker.exe"] = true
+l_0_0["antimalware.tools.testhips.exe"] = true
+local l_0_1 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_PROCESSNAME))
+if l_0_0[l_0_1] == nil then
+  return mp.CLEAN
+end
+;
+(mp.set_mpattribute)("MpDisableCaching")
+return mp.CLEAN
+

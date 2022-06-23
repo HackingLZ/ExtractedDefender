@@ -1,0 +1,70 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19507.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_2, l_0_3, l_0_11, l_0_15, l_0_17 = nil, nil, nil, nil, nil
+if (this_sigattrlog[6]).matched and (this_sigattrlog[6]).utf8p2 ~= nil then
+  local l_0_0, l_0_1, l_0_5, l_0_6, l_0_8, l_0_9, l_0_13 = ((this_sigattrlog[6]).utf8p2):lower()
+  l_0_9 = this_sigattrlog
+  l_0_9 = l_0_9[6]
+  l_0_6 = l_0_9.ppid
+  local l_0_4, l_0_12, l_0_16 = nil
+else
+end
+do
+  do
+    if (not (this_sigattrlog[7]).matched or (this_sigattrlog[7]).utf8p2 == nil or (this_sigattrlog[4]).matched) and (this_sigattrlog[4]).utf8p1 ~= nil then
+      local l_0_7, l_0_10, l_0_14 = ((this_sigattrlog[7]).utf8p2):lower(), (string.match)((this_sigattrlog[4]).utf8p1, "\\([^\\]+)$")
+    end
+    -- DECOMPILER ERROR at PC58: Confused about usage of register: R0 in 'UnsetPending'
+
+    -- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
+
+    if not contains(l_0_7, l_0_10) then
+      return mp.CLEAN
+    end
+    -- DECOMPILER ERROR at PC66: Confused about usage of register: R0 in 'UnsetPending'
+
+    if not l_0_7 then
+      return mp.CLEAN
+    end
+    local l_0_18 = nil
+    local l_0_19 = nil
+    if (mp.GetParentProcInfo)((this_sigattrlog[7]).ppid) == nil or not (string.lower)(((mp.GetParentProcInfo)((this_sigattrlog[7]).ppid)).image_path) then
+      return mp.CLEAN
+    end
+    local l_0_20 = nil
+    -- DECOMPILER ERROR at PC93: Confused about usage of register: R4 in 'UnsetPending'
+
+    if contains((string.lower)(((mp.GetParentProcInfo)((this_sigattrlog[7]).ppid)).image_path), {"certutil.exe", "mshta.exe"}) then
+      local l_0_21 = nil
+      -- DECOMPILER ERROR at PC105: Confused about usage of register: R4 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC121: Overwrote pending register: R2 in 'AssignReg'
+
+      if (not contains((string.lower)(((mp.GetParentProcInfo)((this_sigattrlog[7]).ppid)).image_path), {"winword.exe", "excel.exe", "powerpnt.exe"}) or l_0_20) and (sysio.IsFileExists)(l_0_20) then
+        local l_0_22 = nil
+        if ((sysio.GetLastResult)()).Success and (sysio.GetFileLastWriteTime)(l_0_20) ~= 0 then
+          local l_0_23 = true
+          -- DECOMPILER ERROR at PC147: Confused about usage of register: R9 in 'UnsetPending'
+
+          if (MpCommon.GetCurrentTimeT)() < (sysio.GetFileLastWriteTime)(l_0_20) / 10000000 - 11644473600 or (MpCommon.GetCurrentTimeT)() - ((sysio.GetFileLastWriteTime)(l_0_20) / 10000000 - 11644473600) > 3600 and l_0_23 == true then
+            (bm.add_related_file)(l_0_20)
+          else
+            return mp.CLEAN
+          end
+        end
+      end
+      do
+        -- DECOMPILER ERROR at PC160: Confused about usage of register: R5 in 'UnsetPending'
+
+        if l_0_23 then
+          return mp.INFECTED
+        end
+        return mp.CLEAN
+      end
+    end
+  end
+end
+

@@ -1,0 +1,20 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18867.luac 
+
+-- params : ...
+-- function num : 0
+if (this_sigattrlog[2]).matched and (this_sigattrlog[2]).utf8p2 ~= nil then
+  local l_0_0 = (string.lower)((this_sigattrlog[2]).utf8p2)
+  local l_0_1 = (mp.GetExecutablesFromCommandLine)(l_0_0)
+  for l_0_5,l_0_6 in ipairs(l_0_1) do
+    if not (string.find)(l_0_6, "\\cmd.exe", 1, true) and not (string.find)(l_0_6, "\\svchost.exe", 1, true) and not (string.find)(l_0_6, "\\winrshost.exe", 1, true) and not (string.find)(l_0_6, "\\bcryptprimitives.dll", 1, true) and l_0_6 ~= nil and (string.len)(l_0_6) > 3 and (sysio.IsFileExists)(l_0_6) then
+      (bm.add_related_file)(l_0_6)
+    end
+  end
+end
+do
+  l_0_0 = mp
+  l_0_0 = l_0_0.INFECTED
+  return l_0_0
+end
+

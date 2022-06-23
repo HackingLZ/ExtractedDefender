@@ -1,0 +1,37 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19022.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC15: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[1]).matched and (this_sigattrlog[1]).utf8p2 ~= nil then
+    local l_0_0 = nil
+  end
+  local l_0_1 = nil
+  if not IsProcNameInParentProcessTree("BM", {"winword.exe", "excel.exe", "powerpnt.exe", "mspub.exe"}) then
+    return mp.CLEAN
+  end
+  if contains(l_0_1, "process.*call.*create", false) then
+    local l_0_2 = nil
+    local l_0_3 = contains
+    local l_0_4 = l_0_1
+    l_0_3 = l_0_3(l_0_4, {" powershell", " mshta javascript:", " regsvr32", " rundll32", " mshta", " certutil"})
+    if l_0_3 then
+      l_0_3 = bm
+      l_0_3 = l_0_3.add_related_string
+      l_0_4 = "proc_cmdline"
+      l_0_3(l_0_4, l_0_1, bm.RelatedStringBMReport)
+      l_0_3 = add_parents
+      l_0_3()
+      l_0_3 = mp
+      l_0_3 = l_0_3.INFECTED
+      return l_0_3
+    end
+  end
+  do
+    return mp.CLEAN
+  end
+end
+

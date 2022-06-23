@@ -1,0 +1,33 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3694.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 < 256 or l_0_0 > 1048576 then
+  return mp.CLEAN
+end
+if (mp.readu_u32)(headerpage, 1) ~= 875721283 or (mp.readu_u32)(headerpage, 5) ~= 2 then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.readu_u32)(headerpage, 9)
+if l_0_1 == 0 then
+  return mp.CLEAN
+end
+local l_0_2 = (mp.readu_u32)(headerpage, 13)
+if l_0_2 == 0 then
+  return mp.CLEAN
+end
+local l_0_3 = l_0_1 + l_0_2 + 17
+if mp.HEADERPAGE_SZ <= l_0_3 then
+  return mp.CLEAN
+end
+if (mp.readu_u16)(headerpage, l_0_3) ~= 19280 then
+  return mp.CLEAN
+end
+;
+(mp.readprotection)(false)
+;
+(mp.vfo_add_buffer)((mp.readfile)(l_0_3 - 1, l_0_0 - l_0_3 + 1), "[ChromeCrxPackage]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+return mp.CLEAN
+

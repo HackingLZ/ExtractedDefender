@@ -1,0 +1,17 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4438.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC11: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[1]).utf8p2 ~= nil then
+    local l_0_0 = nil
+    if (string.find)(l_0_0, "kaspersky", 1, true) or (string.find)(l_0_0, "little snitch", 1, true) or (string.find)(l_0_0, "norton", 1, true) or (string.find)(l_0_0, "avast", 1, true) or (string.find)(l_0_0, "mcafee", 1, true) or (string.find)(l_0_0, "avira", 1, true) or (string.find)(l_0_0, "sophos", 1, true) or (string.find)(l_0_0, "malwarebytes", 1, true) or (string.find)(l_0_0, "trendmicro", 1, true) or (string.find)(l_0_0, "bitdefender", 1, true) then
+      return mp.INFECTED
+    end
+  end
+  return mp.CLEAN
+end
+

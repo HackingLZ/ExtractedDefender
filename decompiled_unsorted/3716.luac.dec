@@ -1,0 +1,32 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3716.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = Remediation.Threat
+if l_0_0.Name == "BrowserModifier:Win32/Diplugem" then
+  for l_0_4,l_0_5 in ipairs(l_0_0.Resources) do
+    if l_0_5.Schema == "file" and ((string.find)(l_0_5.Path, ".dll$") or (string.find)(l_0_5.Path, ".exe$")) then
+      local l_0_6 = nil
+      local l_0_7 = (string.sub)(l_0_5.Path, 0, -4)
+      if (string.find)(l_0_7, "%.x64%.$") then
+        l_0_7 = (string.sub)(l_0_7, 0, -5)
+        l_0_6 = l_0_7 .. "dll"
+      else
+        l_0_6 = l_0_7 .. "x64.dll"
+      end
+      if (sysio.IsFileExists)(l_0_6) then
+        (sysio.DeleteFile)(l_0_6)
+      end
+      l_0_6 = l_0_7 .. "dat"
+      if (sysio.IsFileExists)(l_0_6) then
+        (sysio.DeleteFile)(l_0_6)
+      end
+      l_0_6 = l_0_7 .. "tlb"
+      if (sysio.IsFileExists)(l_0_6) then
+        (sysio.DeleteFile)(l_0_6)
+      end
+    end
+  end
+end
+

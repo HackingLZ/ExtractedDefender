@@ -1,0 +1,42 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 884.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_1 = nil
+local l_0_2 = false
+if (this_sigattrlog[2]).matched then
+  local l_0_0 = false
+  l_0_2 = true
+else
+  do
+    -- DECOMPILER ERROR at PC27: Overwrote pending register: R0 in 'AssignReg'
+
+    if not (this_sigattrlog[3]).matched or l_0_1 ~= nil then
+      do
+        if l_0_2 == true then
+          local l_0_3 = true
+          -- DECOMPILER ERROR at PC45: Confused about usage of register: R3 in 'UnsetPending'
+
+          if tonumber(findVersionfromPath(l_0_1, "webmvc")) < 5318 and tonumber(findVersionfromPath(l_0_1, "webmvc")) > 5300 then
+            return mp.INFECTED
+          end
+        end
+        -- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
+
+        do
+          if l_0_3 == true then
+            local l_0_4 = nil
+            -- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
+
+            if tonumber(findVersionfromPath(l_0_1, "webflux")) < 5219 and tonumber(findVersionfromPath(l_0_1, "webflux")) > 5200 then
+              return mp.INFECTED
+            end
+          end
+          return mp.CLEAN
+        end
+      end
+    end
+  end
+end
+

@@ -1,0 +1,33 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18622.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.get_mpattribute)("SIGATTR:GoogleSoftwareRemovalTool") == true then
+  return mp.CLEAN
+end
+local l_0_0 = (mp.GetCertificateInfo)()
+if l_0_0 ~= nil and #l_0_0 > 0 then
+  for l_0_4,l_0_5 in ipairs(l_0_0) do
+    if l_0_5.AuthenticodeContentType == "PE" then
+      local l_0_6 = l_0_5.Certificates
+      if l_0_6 ~= nil then
+        for l_0_10,l_0_11 in ipairs(l_0_6) do
+          local l_0_12 = l_0_11.Subject
+          if l_0_12 ~= nil and l_0_12.Organization ~= nil and (mp.utf16to8)(l_0_12.Organization) == "Google Inc" then
+            return mp.CLEAN
+          end
+        end
+      end
+    end
+  end
+end
+do
+  if mp.HSTR_WEIGHT >= 3 then
+    return mp.INFECTED
+  end
+  do return mp.LOWFI end
+  -- DECOMPILER ERROR at PC60: Confused about usage of register R1 for local variables in 'ReleaseLocals'
+
+end
+

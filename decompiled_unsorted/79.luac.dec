@@ -1,0 +1,21 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 79.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_1 = nil
+do
+  if (this_sigattrlog[4]).matched and (this_sigattrlog[4]).utf8p1 ~= nil then
+    local l_0_0 = (string.match)((this_sigattrlog[4]).utf8p1, "\\([^\\]+%.exe)")
+  end
+  local l_0_2 = nil
+  -- DECOMPILER ERROR at PC46: Overwrote pending register: R1 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
+
+  if ((bm.get_imagepath)() == nil or (string.find)((bm.get_imagepath)(), "Program Files", 1, true) ~= nil or (string.find)((bm.get_imagepath)(), "System32", 1, true) ~= nil or nil ~= nil) and l_0_2 ~= nil and (string.lower)(nil) ~= l_0_2 then
+    return mp.INFECTED
+  end
+  return mp.CLEAN
+end
+

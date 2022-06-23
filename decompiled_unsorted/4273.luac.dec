@@ -1,0 +1,115 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4273.luac 
+
+-- params : ...
+-- function num : 0
+Infrastructure_RestoreNonUxWDRootConfig = function()
+  -- function num : 0_0
+  Infrastructure_RemoveDefenderDAVASPolicyKey()
+  Infrastructure_RemoveDefenderDAVASPrefKey()
+end
+
+Infrastructure_RestoreNonUxRealTimeProtections = function()
+  -- function num : 0_1
+  local l_2_0 = "hklm\\software\\microsoft\\windows defender\\real-time protection"
+  local l_2_1 = "hklm\\software\\policies\\microsoft\\windows defender\\real-time protection"
+  do
+    local l_2_2 = {}
+    -- DECOMPILER ERROR at PC8: No list found for R2 , SetList fails
+
+    -- DECOMPILER ERROR at PC9: Overwrote pending register: R3 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC10: Overwrote pending register: R4 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC11: Overwrote pending register: R5 in 'AssignReg'
+
+    ;
+    ("DisableBehaviorMonitoring")("DisableIOAVProtection", "DisableOnAccessProtection")
+    Infrastructure_DelRegKeyValuesIfExist(l_2_1, l_2_2)
+    -- WARNING: undefined locals caused missing assignments!
+  end
+end
+
+Infrastructure_RestoreNonUxThreatActions = function()
+  -- function num : 0_2
+  local l_3_0 = "hklm\\software\\microsoft\\windows defender\\threats\\ThreatSeverityDefaultAction"
+  local l_3_1 = "hklm\\software\\policies\\microsoft\\windows defender\\threats\\ThreatSeverityDefaultAction"
+  local l_3_2 = "hklm\\software\\policies\\microsoft\\windows defender\\policy manager\\ThreatSeverityDefaultAction"
+  local l_3_3 = {}
+  -- DECOMPILER ERROR at PC8: No list found for R3 , SetList fails
+
+  -- DECOMPILER ERROR at PC9: Overwrote pending register: R4 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC10: Overwrote pending register: R5 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC11: Overwrote pending register: R6 in 'AssignReg'
+
+  ;
+  ("1")("2", "4")
+  Infrastructure_DelRegKeyValuesIfExist(l_3_1, l_3_3)
+  Infrastructure_DelRegKeyValuesIfExist(l_3_2, l_3_3)
+  local l_3_4 = "hklm\\software\\microsoft\\windows defender\\threats\\ThreatTypeDefaultAction"
+  local l_3_5 = "hklm\\software\\policies\\microsoft\\windows defender\\threats\\ThreatTypeDefaultAction"
+  do
+    local l_3_6 = {}
+    -- DECOMPILER ERROR at PC24: Overwrote pending register: R7 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC28: No list found for R6 , SetList fails
+
+    -- DECOMPILER ERROR at PC29: Overwrote pending register: R7 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC30: Overwrote pending register: R8 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC31: Overwrote pending register: R9 in 'AssignReg'
+
+    ;
+    ("5")("1", "2")
+    Infrastructure_DelRegKeyValuesIfExist(l_3_5, l_3_6)
+    -- WARNING: undefined locals caused missing assignments!
+  end
+end
+
+Infrastructure_RestoreNonUxSpynet = function()
+  -- function num : 0_3
+  local l_4_0 = "hklm\\software\\microsoft\\windows defender\\spynet"
+  local l_4_1 = "hklm\\software\\policies\\microsoft\\windows defender\\spynet"
+  local l_4_2 = {}
+  -- DECOMPILER ERROR at PC4: No list found for R2 , SetList fails
+
+  -- DECOMPILER ERROR at PC5: Overwrote pending register: R3 in 'AssignReg'
+
+  ;
+  ("DisableBlockAtFirstSeen")(l_4_0, l_4_2)
+  Infrastructure_DelRegKeyValuesIfExist(l_4_1, l_4_2)
+end
+
+Infrastructure_RestoreNonUxPolicyManager = function()
+  -- function num : 0_4
+  local l_5_0 = "hklm\\software\\policies\\microsoft\\windows defender\\policy manager"
+  do
+    local l_5_1 = {}
+    -- DECOMPILER ERROR at PC6: No list found for R1 , SetList fails
+
+    -- DECOMPILER ERROR at PC7: Overwrote pending register: R2 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC8: Overwrote pending register: R3 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC9: Overwrote pending register: R4 in 'AssignReg'
+
+    ;
+    ("AllowBehaviorMonitoring")("AllowIOAVProtection", "AllowOnAccessProtection")
+    -- WARNING: undefined locals caused missing assignments!
+  end
+end
+
+Infrastructure_RestoreNonUxControlledWDDefaults = function()
+  -- function num : 0_5
+  Infrastructure_RestoreNonUxWDRootConfig()
+  Infrastructure_RestoreNonUxRealTimeProtections()
+  Infrastructure_RestoreNonUxThreatActions()
+  Infrastructure_RestoreNonUxSpynet()
+  Infrastructure_RestoreNonUxPolicyManager()
+end
+
+Infrastructure_RestoreNonUxControlledWDDefaults()
+

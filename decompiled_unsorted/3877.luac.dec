@@ -1,0 +1,27 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3877.luac 
+
+-- params : ...
+-- function num : 0
+if (Remediation.Threat).Active and (string.match)((Remediation.Threat).Name, "Behavior:Win32/Kuluoz.gen!A") then
+  local l_0_0 = (sysio.RegExpandUserKey)("HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run")
+  for l_0_4,l_0_5 in pairs(l_0_0) do
+    local l_0_6 = (sysio.RegOpenKey)(l_0_5)
+    if l_0_6 then
+      local l_0_7 = (sysio.RegEnumValues)(l_0_6)
+      for l_0_11,l_0_12 in pairs(l_0_7) do
+        if l_0_12 and (string.match)(l_0_12, "^%l%l%l%l%l%l%l%l$") then
+          local l_0_13 = (sysio.GetRegValueAsString)(l_0_6, l_0_12)
+          if l_0_13 and ((string.match)((string.lower)(l_0_13), "\\appdata\\local\\%a%a%a%a%a%a%a%a%.exe\"$") or (string.match)((string.lower)(l_0_13), "\\local settings\\application data\\%a%a%a%a%a%a%a%a%.exe\"$")) then
+            l_0_13 = (string.gsub)(l_0_13, "\"", "")
+            ;
+            (sysio.DeleteRegValue)(l_0_6, l_0_12)
+            ;
+            (Remediation.BtrDeleteFile)(l_0_13)
+          end
+        end
+      end
+    end
+  end
+end
+

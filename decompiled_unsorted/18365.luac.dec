@@ -1,0 +1,10 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18365.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.isexe and peattributes.epinfirstsect and pehdr.NumberOfSections >= 3 and pehdr.NumberOfSections < 6 and (pesecs[pehdr.NumberOfSections]).Name == ".data0" and (pesecs[pevars.epsec]).SizeOfRawData == 512 and (pe.mmap_rva)((pesecs[pehdr.NumberOfSections]).VirtualAddress + 4, 2) == "MZ" then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

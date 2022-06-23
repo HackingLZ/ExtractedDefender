@@ -1,0 +1,119 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1351.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = function()
+  -- function num : 0_0
+  local l_1_0 = reportHeaders
+  local l_1_1 = {}
+  -- DECOMPILER ERROR at PC4: No list found for R1 , SetList fails
+
+  l_1_0(l_1_1)
+  -- DECOMPILER ERROR at PC7: Overwrote pending register: R0 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC8: Overwrote pending register: R0 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC10: Overwrote pending register: R1 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC11: Overwrote pending register: R1 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC12: Overwrote pending register: R2 in 'AssignReg'
+
+  local l_1_2 = ("Host")[2]
+  -- DECOMPILER ERROR at PC14: Overwrote pending register: R3 in 'AssignReg'
+
+  local l_1_3 = ("User-Agent")[3]
+  local l_1_4 = (nri.GetURI)()
+  if not l_1_2.utf8p1 or not l_1_2.utf8p2 or not l_1_3.utf8p1 then
+    (mp.changedetectionname)(805306718)
+    return mp.INFECTED
+  end
+  local l_1_5 = {}
+  l_1_5.SIG_CONTEXT = (string.format)("NP:%s:%d", l_1_2.utf8p1, l_1_2.np2)
+  l_1_5.CONTENT_SOURCE = "NP"
+  l_1_5.PROCESS_PATH = l_1_3.utf8p1
+  l_1_5.C2 = "true"
+  local l_1_6 = l_1_0 .. ":" .. l_1_1
+  local l_1_7 = mp.GetUrlReputation
+  local l_1_8 = {}
+  -- DECOMPILER ERROR at PC56: No list found for R8 , SetList fails
+
+  -- DECOMPILER ERROR at PC57: Overwrote pending register: R9 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC62: Overwrote pending register: R8 in 'AssignReg'
+
+  if not l_1_7 then
+    l_1_8(805306719)
+    -- DECOMPILER ERROR at PC65: Overwrote pending register: R8 in 'AssignReg'
+
+    -- DECOMPILER ERROR at PC66: Overwrote pending register: R8 in 'AssignReg'
+
+    return l_1_8
+  else
+    local l_1_9 = l_1_7.urls
+    -- DECOMPILER ERROR at PC78: Overwrote pending register: R10 in 'AssignReg'
+
+    for l_1_13,l_1_14 in l_1_4(l_1_9) do
+      if l_1_14.determination == 2 then
+        local l_1_15 = l_1_14.urlresponsecontext
+        if l_1_15 then
+          local l_1_16 = ""
+          for l_1_20,l_1_21 in ipairs(l_1_15) do
+            local l_1_22 = l_1_21.key
+            local l_1_23 = l_1_21.value
+            if l_1_22 == "MaceFamily" then
+              do
+                do
+                  l_1_16 = (string.lower)(l_1_23)
+                  do break end
+                  -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out DO_STMT
+
+                  -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+                  -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_STMT
+
+                end
+              end
+            end
+          end
+          if l_1_16 ~= "" then
+            do
+              do
+                if l_1_14.confidence ~= 99 then
+                  local l_1_24, l_1_25 = l_1_8[l_1_16] - 1
+                end
+                -- DECOMPILER ERROR at PC114: Confused about usage of register: R17 in 'UnsetPending'
+
+                ;
+                (mp.changedetectionname)(l_1_24)
+                do return mp.INFECTED end
+                -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out DO_STMT
+
+                -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+                -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_STMT
+
+                -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+                -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_STMT
+
+                -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_THEN_STMT
+
+                -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_STMT
+
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+
+local l_0_1, l_0_2 = pcallEx("adjustDetectionName", l_0_0)
+if not l_0_1 then
+  reportPcallEx()
+end
+return mp.INFECTED
+

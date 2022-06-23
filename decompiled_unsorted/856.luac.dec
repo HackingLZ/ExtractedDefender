@@ -1,0 +1,74 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 856.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_1, l_0_2, l_0_3, l_0_4 = nil, nil, nil, nil, nil
+local l_0_5 = nil
+local l_0_6, l_0_7, l_0_8, l_0_9, l_0_10 = , {}
+local l_0_11 = nil
+if (this_sigattrlog[26]).matched and (this_sigattrlog[26]).wp1 ~= nil then
+  (table.insert)(l_0_10, (this_sigattrlog[26]).timestamp)
+  if ({[".gif"] = true, [".pdf"] = true, [".doc"] = true, [".docx"] = true, [".docm"] = true, [".xls"] = true, [".xlsx"] = true, [".xlsm"] = true, [".ppt"] = true, [".pptx"] = true, [".pptm"] = true, [".rtf"] = true, [".zip"] = true, [".rar"] = true, [".cab"] = true, [".jpg"] = true, [".jpeg"] = true, [".bmp"] = true, [".png"] = true, [".jpe"] = true, [".xml"] = true, [".wer"] = true, [".dat"] = true})[l_0_11] then
+    return mp.CLEAN
+  end
+end
+if (this_sigattrlog[48]).matched and (this_sigattrlog[48]).wp1 ~= nil then
+  (table.insert)(l_0_10, (this_sigattrlog[48]).timestamp)
+  -- DECOMPILER ERROR at PC95: Overwrote pending register: R7 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC96: Confused about usage of register: R11 in 'UnsetPending'
+
+  if ({[".gif"] = true, [".pdf"] = true, [".doc"] = true, [".docx"] = true, [".docm"] = true, [".xls"] = true, [".xlsx"] = true, [".xlsm"] = true, [".ppt"] = true, [".pptx"] = true, [".pptm"] = true, [".rtf"] = true, [".zip"] = true, [".rar"] = true, [".cab"] = true, [".jpg"] = true, [".jpeg"] = true, [".bmp"] = true, [".png"] = true, [".jpe"] = true, [".xml"] = true, [".wer"] = true, [".dat"] = true})[nil] then
+    return mp.CLEAN
+  end
+end
+if (this_sigattrlog[70]).matched and (this_sigattrlog[70]).wp1 ~= nil then
+  (table.insert)(l_0_10, (this_sigattrlog[70]).timestamp)
+  -- DECOMPILER ERROR at PC133: Overwrote pending register: R8 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC134: Confused about usage of register: R11 in 'UnsetPending'
+
+  if ({[".gif"] = true, [".pdf"] = true, [".doc"] = true, [".docx"] = true, [".docm"] = true, [".xls"] = true, [".xlsx"] = true, [".xlsm"] = true, [".ppt"] = true, [".pptx"] = true, [".pptm"] = true, [".rtf"] = true, [".zip"] = true, [".rar"] = true, [".cab"] = true, [".jpg"] = true, [".jpeg"] = true, [".bmp"] = true, [".png"] = true, [".jpe"] = true, [".xml"] = true, [".wer"] = true, [".dat"] = true})[nil] then
+    return mp.CLEAN
+  end
+end
+if (this_sigattrlog[92]).matched and (this_sigattrlog[92]).wp1 ~= nil then
+  (table.insert)(l_0_10, (this_sigattrlog[92]).timestamp)
+  -- DECOMPILER ERROR at PC171: Overwrote pending register: R9 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC172: Confused about usage of register: R11 in 'UnsetPending'
+
+  if ({[".gif"] = true, [".pdf"] = true, [".doc"] = true, [".docx"] = true, [".docm"] = true, [".xls"] = true, [".xlsx"] = true, [".xlsm"] = true, [".ppt"] = true, [".pptx"] = true, [".pptm"] = true, [".rtf"] = true, [".zip"] = true, [".rar"] = true, [".cab"] = true, [".jpg"] = true, [".jpeg"] = true, [".bmp"] = true, [".png"] = true, [".jpe"] = true, [".xml"] = true, [".wer"] = true, [".dat"] = true})[nil] then
+    return mp.CLEAN
+  end
+end
+if (this_sigattrlog[114]).matched and (this_sigattrlog[114]).wp1 ~= nil then
+  (table.insert)(l_0_10, (this_sigattrlog[114]).timestamp)
+  -- DECOMPILER ERROR at PC209: Overwrote pending register: R10 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC210: Confused about usage of register: R11 in 'UnsetPending'
+
+  if ({[".gif"] = true, [".pdf"] = true, [".doc"] = true, [".docx"] = true, [".docm"] = true, [".xls"] = true, [".xlsx"] = true, [".xlsm"] = true, [".ppt"] = true, [".pptx"] = true, [".pptm"] = true, [".rtf"] = true, [".zip"] = true, [".rar"] = true, [".cab"] = true, [".jpg"] = true, [".jpeg"] = true, [".bmp"] = true, [".png"] = true, [".jpe"] = true, [".xml"] = true, [".wer"] = true, [".dat"] = true})[nil] then
+    return mp.CLEAN
+  end
+end
+-- DECOMPILER ERROR at PC218: Confused about usage of register: R7 in 'UnsetPending'
+
+-- DECOMPILER ERROR at PC220: Confused about usage of register: R8 in 'UnsetPending'
+
+-- DECOMPILER ERROR at PC222: Confused about usage of register: R9 in 'UnsetPending'
+
+-- DECOMPILER ERROR at PC224: Confused about usage of register: R10 in 'UnsetPending'
+
+if l_0_11 ~= nil and l_0_11 == nil and l_0_11 == nil and l_0_11 == nil and l_0_11 == nil then
+  (table.sort)(l_0_10)
+  if l_0_10[#l_0_10] - l_0_10[1] < 5000000 then
+    if (mp.get_sigattr_event_count)(16386) < 10 then
+      return mp.CLEAN
+    end
+    return mp.INFECTED
+  end
+end
+return mp.CLEAN
+

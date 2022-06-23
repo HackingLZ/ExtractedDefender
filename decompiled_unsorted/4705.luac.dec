@@ -1,0 +1,27 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4705.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC7: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[3]).matched then
+    local l_0_0, l_0_1, l_0_2, l_0_3, l_0_4 = nil
+  else
+  end
+  if not (this_sigattrlog[4]).matched or isTainted((this_sigattrlog[4]).utf8p1, "remote_file_created_taint") then
+    return mp.INFECTED
+  end
+  -- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
+
+  if (string.sub)((this_sigattrlog[4]).utf8p1, 0, 5) == "/tmp/" or (string.sub)((this_sigattrlog[4]).utf8p1, 0, 9) == "/var/tmp/" or (string.sub)((this_sigattrlog[4]).utf8p1, 0, 9) == "/dev/shm/" then
+    return mp.INFECTED
+  end
+  return mp.CLEAN
+end
+

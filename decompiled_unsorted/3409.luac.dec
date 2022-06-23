@@ -1,0 +1,25 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3409.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = GetTechniquesTableForPid("BM")
+local l_0_1 = GetTacticsTableForPid("BM")
+if l_0_1 ~= nil and l_0_0 ~= nil then
+  local l_0_2, l_0_3 = (bm.get_process_relationships)()
+  for l_0_7,l_0_8 in ipairs(l_0_3) do
+    for l_0_12,l_0_13 in pairs(l_0_1) do
+      AddTacticForPid(l_0_8.ppid, l_0_12)
+    end
+    for l_0_17,l_0_18 in pairs(l_0_0) do
+      AddTechniqueForPid(l_0_8.ppid, l_0_17)
+    end
+    TrackPidAndTechniqueBM(l_0_8.ppid, "tt_to_child", "tt_to_child")
+  end
+end
+do
+  l_0_2 = mp
+  l_0_2 = l_0_2.INFECTED
+  return l_0_2
+end
+

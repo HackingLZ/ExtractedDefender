@@ -1,0 +1,15 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3232.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (sysio.RegOpenKey)("HKLM\\SYSTEM\\CurrentControlSet\\services\\Tcpip\\Parameters")
+if l_0_0 then
+  local l_0_1 = (sysio.GetRegValueAsString)(l_0_0, "DhcpNameServer")
+  if l_0_1 and (string.find)(l_0_1, "82.163.143.", 1, true) then
+    Infrastructure_ClearALLDNS()
+    ;
+    (Remediation.SetRebootRequired)()
+  end
+end
+

@@ -1,0 +1,33 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3795.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.enum_mpattributesubstring)("Behavior:Win32/BlockMpTamper")
+if #l_0_0 == 0 or l_0_0 == nil then
+  return mp.CLEAN
+end
+for l_0_4,l_0_5 in ipairs(l_0_0) do
+  (bm.add_related_string)("RelatedBMHits", l_0_5, bm.RelatedStringBMReport)
+end
+local l_0_6 = nil
+for l_0_10 = 1, mp.SIGATTR_LOG_SZ do
+  if (sigattr_tail[l_0_10]).matched and (sigattr_tail[l_0_10]).attribute == 16393 then
+    l_0_6 = (sigattr_tail[l_0_10]).utf8p2
+    if l_0_6 ~= nil then
+      local l_0_11 = (mp.GetExecutablesFromCommandLine)(l_0_6)
+      if l_0_11 ~= nil and #l_0_11 > 0 then
+        for l_0_15,l_0_16 in ipairs(l_0_11) do
+          l_0_16 = (mp.ContextualExpandEnvironmentVariables)(l_0_16)
+          if (sysio.IsFileExists)(l_0_16) then
+            (bm.add_related_file)(l_0_16)
+          end
+        end
+      end
+    end
+  end
+end
+do return mp.INFECTED end
+-- DECOMPILER ERROR at PC80: Confused about usage of register R2 for local variables in 'ReleaseLocals'
+
+

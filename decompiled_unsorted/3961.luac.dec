@@ -1,0 +1,35 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3961.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.isdll == true and peattributes.hasexports == true and ((pehdr.DataDirectory)[1]).Size ~= 0 then
+  local l_0_0 = (mp.getfilesize)()
+  if l_0_0 < 100000 or l_0_0 > 500000 then
+    return mp.CLEAN
+  end
+  local l_0_1 = (pe.get_versioninfo)()
+  if l_0_1 == nil then
+    return mp.CLEAN
+  end
+  if l_0_1.CompanyName == "Microsoft Corporation" then
+    return mp.CLEAN
+  end
+  local l_0_2 = ((pehdr.DataDirectory)[1]).RVA
+  ;
+  (mp.readprotection)(false)
+  local l_0_3 = (mp.readfile)((pe.foffset_rva)(l_0_2), 36)
+  if (mp.readu_u32)(l_0_3, 21) == 1 and (mp.readu_u32)(l_0_3, 25) == 1 then
+    local l_0_4 = (mp.readu_u32)(l_0_3, 33)
+    l_0_3 = (pe.mmap_rva)(l_0_4, 4)
+    local l_0_5 = (mp.readu_u32)(l_0_3, 1)
+    local l_0_6 = (pe.mmap_rva)(l_0_5, 18)
+    if l_0_6 == "DllRegisterServer\000" or l_0_6 == "SetModuleHandle\000" or l_0_6 == "StartServer\000" or l_0_6 == "StopServer\000" or l_0_6 == "MatrixMain\000" then
+      return mp.INFECTED
+    end
+  end
+end
+do
+  return mp.CLEAN
+end
+

@@ -1,0 +1,32 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18544.luac 
+
+-- params : ...
+-- function num : 0
+if not isTamperProtectionOn() then
+  return mp.CLEAN
+end
+local l_0_0 = (mp.GetScannedPPID)()
+if l_0_0 == "" or l_0_0 == nil then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.GetProcessCommandLine)(l_0_0)
+local l_0_2 = false
+l_0_2 = (MpCommon.StringRegExpSearch)("(\\s(/TI)(\\s+1)?\\s+$)", l_0_1)
+if l_0_2 == false then
+  return mp.CLEAN
+end
+local l_0_3 = (mp.GetParentProcInfo)()
+if l_0_3 == nil then
+  return mp.CLEAN
+end
+local l_0_4 = (mp.GetProcessCommandLine)(l_0_3.ppid)
+if l_0_4 == nil then
+  return mp.CLEAN
+end
+l_0_2 = (MpCommon.StringRegExpSearch)("(\\s(/SYS)\\s+)", l_0_4)
+if l_0_2 == false then
+  return mp.CLEAN
+end
+return mp.INFECTED
+

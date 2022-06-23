@@ -1,0 +1,30 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3880.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = 805306512
+local l_0_1 = (MpDetection.GetCurrentThreat)()
+for l_0_5,l_0_6 in pairs(l_0_1.Resources) do
+  if l_0_6.Schema == "file" and (crypto.bitand)(l_0_6.Type, MpCommon.MPRESOURCE_TYPE_CONCRETE) == MpCommon.MPRESOURCE_TYPE_CONCRETE then
+    Infrastructure_DetectionReportFolder(l_0_0, l_0_6.Path, true)
+  end
+end
+local l_0_7 = (sysio.ExpandFilePath)("%appdata%", true)
+if l_0_7 ~= nil then
+  local l_0_8 = ""
+  for l_0_12,l_0_13 in pairs(l_0_7) do
+    l_0_8 = l_0_13 .. "\\Microsoft\\Windows\\Start Menu\\Programs\\Boost My PC\\Boost My PC.lnk"
+    if (sysio.IsFileExists)(l_0_8) then
+      Infrastructure_DetectionReportFolder(l_0_0, l_0_8, true)
+    end
+  end
+end
+do
+  l_0_8 = Infrastructure_ReportSoftwareRegistryByKey
+  l_0_8(l_0_0, "Boost My PC")
+  l_0_8 = MpDetection
+  l_0_8 = l_0_8.ReportResource
+  l_0_8("regkey", "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Boost My PC.exe", l_0_0, false)
+end
+

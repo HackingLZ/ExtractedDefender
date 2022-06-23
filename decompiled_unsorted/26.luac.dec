@@ -1,0 +1,76 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 26.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.reads_vdll_code or (mp.get_mpattribute)("LUA:StrangeImportRVA") then
+  local l_0_0 = 0
+  if epcode[1] == 141 and epcode[2] == 148 and (epcode[3] == 36 or epcode[3] == 4) and epcode[8] == 235 then
+    l_0_0 = 1
+  else
+    if pehdr.SizeOfImage > 1179648 and pehdr.SizeOfImage < 1966080 and epcode[1] == 104 and (mp.readu_u32)(epcode, 6) == 488 and (mp.readu_u16)(epcode, 10) == 49920 then
+      l_0_0 = 2
+    end
+  end
+  if l_0_0 == 0 then
+    return mp.CLEAN
+  end
+  local l_0_1 = ((pehdr.DataDirectory)[pe.IMAGE_DIRECTORY_ENTRY_SECURITY]).RVA
+  if l_0_1 == 0 then
+    return mp.CLEAN
+  end
+  local l_0_2 = (mp.getfilesize)()
+  if l_0_2 <= l_0_1 then
+    return mp.CLEAN
+  end
+  local l_0_3 = l_0_2 - l_0_1
+  if l_0_3 < 1024 then
+    return mp.CLEAN
+  end
+  ;
+  (mp.readprotection)(false)
+  local l_0_4 = (mp.readfile)(l_0_1 + 336, 128)
+  if (mp.crc32)(-1, l_0_4, 1, 128) == 3701156430 then
+    return mp.INFECTED
+  end
+  l_0_4 = (mp.readfile)(l_0_1 + 378, 128)
+  if (mp.crc32)(-1, l_0_4, 1, 128) == 2309974109 then
+    return mp.INFECTED
+  end
+  if l_0_3 < 2560 then
+    return mp.CLEAN
+  end
+  l_0_4 = (mp.readfile)(l_0_1 + 2048, 128)
+  if (mp.crc32)(-1, l_0_4, 1, 128) == 2574726046 then
+    return mp.INFECTED
+  end
+  if l_0_3 < 4096 then
+    return mp.CLEAN
+  end
+  l_0_4 = (mp.readfile)(l_0_1 + 2832, 96)
+  local l_0_5 = (mp.crc32)(-1, l_0_4, 1, 96)
+  if l_0_5 == 286331011 then
+    return mp.INFECTED
+  end
+  if l_0_5 == 1993805178 then
+    return mp.INFECTED
+  end
+  if l_0_5 == 2529611765 then
+    return mp.INFECTED
+  end
+  if l_0_5 == 3673830025 then
+    return mp.INFECTED
+  end
+  if l_0_3 < 5376 then
+    return mp.CLEAN
+  end
+  l_0_4 = (mp.readfile)(l_0_1 + 5033, 96)
+  l_0_5 = (mp.crc32)(-1, l_0_4, 1, 96)
+  if l_0_5 == 3673830025 then
+    return mp.INFECTED
+  end
+end
+do
+  return mp.CLEAN
+end
+

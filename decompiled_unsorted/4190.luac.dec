@@ -1,0 +1,17 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4190.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilename)(mp.FILEPATH_QUERY_LOWERCASE)
+if l_0_0 == nil or (string.len)(l_0_0) <= 5 then
+  return mp.CLEAN
+end
+if (mp.getfilesize)() > 1048576 then
+  return mp.CLEAN
+end
+if (string.find)(l_0_0, "stolen images evidence.js", 1, true) ~= nil or (string.find)(l_0_0, "stolen images evidence%.zip", 1, true) ~= nil or (string.find)(l_0_0, "_.+%.pdf_.+%.js") ~= nil or (string.find)(l_0_0, "swift copy _%d%d%.shtml") ~= nil or (string.find)(l_0_0, "inv0ice#%d%d%d%d+.js") ~= nil or (string.find)(l_0_0, "invoice_#%d%d%.js") ~= nil or (string.find)(l_0_0, "swift message%d%d2022%.js") ~= nil or (string.find)(l_0_0, "salute_%d%d%.vbe") ~= nil or (string.find)(l_0_0, "agenzia_%d%d%.vbe") ~= nil or (string.find)(l_0_0, "%(2022%.02%.%d%d%)%.vbs") ~= nil or (string.find)(l_0_0, "%.pdf_.+%.wsf") ~= nil or (string.find)(l_0_0, "agenzia.lnk", 1, true) ~= nil or (string.find)(l_0_0, "_pdf.vbs", 1, true) ~= nil or (string.find)(l_0_0, "transfer confirmation slip.shtm", 1, true) ~= nil or (string.find)(l_0_0, ".xlsx.wsf", 1, true) ~= nil or (string.find)(l_0_0, ".pdf.wsf", 1, true) ~= nil or (string.find)(l_0_0, ".pdf.js", 1, true) ~= nil or (string.find)(l_0_0, ".xlxs.js", 1, true) ~= nil or (string.find)(l_0_0, ".pdf.vbs", 1, true) ~= nil or (string.find)(l_0_0, "po38012.shtml", 1, true) ~= nil or (string.find)(l_0_0, "factura_pendiente_de_pago.html", 1, true) ~= nil or (string.find)(l_0_0, "purchase order inv.8052", 1, true) ~= nil or (string.find)(l_0_0, "abdtfhgxgeghdp.sct", 1, true) ~= nil or (string.find)(l_0_0, "new order products needed.shtml", 1, true) ~= nil then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

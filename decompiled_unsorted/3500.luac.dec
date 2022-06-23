@@ -1,0 +1,25 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3500.luac 
+
+-- params : ...
+-- function num : 0
+if pehdr.NumberOfSections ~= 3 then
+  return mp.CLEAN
+end
+if (mp.getfilesize)() < 2048 or (mp.getfilesize)() > 20480 then
+  return mp.CLEAN
+end
+;
+(mp.readprotection)(false)
+local l_0_0 = (mp.readfile)((pesecs[3]).PointerToRawData, 32)
+do
+  if l_0_0:match("^%x+$") then
+    local l_0_1 = (string.gsub)(l_0_0, "%x", "")
+    if l_0_0 == 32 then
+      return mp.INFECTED
+    end
+  end
+  local l_0_2 = mp.CLEAN
+  return l_0_2
+end
+

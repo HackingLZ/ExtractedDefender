@@ -1,0 +1,27 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 123.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON)
+if l_0_0 ~= nil and l_0_0 ~= mp.SCANREASON_UNKNOWN then
+  return mp.CLEAN
+end
+if (mp.GetResmgrBasePlugin)() ~= "Folder" then
+  return mp.CLEAN
+end
+local l_0_1 = (string.lower)((mp.getfilename)())
+if l_0_1:find(":\\windows\\winsxs", 1, true) ~= nil then
+  return mp.CLEAN
+end
+if l_0_1:find(":\\windows\\installer", 1, true) ~= nil then
+  return mp.CLEAN
+end
+if l_0_1:find(":\\sccmcontentlib\\filelib", 1, true) ~= nil then
+  return mp.CLEAN
+end
+if (mp.IsTrustedFile)(false) == false then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

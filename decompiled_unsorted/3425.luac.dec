@@ -1,0 +1,14 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3425.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) ~= mp.SCANREASON_ONMODIFIEDHANDLECLOSE then
+  return mp.CLEAN
+end
+local l_0_0 = (string.lower)((mp.get_contextdata)(mp.CONTEXT_DATA_PROCESSNAME))
+if l_0_0 == "mshta.exe" or l_0_0 == "rundll32.exe" or l_0_0 == "regsvr32.exe" or l_0_0 == "wmic.exe" then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

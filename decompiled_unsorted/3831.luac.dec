@@ -1,0 +1,34 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3831.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.get_mpattributesubstring)("SLF:Win32/LnkFileWith") and (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) == mp.SCANREASON_ONMODIFIEDHANDLECLOSE and (mp.get_contextdata)(mp.CONTEXT_DATA_NEWLYCREATEDHINT) == true then
+  local l_0_0 = mp.CLEAN
+  if (MpCommon.QueryPersistContextNoPath)("CLF_AM", "OfcUsrTruDocRec") then
+    l_0_0 = mp.INFECTED
+  end
+  local l_0_1 = false
+  if (MpCommon.QueryPersistContextNoPath)("CLF_AM", "CLF_AM_EC") then
+    l_0_1 = true
+  end
+  if (MpCommon.QueryPersistContextNoPath)("CLF_AM", "CLF_AM_WM") then
+    l_0_1 = true
+  end
+  do
+    do
+      if l_0_1 then
+        local l_0_2 = (MpCommon.GetPersistContextNoPath)("CLF_IC")
+        for l_0_6,l_0_7 in ipairs(l_0_2) do
+          (mp.ReportLowfi)(l_0_7, 1933116662)
+        end
+        l_0_0 = mp.INFECTED
+      end
+      if l_0_0 == mp.INFECTED then
+        return mp.INFECTED
+      end
+      return mp.CLEAN
+    end
+  end
+end
+

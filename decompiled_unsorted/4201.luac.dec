@@ -1,0 +1,114 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4201.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.getfilesize)() > 20480 then
+  return mp.CLEAN
+end
+local l_0_0 = (string.lower)((mp.getfilename)())
+if (string.find)(l_0_0, "->", 1, true) == nil then
+  return mp.CLEAN
+end
+if l_0_0:len() < 9 then
+  return mp.CLEAN
+end
+local l_0_1 = {}
+l_0_1[".doc"] = ""
+l_0_1.docm = ""
+l_0_1.docx = ""
+l_0_1[".dot"] = ""
+l_0_1.dotm = ""
+l_0_1.dotx = ""
+l_0_1[".odt"] = ""
+l_0_1[".rtf"] = ""
+l_0_1[".ods"] = ""
+l_0_1[".xla"] = ""
+l_0_1[".xls"] = ""
+l_0_1.xlam = ""
+l_0_1.xlsb = ""
+l_0_1.xlsm = ""
+l_0_1.xlsx = ""
+l_0_1[".xlt"] = ""
+l_0_1.xltm = ""
+l_0_1.xltx = ""
+l_0_1[".odp"] = ""
+l_0_1[".pot"] = ""
+l_0_1[".potm"] = ""
+l_0_1[".potx"] = ""
+l_0_1[".ppa"] = ""
+l_0_1.ppam = ""
+l_0_1[".pps"] = ""
+l_0_1[".ppsm"] = ""
+l_0_1[".ppsx"] = ""
+l_0_1[".ppt"] = ""
+l_0_1.pptm = ""
+l_0_1.pptx = ""
+l_0_1[".ani"] = ""
+l_0_1[".bmp"] = ""
+l_0_1[".cur"] = ""
+l_0_1[".emf"] = ""
+l_0_1[".gif"] = ""
+l_0_1[".ico"] = ""
+l_0_1.jpeg = ""
+l_0_1[".jpg"] = ""
+l_0_1[".png"] = ""
+l_0_1[".raw"] = ""
+l_0_1[".tif"] = ""
+l_0_1.tiff = ""
+l_0_1[".wmf"] = ""
+l_0_1[".3gp"] = ""
+l_0_1[".aac"] = ""
+l_0_1[".asf"] = ""
+l_0_1[".avi"] = ""
+l_0_1[".fla"] = ""
+l_0_1.flac = ""
+l_0_1[".flv"] = ""
+l_0_1[".m3u"] = ""
+l_0_1[".m4v"] = ""
+l_0_1[".mkv"] = ""
+l_0_1[".mov"] = ""
+l_0_1[".mp3"] = ""
+l_0_1[".mp4"] = ""
+l_0_1[".mpe"] = ""
+l_0_1[".mpeg"] = ""
+l_0_1[".mpg"] = ""
+l_0_1[".ogg"] = ""
+l_0_1[".vma"] = ""
+l_0_1[".wav"] = ""
+l_0_1[".wmv"] = ""
+l_0_1[".cpp"] = ""
+l_0_1[".css"] = ""
+l_0_1[".csv"] = ""
+l_0_1[".eml"] = ""
+l_0_1.gdoc = ""
+l_0_1[".hta"] = ""
+l_0_1[".htm"] = ""
+l_0_1.html = ""
+l_0_1[".mht"] = ""
+l_0_1[".pdf"] = ""
+l_0_1[".php"] = ""
+l_0_1[".ttf"] = ""
+l_0_1[".xml"] = ""
+l_0_1[".cab"] = ""
+l_0_1.gzip = ""
+l_0_1[".iso"] = ""
+l_0_1[".rar"] = ""
+l_0_1[".tar"] = ""
+l_0_1[".vhd"] = ""
+l_0_1["-3ds"] = ""
+l_0_1.acad = ""
+l_0_1[".aws"] = ""
+l_0_1[".dwg"] = ""
+l_0_1[".dxf"] = ""
+l_0_1[".fas"] = ""
+l_0_1[".lsp"] = ""
+l_0_1[".mnl"] = ""
+l_0_1[".plf"] = ""
+l_0_1[".vlx"] = ""
+local l_0_2 = (string.sub)(l_0_0, -8)
+if l_0_1[(string.sub)(l_0_2, 1, 4)] then
+  (mp.set_mpattribute)("Lua:ContextLnkDoubleExtension")
+end
+return mp.CLEAN
+

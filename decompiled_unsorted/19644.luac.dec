@@ -1,0 +1,86 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19644.luac 
+
+-- params : ...
+-- function num : 0
+if not peattributes.isdll then
+  return mp.CLEAN
+end
+;
+(pe.set_peattribute)("disable_apicall_limit", true)
+;
+(pe.set_peattribute)("deep_analysis", true)
+local l_0_0 = (mp.getfilesize)()
+;
+(mp.readprotection)(false)
+local l_0_1 = (mp.readfile)(0, l_0_0)
+if (hstrlog[1]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[1]).VA) + 1, 1)
+end
+if (hstrlog[2]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[2]).VA) + 1, 1)
+end
+if (hstrlog[3]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[3]).VA) + 1, 1)
+end
+if (hstrlog[4]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[4]).VA) + 1, 1)
+end
+if (hstrlog[5]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[5]).VA) + 1, 1)
+end
+if (hstrlog[6]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[6]).VA) + 1, 1)
+end
+if (hstrlog[7]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[7]).VA) + 1, 1)
+end
+if (hstrlog[8]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[8]).VA) + 1, 1)
+end
+if (hstrlog[9]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[9]).VA) + 1, 1)
+end
+if (hstrlog[10]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[10]).VA) + 1, 1)
+end
+if (hstrlog[11]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[11]).VA) + 1, 1)
+end
+if (hstrlog[12]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[12]).VA) + 1, 1)
+end
+if (hstrlog[13]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[13]).VA) + 1, 1)
+end
+if (hstrlog[14]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[14]).VA - 1) + 1, 1)
+end
+if (hstrlog[15]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[15]).VA - 1) + 1, 1)
+end
+if (hstrlog[16]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[16]).VA - 1) + 1, 1)
+end
+if (hstrlog[17]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[17]).VA - 1) + 1, 1)
+end
+if (hstrlog[18]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[18]).VA - 1) + 1, 1)
+end
+if (hstrlog[19]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[19]).VA - 1) + 1, 1)
+end
+if (hstrlog[20]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[20]).VA - 1) + 1, 1)
+end
+if (hstrlog[21]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[21]).VA - 1) + 1, 1)
+end
+if (hstrlog[22]).matched then
+  (mp.writeu_u32)(l_0_1, (pe.foffset_va)((hstrlog[22]).VA - 1) + 1, 1)
+end
+;
+(mp.vfo_add_buffer)(l_0_1, "[Obfuscator.ACV]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+return mp.SUSPICIOUS
+

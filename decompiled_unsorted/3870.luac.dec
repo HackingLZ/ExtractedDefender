@@ -1,0 +1,14 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3870.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 < 4096 or l_0_0 > 65536 then
+  return mp.CLEAN
+end
+if ((((((not (mp.get_mpattribute)("SCRIPT:Exploit:SWF/CVE-2014-0515!attr01") or (mp.get_mpattribute)("SCRIPT:Exploit:SWF/CVE-2014-0515!attr02")) and not (mp.get_mpattribute)("SCRIPT:Exploit:SWF/CVE-2014-0515!attr03")) or (mp.get_mpattribute)("SCRIPT:Exploit:SWF/CVE-2014-0515!attr04")) and not (mp.get_mpattribute)("SCRIPT:Exploit:SWF/CVE-2014-0515!attr05")) or (mp.get_mpattribute)("SCRIPT:Exploit:SWF/CVE-2014-0515!attr06")) and not (mp.get_mpattribute)("SCRIPT:Exploit:SWF/CVE-2014-0515!attr07")) or 0 + 1 + 1 + 1 + 1 + 1 + 1 + 1 >= 5 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

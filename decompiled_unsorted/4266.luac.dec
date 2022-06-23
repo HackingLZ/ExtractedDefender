@@ -1,0 +1,79 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4266.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON) ~= mp.SCANREASON_AMSI then
+  return mp.CLEAN
+end
+local l_0_0, l_0_1 = pcall(mp.get_contextdata, mp.CONTEXT_DATA_AMSI_APPNAME)
+if not l_0_0 or not l_0_1 or l_0_1 ~= "DotNet" and l_0_1 ~= "coreclr" then
+  return mp.CLEAN
+end
+;
+(mp.set_mpattribute)("Lua:IsDotNetAMSIScan")
+local l_0_2, l_0_3 = pcall(mp.get_contextdata, mp.CONTEXT_DATA_AMSI_OPERATION_PPID)
+if not l_0_2 or not l_0_3 then
+  return mp.CLEAN
+end
+local l_0_4 = (sysio.GetFileNameFromProcess)(l_0_3)
+if not ((sysio.GetLastResult)()).Success or not l_0_4 then
+  (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_NoProcess")
+  return mp.CLEAN
+end
+local l_0_5 = false
+l_0_4 = (string.lower)(l_0_4)
+if #l_0_4 >= 15 and l_0_4:sub(-15) == "\\powershell.exe" then
+  (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_PowerShell")
+else
+  if #l_0_4 >= 12 and (l_0_4:sub(-12) == "\\wscript.exe" or l_0_4:sub(-12) == "\\cscript.exe") then
+    (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_WScript")
+  else
+    if #l_0_4 >= 17 and l_0_4:sub(-17) == "\\inetsrv\\w3wp.exe" then
+      (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_IIS")
+    else
+      if #l_0_4 >= 18 and l_0_4:sub(-18) == "\\runtimebroker.exe" then
+        (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_RuntimeBroker")
+      else
+        if #l_0_4 >= 13 and l_0_4:sub(-13) == "\\rundll32.exe" then
+          (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_Rundll32")
+        else
+          if #l_0_4 >= 8 and l_0_4:sub(-8) == "\\mmc.exe" then
+            (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_MMC")
+          end
+        end
+      end
+    end
+  end
+end
+if #l_0_4 >= 9 and l_0_4:sub(2, 9) == ":\\users\\" then
+  (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_Users")
+  l_0_5 = true
+else
+  if #l_0_4 >= 15 and l_0_4:sub(2, 15) == ":\\programdata\\" then
+    (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_ProgramData")
+    l_0_5 = true
+  else
+    if #l_0_4 >= 11 and l_0_4:sub(2, 11) == ":\\windows\\" then
+      (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_Windir")
+      if #l_0_4 >= 20 and (l_0_4:sub(11, 20) == "\\system32\\" or l_0_4:sub(11, 20) == "\\syswow64\\") then
+        (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_System")
+      else
+        if #l_0_4 >= 25 and l_0_4:sub(11, 25) == "\\microsoft.net\\" then
+          (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_Framework")
+        end
+      end
+    else
+      if (#l_0_4 >= 17 and l_0_4:sub(2, 17) == ":\\program files\\") or #l_0_4 >= 23 and l_0_4:sub(2, 23) == ":\\program files (x86)\\" then
+        (mp.set_mpattribute)("Lua:IsDotNetAMSIScan_ProgramFiles")
+      else
+        l_0_5 = true
+      end
+    end
+  end
+end
+if l_0_5 and not (mp.IsKnownFriendlyFile)(l_0_4, true, false) then
+  (mp.ReportLowfi)(l_0_4, 2670337877)
+end
+return mp.CLEAN
+

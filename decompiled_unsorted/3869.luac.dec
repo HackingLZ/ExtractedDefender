@@ -1,0 +1,12 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3869.luac 
+
+-- params : ...
+-- function num : 0
+(mp.readprotection)(false)
+local l_0_0 = tostring((mp.readfile)(8192, 8192))
+if (string.find)(l_0_0, "https://ttraff.ru/", 1, true) ~= nil or (string.find)(l_0_0, "https://ttraff.com/", 1, true) ~= nil or (string.find)(l_0_0, "https://ttraff.me/", 1, true) ~= nil or (string.find)(l_0_0, "https://ttraff.cc/", 1, true) ~= nil or (string.find)(l_0_0, "https://ttraff.club/", 1, true) ~= nil or (string.find)(l_0_0, "https://ttraff.link/", 1, true) ~= nil or (string.find)(l_0_0, "https://cctraff.ru/", 1, true) ~= nil or (string.find)(l_0_0, "https://ggtraff.ru/", 1, true) ~= nil or (string.find)(l_0_0, "https://gettraff.ru/", 1, true) ~= nil then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

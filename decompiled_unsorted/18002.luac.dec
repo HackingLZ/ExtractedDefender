@@ -1,0 +1,23 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18002.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.GetParentProcInfo)()
+if l_0_0 ~= nil then
+  local l_0_1 = (string.lower)(l_0_0.image_path)
+  local l_0_2 = l_0_1:match("([^\\]+)$")
+  if l_0_2 == "powershell.exe" or (string.find)(l_0_2, "^%d+%.exe") then
+    local l_0_3 = (mp.GetScannedPPID)()
+    if l_0_3 == nil then
+      return mp.CLEAN
+    end
+    ;
+    (MpCommon.RequestSmsOnProcess)(l_0_3, MpCommon.SMS_SCAN_LOW)
+    return mp.INFECTED
+  end
+end
+do
+  return mp.CLEAN
+end
+

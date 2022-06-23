@@ -1,0 +1,76 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19104.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_1, l_0_2, l_0_3, l_0_4, l_0_9, l_0_10, l_0_11, l_0_12, l_0_13, l_0_14, l_0_15, l_0_16, l_0_17, l_0_18, l_0_19, l_0_20, l_0_21, l_0_22, l_0_23, l_0_24, l_0_25 = nil, nil, nil, nil, nil
+for l_0_8 = 1, mp.SIGATTR_LOG_SZ do
+  local l_0_5, l_0_6, l_0_7, l_0_8 = nil
+  -- DECOMPILER ERROR at PC6: Confused about usage of register: R8 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC11: Confused about usage of register: R8 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC21: Confused about usage of register: R8 in 'UnsetPending'
+
+  if (sigattr_head[l_0_12]).matched and (sigattr_head[l_0_12]).wp1 ~= nil and (sigattr_head[l_0_12]).wp1 ~= "" then
+    l_0_5 = (sigattr_head[l_0_12]).utf8p1
+    -- DECOMPILER ERROR at PC30: Confused about usage of register: R8 in 'UnsetPending'
+
+    if (string.len)(l_0_5) > 15 then
+      if (sigattr_head[l_0_12]).attribute == 16384 and l_0_6 == nil then
+        l_0_6 = l_0_5:match("\\(%l%l%l%l%l%l%l%l%l%l%l%l).exe")
+      end
+      -- DECOMPILER ERROR at PC41: Confused about usage of register: R8 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC54: Confused about usage of register: R8 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC59: Confused about usage of register: R8 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC66: Confused about usage of register: R8 in 'UnsetPending'
+
+      if (sigattr_head[l_0_12]).attribute == 16393 then
+        if l_0_7 == nil and l_0_5:match("\\CURRENTVERSION\\RUN\\\\(%l%l%l%l%l%l%l%l%l%l%l%l)") ~= nil and (sigattr_head[l_0_12]).wp2 ~= nil and (sigattr_head[l_0_12]).wp2 ~= "" then
+          l_0_7 = (string.match)((sigattr_head[l_0_12]).utf8p2, "\\(%l%l%l%l%l%l%l%l%l%l%l%l).exe")
+          -- DECOMPILER ERROR at PC73: Confused about usage of register: R4 in 'UnsetPending'
+
+          if l_0_7 ~= nil and l_0_7 ~= l_0_5:match("\\CURRENTVERSION\\RUN\\\\(%l%l%l%l%l%l%l%l%l%l%l%l)") then
+            l_0_7 = nil
+          end
+        end
+        if l_0_8 == nil then
+          l_0_8 = l_0_5:match("\\CURRENTVERSION\\\\(%l%l%l%l%l%l%l%l%l%l%l%l)")
+        end
+      end
+    end
+  end
+end
+-- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
+
+if l_0_6 == nil then
+  return mp.CLEAN
+end
+-- DECOMPILER ERROR at PC88: Confused about usage of register: R2 in 'UnsetPending'
+
+if l_0_7 == nil then
+  return mp.CLEAN
+end
+-- DECOMPILER ERROR at PC93: Confused about usage of register: R3 in 'UnsetPending'
+
+if l_0_8 == nil then
+  return mp.CLEAN
+end
+-- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
+
+-- DECOMPILER ERROR at PC98: Confused about usage of register: R3 in 'UnsetPending'
+
+-- DECOMPILER ERROR at PC100: Confused about usage of register: R2 in 'UnsetPending'
+
+-- DECOMPILER ERROR at PC100: Confused about usage of register: R3 in 'UnsetPending'
+
+if l_0_6 == l_0_8 and l_0_7 == l_0_8 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

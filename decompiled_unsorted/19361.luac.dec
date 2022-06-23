@@ -1,0 +1,58 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19361.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.isdll ~= true then
+  return mp.CLEAN
+end
+if peattributes.hasexports == true then
+  return mp.CLEAN
+end
+if peattributes.hasstandardentry == true then
+  return mp.CLEAN
+end
+if peattributes.epinfirstsect ~= true then
+  return mp.CLEAN
+end
+if peattributes.epscn_writable == false then
+  return mp.CLEAN
+end
+if (pesecs[pehdr.NumberOfSections]).NameDW == 1920168494 then
+  return mp.CLEAN
+end
+if (pesecs[1]).NameDW ~= 2019914798 then
+  return mp.CLEAN
+end
+if epcode[1] ~= 85 then
+  return mp.CLEAN
+end
+if epcode[2] ~= 139 then
+  return mp.CLEAN
+end
+if epcode[3] ~= 236 then
+  return mp.CLEAN
+end
+if ((pehdr.DataDirectory)[3]).RVA <= 0 then
+  return mp.CLEAN
+end
+if ((pehdr.DataDirectory)[3]).Size < 16 then
+  return mp.CLEAN
+end
+;
+(mp.readprotection)(false)
+local l_0_0 = (mp.readfile)((pe.foffset_rva)(((pehdr.DataDirectory)[3]).RVA), 16)
+if (mp.readu_u32)(l_0_0, 1) ~= 0 then
+  return mp.CLEAN
+end
+if (mp.readu_u32)(l_0_0, 5) ~= 0 then
+  return mp.CLEAN
+end
+if (mp.readu_u32)(l_0_0, 9) ~= 0 then
+  return mp.CLEAN
+end
+if (mp.readu_u32)(l_0_0, 13) ~= 0 then
+  return mp.CLEAN
+end
+return mp.INFECTED
+

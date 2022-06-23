@@ -1,0 +1,14 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 17342.luac 
+
+-- params : ...
+-- function num : 0
+if pevars.sigaddr ~= pehdr.ImageBase + pehdr.AddressOfEntryPoint then
+  return mp.CLEAN
+end
+local l_0_0 = (pe.mmap_va)(pevars.sigaddr + 10, 1)
+if (mp.bitand)((string.byte)(l_0_0, 1), 128) == 0 then
+  return mp.CLEAN
+end
+return mp.INFECTED
+

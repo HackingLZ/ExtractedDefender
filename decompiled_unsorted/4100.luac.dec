@@ -1,0 +1,17 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4100.luac 
+
+-- params : ...
+-- function num : 0
+if pehdr.Machine ~= 332 then
+  return mp.CLEAN
+end
+if (mp.getfilesize)() < 8192 then
+  return mp.CLEAN
+end
+if (mp.get_mpattribute)("Detection:Trojan:Win32/Bagsu!rfn") or (mp.get_mpattribute)("Detection:Trojan:Win32/Bulta!rfn") or (mp.get_mpattribute)("Detection:VirTool:Win32/Obfuscator.AMM") or (mp.get_mpattribute)("Detection:Trojan:Win32/Toga!rfn") or (mp.get_mpattribute)("RDTSC_Anti") or (mp.get_mpattribute)("HSTR:CheckSavedErrorCode") or (mp.get_mpattribute)("HSTR:Trojan:Win32/Lznt_Xor8_Win32") or (mp.get_mpattribute)("MpHasExpensiveLoop") or (mp.get_mpattribute)("Lua:SuspiciousSectionName") or (mp.get_mpattributesubstring)("attrmatch_codepatch_") or (mp.get_mpattributesubstring)("PEBMPAT:AutoSig") or (mp.get_mpattributesubstring)("PEEMU:AutoSig") or (mp.get_mpattributesubstring)("HSTR:AutoSig") or (mp.get_mpattribute)("SIGATTR:VirTool:Win32/Obfuscator.AKE") or (mp.get_mpattribute)("HSTR:Win32/Obfuscator.NGR") or (mp.get_mpattribute)("HSTR:Win32/Obfuscator.NGR2") or (mp.get_mpattribute)("LowFi:Win32/MalDecoder") then
+  (mp.changedetectionname)(805306473)
+  return mp.INFECTED
+end
+return mp.CLEAN
+

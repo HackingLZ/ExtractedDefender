@@ -1,0 +1,11 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18349.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = pcall(bm.get_connection_string)
+if l_0_0:match("DestIp=5.149.248.") or l_0_0:match("DestIp=79.142.66.") or l_0_0:match("DestIp=217.23.15.") or l_0_0:match("DestIp=65.98.83.") or l_0_0:match("DestIp=69.57.173.") or l_0_0:match("DestIp=74.82.216.") or l_0_0:match("DestIp=88.198.247.") or l_0_0:match("DestIp=98.142.243.") then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

@@ -1,0 +1,12 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 991.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC1: Overwrote pending register: R0 in 'AssignReg'
+
+if ((((((((((((((((((((((((this_sigattrlog[1]).matched and not (this_sigattrlog[2]).matched) or (this_sigattrlog[3]).matched) and not (this_sigattrlog[4]).matched) or (this_sigattrlog[5]).matched) and not (this_sigattrlog[6]).matched) or (this_sigattrlog[7]).matched) and not (this_sigattrlog[8]).matched) or (this_sigattrlog[9]).matched) and not (this_sigattrlog[10]).matched) or (this_sigattrlog[11]).matched) and not (this_sigattrlog[12]).matched) or (this_sigattrlog[13]).matched) and not (this_sigattrlog[14]).matched) or (this_sigattrlog[15]).matched) and not (this_sigattrlog[16]).matched) or (this_sigattrlog[17]).matched) and not (this_sigattrlog[18]).matched) or (this_sigattrlog[19]).matched) and not (this_sigattrlog[20]).matched) or (this_sigattrlog[21]).matched) and not (this_sigattrlog[22]).matched) or (this_sigattrlog[23]).matched) and not (this_sigattrlog[24]).matched) or nil <= 0 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

@@ -1,0 +1,33 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3893.luac 
+
+-- params : ...
+-- function num : 0
+if (versioning.GetProduct)() ~= 13 then
+  return mp.CLEAN
+end
+if (mp.GetResmgrBasePlugin)() ~= "Regkeyvalue" then
+  return mp.CLEAN
+end
+local l_0_0 = (mp.get_contextdata)(mp.CONTEXT_DATA_FILEPATH)
+if not l_0_0 then
+  return mp.CLEAN
+end
+l_0_0 = (string.lower)(l_0_0)
+if not (string.find)(l_0_0, "hklm\\software\\microsoft\\windows defender", 1, true) and not (string.find)(l_0_0, "hklm\\software\\policies\\microsoft\\windows defender", 1, true) then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.get_contextdata)(mp.CONTEXT_DATA_FILENAME)
+if not l_0_1 then
+  return mp.CLEAN
+end
+l_0_1 = (string.lower)(l_0_1)
+if l_0_1 ~= "disableantivirus" and l_0_1 ~= "disableantispyware" then
+  return mp.CLEAN
+end
+local l_0_2 = (mp.readu_u32)(headerpage, 1)
+if l_0_2 and (mp.bitand)(l_0_2, 1) == 1 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

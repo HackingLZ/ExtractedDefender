@@ -1,0 +1,25 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18578.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC7: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[1]).matched then
+    local l_0_0 = nil
+    if l_0_0 == nil or l_0_0 == "" or (sysio.IsFileExists)(l_0_0) == false then
+      return mp.CLEAN
+    end
+    if (string.sub)(l_0_0, 1, 3) == "COM" then
+      return mp.CLEAN
+    end
+    if (string.find)(l_0_0, ".exe", -4, true) or (string.find)(l_0_0, ".dll", -4, true) or (string.find)(l_0_0, ".sys", -4, true) then
+      (bm.add_related_file)(l_0_0)
+      return mp.INFECTED
+    end
+    return mp.CLEAN
+  end
+  return mp.CLEAN
+end
+

@@ -1,0 +1,62 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4838.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC7: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[6]).matched then
+    local l_0_0 = nil
+  else
+  end
+  -- DECOMPILER ERROR at PC25: Overwrote pending register: R0 in 'AssignReg'
+
+  do
+    if not (this_sigattrlog[7]).matched or (this_sigattrlog[8]).matched then
+      local l_0_1, l_0_3, l_0_4, l_0_6, l_0_8, l_0_10, l_0_12, l_0_14, l_0_16, l_0_18, l_0_20, l_0_22, l_0_24, l_0_26, l_0_28, l_0_30 = (this_sigattrlog[7]).utf8p1, nil
+    end
+    do
+      if (this_sigattrlog[9]).matched and (this_sigattrlog[9]).wp2 ~= nil then
+        local l_0_2, l_0_5, l_0_7, l_0_9, l_0_11, l_0_13, l_0_15, l_0_17, l_0_19, l_0_21, l_0_23, l_0_25, l_0_27, l_0_29, l_0_31 = , (this_sigattrlog[9]).utf8p2
+      else
+      end
+      -- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC144: Unhandled construct in 'MakeBoolean' P1
+
+      if (((this_sigattrlog[10]).matched and (this_sigattrlog[10]).wp2 ~= nil and (this_sigattrlog[10]).utf8p2 == nil) or not (string.find)((this_sigattrlog[10]).utf8p2, "-perm", 1, true) or (not (string.match)((this_sigattrlog[10]).utf8p2, "(%s)[-/](0*)200[07]") and not (string.match)((this_sigattrlog[10]).utf8p2, "(%s)-(0*)400[07]") and not (string.match)((this_sigattrlog[10]).utf8p2, "(%s)-(0*)6000") and not (string.match)((this_sigattrlog[10]).utf8p2, "(%s)-(0*)222") and not (string.match)((this_sigattrlog[10]).utf8p2, "(%s)-(0*)0002") and not (string.find)((this_sigattrlog[10]).utf8p2, "u=s", 1, true) and not (string.find)((this_sigattrlog[10]).utf8p2, "g=s", 1, true) and not (string.find)((this_sigattrlog[10]).utf8p2, "-o w", 1, true) and not (string.find)((this_sigattrlog[10]).utf8p2, "-o x", 1, true)) or checkTaint() == true) then
+        return mp.INFECTED
+      end
+      -- DECOMPILER ERROR at PC148: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC157: Confused about usage of register: R1 in 'UnsetPending'
+
+      -- DECOMPILER ERROR at PC164: Confused about usage of register: R1 in 'UnsetPending'
+
+      if (string.find)((this_sigattrlog[10]).utf8p2, " -writable ", 1, true) and ((string.match)((this_sigattrlog[10]).utf8p2, "(%s)-type%s+[fd]") or (string.find)((this_sigattrlog[10]).utf8p2, "-not -user", 1, true)) and checkTaint() then
+        return mp.INFECTED
+      end
+      return mp.CLEAN
+    end
+  end
+end
+

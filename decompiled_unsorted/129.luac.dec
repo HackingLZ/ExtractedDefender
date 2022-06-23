@@ -1,0 +1,29 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 129.luac 
+
+-- params : ...
+-- function num : 0
+if (mp.IsHipsRuleEnabled)("b2b3f03d-6a65-4f7b-a9c7-1c7ef74a9ba4") ~= true then
+  return mp.CLEAN
+end
+local l_0_0 = "enghipscpy:blockexecution:b2b3f03d-6a65-4f7b-a9c7-1c7ef74a9ba4"
+if (this_sigattrlog[1]).matched then
+  local l_0_1 = (this_sigattrlog[1]).utf8p2
+  local l_0_2 = (this_sigattrlog[1]).utf8p1
+  if l_0_1 == nil or l_0_2 == nil then
+    return mp.CLEAN
+  end
+  if (string.find)(l_0_1, "%", 1, true) ~= nil or (string.find)(l_0_2, "%", 1, true) ~= nil then
+    return mp.CLEAN
+  end
+  if not (MpCommon.QueryPersistContext)(l_0_1, l_0_0) then
+    return mp.CLEAN
+  else
+    ;
+    (MpCommon.AppendPersistContext)(l_0_2, l_0_0, 0)
+  end
+end
+do
+  return mp.CLEAN
+end
+

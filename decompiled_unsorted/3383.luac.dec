@@ -1,0 +1,15 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3383.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (string.lower)((mp.getfilename)())
+if l_0_0:len() < 24 or (string.sub)(l_0_0, -6) ~= "v2.exe" then
+  return mp.CLEAN
+end
+local l_0_1 = l_0_0:match("(.+\\)([^\\]+)$")
+if l_0_1:match("\\users\\[^\\]+\\documents\\$") or l_0_1:match("\\users\\[^\\]+\\my documents\\$") or l_0_1:match("\\documents and settings\\[^\\]+\\my documents\\$") then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

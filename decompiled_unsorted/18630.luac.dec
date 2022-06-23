@@ -1,0 +1,38 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18630.luac 
+
+-- params : ...
+-- function num : 0
+if mp.HSTR_WEIGHT == 1 then
+  local l_0_0 = nil
+  if (hstrlog[1]).matched then
+    l_0_0 = (hstrlog[1]).VA
+  end
+  if (hstrlog[2]).matched then
+    l_0_0 = (hstrlog[2]).VA
+  end
+  if (hstrlog[3]).matched then
+    l_0_0 = (hstrlog[3]).VA
+  end
+  if (hstrlog[4]).matched then
+    l_0_0 = (hstrlog[4]).VA
+  end
+  if (hstrlog[5]).matched then
+    l_0_0 = (hstrlog[5]).VA
+  end
+  if (hstrlog[6]).matched then
+    l_0_0 = (hstrlog[6]).VA
+  end
+  if (hstrlog[7]).matched then
+    l_0_0 = (hstrlog[7]).VA
+  end
+  if l_0_0 ~= nil then
+    local l_0_1 = "HSTR:VirTool:Win32/Obfuscator.WU.offset_" .. (string.format)("%.08x", l_0_0)
+    ;
+    (mp.set_mpattribute)(l_0_1)
+  end
+end
+do
+  return mp.INFECTED
+end
+

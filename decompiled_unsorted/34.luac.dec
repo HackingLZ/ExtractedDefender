@@ -1,0 +1,59 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 34.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = function(l_1_0, l_1_1)
+  -- function num : 0_0
+  if l_1_0 == nil and l_1_1 == nil then
+    return false
+  end
+  for l_1_5,l_1_6 in ipairs(l_1_0) do
+    local l_1_7 = l_1_6.Fingerprint
+    if l_1_7 == nil then
+      return false
+    end
+    if l_1_7.HashType ~= "SHA1" then
+      return false
+    end
+    do
+      do
+        local l_1_8 = l_1_7.Hash
+        if l_1_8 == nil then
+          return false
+        end
+        if l_1_1[l_1_8] then
+          return true
+        end
+        do break end
+        -- DECOMPILER ERROR at PC31: LeaveBlock: unexpected jumping out DO_STMT
+
+      end
+    end
+  end
+  return false
+end
+
+local l_0_1 = (mp.GetCertificateInfo)()
+if l_0_1 == nil then
+  return mp.CLEAN
+end
+local l_0_2 = {}
+l_0_2["\031> =*‹ðÓÅ#ötB\160\006Wƒ \179#"] = true
+for l_0_6,l_0_7 in ipairs(l_0_1) do
+  if l_0_7.AuthenticodeContentType ~= "PE" then
+    return mp.CLEAN
+  end
+  if l_0_0(l_0_7.Signers, l_0_2) then
+    if (mp.get_mpattribute)("RPF:PEHasIOAVURL") and (mp.get_mpattribute)("RPF:TopLevelFile") then
+      return mp.INFECTED
+    end
+    ;
+    (mp.set_mpattribute)("Lua:Win32/TrapwotCert.A")
+  end
+  do break end
+end
+do
+  return mp.CLEAN
+end
+

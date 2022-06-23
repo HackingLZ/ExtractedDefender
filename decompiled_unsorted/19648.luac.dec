@@ -1,0 +1,80 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19648.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+-- DECOMPILER ERROR at PC332: Unhandled construct in 'MakeBoolean' P3
+
+if (((((((((((hstrlog[1]).matched or (hstrlog[2]).matched or (hstrlog[3]).matched or (hstrlog[4]).matched or (hstrlog[5]).matched or (hstrlog[6]).matched or (hstrlog[7]).matched or (hstrlog[8]).matched or (hstrlog[9]).matched or (hstrlog[10]).matched or (hstrlog[11]).matched or (hstrlog[12]).matched or (hstrlog[13]).matched or (hstrlog[14]).matched or (hstrlog[15]).matched or (hstrlog[16]).matched or (hstrlog[17]).matched or not (hstrlog[19]).matched) and (hstrlog[25]).matched) or not (hstrlog[28]).matched) and (hstrlog[37]).matched) or not (hstrlog[55]).matched) and (hstrlog[58]).matched) or not (hstrlog[66]).matched) and (hstrlog[68]).matched) or (hstrlog[18]).matched) and 1 or 0) + ((hstrlog[24]).matched and 1 or 0) + ((hstrlog[27]).matched and 1 or 0) + ((hstrlog[36]).matched and 1 or 0) + ((hstrlog[54]).matched and 1 or 0) + ((hstrlog[57]).matched and 1 or 0) + ((hstrlog[65]).matched and 1 or 0) + ((hstrlog[67]).matched and 1 or 0) + ((hstrlog[69]).matched and 1 or 0) >= 3 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

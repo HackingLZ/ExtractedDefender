@@ -1,0 +1,59 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4205.luac 
+
+-- params : ...
+-- function num : 0
+if pehdr.Machine ~= 332 or peattributes.isappcontainer or peattributes.resource_only_dll or peattributes.no_ep or peattributes.dmg_entrypoint or peattributes.dmg_not_executable_image or peattributes.dmg_truncated then
+  return mp.CLEAN
+end
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 < 256 or l_0_0 > 5242880 then
+  return mp.CLEAN
+end
+local l_0_1 = (mp.get_contextdata)(mp.CONTEXT_DATA_SCANREASON)
+if l_0_1 ~= nil and l_0_1 ~= mp.SCANREASON_UNKNOWN then
+  return mp.CLEAN
+end
+if (mp.GetResmgrBasePlugin)() ~= "Folder" then
+  return mp.CLEAN
+end
+local l_0_2 = (string.lower)((mp.getfilename)())
+if l_0_2:find(":\\windows\\winsxs", 1, true) ~= nil then
+  return mp.CLEAN
+end
+if l_0_2:find(":\\windows\\installer", 1, true) ~= nil then
+  return mp.CLEAN
+end
+if l_0_2:find(":\\sccmcontentlib\\filelib", 1, true) ~= nil then
+  return mp.CLEAN
+end
+local l_0_3 = (mp.gethost)()
+if l_0_3 ~= mp.HOST_X86 and l_0_3 ~= mp.HOST_X64 then
+  return mp.CLEAN
+end
+local l_0_4, l_0_5 = pcall(mp.get_parent_filehandle)
+if l_0_4 then
+  l_0_4 = pcall(mp.get_filesize_by_handle, l_0_5)
+  if l_0_4 then
+    return mp.CLEAN
+  end
+end
+local l_0_6 = (mp.utf16to8)((mp.getwfilename)())
+local l_0_7 = (mp.GetFileAttributes)(l_0_6)
+local l_0_8 = "|" .. (l_0_6:match("..-[^\\/]-(%.?[^%.\\/:]+):?[^%.\\/:]*$")):lower() .. "|"
+local l_0_9 = "|.exe|.bat|.cmd|.pif|.scr|.cpl|.dll|.ocx|.sys|.drv|.data|.metadata_dll|.mptest|.api|.ax|.pmp|.mpp|.x3d|.mp|.pun|.ref|.p3k|.acm|.ime|.deploy"
+local l_0_10 = {}
+-- DECOMPILER ERROR at PC191: No list found for R10 , SetList fails
+
+-- DECOMPILER ERROR at PC192: Overwrote pending register: R11 in 'AssignReg'
+
+-- DECOMPILER ERROR at PC194: Overwrote pending register: R12 in 'AssignReg'
+
+-- DECOMPILER ERROR at PC196: Overwrote pending register: R13 in 'AssignReg'
+
+-- DECOMPILER ERROR at PC197: Overwrote pending register: R14 in 'AssignReg'
+
+;
+(("Lua:GenericNonRtp").set_mpattribute)((((not l_0_6:find(".", 1, true) or l_0_9:find(l_0_8, 1, true) == nil) and "N" or "_").concat)(l_0_7 ~= 4294967295 and (mp.bitand)(l_0_7, 2) ~= 0 and "H" or "_", peattributes.genpacked and "P" or "_"))
+return mp.CLEAN
+

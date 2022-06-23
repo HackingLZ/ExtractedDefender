@@ -1,0 +1,24 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3516.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = false
+local l_0_1 = (sysio.RegOpenKey)("HKLM\\SYSTEM")
+if l_0_1 then
+  local l_0_2 = (sysio.RegEnumKeys)(l_0_1)
+  if l_0_2 then
+    for l_0_6,l_0_7 in pairs(l_0_2) do
+    end
+  end
+end
+do
+  -- DECOMPILER ERROR at PC58: Unhandled construct in 'MakeBoolean' P3
+
+  if ((not (string.match)(l_0_7, "ControlSet%d%d%d") or (not Infrastructure_RepairServiceAtPath("VSS", l_0_7)) and not Infrastructure_RepairServiceAtPath("WinDefend", l_0_7) and not Infrastructure_RepairServiceAtPath("MsMpSvc", l_0_7) and Infrastructure_RepairServiceAtPath("eventlog", l_0_7)) or l_0_0) then
+    l_0_2 = Remediation
+    l_0_2 = l_0_2.SetRebootRequired
+    l_0_2()
+  end
+end
+

@@ -1,0 +1,64 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19176.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = "DoplikM"
+local l_0_1 = nil
+local l_0_2 = 300
+if (this_sigattrlog[1]).matched then
+  l_0_1 = "A"
+else
+  if (this_sigattrlog[2]).matched then
+    l_0_1 = "B"
+  else
+    if (this_sigattrlog[3]).matched then
+      l_0_1 = "C"
+    else
+      if (this_sigattrlog[4]).matched then
+        l_0_1 = "D"
+      else
+        if (this_sigattrlog[5]).matched then
+          l_0_1 = "E"
+        else
+          if (this_sigattrlog[6]).matched then
+            l_0_1 = "F"
+          else
+            if (this_sigattrlog[7]).matched then
+              l_0_1 = "G"
+            else
+              if (this_sigattrlog[8]).matched then
+                l_0_1 = "H"
+              else
+                if (this_sigattrlog[9]).matched then
+                  l_0_1 = "I"
+                else
+                  if (this_sigattrlog[10]).matched then
+                    l_0_1 = "J"
+                  else
+                    if (this_sigattrlog[11]).matched then
+                      l_0_1 = "K"
+                    else
+                      if (this_sigattrlog[12]).matched then
+                        l_0_1 = "L"
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+local l_0_3 = (MpCommon.QueryPersistContextNoPath)(l_0_0, l_0_1)
+if not l_0_3 then
+  (MpCommon.AppendPersistContextNoPath)(l_0_0, l_0_1, l_0_2)
+end
+if (MpCommon.GetPersistContextCountNoPath)(l_0_0) >= 4 then
+  return mp.INFECTED
+end
+return mp.CLEAN
+

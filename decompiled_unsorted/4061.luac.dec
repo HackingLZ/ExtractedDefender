@@ -1,0 +1,50 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4061.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilesize)()
+if l_0_0 < 250 then
+  return mp.CLEAN
+end
+if l_0_0 > 1048576 then
+  return mp.CLEAN
+end
+local l_0_1 = (string.find)(tostring(headerpage), "[eE][xX][eE][cC][uU][tT][eE]%s-%(+%s-[cC][hH][rR]%(+")
+do
+  if tostring(headerpage) == nil then
+    local l_0_2 = R2_PC30
+    l_0_1 = (string.find)(tostring(headerpage), "[eE][xX][eE][cC][uU][tT][eE][gG][lL][oO][bB][aA][lL]%([cC][hH][rR]%(")
+  end
+  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
+
+  if l_0_2 == nil then
+    return mp.CLEAN
+  end
+  local l_0_3, l_0_4 = , nil
+  local l_0_5 = nil
+  if mp.HEADERPAGE_SZ < l_0_0 then
+    l_0_4 = (string.find)(tostring(footerpage), "%)+ -& -_?%s-vbcrlf -%)+")
+    ;
+    (mp.readprotection)(false)
+    l_0_5 = (mp.readfile)(l_0_3 - 1, l_0_0 - mp.FOOTERPAGE_SZ + l_0_4 - l_0_3 + 1)
+  else
+    -- DECOMPILER ERROR at PC72: Confused about usage of register: R5 in 'UnsetPending'
+
+    -- DECOMPILER ERROR at PC74: Overwrote pending register: R1 in 'AssignReg'
+
+    l_0_4 = (string.find)(tostring(headerpage), "%)+ -& -_?%s-vbcrlf -%)+")
+    l_0_5 = (tostring(headerpage)):sub(l_0_3, l_0_4)
+  end
+  l_0_5 = l_0_5:gsub("%)+ ?& ?_?%s-[cC][hH][rR]%(+", ",")
+  local l_0_6 = nil
+  local l_0_7 = nil
+  if (string.find)(l_0_5, "(%d+)^%(-(%d+%/%d+)") ~= nil then
+    l_0_5 = (string.gsub)(l_0_5, l_0_7, "Math.pow%(%1,%(%2%)%)%+0.5", 3000)
+    l_0_5 = l_0_5:sub(1, l_0_5:find("%^%(") - 1) .. "%1)"
+  end
+  ;
+  (mp.vfo_add_buffer)("eval(String.fromCharCode" .. l_0_5 .. ")", "[toJS]", mp.ADD_VFO_TAKE_ACTION_ON_DAD)
+  return mp.CLEAN
+end
+

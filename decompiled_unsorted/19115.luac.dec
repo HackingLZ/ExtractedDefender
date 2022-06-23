@@ -1,0 +1,40 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19115.luac 
+
+-- params : ...
+-- function num : 0
+if (pe.query_import)(pe.IMPORT_STATIC, 3781839709) ~= 0 then
+  return mp.INFECTED
+end
+if (pe.query_import)(pe.IMPORT_STATIC, 3358620111) ~= 0 then
+  return mp.INFECTED
+end
+if (pe.query_import)(pe.IMPORT_STATIC, 4213996749) ~= 0 then
+  return mp.INFECTED
+end
+if (pe.query_import)(pe.IMPORT_STATIC, 2125492999) ~= 0 then
+  return mp.INFECTED
+end
+if (pe.query_import)(pe.IMPORT_STATIC, 890811841) ~= 0 then
+  return mp.INFECTED
+end
+if (pe.query_import)(pe.IMPORT_STATIC, 4180176840) ~= 0 then
+  return mp.INFECTED
+end
+if (pe.query_import)(pe.IMPORT_STATIC, 1497271799) ~= 0 then
+  return mp.INFECTED
+end
+if (pe.query_import)(pe.IMPORT_STATIC, 3287693681) ~= 0 then
+  return mp.INFECTED
+end
+if (pe.query_import)(pe.IMPORT_STATIC, 2455191392) ~= 0 then
+  return mp.INFECTED
+end
+if (mp.get_mpattribute)("HSTR:Adware:Win32/Lollipop_Check_ARG") then
+  return mp.INFECTED
+end
+if mp.HSTR_WEIGHT > 21 and peattributes.suspicious_image_version then
+  return mp.INFECTED
+end
+return mp.LOWFI
+

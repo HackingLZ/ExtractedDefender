@@ -1,0 +1,41 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 19393.luac 
+
+-- params : ...
+-- function num : 0
+-- DECOMPILER ERROR at PC11: Overwrote pending register: R0 in 'AssignReg'
+
+do
+  if (this_sigattrlog[20]).matched then
+    local l_0_0, l_0_1, l_0_2, l_0_3, l_0_4, l_0_5, l_0_6, l_0_7, l_0_8, l_0_9, l_0_10, l_0_11 = nil
+  end
+  -- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC55: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC75: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC85: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC105: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC115: Confused about usage of register: R0 in 'UnsetPending'
+
+  -- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
+
+  if ((((((((((((string.find)(l_0_0, "disablerealtimemonitoring $true", 1, true) and not (string.find)(l_0_0, "disablebehaviormonitoring $true", 1, true)) or (string.find)(l_0_0, "disableblockatfirstseen $true", 1, true)) and not (string.find)(l_0_0, "disableioavprotection $true", 1, true)) or (string.find)(l_0_0, "disableprivacymode $true", 1, true)) and not (string.find)(l_0_0, "disableintrusionpreventionsystem $true", 1, true)) or (string.find)(l_0_0, "disablescriptscanning $true", 1, true)) and not (string.find)(l_0_0, "severethreatdefaultaction 6", 1, true)) or (string.find)(l_0_0, "lowthreatdefaultaction 6", 1, true)) and not (string.find)(l_0_0, "moderatethreatdefaultaction 6", 1, true)) or (string.find)(l_0_0, "mapsreporting disabled", 1, true)) and not (string.find)(l_0_0, "enablecontrolledfolderaccess disabled", 1, true)) or nil + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 > 2 then
+    return mp.INFECTED
+  end
+  return mp.CLEAN
+end
+

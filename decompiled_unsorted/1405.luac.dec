@@ -1,0 +1,246 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 1405.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_1 = nil, nil
+local l_0_2 = nil
+local l_0_3 = nil
+local l_0_4 = {}
+local l_0_5 = 0
+local l_0_6 = 0
+-- DECOMPILER ERROR at PC40: Confused about usage of register: R6 in 'UnsetPending'
+
+-- DECOMPILER ERROR at PC49: Confused about usage of register: R6 in 'UnsetPending'
+
+if (bm.get_imagepath)() ~= nil and ((string.find)((string.lower)((bm.get_imagepath)()), "\\windows\\", 1, true) ~= nil or (string.find)((string.lower)((bm.get_imagepath)()), "\\program files", 1, true) ~= nil or (string.find)((string.lower)((bm.get_imagepath)()), "%program_files%", 1, true) ~= nil) then
+  return mp.CLEAN
+end
+if not (this_sigattrlog[1]).matched or not (this_sigattrlog[3]).matched or not (this_sigattrlog[5]).matched or not (this_sigattrlog[7]).matched or not (this_sigattrlog[9]).matched or not (this_sigattrlog[11]).matched or not (this_sigattrlog[13]).matched or not (this_sigattrlog[15]).matched or not (this_sigattrlog[17]).matched or not (this_sigattrlog[19]).matched or not (this_sigattrlog[21]).matched or not (this_sigattrlog[23]).matched or not (this_sigattrlog[25]).matched or not (this_sigattrlog[27]).matched or (this_sigattrlog[29]).matched == false then
+  return mp.CLEAN
+end
+if (bm.GetSignatureMatchDuration)() > 50000000 then
+  return mp.CLEAN
+end
+if (this_sigattrlog[1]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[1]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[3]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[3]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC204: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[5]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[5]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC236: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[7]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[7]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC268: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[9]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[9]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC300: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[11]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[11]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC332: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[13]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[13]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC364: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[15]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[15]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC396: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[17]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[17]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC428: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[19]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[19]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC460: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[21]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[21]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC492: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[23]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[23]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC524: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[25]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[25]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC556: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[27]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[27]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC588: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+if (this_sigattrlog[29]).wp1 ~= nil then
+  l_0_2 = (string.lower)((this_sigattrlog[29]).utf8p1)
+  l_0_3 = (string.match)(l_0_2, "(%.[^%.]+)$")
+  if l_0_3 == ".exe" then
+    l_0_6 = l_0_6 + 1
+  else
+    -- DECOMPILER ERROR at PC620: Confused about usage of register: R5 in 'UnsetPending'
+
+    if l_0_3 ~= nil and l_0_4[l_0_3] == nil and ({[".tmp"] = true, [".exe"] = true, [".dll"] = true, [".ini"] = true, [".dat"] = true, [".log"] = true, [".reg"] = true, [".evtx"] = true, [".bat"] = true, [".zip"] = true, [".rar"] = true, [".manifest"] = true, [".clb"] = true, [".ccx"] = true, [".cch"] = true})[l_0_3] == nil then
+      l_0_4[l_0_3] = true
+      l_0_5 = l_0_5 + 1
+    end
+  end
+end
+do
+  if l_0_5 >= 6 and l_0_6 <= 2 then
+    local l_0_7 = nil
+    if not (MpCommon.QueryPersistContext)((bm.get_imagepath)(), "RunsDestructiveCMDsParent") then
+      return mp.INFECTED
+    end
+    if (MpCommon.QueryPersistContext)((bm.get_imagepath)(), "RunsDestructiveCMDsParentBlock") then
+      (mp.ReportLowfi)((bm.get_imagepath)(), 481468239)
+    end
+    return mp.INFECTED
+  end
+  return mp.CLEAN
+end
+

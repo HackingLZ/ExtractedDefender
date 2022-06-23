@@ -1,0 +1,41 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 18480.luac 
+
+-- params : ...
+-- function num : 0
+if not isTamperProtectionOn() then
+  return mp.CLEAN
+end
+local l_0_0 = nil
+if (this_sigattrlog[2]).matched then
+  l_0_0 = (this_sigattrlog[2]).utf8p2
+else
+  if (this_sigattrlog[3]).matched then
+    l_0_0 = (this_sigattrlog[3]).utf8p2
+  else
+    if (this_sigattrlog[4]).matched then
+      l_0_0 = (this_sigattrlog[4]).utf8p2
+    else
+      if (this_sigattrlog[5]).matched then
+        l_0_0 = (this_sigattrlog[5]).utf8p2
+      end
+    end
+  end
+end
+do
+  local l_0_1 = {}
+  -- DECOMPILER ERROR at PC48: No list found for R1 , SetList fails
+
+  -- DECOMPILER ERROR at PC49: Overwrote pending register: R2 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC50: Overwrote pending register: R3 in 'AssignReg'
+
+  -- DECOMPILER ERROR at PC51: Overwrote pending register: R4 in 'AssignReg'
+
+  if ("OpenHardwareMonitor")("pcadmin", "finereader") then
+    return mp.CLEAN
+  end
+  do return mp.INFECTED end
+  -- WARNING: undefined locals caused missing assignments!
+end
+

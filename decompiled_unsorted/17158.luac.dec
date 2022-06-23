@@ -1,0 +1,16 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 17158.luac 
+
+-- params : ...
+-- function num : 0
+if (this_sigattrlog[9]).matched and (this_sigattrlog[10]).matched then
+  local l_0_0 = (string.lower)((this_sigattrlog[9]).p1)
+  local l_0_1 = (string.lower)((this_sigattrlog[10]).p1)
+  if l_0_0:match("c:\\temp\\(%l+)%.zip") == l_0_1:match("c:\\temp\\%l+%.(%l+)") then
+    return mp.INFECTED
+  end
+end
+do
+  return mp.CLEAN
+end
+

@@ -1,0 +1,44 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3769.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = (mp.getfilename)((mp.bitor)(mp.FILEPATH_QUERY_FNAME, mp.FILEPATH_QUERY_LOWERCASE))
+if l_0_0 == nil or (string.len)(l_0_0) < 5 then
+  return mp.CLEAN
+end
+if (string.find)(l_0_0, "->", 1, true) == nil then
+  return mp.CLEAN
+end
+local l_0_1 = l_0_0:sub(-4)
+if l_0_1 == ".msi" then
+  local l_0_2 = {}
+  l_0_2[".zip->"] = "%.zip%->.+"
+  for l_0_6,l_0_7 in pairs(l_0_2) do
+    if (string.find)(l_0_0, l_0_6, 1, true) then
+      local l_0_8 = (string.match)(l_0_0, l_0_7)
+      if l_0_8 == nil or l_0_8:len() < 12 then
+        return mp.CLEAN
+      end
+      local l_0_9 = l_0_6:len() + 1
+      if l_0_8:len() <= l_0_9 + 5 then
+        return mp.CLEAN
+      end
+      local l_0_10 = (string.sub)(l_0_8, l_0_9, -5)
+      if l_0_10 == nil then
+        return mp.CLEAN
+      end
+      local l_0_11 = l_0_10 .. l_0_6
+      if (string.find)(l_0_0, l_0_11, 1, true) == nil then
+        return mp.CLEAN
+      end
+      return mp.INFECTED
+    end
+  end
+end
+do
+  l_0_2 = mp
+  l_0_2 = l_0_2.CLEAN
+  return l_0_2
+end
+

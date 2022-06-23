@@ -1,0 +1,59 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 4249.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0 = function(l_1_0)
+  -- function num : 0_0
+  if l_1_0 == nil then
+    return 
+  end
+  local l_1_1, l_1_2, l_1_3, l_1_4 = Infrastructure_SplitThreatPath(l_1_0)
+  if l_1_1 ~= nil and l_1_2 ~= nil and l_1_3 ~= nil then
+    l_1_1 = (string.gsub)(l_1_1, "^\\\\%?\\", "")
+    l_1_1 = (string.lower)(l_1_1)
+    l_1_3 = (string.lower)(l_1_3)
+    if (string.sub)(l_1_1, 2, 16) == ":\\program files" and (string.sub)(l_1_3, 1, 6) == "update" and (string.sub)(l_1_3, -4) == ".exe" and (string.len)(l_1_3) > 10 then
+      local l_1_5 = (string.sub)(l_1_3, 7, -5)
+      local l_1_6 = (string.lower)((string.gsub)(l_1_2, " ", ""))
+      if l_1_6 == l_1_5 and (string.len)(l_1_6) > 0 and l_1_2 ~= nil and (string.len)(l_1_2) > 0 then
+        local l_1_7 = (sysio.FindFiles)(l_1_1, "*.dll", -1)
+        for l_1_11,l_1_12 in pairs(l_1_7) do
+          (MpDetection.ScanResource)("file://" .. l_1_12)
+        end
+        local l_1_13 = (sysio.FindFiles)(l_1_1, "*.exe", -1)
+        for l_1_17,l_1_18 in pairs(l_1_13) do
+          (MpDetection.ScanResource)("file://" .. l_1_18)
+        end
+        local l_1_19 = 805306497
+        Infrastructure_DetectionReportFolder(l_1_19, l_1_0, true)
+        Infrastructure_ReportBHOByName(l_1_19, l_1_2)
+        Infrastructure_ReportSoftwareRegistryByKey(l_1_19, l_1_2)
+        Infrastructure_ReportUninstallRegistryByKey(l_1_19, l_1_2)
+      end
+    end
+  end
+end
+
+local l_0_1 = function(l_2_0)
+  -- function num : 0_1
+  if l_2_0 == nil then
+    return 
+  end
+  l_2_0 = (string.gsub)((string.lower)(l_2_0), "^\\\\%?\\", "")
+  if (string.match)(l_2_0, "%a:\\program files\\[%a%s]+\\uninstaller.exe") or (string.match)(l_2_0, "%a:\\programdata\\%x%x%x%x%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%x%x%x%x%x%x%x%x\\") or (string.match)(l_2_0, "%a:\\program files.*\\common files\\%x%x%x%x%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%x%x%x%x%x%x%x%x\\") then
+    local l_2_1 = 805306497
+    Infrastructure_DetectionReportFolder(l_2_1, l_2_0, true)
+  end
+end
+
+local l_0_2 = (MpDetection.GetCurrentThreat)()
+if (string.find)(l_0_2.Name, "BrowserModifier:Win32/Foxiebro", 1, true) then
+  for l_0_6,l_0_7 in pairs(l_0_2.Resources) do
+    if l_0_7.Schema == "file" and (crypto.bitand)(l_0_7.Type, MpCommon.MPRESOURCE_TYPE_CONCRETE) == MpCommon.MPRESOURCE_TYPE_CONCRETE then
+      l_0_0(l_0_7.Path)
+      l_0_1(l_0_7.Path)
+    end
+  end
+end
+

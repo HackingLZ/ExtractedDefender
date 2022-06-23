@@ -1,0 +1,15 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3653.luac 
+
+-- params : ...
+-- function num : 0
+local l_0_0, l_0_1 = pcall(mp.get_contextdata, mp.CONTEXT_DATA_CONTROL_GUID)
+local l_0_2, l_0_3 = pcall(mp.get_contextdata, mp.CONTEXT_DATA_SCANREASON)
+if l_0_0 and l_0_2 and l_0_3 ~= mp.SCANREASON_VALIDATION_PRESCAN and ((string.match)(l_0_1, "19916e01%-b44e%-4e31%-94a4%-4696df46157b") or (string.match)(l_0_1, "c2c4f00a%-720e%-4389%-aeb9%-e9c4b0d93c6f") or (string.match)(l_0_1, "53001f3a%-f5e1%-4b90%-9c9f%-00e09b53c5f1")) then
+  (mp.aggregate_mpattribute)("Context:ICARDIEDLL")
+  ;
+  (mp.aggregate_mpattribute)("//MpIsIEVScan")
+  return mp.TRUE
+end
+return mp.FALSE
+

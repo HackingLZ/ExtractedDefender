@@ -1,0 +1,49 @@
+-- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.1 from https://github.com/viruscamp/luadec
+-- Command line: 3935.luac 
+
+-- params : ...
+-- function num : 0
+if peattributes.is_delphi then
+  return mp.CLEAN
+end
+if not peattributes.isexe then
+  return mp.CLEAN
+end
+if not peattributes.hasappendeddata then
+  return mp.CLEAN
+end
+if (mp.ispackedwith)("AutoHotKey_+") then
+  return mp.CLEAN
+end
+if (mp.ispackedwith)("AutoIt_+") or (mp.get_mpattributesubstring)("Win32/AutoIt") then
+  local l_0_0 = (mp.getfilesize)()
+  if l_0_0 < 2048000 then
+    return mp.CLEAN
+  end
+  local l_0_1 = (pesecs[pehdr.NumberOfSections]).PointerToRawData + (pesecs[pehdr.NumberOfSections]).SizeOfRawData
+  if l_0_0 - l_0_1 <= 20480 then
+    return mp.CLEAN
+  end
+  ;
+  (mp.readprotection)(false)
+  local l_0_2 = (mp.readfile)(l_0_1, 24)
+  local l_0_3 = (mp.crc32)(-1, l_0_2, 1, 24)
+  if l_0_3 == 3604511246 then
+    return mp.CLEAN
+  end
+  if l_0_3 == 1339108276 then
+    return mp.CLEAN
+  end
+  local l_0_4 = (mp.crc32)(-1, l_0_2, 1, 17)
+  if l_0_4 == 2991533544 then
+    return mp.CLEAN
+  end
+  if l_0_4 == 1547783364 then
+    return mp.CLEAN
+  end
+  return mp.INFECTED
+end
+do
+  return mp.CLEAN
+end
+
