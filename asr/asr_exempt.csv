@@ -1,0 +1,1513 @@
+Id, target
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\WerFaultSecure.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\mrt.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\svchost.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\wbem\\WmiPrvSE.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\SysWOW64\\wbem\\WmiPrvSE.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Microsoft Intune Management Extension\\ClientHealthEval.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Microsoft Intune Management Extension\\SensorLogonTask.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Microsoft Intune Management Extension\\Microsoft.Management.Services.IntuneWindowsAgent.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programdata%\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\*\\OpenHandleCollector.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\WindowsApps\\Microsoft.GamingServices_*\\gamingservices.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Cisco\\Cisco AnyConnect Secure Mobility Client\\vpnagent.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Zoom\\bin\\CptHost.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Google\\Update\\GoogleUpdate.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Splunk\\bin\\splunkd.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Avecto\\Privilege Guard Client\\DefendpointService.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Intel\\SUR\\QUEENCREEK\\x64\\esrv_svc.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Microsoft Monitoring Agent\\Agent\\HealthService.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Microsoft Monitoring Agent\\Agent\\MOMPerfSnapshotHelper.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Nexthink\\Collector\\Collector\\nxtsvc.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Splunk\\bin\\splunkd.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Azure Advanced Threat Protection Sensor\\*\\Microsoft.Tri.Sensor.Updater.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\CCM\\CcmExec.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\CCM\\SensorLogonTask.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\Temp\\Ctx-*\\Extract\\TrolleyExpress.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programdata%\\Citrix\\Citrix Receiver*\\TrolleyExpress.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programdata%\\Citrix\\Citrix Workspace *\\TrolleyExpress.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Citrix\\Citrix Workspace *\\TrolleyExpress.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%temp%\\Ctx-*\\Extract\\TrolleyExpress.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Quest\\ChangeAuditor\\Agent\\NPSrvHost.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Quest\\ChangeAuditor\\Service\\ChangeAuditor.Service.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\DriverStore\\FileRepository\\hpqkbsoftwarecompnent.inf_amd64_*\\HotKeyServiceUWP.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\CompatTelRunner.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Printer Properties Pro\\Printer Installer Client\\PrinterInstallerClient.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Printer Properties Pro\\Printer Installer Client\\PrinterInstallerClient.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Zscaler\\ZSATunnel\\ZSATunnel.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Zscaler\\ZSATunnel\\ZSATunnel.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\ManageSoft\\Security Agent\\mgssecsvc.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\ManageSoft\\Security Agent\\mgssecsvc.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Snow Software\\Inventory\\Agent\\snowagent.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Snow Software\\Inventory\\Agent\\snowagent.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,c:\\windows\\system32\\WerFaultSecure.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,c:\\windows\\system32\\wbem\\WmiPrvSE.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,c:\\windows\\SysWOW64\\wbem\\WmiPrvSE.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\WerFaultSecure.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\mrt.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\svchost.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\wbem\\WmiPrvSE.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\SysWOW64\\wbem\\WmiPrvSE.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Microsoft Intune Management Extension\\ClientHealthEval.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Microsoft Intune Management Extension\\SensorLogonTask.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Microsoft Intune Management Extension\\Microsoft.Management.Services.IntuneWindowsAgent.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programdata%\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\*\\OpenHandleCollector.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\WindowsApps\\Microsoft.GamingServices_*\\gamingservices.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Cisco\\Cisco AnyConnect Secure Mobility Client\\vpnagent.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Zoom\\bin\\CptHost.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Google\\Update\\GoogleUpdate.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Splunk\\bin\\splunkd.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Avecto\\Privilege Guard Client\\DefendpointService.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Intel\\SUR\\QUEENCREEK\\x64\\esrv_svc.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Microsoft Monitoring Agent\\Agent\\HealthService.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Microsoft Monitoring Agent\\Agent\\MOMPerfSnapshotHelper.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Nexthink\\Collector\\Collector\\nxtsvc.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Splunk\\bin\\splunkd.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Azure Advanced Threat Protection Sensor\\*\\Microsoft.Tri.Sensor.Updater.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\CCM\\CcmExec.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\CCM\\SensorLogonTask.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\Temp\\Ctx-*\\Extract\\TrolleyExpress.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programdata%\\Citrix\\Citrix Receiver*\\TrolleyExpress.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programdata%\\Citrix\\Citrix Workspace *\\TrolleyExpress.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Citrix\\Citrix Workspace *\\TrolleyExpress.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%temp%\\Ctx-*\\Extract\\TrolleyExpress.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Quest\\ChangeAuditor\\Agent\\NPSrvHost.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Quest\\ChangeAuditor\\Service\\ChangeAuditor.Service.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\DriverStore\\FileRepository\\hpqkbsoftwarecompnent.inf_amd64_*\\HotKeyServiceUWP.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%windir%\\system32\\CompatTelRunner.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Printer Properties Pro\\Printer Installer Client\\PrinterInstallerClient.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Printer Properties Pro\\Printer Installer Client\\PrinterInstallerClient.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Zscaler\\ZSATunnel\\ZSATunnel.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Zscaler\\ZSATunnel\\ZSATunnel.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\ManageSoft\\Security Agent\\mgssecsvc.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\ManageSoft\\Security Agent\\mgssecsvc.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles(x86)%\\Snow Software\\Inventory\\Agent\\snowagent.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,%programfiles%\\Snow Software\\Inventory\\Agent\\snowagent.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,c:\\windows\\system32\\WerFaultSecure.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,c:\\windows\\system32\\wbem\\WmiPrvSE.exe
+9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2,c:\\windows\\SysWOW64\\wbem\\WmiPrvSE.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%commonprogramfiles%\\adobe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%commonprogramfiles%\\microsoft shared
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%commonprogramfiles(x86)%\\adobe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%commonprogramfiles(x86)%\\microsoft shared
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programdata%\\app-v
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\acrobat
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\adobe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\firefox developer edition
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\foxit software
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\google
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\internet explorer
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft application virtualization\\client\\subsystems\\appvdllsurrogate32.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft application virtualization\\client\\subsystems\\appvdllsurrogate64.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office 15
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office 2003
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office 2010
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office 2016
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office2003
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office2007
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\2010
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\live meeting 8
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\office
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\office10
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\office11
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\office12
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\office13
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\office14
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\office15
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\office16
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\2010
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\client\\appvdllsurrogate32.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\client\\appvdllsurrogate64.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\live meeting 8
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\office
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\office10
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\office11
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\office12
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\office13
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\office14
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\office15
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\office16
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\updates
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\vfs
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\visio
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\visio10
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\visio11
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\visio12
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\root\\visio13
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\updates
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\vfs
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\visio
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\visio10
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\visio11
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\visio12
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft office\\visio13
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\microsoft security client
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\mozilla firefox
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\opera
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\reader
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\sogouinput
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\tencent
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\ucbrowser
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\winrar
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\winzip
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\Microsoft\\Edge\\Application
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\Microsoft\\Edge\\Application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\Microsoft\\Edge Dev\\Application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\Microsoft\\Edge Beta\\Application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\Microsoft\\Edge\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\Microsoft\\Edge Dev\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\Microsoft\\Edge Beta\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles%\\Microsoft\\EdgeWebView\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\acrobat
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\acrobat dc
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\adobe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\firefox developer edition
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\foxit software
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\google
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\internet explorer
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft application virtualization\\client\\subsystems\\appvdllsurrogate32.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft application virtualization\\client\\subsystems\\appvdllsurrogate64.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office 15
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office 2003
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office 2010
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office 2016
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office2003
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office2007
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\2010
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\live meeting 8
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\office
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\office10
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\office11
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\office12
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\office13
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\office14
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\office15
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\office16
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\2010
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\client\\appvdllsurrogate32.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\client\\appvdllsurrogate64.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\live meeting 8
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\office
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\office10
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\office11
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\office12
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\office13
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\office14
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\office15
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\office16
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\updates
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\vfs
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\visio
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\visio10
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\visio11
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\visio12
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\root\\visio13
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\updates
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\vfs
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\visio
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\visio10
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\visio11
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\visio12
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft office\\visio13
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\microsoft security client
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\mozilla firefox
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\opera
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\reader
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\sogouinput
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\tencent
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\ucbrowser
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\winrar
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\winzip
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\Microsoft\\Edge\\Application
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\Microsoft\\Edge\\Application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\Microsoft\\Edge Dev\\Application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\Microsoft\\Edge Beta\\Application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\Microsoft\\Edge\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\Microsoft\\Edge Dev\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\Microsoft\\Edge Beta\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\Microsoft\\EdgeWebView\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programW6432%\\Microsoft\\Edge\\Application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programW6432%\\Microsoft\\Edge Dev\\Application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programW6432%\\Microsoft\\Edge Beta\\Application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programW6432%\\Microsoft\\Edge\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programW6432%\\Microsoft\\Edge Dev\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programW6432%\\Microsoft\\Edge Beta\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programW6432%\\Microsoft\\EdgeWebView\\Application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%programfiles(x86)%\\BraveSoftware\\Brave-Browser\\Application\\brave.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\microsoft\\edge\\application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\microsoft\\edge sxs\\application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\microsoft\\edge dev\\application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\microsoft\\edge beta\\application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\microsoft\\edgewebview\\application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\microsoft\\edge sxs\\application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\microsoft\\edge dev\\application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\microsoft\\edge beta\\application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\mozilla firefox\\*\\firefoxportable\\app\\firefox64\\firefox.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\mozilla firefox\\firefox.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\centbrowser\\application\\chrome.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\chromium\\application\\chrome.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\epic privacy browser\\application\\epic.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\firefox developer edition\\firefox.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\google chrome\\*\\googlechromeportable\\app\\chrome-bin\\chrome.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\google\\chrome beta\\application\\chrome.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\google\\chrome dev\\application\\chrome.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\google\\chrome sxs\\application\\chrome.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%localappdata%\\google\\chrome\\application\\chrome.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\explorer.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\microsoft.net\\framework\\*\\dw20.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\notepad.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\splwow64.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\ssdal.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\atbroker.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\bdeunlock.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\buaappnt.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\conhost.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\ctfmon.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\dwwin.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\ie4uinit.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\igfxem.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\igfxhk.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\igfxtray.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\macromed\\flash\\flashplayerupdateservice.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\microsoft.uev.synccontroller.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\notepad.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\ntprint.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\pcaui.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\searchprotocolhost.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\slui.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\spool\\drivers
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\verclsid.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\werfault.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\werfaultsecure.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\wermgr.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\wevtutil.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\wfs.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\xpsrchvw.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\system32\\msiexec.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\config\\systemprofile\\sogouinput\\*\\sgtool.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\ctfmon.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\dwwin.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\ieunatt.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\ime\\imejp\\imjpdct.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\ime\\shared\\imecfmui.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\ime\\shared\\imepadsv.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\macromed\\flash\\flashplayerupdateservice.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\mspaint.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\notepad.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\openwith.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\prevhost.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\verclsid.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\werfault.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\wermgr.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\xpsrchvw.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\msiexec.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\syswow64\\launchwinapp.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\systemapps\\*\\microsoftedgecp.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\winsxs\\*\\iexplore.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\winsxs\\*\\splwow64.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%windir%\\winsxs\\*\\werfault.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\google\\chrome
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\microsoft\\onedrive
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\locallow\\copitrak
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\centbrowser\\application\\chrome.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\microsoft\\edge\\application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\microsoft\\edge sxs\\application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\microsoft\\edge dev\\application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\microsoft\\edge beta\\application\\msedge.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\microsoft\\edgewebview\\application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\microsoft\\edge sxs\\application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\microsoft\\edge dev\\application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\microsoft\\edge beta\\application\\*\\msedgewebview2.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\mozilla firefox\\*\\firefoxportable\\app\\firefox64\\firefox.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\mozilla firefox\\firefox.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\google\\chrome\\application\\chrome.exe
+7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\mozilla firefox\\firefox.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc84,%windir%\\system32\\WerFault.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc85,%windir%\\SysWOW64\\WerFault.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc86,%windir%\\system32\\DWWIN.EXE
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc87,%windir%\\SysWOW64\\DWWIN.EXE
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc88,%programfiles(x86)%\\Microsoft Azure Information Protection\\MSIP.ExecutionHost.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc89,%programfiles(x86)%\\Microsoft Azure Information Protection\\MSIP.ExecutionHost32.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc90,%programfiles%\\Microsoft Azure Information Protection\\MSIP.ExecutionHost.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc91,%programfiles%\\Microsoft Azure Information Protection\\MSIP.ExecutionHost32.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc92,%programfiles%\\Common Files\\microsoft shared\\ClickToRun\\OfficeClickToRun.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc93,%programdata%\\App-V
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc94,%programfiles%\\Microsoft Office\\root\\VFS\\ProgramFilesCommonX64\\Microsoft Shared\\DW\\dw20.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc95,%programfiles(x86)%\\Microsoft Office\\root\\VFS\\ProgramFilesCommonX64\\Microsoft Shared\\DW\\dw20.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc96,%programfiles(x86)%\\Common Files\\microsoft shared\\DW\\DW20.EXE
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc97,%programfiles%\\Common Files\\microsoft shared\\DW\\DW20.EXE
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc98,%programfiles%\\Microsoft Office\\root\\Office16\\ADDINS\\Microsoft Power Query for Excel Integrated\\bin\\Microsoft.Mashup.Container.Loader.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc99,%programfiles(x86)%\\Microsoft Office\\root\\Office16\\ADDINS\\Microsoft Power Query for Excel Integrated\\bin\\Microsoft.Mashup.Container.Loader.exe
+75668c1f-73b5-4cf0-bb93-3ecf5cb7cc100,%windir%\\splwow64.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%appdata%\\onetastic\\onecal.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%appdata%\\zoom\\bin\\zoom.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%commonprogramfiles%\\Autodesk Shared\\DWF Common\\ExpressViewer.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%commonprogramfiles(x86)%\\Autodesk Shared\\DWF Common\\ExpressViewer.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\360chrome\\chrome\\application\\360chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\AEtherClientX.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\BRP.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\BabtecCAQ.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\BrowserProcessHelper.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\BrowserProcessHelper64.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\BrowserSubProcess.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\CDLauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\CRM.Terminal.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\CaseBuddy64.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\DealCloud.AddIn.WebBrowserHost.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\Epic.Excavator.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\Hyland.Canvas.FinancialCloseManagement.Client.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\LocalCloudLauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\MSSolveHelper-DataBroker.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\Matrix.Toolbox.TrayApp.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\OTPortal.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\OfflineClient.WebHost.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\PartnerProposition.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\Q-Pulse.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\SS_CRM.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\SecMsg.QueueMonitor.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\TELSheetChecker.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\msoffice-crypt.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\obunity.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\qDocsViewer.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\sme-browser.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\apps\\2.0\\*\\*\\*\\swExplorerLauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\centbrowser\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\cflauncher\\bootcodeflow.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\chromium\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\epic privacy browser\\application\\epic.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\firefox developer edition\\firefox.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\google chrome\\*\\googlechromeportable\\app\\chrome-bin\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\google\\chrome beta\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\google\\chrome dev\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\google\\chrome sxs\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\google\\chrome\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\google\\drive plugin for office\\driveforoffice.synchelper.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\gotomeeting\\*\\g2mstart.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\gpg4win\\bin\\gpgme-w32spawn.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\edge beta\\application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\edge beta\\application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\edge dev\\application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\edge dev\\application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\edge sxs\\application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\edge sxs\\application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\edge\\application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\edgewebview\\application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\offcat\\offcat_rts.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\onedrive\\*\\filecoauth.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\onedrive\\onedrive.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\microsoft\\teams\\current\\teams.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\mozilla firefox\\*\\firefoxportable\\app\\firefox64\\firefox.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\mozilla firefox\\firefox.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\mssolvehelper databroker\\*\\mssolvehelper-databroker.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\mssolvehelper databroker\\*\\verpatch.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\outlooktodoistadx\\todoist.helper.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\packages\\*\\localcache\\local\\cflauncher\\bootcodeflow.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\packages\\*\\localcache\\local\\google\\chrome\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\packages\\*\\localcache\\local\\mozilla firefox\\firefox.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\packages\\*\\localcache\\local\\programs\\fiddler\\fiddler.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\packages\\*\\localcache\\local\\programs\\opera\\launcher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\packages\\*\\localcache\\roaming\\oracle\\oracle sales cloud for outlook\\loader\\appdiag.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\programs\\fiddler\\fiddler.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\programs\\opera beta\\launcher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\programs\\opera developer\\launcher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\programs\\opera\\launcher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\sap\\sap jam for outlook\\bin\\appdiag.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\seclore\\filesecure\\filesecure lite\\doclauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\seclore\\filesecure\\filesecure lite\\pdflauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\seclore\\filesecure\\filesecure lite\\pptlauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\seclore\\filesecure\\filesecure lite\\xlslauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\sogouexplorer\\sogouexplorer.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\temp\\newoutlookinstall\\newoutlookinstaller.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\vivaldi\\application\\vivaldi.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\vivaldidev\\application\\vivaldi.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\yandex\\yandexbrowser\\application\\browser.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\yesware\\yesware for outlook\\yeswareshadow\\yeswarechromium.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%localappdata%\\yesware\\yesware for outlook\\yeswareshadow\\yeswarechromiumx64.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programW6432%\\Microsoft\\Edge Beta\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programW6432%\\Microsoft\\Edge Beta\\Application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programW6432%\\Microsoft\\Edge Dev\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programW6432%\\Microsoft\\Edge Dev\\Application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programW6432%\\Microsoft\\EdgeWebView\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programW6432%\\Microsoft\\Edge\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programW6432%\\Microsoft\\Edge\\Application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programW6432%\\Microsoft\\Teams\\current\\Teams.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programdata%\\*\\microsoft\\teams\\current\\teams.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programdata%\\WebEx\\WebEx\\Applications\\ptSrv.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programdata%\\WebEx\\WebEx\\Applications\\ptUpdate.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programdata%\\WebEx\\WebEx\\Applications\\ptWbxONI.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programdata%\\app-v
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\BraveSoftware\\Brave-Browser\\Application\\brave.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Cisco Systems\\Cisco Jabber\\CiscoJabber.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\FactSet\\FDSBrowser.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\FactSet\\FDSBrowser_x64.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Kofax\\Power PDF *\\bin\\PowerPDF.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\MQTechnologies
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Updates
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\VFS
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Visio
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Visio10
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Visio11
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Visio12
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Visio13
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Updates
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\VFS
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Visio
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Visio10
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Visio11
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Visio12
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Visio13
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Power BI Desktop
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Power Query for Excel
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Product Studio
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Rights Management sharing application
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft SQL Server
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Silverlight
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft VS Code
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Visual Studio 12.0
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Visual Studio 14.0
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Visual Studio
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft\\Edge Beta\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft\\Edge Beta\\Application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft\\Edge Dev\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft\\Edge Dev\\Application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft\\EdgeWebView\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft\\Edge\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft\\Edge\\Application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft\\Teams\\current\\Teams.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Mimecast
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Mozilla Firefox
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\NetDocuments
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Nitro PDF
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Notepad++
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Nuance
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Open-EID
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\OpenText
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Opera developer
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Opera
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Oracle
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\PDF Annotator
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\PDF Architect 5
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Parallels
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\PeaZip
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\PhotoScape
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\PowerArchiver
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\QuickTime
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\SAP
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Safer Technologies
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Sage
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\SogouInput
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\SumatraPDF
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\SuperOffice
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Symantec.cloud
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Tableau
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\TeamMate
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\TechSmith
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Tencent
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\TextPad 7
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\TextPad 8
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Thomson Reuters
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\TortoiseGit
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\TortoiseSVN
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Tracker Software
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\VideoLAN
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Vim
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\WebConferencing
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\WebEx
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\WinRAR
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\WinZip
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Windows Media Player
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\WindowsApps
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Wondershare
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\XnView
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\nitro
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\paint.net
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\pdf995
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\policypak
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\sublime text 3
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\tikit
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\ucbrowser
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\vivaldi
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\windows mail
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\windows nt\\accessories\\wordpad.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\workshare
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\zoom
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles\\Kofax\\Power PDF *\\bin\\PowerPDF.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%systemdrive%\\apps\\notes\\notes.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%systemdrive%\\axpointaddin\\eowp.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%systemdrive%\\gendox\\teams\\common\\bin
+26190899-1602-49e8-8b27-eb1d0a1ce869,%systemdrive%\\lotus\\notes\\notes.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%systemdrive%\\notes\\notes.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\360chrome\\chrome\\application\\360chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\AEtherClientX.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\BRP.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\BabtecCAQ.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\BrowserProcessHelper.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\BrowserProcessHelper64.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\BrowserSubProcess.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\CDLauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\CRM.Terminal.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\CaseBuddy64.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\DealCloud.AddIn.WebBrowserHost.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\Epic.Excavator.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\Hyland.Canvas.FinancialCloseManagement.Client.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\LocalCloudLauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\MSSolveHelper-DataBroker.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\Matrix.Toolbox.TrayApp.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\OTPortal.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\OfflineClient.WebHost.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\PartnerProposition.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\Q-Pulse.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\SS_CRM.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\SecMsg.QueueMonitor.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\TELSheetChecker.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\msoffice-crypt.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\obunity.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\qDocsViewer.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\sme-browser.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\apps\\2.0\\*\\*\\*\\swExplorerLauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\centbrowser\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\cflauncher\\bootcodeflow.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\chromium\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\epic privacy browser\\application\\epic.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\firefox developer edition\\firefox.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\google chrome\\*\\googlechromeportable\\app\\chrome-bin\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\google\\chrome beta\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\google\\chrome dev\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\google\\chrome sxs\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\google\\chrome\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\google\\drive plugin for office\\driveforoffice.synchelper.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\gotomeeting\\*\\g2mstart.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\gpg4win\\bin\\gpgme-w32spawn.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\edge beta\\application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\edge beta\\application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\edge dev\\application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\edge dev\\application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\edge sxs\\application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\edge sxs\\application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\edge\\application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\edgewebview\\application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\offcat\\offcat_rts.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\onedrive\\*\\filecoauth.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\onedrive\\onedrive.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\microsoft\\teams\\current\\teams.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\mozilla firefox\\*\\firefoxportable\\app\\firefox64\\firefox.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\mozilla firefox\\firefox.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\mssolvehelper databroker\\*\\mssolvehelper-databroker.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\mssolvehelper databroker\\*\\verpatch.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\outlooktodoistadx\\todoist.helper.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\cflauncher\\bootcodeflow.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\google\\chrome\\application\\chrome.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\mozilla firefox\\firefox.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\programs\\fiddler\\fiddler.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\programs\\opera\\launcher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\packages\\*\\localcache\\roaming\\oracle\\oracle sales cloud for outlook\\loader\\appdiag.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\programs\\fiddler\\fiddler.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\programs\\opera beta\\launcher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\programs\\opera developer\\launcher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\programs\\opera\\launcher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\sap\\sap jam for outlook\\bin\\appdiag.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\seclore\\filesecure\\filesecure lite\\doclauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\seclore\\filesecure\\filesecure lite\\pdflauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\seclore\\filesecure\\filesecure lite\\pptlauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\seclore\\filesecure\\filesecure lite\\xlslauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\sogouexplorer\\sogouexplorer.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\temp\\newoutlookinstall\\newoutlookinstaller.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\vivaldi\\application\\vivaldi.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\vivaldidev\\application\\vivaldi.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\yandex\\yandexbrowser\\application\\browser.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\yesware\\yesware for outlook\\yeswareshadow\\yeswarechromium.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\local\\yesware\\yesware for outlook\\yeswareshadow\\yeswarechromiumx64.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\locallow\\copitrak\\tstpfltk.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\roaming\\360se6\\application\\360se.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\roaming\\icrm\\desktop connection for sap crm\\bin\\appdiag.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\roaming\\infoslipsforme\\infoslips.viewer.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\roaming\\onetastic\\onecal.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\roaming\\oracle\\crm ondemand desktop\\bin\\appdiag.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\roaming\\oracle\\oracle sales cloud for outlook\\bin\\appdiag.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\roaming\\vision\\updater.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\roaming\\watchdox\\windows plugin\\pdflauncher.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\roaming\\webex\\applications\\ptupdate.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\roaming\\zoom\\bin\\zoom.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%userprofile%\\appdata\\roaming\\zoom\\bin_00\\zoom.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\explorer.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\hh.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\microsoft.net\\framework64\\*\\dw20.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\microsoft.net\\framework\\*\\dw20.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\notepad.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\splwow64.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\bdeunlock.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\bucappnt.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\bumappnt.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\bupappnt.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\cmtrace.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\conhost.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\ctfmon.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\dsregcmd.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\dwwin.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\eventvwr.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\fondue.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\fontview.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\igfxem.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\igfxhk.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\igfxtray.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\ime
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\microsoft.uev.synccontroller.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\mspaint.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\notepad.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\prevhost.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\rmactivate.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\runtimebroker.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\spool\\drivers
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\tokenbrokercookies.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\verclsid.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\werfault.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\wermgr.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\wevtutil.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\wfs.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\wisptis.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\system32\\xpsrchvw.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\systemapps\\*\\microsoftedgecp.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\colorcpl.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\ctfmon.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\dwwin.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\eventvwr.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\explorer.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\fondue.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\fontview.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\ime
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\macromed\\flash\\flashplayerupdateservice.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\mspaint.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\notepad.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\prevhost.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\rmactivate.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\spool\\drivers
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\verclsid.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\werfault.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\wermgr.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\wevtutil.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\syswow64\\xpsrchvw.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%windir%\\winsxs
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Office16
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programFiles%\\microsoft onedrive\\*\\filecoauth.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\28Hands
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\7-Zip
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\ACD Systems
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Acrobat
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Add-On Products
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Adobe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Autodesk
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\BraveSoftware\\Brave-Browser\\Application\\brave.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\CA\\CA DataMinder
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Citrix
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Common Files\\Adobe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Common Files\\Cerenade Shared
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Common Files\\IBM
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Common Files\\Microsoft Shared
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Common Files\\Sage Software Shared
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Common Files\\Tilde shared
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\DocsCorp
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\DocsExpert
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\FOXIT SOFTWARE
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Fiddler2
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Firefox
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\GNU
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\GPSoftware
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Git
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Google
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Gpg4win
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Hewlett Packard Enterprise
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\IBM
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\IDM Computer Solutions
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\IPFX
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\IZArc
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\IntelliMagic
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Interactive Intelligence
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Internet Explorer
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Just Great Software
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\JustSystems
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Kapish
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Laserform
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Lhaplus
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\LibreOffice 5
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Lindenhouse Software Ltd
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\MQTechnologies
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Metaswitch
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Access2007
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Azure Information Protection
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Dynamics CRM 2013 Client
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Dynamics NAV
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office 15
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office 2003
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office 2010
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office 2016
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office2003
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office2007
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\2010
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Live Meeting 8
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Office
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Office10
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Office11
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Office12
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Office13
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Office14
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Office15
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Office16
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Updates
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\VFS
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Visio
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Visio10
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Visio11
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Visio12
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\Visio13
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\2010
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Live Meeting 8
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Office
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Office10
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Office11
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Office12
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Office13
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Office14
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Office15
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Office16
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Updates
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\VFS
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Visio
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Visio10
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Visio11
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Visio12
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\Visio13
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\client\\AppVDllSurrogate.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\client\\AppVDllSurrogate32.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Office\\root\\client\\AppVDllSurrogate64.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Power BI Desktop
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Power Query for Excel
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Product Studio
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Rights Management sharing application
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft SQL Server
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Silverlight
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft VS Code
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Visual Studio 12.0
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Visual Studio 14.0
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft Visual Studio
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft\\Edge Beta\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft\\Edge Beta\\Application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft\\Edge Dev\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft\\Edge Dev\\Application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft\\EdgeWebView\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft\\Edge\\Application\\*\\msedgewebview2.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft\\Edge\\Application\\msedge.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Microsoft\\Teams\\current\\Teams.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Mimecast
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Mozilla Firefox
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\NetDocuments
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Nitro PDF
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Notepad++
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Nuance
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Open-EID
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\OpenText
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Opera developer
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Opera
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Oracle
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\PDF Annotator
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\PDF Architect 5
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Parallels
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\PeaZip
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\PhotoScape
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\PowerArchiver
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\QuickTime
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\SAP
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Safer Technologies
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Sage
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\SogouInput
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\SumatraPDF
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\SuperOffice
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Symantec.cloud
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Tableau
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\TeamMate
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\TechSmith
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Tencent
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\TextPad 7
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\TextPad 8
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Thomson Reuters
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\TortoiseGit
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\TortoiseSVN
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Tracker Software
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\VideoLAN
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Vim
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\WebConferencing
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\WebEx
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\WinRAR
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\WinZip
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Windows Media Player
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\WindowsApps
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\Wondershare
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\XnView
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\bluebeam software
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\filzip
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\firefox developer edition
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\firefox nightly
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\interwoven\\worksite
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\irfanview
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\lotus
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\microsoft dynamics crm
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\nitro
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\paint.net
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\pdf995
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\policypak
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\sublime text 3
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\tikit
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\ucbrowser
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\vivaldi
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\windows mail
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\windows nt\\accessories\\wordpad.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\workshare
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles%\\zoom
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\28Hands
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\7-Zip
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\ACD Systems
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Acrobat
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Add-On Products
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Adobe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Autodesk
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\CA\\CA DataMinder
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Citrix
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Common Files\\Adobe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Common Files\\Cerenade Shared
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Common Files\\IBM
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Common Files\\Microsoft Shared
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Common Files\\Sage Software Shared
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Common Files\\Tilde shared
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\DocsCorp
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\DocsExpert
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\FOXIT SOFTWARE
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Fiddler2
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Firefox
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\GNU
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\GPSoftware
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Git
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Google
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Gpg4win
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Hewlett Packard Enterprise
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\IBM
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\IDM Computer Solutions
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\IPFX
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\IZArc
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\IntelliMagic
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Interactive Intelligence
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Internet Explorer
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Just Great Software
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\JustSystems
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Kapish
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Laserform
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Lhaplus
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\LibreOffice 5
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Lindenhouse Software Ltd
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Metaswitch
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Access2007
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Azure Information Protection
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Dynamics CRM 2013 Client
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Dynamics NAV
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office 15
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office 2003
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office 2010
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office 2016
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office2003
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office2007
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\2010
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Live Meeting 8
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Office
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Office10
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Office11
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Office12
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Office13
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Office14
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Office15
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\Office16
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\2010
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Live Meeting 8
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Office
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Office10
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Office11
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Office12
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Office13
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Office14
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\Office15
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\client\\AppVDllSurrogate.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\client\\AppVDllSurrogate32.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\Microsoft Office\\root\\client\\AppVDllSurrogate64.exe
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\bluebeam software
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\filzip
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\firefox developer edition
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\firefox nightly
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\interwoven\\worksite
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\irfanview
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\lotus
+26190899-1602-49e8-8b27-eb1d0a1ce869,%programfiles(x86)%\\microsoft dynamics crm
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\system32\\wbem\\WmiPrvSE.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\system32\\wbem\\mofcomp.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\system32\\svchost.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\system32\\WerFault.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\system32\\wuauclt.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\system32\\gpupdate.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\SysWOW64\\wbem\\WmiPrvSE.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\SysWOW64\\wbem\\mofcomp.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\SysWOW64\\svchost.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\SysWOW64\\WerFault.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\SysWOW64\\wuauclt.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\SysWOW64\\gpupdate.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\system32\\spool\\drivers
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\PSEXESVC.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\Temp\\*\\DismHost.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%systemdrive%\\*\\Tools\\MDATPClientAnalyzer.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%systemdrive%\\*\\WDATPDeploy\\MDATPClientAnalyzer\\MDATPClientAnalyzer.exe
+d1e49aac-8f56-4280-b9ba-993a6d77406c,%windir%\\CCM\\Ccm32BitLauncher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%appdata%\\microsoft\\addins
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%appdata%\\onetastic\\onecal.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%appdata%\\zoom\\bin\\zoom.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\360chrome\\chrome\\application\\360chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\apps\\2.0
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\assembly\\tmp\\*\\viewsjpk.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\centbrowser\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\cflauncher\\bootcodeflow.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\chromium\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\epic privacy browser\\application\\epic.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\firefox developer edition\\firefox.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\google chrome\\*\\googlechromeportable\\app\\chrome-bin\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\google\\chrome beta\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\google\\chrome dev\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\google\\chrome sxs\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\google\\chrome\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\google\\drive plugin for office\\driveforoffice.synchelper.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\gotomeeting\\*\\g2mstart.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\gpg4win\\bin\\gpgme-w32spawn.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\edge beta\\application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\edge beta\\application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\edge dev\\application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\edge dev\\application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\edge sxs\\application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\edge sxs\\application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\edge\\application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\edgewebview\\application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\offcat\\offcat_rts.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\onedrive
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\onedrive\\*\\filecoauth.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\microsoft\\teams\\current\\teams.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\mozilla firefox\\*\\firefoxportable\\app\\firefox64\\firefox.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\mozilla firefox\\firefox.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\mssolvehelper databroker
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\mssolvehelper databroker\\*\\mssolvehelper-databroker.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\mssolvehelper databroker\\*\\verpatch.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\outlooktodoistadx\\todoist.helper.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\packages\\*\\localcache\\local\\cflauncher\\bootcodeflow.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\packages\\*\\localcache\\local\\google\\chrome\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\packages\\*\\localcache\\local\\mozilla firefox\\firefox.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\packages\\*\\localcache\\local\\programs\\fiddler\\fiddler.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\packages\\*\\localcache\\local\\programs\\opera\\launcher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\packages\\*\\localcache\\roaming\\oracle\\oracle sales cloud for outlook\\loader\\appdiag.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\programs\\fiddler\\fiddler.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\programs\\opera beta\\launcher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\programs\\opera developer\\launcher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\programs\\opera\\launcher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\sap\\sap jam for outlook\\bin\\appdiag.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\seclore\\filesecure\\filesecure lite\\doclauncher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\seclore\\filesecure\\filesecure lite\\pdflauncher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\seclore\\filesecure\\filesecure lite\\pptlauncher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\seclore\\filesecure\\filesecure lite\\xlslauncher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\sogouexplorer\\sogouexplorer.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\vivaldi\\application\\vivaldi.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\vivaldidev\\application\\vivaldi.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\yandex\\yandexbrowser\\application\\browser.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\yesware\\yesware for outlook\\yeswareshadow\\yeswarechromium.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%localappdata%\\yesware\\yesware for outlook\\yeswareshadow\\yeswarechromiumx64.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programW6432%\\Microsoft\\Edge Beta\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programW6432%\\Microsoft\\Edge Beta\\Application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programW6432%\\Microsoft\\Edge Dev\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programW6432%\\Microsoft\\Edge Dev\\Application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programW6432%\\Microsoft\\EdgeWebView\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programW6432%\\Microsoft\\Edge\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programW6432%\\Microsoft\\Edge\\Application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programdata%\\app-v
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programdata%\\webex
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\*\\SNL.Clients.Office.Host.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\BraveSoftware\\Brave-Browser\\Application\\brave.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\FactSet\\FDSBrowser.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\FactSet\\FDSBrowser_x64.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\MQTechnologies
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Updates
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\VFS
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Visio
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Visio10
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Visio11
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Visio12
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Visio13
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Office16
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Updates
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\VFS
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Visio
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Visio10
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Visio11
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Visio12
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Visio13
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Power BI Desktop
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Power Query for Excel
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Product Studio
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Rights Management sharing application
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft SQL Server
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Silverlight
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft VS Code
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Visual Studio 12.0
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Visual Studio 14.0
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Visual Studio
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft\\Edge Beta\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft\\Edge Beta\\Application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft\\Edge Dev\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft\\Edge Dev\\Application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft\\EdgeWebView\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft\\Edge\\Application
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft\\Edge\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft\\Edge\\Application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Mimecast
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Mozilla Firefox
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\NetDocuments
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Nitro PDF
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Notepad++
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Nuance
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Office Timeline\\Current\\Monitor.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Open-EID
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\OpenText
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Opera developer
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Opera
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Oracle
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\PDF Annotator
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\PDF Architect 5
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Parallels
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\PeaZip
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\PhotoScape
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\PowerArchiver
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\QuickTime
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\SAP
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Safer Technologies
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Sage
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\SogouInput
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\SumatraPDF
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\SuperOffice
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Symantec.cloud
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Tableau
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\TeamMate
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\TechSmith
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Tencent
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\TextPad 7
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\TextPad 8
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Thomson Reuters
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\TortoiseGit
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\TortoiseSVN
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Tracker Software
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\VideoLAN
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Vim
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\WebConferencing
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\WebEx
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\WinRAR
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\WinZip
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Windows Media Player
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\WindowsApps
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Wondershare
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\XnView
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\nitro
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\paint.net
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\pdf995
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\policypak
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\sublime text 3
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\think-cell
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\tikit
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\ucbrowser
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\vivaldi
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\windows mail
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\windows nt\\accessories\\wordpad.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\workshare
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\zoom
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%systemdrive%\\apps\\notes\\notes.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%systemdrive%\\axpointaddin\\eowp.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%systemdrive%\\gendox\\teams\\common\\bin
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%systemdrive%\\lotus\\notes\\notes.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%systemdrive%\\notes\\notes.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\360chrome\\chrome\\application\\360chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\apps\\2.0
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\centbrowser\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\cflauncher\\bootcodeflow.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\chromium\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\epic privacy browser\\application\\epic.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\firefox developer edition\\firefox.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\google chrome\\*\\googlechromeportable\\app\\chrome-bin\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\google\\chrome beta\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\google\\chrome dev\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\google\\chrome sxs\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\google\\chrome\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\google\\drive plugin for office\\driveforoffice.synchelper.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\gotomeeting\\*\\g2mstart.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\gpg4win\\bin\\gpgme-w32spawn.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\edge beta\\application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\edge beta\\application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\edge dev\\application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\edge dev\\application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\edge sxs\\application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\edge sxs\\application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\edge\\application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\edgewebview\\application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\offcat\\offcat_rts.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\onedrive
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\onedrive\\*\\filecoauth.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\microsoft\\teams\\current\\teams.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\mozilla firefox\\*\\firefoxportable\\app\\firefox64\\firefox.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\mozilla firefox\\firefox.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\mssolvehelper databroker
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\mssolvehelper databroker\\*\\mssolvehelper-databroker.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\mssolvehelper databroker\\*\\verpatch.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\outlooktodoistadx\\todoist.helper.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\cflauncher\\bootcodeflow.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\google\\chrome\\application\\chrome.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\mozilla firefox\\firefox.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\programs\\fiddler\\fiddler.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\packages\\*\\localcache\\local\\programs\\opera\\launcher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\packages\\*\\localcache\\roaming\\oracle\\oracle sales cloud for outlook\\loader\\appdiag.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\programs\\fiddler\\fiddler.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\programs\\opera beta\\launcher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\programs\\opera developer\\launcher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\programs\\opera\\launcher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\sap\\sap jam for outlook\\bin\\appdiag.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\seclore\\filesecure\\filesecure lite\\doclauncher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\seclore\\filesecure\\filesecure lite\\pdflauncher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\seclore\\filesecure\\filesecure lite\\pptlauncher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\seclore\\filesecure\\filesecure lite\\xlslauncher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\sogouexplorer\\sogouexplorer.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\vivaldi\\application\\vivaldi.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\vivaldidev\\application\\vivaldi.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\yandex\\yandexbrowser\\application\\browser.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\yesware\\yesware for outlook\\yeswareshadow\\yeswarechromium.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\local\\yesware\\yesware for outlook\\yeswareshadow\\yeswarechromiumx64.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\locallow\\copitrak\\tstpfltk.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\360se6\\application\\360se.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\icrm\\desktop connection for sap crm\\bin\\appdiag.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\infoslipsforme\\infoslips.viewer.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\microsoft\\addins
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\onetastic\\onecal.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\oracle\\crm ondemand desktop\\bin\\appdiag.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\oracle\\oracle sales cloud for outlook\\bin\\appdiag.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\vision\\updater.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\watchdox\\windows plugin\\pdflauncher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\webex\\applications\\ptupdate.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\zoom\\bin\\zoom.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%userprofile%\\appdata\\roaming\\zoom\\bin_00\\zoom.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\explorer.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\hh.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\microsoft.net\\framework
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\microsoft.net\\framework64
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\notepad.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\splwow64.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\bdeunlock.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\bucappnt.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\bumappnt.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\bupappnt.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\cmtrace.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\ctfmon.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\dwwin.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\eventvwr.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\fondue.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\fontview.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\igfxem.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\igfxhk.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\igfxtray.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\ime
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\microsoft.uev.synccontroller.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\mspaint.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\notepad.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\prevhost.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\rmactivate.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\runtimebroker.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\spool\\drivers
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\tokenbrokercookies.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\verclsid.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\werfault.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\wermgr.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\wevtutil.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\wfs.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\wisptis.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\system32\\xpsrchvw.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\systemapps\\*\\microsoftedgecp.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\colorcpl.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\ctfmon.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\dwwin.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\eventvwr.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\explorer.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\fondue.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\fontview.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\ime
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\macromed\\flash\\flashplayerupdateservice.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\mspaint.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\notepad.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\prevhost.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\rmactivate.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\spool\\drivers
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\verclsid.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\werfault.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\wermgr.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\syswow64\\xpsrchvw.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%windir%\\winsxs\\*\\splwow64.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Office15
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\28Hands
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\7-Zip
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\ACD Systems
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Acrobat
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Add-On Products
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Adobe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Autodesk
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\CA\\CA DataMinder
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Citrix
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Common Files\\Adobe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Common Files\\Cerenade Shared
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Common Files\\IBM
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Common Files\\Microsoft Shared
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Common Files\\Sage Software Shared
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Common Files\\Tilde shared
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\DocsCorp
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\DocsExpert
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\FOXIT SOFTWARE
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Fiddler2
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Firefox
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\GNU
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\GPSoftware
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Git
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Google
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Gpg4win
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Hewlett Packard Enterprise
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\IBM
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\IDM Computer Solutions
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\IPFX
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\IZArc
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\IntelliMagic
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Interactive Intelligence
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Internet Explorer
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Just Great Software
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\JustSystems
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Kapish
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Laserform
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Lhaplus
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\LibreOffice 5
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Lindenhouse Software Ltd
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\MQTechnologies
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Metaswitch
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Micro Focus\\Content Manager\\TRIMWatcher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Access2007
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Azure Information Protection
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Dynamics CRM 2013 Client
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Dynamics NAV
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office 15
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office 2003
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office 2010
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office 2016
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office2003
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office2007
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\2010
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Live Meeting 8
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Office
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Office10
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Office11
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Office12
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Office13
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Office14
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Office15
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Office16
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Updates
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\VFS
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Visio
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Visio10
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Visio11
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Visio12
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\Visio13
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\2010
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Live Meeting 8
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Office
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Office10
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Office11
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Office12
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Office13
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Office14
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Office15
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Office16
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Updates
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\VFS
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Visio
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Visio10
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Visio11
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Visio12
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\Visio13
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\client\\AppVDllSurrogate.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\client\\AppVDllSurrogate32.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Office\\root\\client\\AppVDllSurrogate64.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Power BI Desktop
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Power Query for Excel
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Product Studio
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Rights Management sharing application
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft SQL Server
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Silverlight
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft VS Code
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Visual Studio 12.0
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Visual Studio 14.0
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft Visual Studio
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft\\Edge Beta\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft\\Edge Beta\\Application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft\\Edge Dev\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft\\Edge Dev\\Application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft\\EdgeWebView\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft\\Edge\\Application
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft\\Edge\\Application\\*\\msedgewebview2.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Microsoft\\Edge\\Application\\msedge.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Mimecast
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Mozilla Firefox
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\NetDocuments
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Nitro PDF
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Notepad++
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Nuance
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Open-EID
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\OpenText
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Opera developer
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Opera
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Oracle
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\PDF Annotator
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\PDF Architect 5
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Parallels
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\PeaZip
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\PhotoScape
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\PowerArchiver
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\QuickTime
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\SAP
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Safer Technologies
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Sage
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\SogouInput
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\SumatraPDF
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\SuperOffice
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Symantec.cloud
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Tableau
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\TeamMate
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\TechSmith
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Tencent
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\TextPad 7
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\TextPad 8
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Thomson Reuters
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\TortoiseGit
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\TortoiseSVN
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Tracker Software
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\VideoLAN
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Vim
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\WebConferencing
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\WebEx
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\WinRAR
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\WinZip
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Windows Media Player
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\WindowsApps
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\Wondershare
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\XnView
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\bluebeam software
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\filzip
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\firefox developer edition
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\firefox nightly
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\interwoven\\worksite
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\irfanview
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\lotus
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\microsoft dynamics crm
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\nitro
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\paint.net
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\pdf995
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\policypak
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\sublime text 3
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\think-cell
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\tikit
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\ucbrowser
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\vivaldi
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\windows mail
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\windows nt\\accessories\\wordpad.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\workshare
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles%\\zoom
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\28Hands
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\7-Zip
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\ACD Systems
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Acrobat
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Add-On Products
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Adobe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Autodesk
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\CA\\CA DataMinder
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Citrix
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Common Files\\Adobe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Common Files\\Cerenade Shared
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Common Files\\IBM
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Common Files\\Microsoft Shared
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Common Files\\Sage Software Shared
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Common Files\\Tilde shared
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\DocsCorp
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\DocsExpert
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\FOXIT SOFTWARE
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Fiddler2
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Firefox
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\GNU
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\GPSoftware
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Git
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Google
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Gpg4win
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Hewlett Packard Enterprise
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\IBM
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\IDM Computer Solutions
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\IPFX
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\IZArc
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\IntelliMagic
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Interactive Intelligence
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Internet Explorer
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Just Great Software
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\JustSystems
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Kapish
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Laserform
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Lhaplus
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\LibreOffice 5
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Lindenhouse Software Ltd
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Metaswitch
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Micro Focus\\Content Manager\\TRIMWatcher.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Access2007
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Azure Information Protection
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Dynamics CRM 2013 Client
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Dynamics NAV
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office 15
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office 2003
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office 2010
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office 2016
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office2003
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office2007
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\2010
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Live Meeting 8
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Office
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Office10
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Office11
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Office12
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Office13
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Office14
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Office15
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\Office16
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\2010
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Live Meeting 8
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Office
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Office10
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Office11
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Office12
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Office13
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\Office14
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\client\\AppVDllSurrogate.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\client\\AppVDllSurrogate32.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\Microsoft Office\\root\\client\\AppVDllSurrogate64.exe
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\bluebeam software
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\filzip
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\firefox developer edition
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\firefox nightly
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\interwoven\\worksite
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\irfanview
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\lotus
+d4f940ab-401b-4efc-aadc-ad5f3c50688a,%programfiles(x86)%\\microsoft dynamics crm
